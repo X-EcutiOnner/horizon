@@ -30,6 +30,25 @@
 
 #include <vector>
 
+#if USE_OPENSSL_DES
+DES::DES(const unsigned char *key)
+{
+	DES_set_key((const_DES_cblock*)key, &_schedule);
+}
+
+void DES::decryptBlock(DES_cblock *block)
+{
+	DES_ecb_encrypt(block, block, &_schedule, DES_DECRYPT);
+}
+
+void DES::decrypt(unsigned char *data, size_t size)
+{
+	DES_cblock ivec;
+	memset(&ivec, 0, sizeof(ivec));
+	DES_ncbc_encrypt(data, data, size, &_schedule, &ivec, DES_DECRYPT);
+}
+
+#else
 /// Expansion (E).
 /// Expands upper four 8-bits (32b) into eight 6-bits (48b).
 void DES::E(BIT64 *src)
@@ -201,3 +220,5 @@ void DES::decrypt(unsigned char* data, size_t size)
 	for (i = 0; i*8 < size; i += 8)
 		decryptBlock(p);
 }
+
+#endif

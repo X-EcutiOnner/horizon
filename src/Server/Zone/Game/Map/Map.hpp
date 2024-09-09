@@ -31,9 +31,8 @@
 #define HORIZON_ZONE_GAME_MAP_HPP
 
 #include "Path/AStar.hpp"
-#include "Core/Logging/Logger.hpp"
 #include "Server/Common/Configuration/Horizon.hpp"
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
 #include "Server/Zone/Game/Map/Grid/Cell/Cell.hpp"
 #include "Server/Zone/Game/Map/Grid/GridDefinitions.hpp"
@@ -44,10 +43,11 @@ namespace Horizon
 {
 namespace Zone
 {
-	namespace Entities
+	namespace Units
 	{
 		class Item;
 	}
+	class GameLogicProcess;
 //! @brief The class Map is the representation of a map in the game. It contains all the cells and the grid holder. It also contains the A* pathfinder. 
 //! It is the main class for the map. It is used to get the cells, the grid holder and the pathfinder, and perform a variety of operations on them.
 //! @param _container The container that contains this map.
@@ -60,12 +60,11 @@ namespace Zone
 //! @param _obstructions The obstructions of the map.
 class Map : public std::enable_shared_from_this<Map>
 {
-friend class MapManager;
 public:
-	Map(std::weak_ptr<MapContainerThread>, std::string const &, uint16_t, uint16_t, std::vector<uint8_t> const &);
+	Map(std::weak_ptr<GameLogicProcess>, std::string const &, uint16_t, uint16_t, std::vector<uint8_t> const &);
 	~Map();
 
-	std::shared_ptr<MapContainerThread> container() { return _container.expired() == false ? _container.lock() : nullptr; }
+	std::shared_ptr<GameLogicProcess> container() { return _container.expired() == false ? _container.lock() : nullptr; }
 
 	std::string const &get_name() { return _name; }
 
@@ -79,7 +78,7 @@ public:
 	GridHolderType &getGridHolder() { return _gridholder; }
 
 	template <class T>
-	bool ensure_grid_for_entity(T *entity, MapCoords coords);
+	bool ensure_grid_for_unit(T *unit, MapCoords coords);
 
 	template<class T, class CONTAINER>
 	void visit(int grid_x, int grid_y, GridReferenceContainerVisitor<T, CONTAINER> &visitor);
@@ -161,7 +160,7 @@ public:
 	void add_item_drop(int item_id, MapCoords map_coords, int amount, int identified);
 	void add_item_drop(std::shared_ptr<item_entry_data> entry, int32_t amount, MapCoords map_coords);
 private:
-	std::weak_ptr<MapContainerThread> _container;
+	std::weak_ptr<GameLogicProcess> _container;
 	std::string _name{""};
 	uint16_t _width{0}, _height{0};
 	GridCoords _max_grids;
@@ -174,20 +173,20 @@ private:
 }
 
 template <class T>
-bool Horizon::Zone::Map::ensure_grid_for_entity(T *entity, MapCoords mcoords)
+bool Horizon::Zone::Map::ensure_grid_for_unit(T *unit, MapCoords mcoords)
 {
-	std::string const &new_map_name = entity->map()->get_name();
+	std::string const &new_map_name = unit->map()->get_name();
 	GridCoords new_gcoords = mcoords.scale<MAX_CELLS_PER_GRID, MAX_GRIDS_PER_MAP>();
 
-	if (new_map_name.compare(get_name()) == 0 && entity->grid_coords() == new_gcoords)
+	if (new_map_name.compare(get_name()) == 0 && unit->grid_coords() == new_gcoords)
 		return false;
 
-	if (entity->has_valid_grid_reference())
-		entity->remove_grid_reference();
+	if (unit->has_valid_grid_reference())
+		unit->remove_grid_reference();
 
-	entity->set_grid_coords(new_gcoords);
+	unit->set_grid_coords(new_gcoords);
 
-	_gridholder.get_grid(new_gcoords.x(), new_gcoords.y()).add_object(entity);
+	_gridholder.get_grid(new_gcoords.x(), new_gcoords.y()).add_object(unit);
 
 	return true;
 }
@@ -195,7 +194,7 @@ bool Horizon::Zone::Map::ensure_grid_for_entity(T *entity, MapCoords mcoords)
 template<class T, class CONTAINER>
 inline void Horizon::Zone::Map::visit(int grid_x, int grid_y, GridReferenceContainerVisitor<T, CONTAINER> &visitor)
 {
-	Grid<AllEntityTypes> &g = _gridholder.get_grid(grid_x, grid_y);
+	Grid<AllUnitTypes> &g = _gridholder.get_grid(grid_x, grid_y);
 	g.visit(visitor);
 }
 

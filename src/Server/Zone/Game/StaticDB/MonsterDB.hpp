@@ -29,9 +29,11 @@
 
 #ifndef HORIZON_ZONE_STATICDB_MONSTERDB_HPP
 #define HORIZON_ZONE_STATICDB_MONSTERDB_HPP
+#include "Core/Multithreading/LockedLookupTable.hpp"
  // Linux
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
 #include "Server/Zone/Definitions/MonsterDefinitions.hpp"
+#include <sol/sol.hpp>
 
 namespace Horizon
 {

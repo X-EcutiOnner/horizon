@@ -44,30 +44,27 @@ class AsyncAcceptor;
  * @brief Socket Manager for Accepted Sockets.
  *        Deals with client sockets that were accepted by the server.
  */
-template <class SocketType>
-class AcceptSocketMgr : public SocketMgr<SocketType>
+template <class SocketType, class NetworkThreadType>
+class AcceptSocketMgr : public SocketMgr<SocketType, NetworkThreadType>
 {
 	typedef std::map<uint32_t, std::shared_ptr<SocketType>> SocketMap;
-	typedef SocketMgr<SocketType> BaseSocketMgr;
+	typedef SocketMgr<SocketType, NetworkThreadType> BaseSocketMgr;
 public:
-	AcceptSocketMgr() { }
-	~AcceptSocketMgr() { }
-
 	/**
 	 * @brief Initialize and start accepting connections asynchronously.
 	 *        This method also starts the networking threads for accepted sockets.
-	 * @param[in|out] &io_service  const reference to the IO_Service object.
+	 * @param[in|out] &io_context  const reference to the io_context object.
 	 * @param[in|out] &listen_ip   const reference to the ip_address string for the acceptor to bind on.
 	 * @param[in]     port         port number for the acceptor to bind on.
 	 * @param[in]     threads      number of network acceptor threads to start and run.
 	 * @return true on success, false on failure.
 	 */
-	virtual bool start(boost::asio::io_service &io_service, std::string const &listen_ip, uint16_t port, uint32_t threads = 1)
+	virtual bool start(boost::asio::io_context &io_context, std::string const &listen_ip, uint16_t port, uint32_t threads = 1, bool minimal = false)
 	{
 		try {
-			_acceptor = std::make_unique<AsyncAcceptor>(io_service, listen_ip, port);
+			_acceptor = std::make_unique<AsyncAcceptor>(io_context, listen_ip, port);
 		} catch (boost::system::system_error const &error) {
-			HLog(error) << "Exception caught in AcceptSocketMgr::Start (" << listen_ip.c_str() << ", " << port << ") " << error.what();
+			HLog(error) << "Exception caught in AcceptSocketMgr::start (" << listen_ip.c_str() << ", " << port << ") " << error.what();
 			return false;
 		}
 
@@ -77,7 +74,9 @@ public:
 		}
 
 		_acceptor->set_socket_factory(std::bind(&BaseSocketMgr::get_new_socket, this));
-		_acceptor->async_accept_with_callback(std::bind(&AcceptSocketMgr<SocketType>::on_socket_open, this, std::placeholders::_1, std::placeholders::_2));
+
+		if (minimal == false)
+			_acceptor->async_accept_with_callback(std::bind(&AcceptSocketMgr<SocketType, NetworkThreadType>::on_socket_open, this, std::placeholders::_1, std::placeholders::_2));
 
 		HLog(info) << "Networking initialized, listening on " << listen_ip << "@" << port << ".";
 		HLog(info) << "Maximum Network Threads: " << threads;
@@ -89,14 +88,16 @@ public:
 	 * @brief Stop the Acceptor network and clear the client socket map.
 	 * - Called from the main thread only.
 	 */
-	virtual void stop_network() override
+	virtual bool stop_network() override
 	{
-		if (_acceptor->is_open())
-			_acceptor->close();
-
 		BaseSocketMgr::stop_network();
+	
+		if (_acceptor->is_open()) {
+			_acceptor->close();
+		}
 
-		_socket_map.clear();
+		_acceptor.reset();
+		return true;
 	}
 
 	/**
@@ -133,7 +134,7 @@ public:
 	 * - Called from the main thread only.
 	 * @param[in] diff
 	 */
-	void update_socket_sessions(uint32_t time)
+	void manage_sockets(uint32_t time)
 	{
 		std::shared_ptr<std::pair<bool, std::shared_ptr<SocketType>>> sock_buf;
 
@@ -149,18 +150,15 @@ public:
 				_socket_map.emplace(socket->get_socket_id(), socket);
 			}
 		}
-
-		for (auto sock : _socket_map) {
-			if (sock.second->get_session() != nullptr) {
-				sock.second->update_session(time);
-			}
-		}
 	}
+
+	SocketMap &get_sockets() { return _socket_map; }
 
 private:
 	std::unique_ptr<AsyncAcceptor> _acceptor;       ///< unique pointer to an AsyncAcceptor object.
 	SocketMap _socket_map;                          ///< std::map of all connected and handled sockets.
 	ThreadSafeQueue<std::pair<bool, std::shared_ptr<SocketType>>> _socket_management_queue;
+	std::atomic<bool> _is_initialized;
 };
 }
 }

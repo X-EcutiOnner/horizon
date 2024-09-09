@@ -30,7 +30,10 @@
 #ifndef HORIZON_ZONE_STATICDB_STATUSEFFECTDB_HPP
 #define HORIZON_ZONE_STATICDB_STATUSEFFECTDB_HPP
 
-
+#include "Core/Multithreading/LockedLookupTable.hpp"
+#include <cinttypes>
+#include <string>
+#include <sol/sol.hpp>
 
 namespace Horizon
 {

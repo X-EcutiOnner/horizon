@@ -3,8 +3,8 @@
 ---@class Combat
 Combat = {}
 
----@return Entity # The attacker
+---@return Unit # The attacker
 function Combat:source() end
 
----@return Entity # The target
+---@return Unit # The target
 function Combat:target() end

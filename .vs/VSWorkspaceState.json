@@ -1,14 +1,14 @@
 {
   "OutputFoldersPerTargetSystem": {
     "Local Machine": [
-      "out\\build\\x64-debug",
-      "out\\install\\x64-debug",
-      "out\\build\\x64-release",
-      "out\\install\\x64-release",
-      "out\\build\\x86-debug",
-      "out\\install\\x86-debug",
-      "out\\build\\x86-release",
-      "out\\install\\x86-release"
+      "out\\build\\Horizon-Release",
+      "out\\build\\Horizon",
+      "out\\build\\Horizon-Tools",
+      "out\\build\\Horizon-Tests",
+      "out\\build\\Horizon Debug",
+      "out\\build\\Horizon Tools Debug",
+      "out\\build\\Horizon Tests Debug",
+      "out\\build\\Horizon x86"
     ]
   },
   "ExpandedNodes": [

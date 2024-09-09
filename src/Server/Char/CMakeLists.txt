@@ -34,11 +34,18 @@ CollectSourceFiles(
 
 GroupSources(${CMAKE_CURRENT_SOURCE_DIR})
 
-add_executable(char
+set(CHAR_TARGET_SOURCES
 	${PRIVATE_SOURCES}
 	${COMMON_SOURCES}
+	${COMMON_HEADERS}
 	${CORE_SOURCES}
-    ${UTILITY_SOURCES})
+	${UTILITY_SOURCES}
+)
+
+add_executable(char
+	${CHAR_TARGET_SOURCES})
+
+set(CHAR_TARGET_SOURCES ${CHAR_TARGET_SOURCES} PARENT_SCOPE)
 
 target_precompile_headers(char
 	PUBLIC
@@ -46,16 +53,11 @@ target_precompile_headers(char
 
 target_link_libraries(char
 	PUBLIC
-        ${Boost_LIBRARIES}
-        networking
-        ${Readline_LIBRARY}
+    	${Boost_LIBRARIES}
+    	networking
 		${LUA_LIBRARIES}
-		${MYSQL_LIBRARIES}
-		$<$<BOOL:${WIN32}>:unofficial::mysql-connector-cpp::connector>
-		$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_LIBRARIES}>
-		$<$<BOOL:${UNIX}>:-lssl>
-		$<$<BOOL:${UNIX}>:-lcrypto>
-		$<$<BOOL:${UNIX}>:-lresolv>
+		OpenSSL::SSL
+		${QUADMATH_LIBRARY}
 )
 
 set(INCLUDE_DIRS
@@ -78,29 +80,17 @@ target_include_directories(char
 	PUBLIC
 		${Boost_INCLUDE_DIRS}
 		${PUBLIC_INCLUDES}
-        ${Readline_INCLUDE_DIR}
 		${LUA_INCLUDE_DIR}
 		${SOL2_INCLUDE_DIR}
-		${SQLPP11_INCLUDE_DIR}
-		${MYSQL_INCLUDE_DIR}
-		$<$<BOOL:${WIN32}>:${UNOFFICIAL_MYSQL_CONNECTOR_CPP_INCLUDE_DIR}>
-		$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_INCLUDE_DIR}>
 	PRIVATE
 		${CMAKE_CURRENT_BINARY_DIR}
 )
 
-if (WITH_COVERAGE)
-	target_compile_options(char INTERFACE
-		-O0        # no optimization
-		-g         # generate debug info
-		--coverage # sets all required flags
-	)
-	if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
-		target_link_options(char INTERFACE --coverage)
-	else()
-		target_link_libraries(char INTERFACE --coverage)
-	endif()
-endif()
+# Enable CMP0091 for MSVC Builds
+if (MSVC)
+set_property(TARGET char PROPERTY
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)
 
 install(TARGETS char
     DESTINATION ${CMAKE_INSTALL_PREFIX}

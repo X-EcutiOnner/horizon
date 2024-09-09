@@ -36,8 +36,8 @@ namespace Horizon
 {
 namespace Char
 {
-	typedef std::shared_ptr<Base::NetworkPacketHandler<CharSession>> HPacketStructPtrType;
-	typedef std::shared_ptr<Base::NetworkPacketTransmitter<CharSession>> TPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<CharSession>> HPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<CharSession>> TPacketStructPtrType;
 	typedef std::pair<int16_t, HPacketStructPtrType> HPacketTablePairType;
 	typedef std::pair<int16_t, TPacketStructPtrType> TPacketTablePairType;
 /**

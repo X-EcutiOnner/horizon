@@ -26,8 +26,17 @@
 ###################################################
 # Common Sources
 add_subdirectory(Common)
+set(COMMON_HEADERS ${COMMON_HEADERS} PARENT_SCOPE)
 
 # Targets
 add_subdirectory(Auth)
+list(REMOVE_ITEM AUTH_TARGET_SOURCES REGEX "${CMAKE_CURRENT_SOURCE_DIR}/Auth/Main.cpp")
+set(AUTH_TESTING_SOURCES ${AUTH_TARGET_SOURCES} PARENT_SCOPE)
+
 add_subdirectory(Char)
+list(REMOVE_ITEM CHAR_TARGET_SOURCES REGEX "${CMAKE_CURRENT_SOURCE_DIR}/Char/Main.cpp")
+set(CHAR_TESTING_SOURCES ${CHAR_TARGET_SOURCES} PARENT_SCOPE)
+
 add_subdirectory(Zone)
+list(REMOVE_ITEM ZONE_TARGET_SOURCES REGEX "${CMAKE_CURRENT_SOURCE_DIR}/Zone/Main.cpp")
+set(ZONE_TESTING_SOURCES ${ZONE_TARGET_SOURCES} PARENT_SCOPE)

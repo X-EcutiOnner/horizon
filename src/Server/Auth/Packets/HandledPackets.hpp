@@ -60,11 +60,11 @@ ID_CA_ACK_LOGIN_ACCOUNT_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_LOGIN_ACCOUNT_INFO
  *
  */ 
-class CA_ACK_LOGIN_ACCOUNT_INFO : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_LOGIN_ACCOUNT_INFO : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_LOGIN_ACCOUNT_INFO(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_LOGIN_ACCOUNT_INFO, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_LOGIN_ACCOUNT_INFO, s)
 	{}
 	virtual ~CA_ACK_LOGIN_ACCOUNT_INFO() {}
 
@@ -98,11 +98,11 @@ ID_CA_ACK_LOGIN_CARDPASS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_LOGIN_CARDPASS
  *
  */ 
-class CA_ACK_LOGIN_CARDPASS : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_LOGIN_CARDPASS : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_LOGIN_CARDPASS(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_LOGIN_CARDPASS, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_LOGIN_CARDPASS, s)
 	{}
 	virtual ~CA_ACK_LOGIN_CARDPASS() {}
 
@@ -136,11 +136,11 @@ ID_CA_ACK_LOGIN_NEWEKEY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_LOGIN_NEWEKEY
  *
  */ 
-class CA_ACK_LOGIN_NEWEKEY : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_LOGIN_NEWEKEY : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_LOGIN_NEWEKEY(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_LOGIN_NEWEKEY, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_LOGIN_NEWEKEY, s)
 	{}
 	virtual ~CA_ACK_LOGIN_NEWEKEY() {}
 
@@ -174,11 +174,11 @@ ID_CA_ACK_LOGIN_OLDEKEY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_LOGIN_OLDEKEY
  *
  */ 
-class CA_ACK_LOGIN_OLDEKEY : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_LOGIN_OLDEKEY : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_LOGIN_OLDEKEY(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_LOGIN_OLDEKEY, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_LOGIN_OLDEKEY, s)
 	{}
 	virtual ~CA_ACK_LOGIN_OLDEKEY() {}
 
@@ -206,11 +206,11 @@ ID_CA_ACK_MOBILE_OTP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_MOBILE_OTP
  *
  */ 
-class CA_ACK_MOBILE_OTP : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_MOBILE_OTP : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_MOBILE_OTP(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_MOBILE_OTP, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_MOBILE_OTP, s)
 	{}
 	virtual ~CA_ACK_MOBILE_OTP() {}
 
@@ -238,11 +238,11 @@ ID_CA_ACK_NEW_USER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_ACK_NEW_USER
  *
  */ 
-class CA_ACK_NEW_USER : public Base::NetworkPacketHandler<AuthSession>
+class CA_ACK_NEW_USER : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_ACK_NEW_USER(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_ACK_NEW_USER, s)
+	: NetworkPacket<AuthSession>(ID_CA_ACK_NEW_USER, s)
 	{}
 	virtual ~CA_ACK_NEW_USER() {}
 
@@ -276,11 +276,11 @@ ID_CA_CLIENT_TYPE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_CLIENT_TYPE
  *
  */ 
-class CA_CLIENT_TYPE : public Base::NetworkPacketHandler<AuthSession>
+class CA_CLIENT_TYPE : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_CLIENT_TYPE(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_CLIENT_TYPE, s)
+	: NetworkPacket<AuthSession>(ID_CA_CLIENT_TYPE, s)
 	{}
 	virtual ~CA_CLIENT_TYPE() {}
 
@@ -314,11 +314,11 @@ ID_CA_CONNECT_INFO_CHANGED = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_CONNECT_INFO_CHANGED
  *
  */ 
-class CA_CONNECT_INFO_CHANGED : public Base::NetworkPacketHandler<AuthSession>
+class CA_CONNECT_INFO_CHANGED : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_CONNECT_INFO_CHANGED(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_CONNECT_INFO_CHANGED, s)
+	: NetworkPacket<AuthSession>(ID_CA_CONNECT_INFO_CHANGED, s)
 	{}
 	virtual ~CA_CONNECT_INFO_CHANGED() {}
 
@@ -352,11 +352,11 @@ ID_CA_EXE_HASHCHECK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_EXE_HASHCHECK
  *
  */ 
-class CA_EXE_HASHCHECK : public Base::NetworkPacketHandler<AuthSession>
+class CA_EXE_HASHCHECK : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_EXE_HASHCHECK(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_EXE_HASHCHECK, s)
+	: NetworkPacket<AuthSession>(ID_CA_EXE_HASHCHECK, s)
 	{}
 	virtual ~CA_EXE_HASHCHECK() {}
 
@@ -390,16 +390,17 @@ ID_CA_LOGIN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN
  *
  */ 
-class CA_LOGIN : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN, s)
 	{}
 	virtual ~CA_LOGIN() {}
 
 	void handle(ByteBuffer &&buf);
 	void deserialize(ByteBuffer &buf);
+	ByteBuffer serialize(int32_t version, std::string username, std::string password, uint8_t client_type);
 
 /* Structure */
 	uint32_t _version{ 0 };       ///< Client Version Information
@@ -432,11 +433,11 @@ ID_CA_LOGIN2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN2
  *
  */ 
-class CA_LOGIN2 : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN2 : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN2(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN2, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN2, s)
 	{}
 	virtual ~CA_LOGIN2() {}
 
@@ -470,11 +471,11 @@ ID_CA_LOGIN3 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN3
  *
  */ 
-class CA_LOGIN3 : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN3 : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN3(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN3, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN3, s)
 	{}
 	virtual ~CA_LOGIN3() {}
 
@@ -508,11 +509,11 @@ ID_CA_LOGIN4 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN4
  *
  */ 
-class CA_LOGIN4 : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN4 : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN4(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN4, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN4, s)
 	{}
 	virtual ~CA_LOGIN4() {}
 
@@ -540,11 +541,11 @@ ID_CA_LOGIN5 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN5
  *
  */ 
-class CA_LOGIN5 : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN5 : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN5(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN5, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN5, s)
 	{}
 	virtual ~CA_LOGIN5() {}
 
@@ -572,11 +573,11 @@ ID_CA_LOGIN6 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN6
  *
  */ 
-class CA_LOGIN6 : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN6 : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN6(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN6, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN6, s)
 	{}
 	virtual ~CA_LOGIN6() {}
 
@@ -610,11 +611,11 @@ ID_CA_LOGIN_HAN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN_HAN
  *
  */ 
-class CA_LOGIN_HAN : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN_HAN : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN_HAN(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN_HAN, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN_HAN, s)
 	{}
 	virtual ~CA_LOGIN_HAN() {}
 
@@ -651,11 +652,11 @@ ID_CA_LOGIN_OTP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN_OTP
  *
  */ 
-class CA_LOGIN_OTP : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN_OTP : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN_OTP(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN_OTP, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN_OTP, s)
 	{}
 	virtual ~CA_LOGIN_OTP() {}
 
@@ -689,11 +690,11 @@ ID_CA_LOGIN_PCBANG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_LOGIN_PCBANG
  *
  */ 
-class CA_LOGIN_PCBANG : public Base::NetworkPacketHandler<AuthSession>
+class CA_LOGIN_PCBANG : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_LOGIN_PCBANG(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_LOGIN_PCBANG, s)
+	: NetworkPacket<AuthSession>(ID_CA_LOGIN_PCBANG, s)
 	{}
 	virtual ~CA_LOGIN_PCBANG() {}
 
@@ -721,11 +722,11 @@ ID_CA_OTP_AUTH_REQ = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_OTP_AUTH_REQ
  *
  */ 
-class CA_OTP_AUTH_REQ : public Base::NetworkPacketHandler<AuthSession>
+class CA_OTP_AUTH_REQ : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_OTP_AUTH_REQ(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_OTP_AUTH_REQ, s)
+	: NetworkPacket<AuthSession>(ID_CA_OTP_AUTH_REQ, s)
 	{}
 	virtual ~CA_OTP_AUTH_REQ() {}
 
@@ -753,11 +754,11 @@ ID_CA_OTP_CODE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_OTP_CODE
  *
  */ 
-class CA_OTP_CODE : public Base::NetworkPacketHandler<AuthSession>
+class CA_OTP_CODE : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_OTP_CODE(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_OTP_CODE, s)
+	: NetworkPacket<AuthSession>(ID_CA_OTP_CODE, s)
 	{}
 	virtual ~CA_OTP_CODE() {}
 
@@ -791,11 +792,11 @@ ID_CA_REPLY_PNGAMEROOM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_REPLY_PNGAMEROOM
  *
  */ 
-class CA_REPLY_PNGAMEROOM : public Base::NetworkPacketHandler<AuthSession>
+class CA_REPLY_PNGAMEROOM : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_REPLY_PNGAMEROOM(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_REPLY_PNGAMEROOM, s)
+	: NetworkPacket<AuthSession>(ID_CA_REPLY_PNGAMEROOM, s)
 	{}
 	virtual ~CA_REPLY_PNGAMEROOM() {}
 
@@ -829,11 +830,11 @@ ID_CA_REQ_GAME_GUARD_CHECK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_REQ_GAME_GUARD_CHECK
  *
  */ 
-class CA_REQ_GAME_GUARD_CHECK : public Base::NetworkPacketHandler<AuthSession>
+class CA_REQ_GAME_GUARD_CHECK : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_REQ_GAME_GUARD_CHECK(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_REQ_GAME_GUARD_CHECK, s)
+	: NetworkPacket<AuthSession>(ID_CA_REQ_GAME_GUARD_CHECK, s)
 	{}
 	virtual ~CA_REQ_GAME_GUARD_CHECK() {}
 
@@ -867,11 +868,11 @@ ID_CA_REQ_HASH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_REQ_HASH
  *
  */ 
-class CA_REQ_HASH : public Base::NetworkPacketHandler<AuthSession>
+class CA_REQ_HASH : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_REQ_HASH(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_REQ_HASH, s)
+	: NetworkPacket<AuthSession>(ID_CA_REQ_HASH, s)
 	{}
 	virtual ~CA_REQ_HASH() {}
 
@@ -899,11 +900,11 @@ ID_CA_SSO_LOGIN_REQ = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CA_SSO_LOGIN_REQ
  *
  */ 
-class CA_SSO_LOGIN_REQ : public Base::NetworkPacketHandler<AuthSession>
+class CA_SSO_LOGIN_REQ : public Base::NetworkPacket<AuthSession>
 {
 public:
 	CA_SSO_LOGIN_REQ(std::shared_ptr<AuthSession> s)
-	: NetworkPacketHandler<AuthSession>(ID_CA_SSO_LOGIN_REQ, s)
+	: NetworkPacket<AuthSession>(ID_CA_SSO_LOGIN_REQ, s)
 	{}
 	virtual ~CA_SSO_LOGIN_REQ() {}
 

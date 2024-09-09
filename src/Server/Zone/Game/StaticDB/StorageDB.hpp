@@ -29,6 +29,12 @@
 
 #ifndef HORIZON_ZONE_STATICDB_STORAGEDB_HPP
 #define HORIZON_ZONE_STATICDB_STORAGEDB_HPP
+#include "Core/Multithreading/LockedLookupTable.hpp"
+#include <cinttypes>
+#include <string>
+#include <memory>
+#include <sol/sol.hpp>
+#include <map>
 
 namespace Horizon
 {

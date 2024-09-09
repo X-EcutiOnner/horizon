@@ -30,23 +30,70 @@
 #include "Zone.hpp"
 
 #include "Server/Zone/SocketMgr/ClientSocketMgr.hpp"
-#include "Server/Zone/Game/Map/MapManager.hpp"
-#include "Server/Zone/Game/StaticDB/ExpDB.hpp"
-#include "Server/Zone/Game/StaticDB/JobDB.hpp"
-#include "Server/Zone/Game/StaticDB/ItemDB.hpp"
-#include "Server/Zone/Game/StaticDB/MonsterDB.hpp"
-#include "Server/Zone/Game/StaticDB/SkillDB.hpp"
-#include "Server/Zone/Game/StaticDB/StatusEffectDB.hpp"
-#include "Server/Zone/Game/StaticDB/StorageDB.hpp"
+#include <boost/bind/bind.hpp>
+
+#include <signal.h>
 
 using namespace std;
 using namespace Horizon::Zone;
+
+ZoneKernel::ZoneKernel(s_zone_server_configuration &config) 
+: Server(), _config(config)
+{
+
+}
+
+ZoneKernel::~ZoneKernel()
+{
+	if (!get_io_context().stopped())
+		get_io_context().stop();
+}
+
+void ZoneKernel::initialize()
+{
+	_task_scheduler.Schedule(Seconds(60), [this] (TaskContext context) {
+		verify_connected_sessions();
+		context.Repeat();
+	});
+
+	Server::initialize();
+}
+
+void ZoneKernel::finalize()
+{
+	_task_scheduler.CancelAll();
+	
+	Server::finalize();
+}
+
+void ZoneKernel::verify_connected_sessions()
+{	
+	std::shared_ptr<boost::mysql::tcp_ssl_connection> conn = sZone->get_database_connection();
+	
+	try {
+		boost::mysql::statement stmt = conn->prepare_statement("DELETE FROM `session_data` WHERE `current_server` = ? AND `last_update` < ?");
+		auto b1 = stmt.bind("Z", std::time(nullptr) - config().session_max_timeout());
+		boost::mysql::results results;
+		conn->execute(b1, results);
+
+		stmt = conn->prepare_statement("SELECT COUNT(`game_account_id`) FROM `session_data` WHERE `current_server` = ?");
+		auto b2 = stmt.bind("Z");
+		conn->execute(b2, results);
+
+		int32_t count = results.rows()[0][0].as_int64();
+
+		HLog(info) << count << " connected session(s).";
+	} catch (boost::mysql::error_with_diagnostics &err) {
+		HLog(error) << "Error while verifying connected sessions: " << err.what();
+		return;
+	}
+}
 
 /**
  * Zone Main server constructor.
  */
 ZoneServer::ZoneServer()
-: Server(), _update_timer(_io_service)
+: ZoneKernel(_zone_server_config), _update_timer(get_io_context())
 {
 }
 
@@ -89,14 +136,21 @@ bool ZoneServer::read_config()
 
 	config().set_script_root_path(tbl.get_or("script_root_path", std::string("scripts/")));
 	HLog(info) << "Script root path is set to " << config().get_script_root_path() << ", it will be used for all scripting references.";
-//	config().set_entity_save_interval(tbl.get_or("entity_save_interval", 180000));
-//	HLog(info) << "Entity data will be saved to the database every " << duration_cast<minutes>(std::chrono::milliseconds(config().get_entity_save_interval())).count() << " minutes and " << duration_cast<seconds>(std::chrono::milliseconds(config().get_entity_save_interval())).count() << " seconds.";
-	
-	HLog(info) << "Maps will be managed by '" << MAX_MAP_CONTAINER_THREADS << "' thread containers.";
 
 	config().set_session_max_timeout(tbl.get_or("session_max_timeout", 60));
-
 	HLog(info) << "Session maximum timeout set to '" << config().session_max_timeout() << "'.";
+
+	config().set_max_network_threads(tbl.get_or("max_network_threads", 1));
+	HLog(info) << "Maximum network threads set to '" << config().max_network_threads() << "'.";
+
+	config().set_max_game_logic_threads(tbl.get_or("max_game_logic_threads", 1));
+	HLog(info) << "Maximum game logic threads set to '" << config().max_game_logic_threads() << "'.";
+
+	config().set_max_persistence_threads(tbl.get_or("max_persistence_threads", 1));
+	HLog(info) << "Maximum persistence threads set to '" << config().max_persistence_threads() << "'.";
+
+	config().set_max_script_vm_threads(tbl.get_or("max_script_vm_threads", 1));
+	HLog(info) << "Maximum script VM threads set to '" << config().max_script_vm_threads() << "'.";
 
 	/**
 	 * Process Configuration that is common between servers.
@@ -109,85 +163,62 @@ bool ZoneServer::read_config()
 	return true;
 }
 
-void ZoneServer::verify_connected_sessions()
-{	
-	mysqlx::Session session = sZone->database_pool()->get_connection();
-
-	try {
-		session.sql("DELETE FROM `session_data` WHERE `current_server` = ? AND `last_update` < ?")
-			.bind("Z", std::time(nullptr) - config().session_max_timeout())
-			.execute();
-
-		mysqlx::RowResult rr = session.sql("SELECT COUNT(`game_account_id`) FROM `session_data` WHERE `current_server` = ?")
-			.bind("Z")
-			.execute();
-		
-		mysqlx::Row r = rr.fetchOne();
-
-		int32_t count = r[0].get<int>();
-
-		HLog(info) << count << " connected session(s).";
-	} catch (const mysqlx::Error &err) {
-		HLog(error) << "Error while verifying connected sessions: " << err.what();
-		sZone->database_pool()->release_connection(std::move(session));
-		return;
-	}
-
-	sZone->database_pool()->release_connection(std::move(session));
-}
-
-void ZoneServer::update(uint64_t time)
-{
-	process_cli_commands();
-
-	/**
-	 * Task Scheduler Update.
-	 */
-	getScheduler().Update();
-
-	/**
-	 * Process Packets.
-	 */
-	ClientSocktMgr->update_socket_sessions(time);
-	
-	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run()) {
-		_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
-		_update_timer.async_wait(std::bind(&ZoneServer::update, this, std::time(nullptr)));
-	} else {
-		get_io_service().stop();
-	}
-}
-
 uint64_t ZoneServer::to_uuid(uint8_t type, uint32_t uid, uint16_t uid2, uint8_t uid3)
 {
 	return ((uint64_t)uid3 << 56 | ((uint64_t)uid2 << 8) | ((uint64_t)uid << 40) | (uint64_t) type);
 }
 
-void ZoneServer::from_uuid(uint64_t entity_uuid, uint8_t& type, uint32_t& uid, uint16_t& uid2, uint8_t& uid3)
+void ZoneServer::from_uuid(uint64_t unit_uuid, uint8_t& type, uint32_t& uid, uint16_t& uid2, uint8_t& uid3)
 {
-    type = (uint8_t) entity_uuid;
-    uid = (uint32_t) (entity_uuid >> 40);
-    uid2 = (uint16_t) (entity_uuid >> 8);
-    uid3 = (uint8_t) (entity_uuid >> 56);
+    type = (uint8_t) unit_uuid;
+    uid = (uint32_t) (unit_uuid >> 40);
+    uid2 = (uint16_t) (unit_uuid >> 8);
+    uid3 = (uint8_t) (unit_uuid >> 56);
 }
 
 /**
  * Signal Handler for the Zone-Server main thread.
  * @param error
  */
-void SignalHandler(int signal)
+void SignalHandler(int signal_num)
 {
-	if (signal == SIGINT || signal == SIGTERM
-#ifndef WIN32
-		|| signal == SIGQUIT
-#endif
-		) {
-		sZone->set_shutdown_stage(SHUTDOWN_INITIATED);
-		sZone->set_shutdown_signal(signal);
+	if (sZone->get_signal_interrupt_command_line_loop() == true) {
+		sZone->set_signal_interrupt_command_line_loop(false);
+		// Install a signal handler
+		signal(signal_num, SignalHandler);
+	} else {
+		set_shutdown_stage(SHUTDOWN_INITIATED);
+		set_shutdown_signal(signal_num);
 	}
 }
 
-void ZoneServer::initialize_core()
+void ZoneServer::update(int64_t diff)
+{
+	/**
+	 * Process Packets.
+	 */
+	sZone->get_client_socket_mgr().manage_sockets(diff);
+    sZone->get_client_socket_mgr().update_sessions(diff);
+
+	// Process Horizon System Routine Queue.
+	sZone->system_routine_process_queue();
+
+	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run_minimal()) {
+		_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
+		_update_timer.async_wait(boost::bind(&ZoneServer::update, this, std::time(nullptr)));
+	} else {	
+		for (auto i = _components.begin(); i != _components.end(); i++) {
+			HLog(info) << "Kernel component '" << i->second.ptr->get_type_string()  << " (" << i->second.segment_number << ")': " << (i->second.ptr->is_finalized() == true ? "Offline" : "Online (Shutting Down)") << " { CPU: " << i->second.ptr->get_thread_cpu_id() << " , uuid: " << i->first << " }";
+		}
+		// Stop the client socket manager here because the io_context will be stopped later.
+		// If this is stopped before the io_context, it will cause a dangling pointer.
+		get_client_socket_mgr().stop();
+
+		finalize();
+	}
+}
+
+void ZoneServer::initialize()
 {
 	// Install a signal handler
 	signal(SIGINT, SignalHandler);
@@ -195,96 +226,104 @@ void ZoneServer::initialize_core()
 	signal(SIGQUIT, SignalHandler);
 #endif
 	signal(SIGTERM, SignalHandler);
-
-	/**
-	 * Static Databases
-	 */
-	ExpDB->load();
-	ExpDB->load_status_point_table();
-	JobDB->load();
-	ItemDB->load();
-	ItemDB->load_refine_db();
-	ItemDB->load_weapon_target_size_modifiers_db();
-	ItemDB->load_weapon_attribute_modifiers_db();
-	StatusEffectDB->load();
-	SkillDB->load();
-	MonsterDB->load();
-	StorageDB->load();
-
-	/**
-	 * Map Manager.
-	 */
-	MapMgr->initialize();
 	
-	// Start Network
-	ClientSocktMgr->start(get_io_service(),
-						  general_conf().get_listen_ip(),
+	// We declare this here since the responsibility of starting the network is of 
+	// the Runtime level. It must remain lower than the kernel, because
+	// we're using the kernel's io_context and it will be destroyed after the destruction of
+	// the ClientSocketMgr class. This fixes the issue of dangling pointers and memory access violations.
+	sZone->get_client_socket_mgr().start(get_io_context(),
+						  sZone->general_conf().get_listen_ip(),
 						  general_conf().get_listen_port(),
-						  MAX_NETWORK_THREADS);
-
-	Server::initialize_core();
-
-	_task_scheduler.Schedule(Seconds(60), [this] (TaskContext context) {
-		verify_connected_sessions();
-		context.Repeat();
-	});
+						  config().max_network_threads(),
+						  general_conf().is_test_run() && general_conf().is_test_run_with_network() == false);
 	
+	// Initialize Runtime
+	register_component<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME, std::make_shared<Horizon::Zone::ZoneRuntime>());
+	get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->initialize();
+	
+	for (int i = 0; i < config().max_game_logic_threads(); i++) {
+		register_component(Horizon::System::RUNTIME_GAMELOGIC, std::make_shared<GameLogicProcess>());
+		get_component_of_type<GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC, i + 1)->initialize(i + 1);
+	}
+
+	for (int i = 0; i < config().max_script_vm_threads(); i++) {
+		register_component(Horizon::System::RUNTIME_SCRIPTVM, std::make_shared<ScriptManager>());
+		get_component_of_type<ScriptManager>(Horizon::System::RUNTIME_SCRIPTVM, i + 1)->initialize(i + 1);
+	}
+
+	for (int i = 0; i < config().max_persistence_threads(); i++) {
+		register_component(Horizon::System::RUNTIME_PERSISTENCE, std::make_shared<PersistenceManager>());
+		get_component_of_type<PersistenceManager>(Horizon::System::RUNTIME_PERSISTENCE, i + 1)->initialize(i + 1);
+	}
+
 	_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
-	_update_timer.async_wait(std::bind(&ZoneServer::update, this, MAX_CORE_UPDATE_INTERVAL));
-	
-	get_io_service().run();
+	_update_timer.async_wait(boost::bind(&ZoneServer::update, this, std::time(nullptr)));
+						  
+	ZoneKernel::initialize();
 
-	HLog(info) << "Server shutdown initiated ...";
-	
-	MapMgr->finalize();
+	Server::post_initialize();
 
-	/**
-	 * Server shutdown routine begins here...
-	 */
-	_task_scheduler.CancelAll();
-
-	ClientSocktMgr->stop_network();
-	
-	Server::finalize_core();
-}
-
-/**
- * Initialize Zone-Server CLI Commands.
- */
-void ZoneServer::initialize_cli_commands()
-{
-	Server::initialize_cli_commands();
-}
-
-/**
- * Zone Server Main runtime entrypoint.
- * @param argc
- * @param argv
- * @return
- */
-int main(int argc, const char * argv[])
-{
-	std::srand(std::time(nullptr));
-	
-	if (argc > 1)
-		sZone->parse_exec_args(argv, argc);
-
-	/*
-	 * Read Configuration Settings for
-	 * the Zoneacter Server.
-	 */
-	if (!sZone->read_config())
-		exit(1); // Stop process if the file can't be read.
-
-	/**
-	 * Initialize the Common Core
-	 */
-	sZone->initialize_core();
-
+	// Run the io_context until stop is called from the internal, finalizing thread.
+	// After stopping, execution will continue through the next line onwards.
+	// We actually finalize on this thread and not in any of io_context's internal threads.
+	get_io_context().run();
 	/*
 	 * Core Cleanup
 	 */
 	HLog(info) << "Server shutting down...";
 
-	return 0;
+	HLogShutdown;
+}
+
+void ZoneServer::finalize()
+{
+	HLog(info) << "Server shutdown initiated ...";
+	
+	if (!get_io_context().stopped())
+		get_io_context().stop();
+
+	get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->finalize();
+	deregister_component(Horizon::System::RUNTIME_RUNTIME);
+
+	for (int i = 0; i < config().max_game_logic_threads(); i++) {
+		get_component_of_type<GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC, i + 1)->finalize();
+		deregister_component(Horizon::System::RUNTIME_GAMELOGIC, i + 1);
+	}
+	for (int i = 0; i < config().max_persistence_threads(); i++) {
+		get_component_of_type<PersistenceManager>(Horizon::System::RUNTIME_PERSISTENCE, i + 1)->finalize();
+		deregister_component(Horizon::System::RUNTIME_PERSISTENCE, i + 1);
+	}
+	for (int i = 0; i < config().max_script_vm_threads(); i++) {
+		get_component_of_type<ScriptManager>(Horizon::System::RUNTIME_SCRIPTVM, i + 1)->finalize();
+		deregister_component(Horizon::System::RUNTIME_SCRIPTVM, i + 1);
+	}
+
+	ZoneKernel::finalize();
+	
+	Server::post_finalize();
+}
+
+ZoneRuntime::ZoneRuntime()
+: KernelComponent(sZone, Horizon::System::RUNTIME_RUNTIME),
+_resource_manager(PrimaryResource(RESOURCE_PRIORITY_PRIMARY, std::make_shared<s_segment_storage<uint64_t, std::shared_ptr<ZoneSession>>>()))
+{
+}
+
+void ZoneRuntime::start()
+{
+	while (!sZone->general_conf().is_test_run_minimal() && get_shutdown_stage() == SHUTDOWN_NOT_STARTED) {
+		update(std::time(nullptr));
+		std::this_thread::sleep_for(std::chrono::microseconds(MAX_CORE_UPDATE_INTERVAL));
+	};
+}
+
+void ZoneRuntime::update(int64_t diff)
+{
+	std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+	get_system_routine_manager().process_queue();
+
+	calculate_and_set_cpu_load();
+	std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+	std::chrono::nanoseconds time_span = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+	set_total_execution_time(time_span.count());
 }

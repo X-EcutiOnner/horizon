@@ -55,12 +55,12 @@ class AuthSocket;
 class AuthSession : public Horizon::Networking::Session<AuthSocket, AuthSession>
 {
 public:
-	AuthSession(int64_t uid, std::shared_ptr<AuthSocket> socket);
+	AuthSession(uint64_t uid);
 	~AuthSession();
 
 	/* */
-	void initialize();
-	void update(uint32_t diff);
+	void initialize() override;
+	virtual void update(uint32_t diff) override;
 	
 	std::unique_ptr<AuthClientInterface> &clif() { return _clif; }
 	std::unique_ptr<ClientPacketLengthTable> &pkt_tbl() { return _pkt_tbl; }

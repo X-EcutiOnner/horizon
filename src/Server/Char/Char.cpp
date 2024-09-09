@@ -30,7 +30,6 @@
 
 #include "Char.hpp"
 
-#include "Core/Logging/Logger.hpp"
 #include "Server/Char/SocketMgr/ClientSocketMgr.hpp"
 
 #include <boost/asio.hpp>
@@ -38,7 +37,6 @@
 #include <iostream>
 
 #include <sol.hpp>
-#include <mysqlx/xdevapi.h>
 
 using namespace Horizon::Char;
 
@@ -48,7 +46,7 @@ using namespace std;
  * Char Constructor
  */
 CharServer::CharServer()
-: Server(), _update_timer(_io_service)
+: Server(), _update_timer(get_io_context())
 {
 	//
 }
@@ -160,6 +158,14 @@ bool CharServer::read_config()
 		HLog(error) << "Error for setting session_max_timeout:" << err.what();
 	}
 
+	// Max Network Threads
+	try {
+		int32_t max_network_threads = tbl.get_or("max_network_threads", 1);
+		config().set_max_network_threads(max_network_threads);
+		HLog(info) << "Max Network Threads set to '" << config().max_network_threads() << "'.";
+	} catch (sol::error &err) {
+		HLog(error) << "Error for setting max_network_threads:" << err.what();
+	}
 
 	/**
 	 * Process Configuration that is common between servers.
@@ -177,7 +183,6 @@ bool CharServer::read_config()
 /* Initialize Char-Server CLI Commands */
 void CharServer::initialize_cli_commands()
 {
-	Server::initialize_cli_commands();
 }
 
 /**
@@ -185,135 +190,129 @@ void CharServer::initialize_cli_commands()
  * @param[in|out] error   boost system error code.
  * @param[in]     signal  interrupt signal code
  */
-void SignalHandler(const boost::system::error_code &error, int /*signal*/)
+void SignalHandler(int signal_num)
 {
-	if (!error) {
-		sChar->set_shutdown_stage(SHUTDOWN_INITIATED);
-		sChar->set_shutdown_signal(SIGINT);
+	if (sChar->get_signal_interrupt_command_line_loop() == true) {
+		sChar->set_signal_interrupt_command_line_loop(false);
+		// re-set the signal handler
+		signal(signal_num, SignalHandler);
+	} else {
+		set_shutdown_stage(SHUTDOWN_INITIATED);
+		set_shutdown_signal(signal_num);
 	}
 }
 
 void CharServer::verify_connected_sessions()
-{
-	mysqlx::Session db_session = sChar->database_pool()->get_connection();
-	
+{	
 	try {
-		db_session.sql("DELETE FROM `session_data` WHERE `current_server` = ? AND `last_update` < ?")
-			.bind("C", std::time(nullptr) - config().session_max_timeout())
-			.execute();
+		std::shared_ptr<boost::mysql::tcp_ssl_connection> conn = sChar->get_database_connection();
+		boost::mysql::statement stmt = conn->prepare_statement("DELETE FROM `session_data` WHERE `current_server` = ? AND `last_update` < ?");
+		auto b = stmt.bind("C", std::time(nullptr) - config().session_max_timeout());
+		boost::mysql::results results;
+		conn->execute(b, results);
 
-		mysqlx::RowResult rr = db_session.sql("SELECT COUNT(`game_account_id`) FROM `session_data` WHERE `current_server` = ?")
-			.bind("C")
-			.execute();
+		stmt = conn->prepare_statement("SELECT COUNT(`game_account_id`) FROM `session_data` WHERE `current_server` = ?");
+		auto b2 = stmt.bind("C");
+		conn->execute(b2, results);
 
-		mysqlx::Row r = rr.fetchOne();
-		if (r.isNull()) {
+		if (results.rows().empty()) {
 			HLog(info) << "There are no connected session(s).";
-			sChar->database_pool()->release_connection(std::move(db_session));
 			return;
 		}
 
-		int32_t count = r[0].get<int>();
+		int32_t count = results.rows()[0][0].as_int64();
 
 		HLog(info) << count << " connected session(s).";
 
 	}
-	catch (mysqlx::Error& error) {
+	catch (boost::mysql::error_with_diagnostics &error) {
 		HLog(error) << error.what();
 	}
 	catch (std::exception& error) {
 		HLog(error) << error.what();
 	}
-	
-	sChar->database_pool()->release_connection(std::move(db_session));
 }
 
 void CharServer::update(uint64_t time)
 {
-	process_cli_commands();
-	
 	getScheduler().Update();
 
-	ClientSocktMgr->update_socket_sessions(time);
+	sClientSocketMgr->manage_sockets(time);
+	sClientSocketMgr->update_sessions(time);
 	
-	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run()) {
+	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run_minimal()) {
 		_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
 		_update_timer.async_wait(std::bind(&CharServer::update, this, std::time(nullptr)));
 	} else {
-		get_io_service().stop();
+		for (auto i = _components.begin(); i != _components.end(); i++) {
+			HLog(info) << "Kernel component '" << i->second.ptr->get_type_string()  << " (" << i->second.segment_number << ")': " << (i->second.ptr->is_finalized() == true ? "Offline" : "Online (Shutting Down)") << " { CPU: " << i->second.ptr->get_thread_cpu_id() << ", uuid: " << i->first << " }";
+		}
+		/**
+		 * Cancel all pending tasks.
+		 */
+		getScheduler().CancelAll();
+
+		/**
+		 * Stop all networks
+		 */
+		sClientSocketMgr->stop();
+
+		finalize();
 	}
 }
 
-void CharServer::initialize_core()
+void CharServer::initialize()
 {
 	/* Core Signal Handler  */
-	boost::asio::signal_set signals(get_io_service(), SIGINT, SIGTERM);
-	signals.async_wait(SignalHandler);
+	signal(SIGINT, SignalHandler);
+	signal(SIGTERM, SignalHandler);
+#ifndef WIN32
+	signal(SIGQUIT, SignalHandler);
+#endif
 
 	/* Start Character Network */
-	ClientSocktMgr->start(get_io_service(),
+	sClientSocketMgr->start(get_io_context(),
 						  general_conf().get_listen_ip(),
 						  general_conf().get_listen_port(),
-						  MAX_NETWORK_THREADS);
+						  config().max_network_threads(),
+						  general_conf().is_test_run() && general_conf().is_test_run_with_network() == false);
 
-	Server::initialize_core();
+	Server::initialize();
 
 	getScheduler().Schedule(Seconds(60), [this] (TaskContext context) {
 		verify_connected_sessions();
 		context.Repeat();
 	});
 
-	_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
+	_update_timer.expires_from_now(boost::posix_time::seconds(0));
 	_update_timer.async_wait(std::bind(&CharServer::update, this, std::time(nullptr)));
 	
-	get_io_service().run();
+	Server::post_initialize();
+	
+	// Run the io_context until stop is called from the internal, finalizing thread.
+	// After stopping, execution will continue through the next line onwards.
+	// We actually finalize on this thread and not in any of io_context's internal threads.
+	get_io_context().run();
 
-	HLog(info) << "Shutdown process initiated...";
-
-	/**
-	 * Cancel all pending tasks.
-	 */
-	getScheduler().CancelAll();
-
-	/**
-	 * Server shutdown routine begins here...
-	 */
-	Server::finalize_core();
-
-	/**
-	 * Stop all networks
-	 */
-	ClientSocktMgr->stop_network();
-
-	/* Cancel signal handling. */
-	signals.cancel();
+	/* Core Cleanup */
+	HLog(info) << "Server shutting down...";
+	
+	HLogShutdown;
 
 	set_shutdown_stage(SHUTDOWN_CLEANUP_COMPLETE);
 }
 
-/**
- * Main entry point of the char-server application.
- * @param argc
- * @param argv
- * @return integer of shutdown signal.
- */
-int main(int argc, const char * argv[])
+void CharServer::finalize()
 {
-	std::srand(std::time(nullptr));
-	
-	/* Parse Command Line Arguments */
-	if (argc > 1)
-		sChar->parse_exec_args(argv, argc);
+	HLog(info) << "Shutdown process initiated...";
 
-	/* Read Char Configuration */
-	if (!sChar->read_config())
-		exit(1); // Stop process if the file can't be read.
+	if (!get_io_context().stopped())
+		get_io_context().stop();
 
-	/* Initialize the Common Core */
-	sChar->initialize_core();
+	/**
+	 * Server shutdown routine begins here...
+	 */
+	Server::finalize();
 
-	/* Core Cleanup */
-	HLog(info) << "Server shutting down...";
-
-	return 0;
+	Server::post_finalize();
 }

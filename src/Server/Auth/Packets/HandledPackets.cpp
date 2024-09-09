@@ -60,6 +60,23 @@ void CA_LOGIN::deserialize(ByteBuffer& buf)
     buf.read(_password, sizeof(_password));
     buf >> _client_type;
 }
+
+ByteBuffer CA_LOGIN::serialize(int32_t version, std::string username, std::string password, uint8_t client_type)
+{
+	_version = version;
+	std::strncpy(_username, username.c_str(), MAX_USERNAME_LENGTH);
+	std::strncpy(_password, password.c_str(), MAX_PASSWORD_LENGTH);
+	_client_type = client_type;
+
+	ByteBuffer &buf = this->_buffer;
+	buf << _packet_id;
+	buf << _version;
+	buf.append(_username, MAX_USERNAME_LENGTH);
+	buf.append(_password, MAX_PASSWORD_LENGTH);
+	buf << _client_type;
+
+	return buf;
+}
 /**
  * CA_LOGIN2
  */

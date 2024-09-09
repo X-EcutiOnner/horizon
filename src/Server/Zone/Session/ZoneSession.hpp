@@ -33,7 +33,7 @@
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Common/Configuration/ServerConfiguration.hpp"
 #include "Server/Zone/Interface/ZoneClientInterface.hpp"
-#include "Server/Zone/Game/Entities/Player/Player.hpp"
+#include "Server/Zone/Game/Units/Player/Player.hpp"
 
 #if CLIENT_TYPE == 'R'
 #include "Server/Zone/Packets/RE/ClientPacketLengthTable.hpp"
@@ -65,7 +65,7 @@ public:
 	//! @details This is the constructor of the class ZoneSession.
 	//! @param uid is a int64_t variable which is used to handle the unique id of the session.
 	//! @param socket is a shared pointer of type ZoneSocket which is used to handle the socket.
-	ZoneSession(int64_t uid, std::shared_ptr<ZoneSocket> socket);
+	ZoneSession(uint64_t uid);
 
 	//! @details This is the destructor of the class ZoneSession.
 	//! @return void
@@ -105,13 +105,13 @@ public:
 	std::unique_ptr<ClientPacketLengthTable> &pkt_tbl() { return _pkt_tbl; }
 	
 	//! @details This function is a getter function which is used to get the player.
-	//! @return std::shared_ptr<Entities::Player>
-	std::shared_ptr<Entities::Player> player() { return _player; }
+	//! @return std::shared_ptr<Units::Player>
+	std::shared_ptr<Units::Player> player() { return _player; }
 
 	//! @details This function is a setter function which is used to set the player.
 	//! @param pl is a shared pointer of type Player which is used to set the _player variable.
 	//! @return void
-	void set_player(std::shared_ptr<Entities::Player> pl) { _player = pl; }
+	void set_player(std::shared_ptr<Units::Player> pl) { _player = pl; }
 
 	//!	@details This function is a getter function which is used to get the map name.
 	std::string get_map_name() { return _map_name; }
@@ -119,7 +119,7 @@ public:
 protected:
 	std::unique_ptr<ZoneClientInterface> _clif;
 	std::unique_ptr<ClientPacketLengthTable> _pkt_tbl;
-	std::shared_ptr<Entities::Player> _player;
+	std::shared_ptr<Units::Player> _player;
 	std::string _map_name{""};
 };
 }

@@ -31,20 +31,13 @@
 #include <iostream>
 #include <boost/log/utility/setup/file.hpp>
 #include <boost/log/expressions.hpp>
+#include <boost/log/utility/setup/common_attributes.hpp>
+#include <boost/log/utility/setup/console.hpp>
 #include <boost/date_time/posix_time/posix_time_types.hpp>
 #include <boost/log/support/date_time.hpp>
-#include <boost/log/utility/setup/console.hpp>
+#include <boost/core/null_deleter.hpp>
 
-Logger::Logger()
-{
-}
-
-Logger::~Logger()
-{
-	//
-}
-
-std::string Logger::color(uint16_t color) { return "\033[" + std::to_string(color) + "m"; }
+static inline std::string color(uint16_t color) { return "\033[" + std::to_string(color) + "m"; }
  
 void Logger::colored_formatter(boost::log::record_view const& rec, boost::log::formatting_ostream& strm)
 {
@@ -79,13 +72,7 @@ void Logger::colored_formatter(boost::log::record_view const& rec, boost::log::f
 }
 
 void Logger::initialize()
-{
-    /* init boost log 
-     * 1. Add common attributes
-     * 2. set log filter to trace
-     */
-    boost::log::add_common_attributes();
-    
+{   
     boost::log::core::get()->add_global_attribute("Scope",
         boost::log::attributes::named_scope());
     
@@ -113,21 +100,48 @@ void Logger::initialize()
         % boost::log::expressions::smessage;
 
     /* console sink */
-    auto consoleSink = boost::log::add_console_log(std::clog);
+    _consoleSink = boost::make_shared<boost::log::sinks::synchronous_sink<boost::log::sinks::text_ostream_backend>>();
+    boost::log::core::get()->add_sink(_consoleSink);
     
-    consoleSink->set_formatter(std::bind(&Logger::colored_formatter, this, std::placeholders::_1, std::placeholders::_2));
+    boost::shared_ptr<std::ostream> stream{&std::clog, boost::null_deleter{}};
+    _consoleSink->locked_backend()->add_stream(stream);
+    
+    _consoleSink->set_formatter(std::bind(&Logger::colored_formatter, this, std::placeholders::_1, std::placeholders::_2));
 
     /* fs sink */
-    auto fsSink = boost::log::add_file_log(
+    _fileSink = boost::make_shared<boost::log::sinks::asynchronous_sink<boost::log::sinks::text_file_backend>>(
         boost::log::keywords::target = "logs",
         boost::log::keywords::file_name = "logs/log_%Y-%m-%d_%H-%M-%S.%N.log",
         boost::log::keywords::rotation_size = 10 * 1024 * 1024,
         boost::log::keywords::min_free_space = 30 * 1024 * 1024,
-        boost::log::keywords::open_mode = std::ios_base::app);
+        boost::log::keywords::open_mode = std::ios_base::app,
+		boost::log::keywords::start_thread = false);
     
-    fsSink->set_formatter(logFmt);
+    _fileSink->set_formatter(logFmt);
     
-    fsSink->locked_backend()->auto_flush(true);
+    _fileSink->locked_backend()->auto_flush(true);
+
+    // Add the file sink to the core
+    boost::log::core::get()->add_sink(_fileSink);
+
+    // Add common attributes
+    boost::log::add_common_attributes();
 
     _initialized.store(true);
+}
+
+void Logger::shutdown() {
+    // Remove and flush the console sink
+    if (_consoleSink) {
+		_consoleSink->flush();
+        boost::log::core::get()->remove_sink(_consoleSink);
+        _consoleSink.reset();
+    }
+
+    // Remove and flush the file sink
+    if (_fileSink) {
+		_fileSink->flush();
+        boost::log::core::get()->remove_sink(_fileSink);
+        _fileSink.reset();
+    }
 }

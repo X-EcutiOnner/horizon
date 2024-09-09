@@ -30,6 +30,8 @@
 #ifndef HORIZON_NETWORKING_ASYNCACCEPTOR_HPP
 #define HORIZON_NETWORKING_ASYNCACCEPTOR_HPP
 
+#include "Core/Logging/Logger.hpp"
+
 #include <boost/asio.hpp>
 #include <functional>
 #include <iostream>
@@ -51,16 +53,22 @@ class AsyncAcceptor
 public:
 	typedef std::function<void(std::shared_ptr<tcp::socket>, uint32_t thread_index)> AcceptCallback;
 
+	~AsyncAcceptor()
+	{
+		_acceptor.reset();
+		_socket.reset();
+	}
+
 	/**
 	 * @brief Constructor of the AsyncAcceptor object.
-	 * @param[in|out] io_service reference to the io_service object.
+	 * @param[in|out] io_context reference to the io_context object.
 	 * @param[in]     listen_ip  const reference to the ip address string for the acceptor to bind on.
 	 * @param[in]     port       port number for the acceptor to bind on.
 	 */
-	AsyncAcceptor(boost::asio::io_service &io_service, std::string const &listen_ip, uint16_t port)
-	: _acceptor(io_service, tcp::endpoint(boost::asio::ip::address::from_string(listen_ip), port)),
-	_endpoint(boost::asio::ip::address::from_string(listen_ip), port),
-	_socket(std::make_shared<tcp::socket>(io_service)), _closed(false), _socket_factory(std::bind(&AsyncAcceptor::default_socket_factory, this))
+	AsyncAcceptor(boost::asio::io_context &io_context, std::string const &listen_ip, uint16_t port)
+	: _endpoint(boost::asio::ip::address::from_string(listen_ip), port),
+	_acceptor(std::make_shared<tcp::acceptor>(io_context, tcp::endpoint(boost::asio::ip::address::from_string(listen_ip), port))),
+	_socket(std::make_shared<tcp::socket>(io_context)), _closed(false), _socket_factory(std::bind(&AsyncAcceptor::default_socket_factory, this))
 	{
 	}
 
@@ -82,20 +90,20 @@ public:
 
 		std::tie(socket, thread_index) = _socket_factory();
 
-		_acceptor.async_accept(*socket, [this, socket, callback, thread_index] (boost::system::error_code error)
-		   {
-			   if (!error) {
-				   try {
-					   socket->non_blocking(true);
-					   callback(std::move(socket), thread_index);
-				   } catch (boost::system::system_error const &err) {
-					   HLog(error) << "Networking: AsyncAcceptor failed to initialize client's socket :" << err.what();
-				   }
-			   }
+		_acceptor->async_accept(*socket, [this, socket, callback, thread_index] (boost::system::error_code error)
+			{
+				if (!error) {
+					try {
+						socket->non_blocking(true);
+						callback(std::move(socket), thread_index);
+					} catch (boost::system::system_error const &err) {
+						HLog(error) << "Networking: AsyncAcceptor failed to initialize client's socket :" << err.what();
+					}
+				}
 
-			   if (!_closed)
-				   this->async_accept_with_callback(callback);
-		   });
+				if (!_closed)
+					this->async_accept_with_callback(callback);
+			});
 	}
 
 	/**
@@ -105,14 +113,14 @@ public:
 	{
 		boost::system::error_code errorCode;
 
-		_acceptor.open(_endpoint.protocol(), errorCode);
+		_acceptor->open(_endpoint.protocol(), errorCode);
 
 		if (errorCode) {
 			HLog(error) << "Failed to open acceptor " << errorCode.message().c_str();
 			return false;
 		}
 
-		_acceptor.bind(_endpoint, errorCode);
+		_acceptor->bind(_endpoint, errorCode);
 
 		if (errorCode) {
 			HLog(error) << "Could not bind to " << _endpoint.address().to_string().c_str() << ":" << _endpoint.port() << " - "
@@ -120,7 +128,7 @@ public:
 			return false;
 		}
 
-		_acceptor.listen(boost::asio::socket_base::max_connections, errorCode);
+		_acceptor->listen(boost::asio::socket_base::max_connections, errorCode);
 
 		if (errorCode) {
 			HLog(error) << "Failed to start listening on " << _endpoint.address().to_string().c_str() << ":" << _endpoint.port() << " " << errorCode.message().c_str();
@@ -138,11 +146,18 @@ public:
 		if (_closed.exchange(true))
 			return;
 
+		_socket->close();
+
 		boost::system::error_code error;
-		_acceptor.close(error);
+		_acceptor->close(error);
+
+		_acceptor.reset();
+		_socket.reset();
+		if (error)
+			HLog(error) << "Failed to close acceptor: " << error.message().c_str();
 	}
 
-	bool is_open() { return _closed.load(); }
+	bool is_open() { return !_closed.load(); }
 
 	/**
 	 * @brief Sets the socket factory for the acceptor.
@@ -152,8 +167,8 @@ public:
 private:
 	std::pair<std::shared_ptr<tcp::socket>, uint32_t> default_socket_factory() { return std::make_pair(_socket, 0); }
 
-	tcp::acceptor _acceptor;
 	tcp::endpoint _endpoint;
+	std::shared_ptr<tcp::acceptor> _acceptor;
 	std::shared_ptr<tcp::socket> _socket;
 	std::atomic<bool> _closed;
 	std::function<std::pair<std::shared_ptr<tcp::socket>, uint32_t>()> _socket_factory;
@@ -162,7 +177,7 @@ private:
 template <class T>
 void AsyncAcceptor::AsyncAccept()
 {
-	_acceptor.async_accept(_socket, [this] (boost::system::error_code error)
+	_acceptor->async_accept(_socket, [this] (boost::system::error_code error)
 	   {
 		   if (!error) {
 			   try {

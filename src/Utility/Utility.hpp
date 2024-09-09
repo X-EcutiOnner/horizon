@@ -71,8 +71,14 @@ uint16_t GetUShort(const unsigned char* buf);
 // Reads an uint32 in little-endian from the buffer
 uint32_t GetULong(const unsigned char* buf);
 
+// Reads an uint64 in little-endian from the buffer
+uint64_t GetULongLong(const unsigned char* buf);
+
 // Reads an int32 in little-endian from the buffer
 int32_t GetLong(const unsigned char *buf);
+
+// Reads an int64 in little-endian from the buffer
+int64_t GetLongLong(const unsigned char *buf);
 
 uint32_t Concatenate(uint32_t a, uint32_t b);
 #endif // HORIZON_UTILITIES_UTILITY_HPP

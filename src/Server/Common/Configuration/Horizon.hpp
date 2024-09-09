@@ -54,14 +54,8 @@
 #define MAX_VIEW_RANGE 14
 #define MAX_NPC_TRIGGER_RANGE 5
 
-// Network Threads
-#define MAX_NETWORK_THREADS 1
-
 // Time in Microseconds (µs)
 #define MAX_CORE_UPDATE_INTERVAL 500
-
-// Map Thread Containers
-#define MAX_MAP_CONTAINER_THREADS 1
 
 // Mob searches active path when selecting target.
 #define ACTIVE_PATH_SEARCH 1
@@ -76,15 +70,8 @@ static_assert(MAX_VIEW_RANGE > 0,
               "View range affects visibility range for players and should not be 0.");
 static_assert(MAX_NPC_TRIGGER_RANGE > 0 && MAX_NPC_TRIGGER_RANGE < MAX_VIEW_RANGE,
               "MAX_NPC_TRIGGER_RANGE must be less than MAX_VIEW_RANGE and greater than 0.");
-
-static_assert(MAX_NETWORK_THREADS > 0,
-              "MAX_NETWORK_THREADS cannot be less than or equal to 0.");
-
 static_assert(MAX_CORE_UPDATE_INTERVAL >= 1,
             "MAX_CORE_UPDATE_INTERVAL should be greater than or equal to 500 microseconds (µs).");
-
-static_assert(MAX_MAP_CONTAINER_THREADS > 0,
-            "MAX_MAP_CONTAINER_THREADS cannot be less than or equal to 0.");
 
 #include "Client.hpp"
 

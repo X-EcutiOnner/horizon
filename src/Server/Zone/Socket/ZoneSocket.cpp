@@ -53,7 +53,8 @@ void ZoneSocket::set_session(std::shared_ptr<ZoneSession> session) { std::atomic
  */
 void ZoneSocket::start()
 {
-	auto session = std::make_shared<ZoneSession>(get_socket_id(), shared_from_this());
+	auto session = std::make_shared<ZoneSession>(get_socket_id());
+	session->set_socket(shared_from_this());
 
 	set_session(session);
 
@@ -132,12 +133,7 @@ void ZoneSocket::read_handler()
 		
 		ByteBuffer b;
 		b.append(get_read_buffer().get_read_pointer(), packet_length);
-		get_recv_queue().push(std::move(b));
+		get_session()->get_recv_queue().push(std::move(b));
 		get_read_buffer().read_completed(packet_length);
 	}
-}
-
-void ZoneSocket::update_session(uint32_t diff)
-{
-	get_session()->update(diff);
 }

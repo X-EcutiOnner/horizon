@@ -33,37 +33,121 @@
 #define HORIZON_ZONE_CLIENTSOCKETMGR_HPP
 
 #include "Libraries/Networking/AcceptSocketMgr.hpp"
-
-#include "Server/Zone/Zone.hpp"
+#include "Server/Common/System.hpp"
+#include "Server/Zone/Session/ZoneSession.hpp"
 #include "Server/Zone/Socket/ZoneSocket.hpp"
-#include "Server/Common/Configuration/ServerConfiguration.hpp"
+
+#if WIN32
+	#include <windows.h>
+#elif __linux__
+	#include <sched.h>
+#endif
 
 namespace Horizon
 {
 namespace Zone
 {
-/**
- * Manager of client sockets and initialization of the packet db * @brief Singleton class
- */
-class ClientSocketMgr : public Horizon::Networking::AcceptSocketMgr<ZoneSocket>
+	
+class ZoneNetworkThread : public KernelComponent, public Networking::NetworkThread<ZoneSocket>
 {
-	typedef Horizon::Networking::AcceptSocketMgr<ZoneSocket> BaseSocketMgr;
-public:
-	static ClientSocketMgr *getInstance()
+protected:
+	void on_socket_removed(std::shared_ptr<ZoneSocket> socket) override
 	{
-		static ClientSocketMgr instance;
-		return &instance;
+		get_resource_manager().add<RESOURCE_PRIORITY_PRIMARY>(socket->get_socket_id(), socket);
 	}
 
-	bool start(boost::asio::io_service &io_service, std::string const &listen_ip, uint16_t port, uint32_t threads = 1)
+	void on_socket_added(std::shared_ptr<ZoneSocket> socket) override
 	{
-		if (!BaseSocketMgr::start(io_service, listen_ip, port, threads))
+		get_resource_manager().remove<RESOURCE_PRIORITY_PRIMARY>(socket->get_socket_id());
+	}
+public:
+	ZoneNetworkThread();
+
+	bool start(int segment_number = 1) override
+	{
+		if (!Networking::NetworkThread<ZoneSocket>::start(segment_number))
 			return false;
 
+		initialize(segment_number);
 		return true;
+	}
+
+	void run() override
+	{
+		Networking::NetworkThread<ZoneSocket>::run();
+	}
+
+	void update() override
+	{
+		std::chrono::high_resolution_clock::time_point start = std::chrono::high_resolution_clock::now();
+		Networking::NetworkThread<ZoneSocket>::update();
+
+		get_system_routine_manager().process_queue();
+		
+#if WIN32
+		DWORD cpu = GetCurrentProcessorNumber();
+		if (get_thread_cpu_id() != (int) cpu) 
+			set_thread_cpu_id(cpu);
+#elif __linux__
+		int cpu = sched_getcpu();
+		if (get_thread_cpu_id() != cpu)
+			set_thread_cpu_id(cpu);
+#endif
+		calculate_and_set_cpu_load();
+		std::chrono::high_resolution_clock::time_point end = std::chrono::high_resolution_clock::now();
+		std::chrono::nanoseconds time_span = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+		set_total_execution_time(time_span.count());
+	}
+
+	virtual void initialize(int segment_number = 1) override 
+	{ 
+		set_segment_number(segment_number);
+
+		_is_initialized.exchange(true);
+	}
+
+	virtual void finalize() override 
+	{
+		Networking::NetworkThread<ZoneSocket>::finalize();
+		_is_finalized.exchange(true);
+	}
+
+	virtual bool is_initialized() override { return _is_initialized.load(); }
+	virtual bool is_finalized() override { return _is_finalized.load(); }
+protected:
+	std::atomic<bool> _is_initialized{false};
+	std::atomic<bool> _is_finalized{false};
+
+	using PrimaryResource = SharedPriorityResourceMedium<s_segment_storage<uint64_t, std::shared_ptr<ZoneSocket>>>;
+	using ResourceManager = SharedPriorityResourceManager<PrimaryResource>;
+	ResourceManager _resource_manager;
+	
+	ResourceManager &get_resource_manager() { return _resource_manager; }
+};
+
+
+/**
+ * Manager of client sockets
+ */
+class ClientSocketMgr : public Horizon::Networking::AcceptSocketMgr<ZoneSocket, ZoneNetworkThread>
+{
+	typedef Horizon::Networking::AcceptSocketMgr<ZoneSocket, ZoneNetworkThread> BaseSocketMgr;
+public:
+	bool start(boost::asio::io_context &io_context, std::string const &listen_ip, uint16_t port, uint32_t threads = 1, bool minimal = false);
+
+	bool stop();
+
+	void update_sessions(uint64_t time)
+	{
+		auto socket_map = get_sockets();
+
+		for (auto s : socket_map) {
+			if (s.second->get_session() != nullptr)
+				s.second->get_session()->update(time);
+		}
 	}
 };
 }
 }
-#define ClientSocktMgr Horizon::Zone::ClientSocketMgr::getInstance()
+
 #endif /* HORIZON_ZONE_CLIENTSOCKETMGR_HPP */

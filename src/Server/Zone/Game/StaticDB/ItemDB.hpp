@@ -29,9 +29,10 @@
 
 #ifndef HORIZON_ZONE_STATICDB_ITEMDB_HPP
 #define HORIZON_ZONE_STATICDB_ITEMDB_HPP
-
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Core/Multithreading/LockedLookupTable.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
+#include <sol/sol.hpp>
 
 namespace Horizon
 {
@@ -70,7 +71,7 @@ public:
 		return _refine_db.at(type, std::shared_ptr<refine_config>());
 	}
 
-	uint8_t get_weapon_target_size_modifier(item_weapon_type wtype, entity_size_type stype)
+	uint8_t get_weapon_target_size_modifier(item_weapon_type wtype, unit_size_type stype)
 	{
 		std::shared_ptr<std::array<uint8_t, ESZ_MAX>> arr = _weapon_target_size_modifiers_db.at(wtype);
 		return arr != nullptr ? (*arr)[stype] : 100;
@@ -97,7 +98,7 @@ public:
 	{
 		try {
 			return _weapontype2name_db[type];
-		} catch (std::exception &e) {
+		} catch (std::exception & /*e*/) {
 			return "Unknown";
 		}
 	}

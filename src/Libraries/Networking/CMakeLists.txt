@@ -66,3 +66,9 @@ set_target_properties(networking
 	LINKER_LANGUAGE CXX
 	FOLDER
 	"Networking")
+
+# Enable CMP0091 for MSVC Builds
+if (MSVC)
+set_property(TARGET networking PROPERTY
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)

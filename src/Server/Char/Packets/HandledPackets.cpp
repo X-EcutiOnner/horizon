@@ -43,13 +43,22 @@ void CH_DELETE_CHAR::deserialize(ByteBuffer& buf)
 {
 	buf >> _packet_id;
 	buf >> _character_id;
-	buf.read(_email, MAX_EMAIL_LENGTH);
+	buf.read(_email, CLIENT_MAX_EMAIL_LENGTH);
 }
 /**
  * CH_DELETE_CHAR2
  */
-void CH_DELETE_CHAR2::handle(ByteBuffer &&buf) {}
-void CH_DELETE_CHAR2::deserialize(ByteBuffer &buf) {}
+void CH_DELETE_CHAR2::handle(ByteBuffer &&buf) 
+{
+	deserialize(buf);
+	get_session()->clif()->character_delete_email(_character_id, _email);
+}
+void CH_DELETE_CHAR2::deserialize(ByteBuffer &buf) 
+{
+	buf >> _packet_id;
+	buf >> _character_id;
+	buf.read(_email, CLIENT_MAX_EMAIL_LENGTH);
+}
 /**
  * CH_ENTER
  */

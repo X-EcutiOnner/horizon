@@ -30,7 +30,10 @@
 #define HORIZON_ZONE_MONSTER_DEFINITIONS_HPP
 
 #include "Server/Zone/Game/Map/Grid/GridDefinitions.hpp"
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
+#include <cinttypes>
+#include <string>
+#include <unordered_map>
 
 #define MAX_MOB_DROP 10
 #define MAX_MVP_DROP 10
@@ -222,7 +225,7 @@ struct monster_config_data
 
 	short view_range{1};
 	short chase_range{1};
-	entity_size_type size{ESZ_MEDIUM};
+	unit_size_type size{ESZ_MEDIUM};
 	monster_primary_race_type primary_race{MONSTER_RACE_FORMLESS};
 	monster_secondary_race_type secondary_race{ MONSTER_RACE2_NONE };
 	element_type element{ELE_NEUTRAL};
@@ -246,7 +249,7 @@ struct monster_config_data
 		int32_t body_style_id{0};
 		int32_t hair_color_id{0};
 		int32_t body_color_id{0};
-		entity_gender_types gender{ENTITY_GENDER_FEMALE};
+		unit_gender_types gender{UNIT_GENDER_FEMALE};
 	} view{0};
 	//struct view_data vd;
 	unsigned int option;

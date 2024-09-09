@@ -25,29 +25,30 @@
 #########################################################
 
 CREATE TABLE `game_accounts` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(23) NOT NULL DEFAULT '',
-  `hash` varchar(128) NOT NULL DEFAULT '',
-  `salt` varchar(16) NOT NULL DEFAULT '',
+  `hash` blob NOT NULL,
+  `salt` blob NOT NULL,
   `gender` enum('M','F','NA') NOT NULL DEFAULT 'M',
   `email` varchar(39) NOT NULL DEFAULT '',
-  `group_id` tinyint(3) NOT NULL DEFAULT 0,
-  `state` int(11) unsigned NOT NULL DEFAULT 0,
-  `unban_time` int(11) unsigned NOT NULL DEFAULT 0,
-  `expiration_time` int(11) unsigned NOT NULL DEFAULT 0,
-  `login_count` mediumint(9) unsigned NOT NULL DEFAULT 0,
+  `group_id` tinyint NOT NULL DEFAULT '0',
+  `state` int unsigned NOT NULL DEFAULT '0',
+  `unban_time` int unsigned NOT NULL DEFAULT '0',
+  `expiration_time` int unsigned NOT NULL DEFAULT '0',
+  `login_count` mediumint unsigned NOT NULL DEFAULT '0',
   `last_login` datetime DEFAULT NULL,
   `last_ip` varchar(100) NOT NULL DEFAULT '',
   `birth_date` varchar(10) DEFAULT NULL,
-  `character_slots` tinyint(3) unsigned NOT NULL DEFAULT 0,
+  `character_slots` tinyint unsigned NOT NULL DEFAULT '0',
   `pincode` varchar(4) NOT NULL DEFAULT '',
-  `pincode_expiry` int(11) unsigned NOT NULL DEFAULT 0,
+  `pincode_expiry` int unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `name` (`username`),
   KEY `id` (`id`),
   KEY `email` (`email`),
   KEY `last_ip` (`last_ip`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=UTF8MB4;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 CREATE TABLE `characters` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,

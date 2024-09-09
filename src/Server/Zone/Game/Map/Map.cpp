@@ -33,15 +33,15 @@
 #include "Server/Zone/Game/Map/Grid/Notifiers/GridNotifiers.hpp"
 #include "Server/Zone/Game/Map/Grid/Container/GridReferenceContainer.hpp"
 #include "Server/Zone/Game/Map/Grid/Container/GridReferenceContainerVisitor.hpp"
-#include "Server/Zone/LUA/Components/MonsterComponent.hpp"
-#include "Server/Zone/Game/Entities/Item/Item.hpp"
+#include "Server/Zone/Script/Components/MonsterComponent.hpp"
+#include "Server/Zone/Game/Units/Item/Item.hpp"
 #include "Server/Zone/Game/Map/Grid/Grid.hpp"
 #include "Server/Zone/Game/StaticDB/ItemDB.hpp"
 #include "Server/Zone/Zone.hpp"
 
 using namespace Horizon::Zone;
 
-Map::Map(std::weak_ptr<MapContainerThread> container, std::string const &name, uint16_t width, uint16_t height, std::vector<uint8_t> const &cells)
+Map::Map(std::weak_ptr<GameLogicProcess> container, std::string const &name, uint16_t width, uint16_t height, std::vector<uint8_t> const &cells)
 : _container(container), _name(name), _width(width), _height(height),
   _max_grids((width / MAX_CELLS_PER_GRID), (height / MAX_CELLS_PER_GRID)),
   _gridholder((width / MAX_CELLS_PER_GRID) + 1, (height / MAX_CELLS_PER_GRID) + 1), // add 1 because 0,0 is included.
@@ -56,6 +56,11 @@ Map::Map(std::weak_ptr<MapContainerThread> container, std::string const &name, u
 
 Map::~Map()
 {
+	for (int y = _height - 1; y >= 0; --y) {
+		for (int x = 0; x < _width; ++x) {
+			_cells[x][y].~Cell();
+		}
+	}
 }
 
 bool Map::has_obstruction_at(int16_t x, int16_t y)
@@ -74,13 +79,15 @@ bool Map::has_obstruction_at(int16_t x, int16_t y)
 void Map::add_user_count() {
 	_user_count++; 
 	if (get_user_count() == 1)
-		container()->get_lua_manager()->monster()->spawn_monsters(get_name(), container()); 
+		container()->get_monster_spawn_agent().spawn_monsters(get_name());
+	HLog(debug) << "Map::add_user_count: " << get_user_count();
 }
 
 void Map::sub_user_count() { 
 	_user_count--; 
 	if (get_user_count() == 0)
-		container()->get_lua_manager()->monster()->despawn_monsters(get_name(), container());
+		container()->get_monster_spawn_agent().despawn_monsters(get_name());
+	HLog(debug) << "Map::sub_user_count: " << get_user_count();
 }
 
 
@@ -95,8 +102,8 @@ void Map::add_item_drop(int item_id, MapCoords map_coords, int amount, int ident
 
 	int r = std::rand();
 	
-	int64_t uuid = sZone->to_uuid(ENTITY_ITEM, ++_last_np_entity_guid, 0, 0);
-	std::shared_ptr<Horizon::Zone::Entities::Item> item = std::make_shared<Horizon::Zone::Entities::Item>(uuid, shared_from_this(), map_coords, identified, amount, item_d);
+	int64_t uuid = sZone->to_uuid(UNIT_ITEM, ++_last_np_unit_guid, 0, 0);
+	std::shared_ptr<Horizon::Zone::Units::Item> item = std::make_shared<Horizon::Zone::Units::Item>(uuid, shared_from_this(), map_coords, identified, amount, item_d);
 	item->initialize();
 
 	s_grid_notify_item_drop_entry entry;
@@ -115,13 +122,13 @@ void Map::add_item_drop(int item_id, MapCoords map_coords, int amount, int ident
 	entry.drop_effect_mode = item->config()->drop_effect_mode;
 	item->notify_nearby_players_of_item_drop(entry);
 
-	this->container()->add_entity(item);
+	this->container()->get_resource_manager().add<RESOURCE_PRIORITY_TERTIARY>(item->uuid(), item);
 }
 
 void Map::add_item_drop(std::shared_ptr<item_entry_data> entry, int32_t amount, MapCoords map_coords)
 {	
-	int64_t uuid = sZone->to_uuid(ENTITY_ITEM, ++_last_np_entity_guid, 0, 0);
-	std::shared_ptr<Horizon::Zone::Entities::Item> floor_item = std::make_shared<Horizon::Zone::Entities::Item>(uuid, entry, amount, shared_from_this(), map_coords);
+	int64_t uuid = sZone->to_uuid(UNIT_ITEM, ++_last_np_unit_guid, 0, 0);
+	std::shared_ptr<Horizon::Zone::Units::Item> floor_item = std::make_shared<Horizon::Zone::Units::Item>(uuid, entry, amount, shared_from_this(), map_coords);
 	floor_item->initialize();
 
 	s_grid_notify_item_drop_entry notif_config;
@@ -144,5 +151,5 @@ void Map::add_item_drop(std::shared_ptr<item_entry_data> entry, int32_t amount, 
 
 	floor_item->notify_nearby_players_of_item_drop(notif_config);
 
-	this->container()->add_entity(floor_item);
+	this->container()->get_resource_manager().add<RESOURCE_PRIORITY_TERTIARY>(floor_item->uuid(), floor_item);
 }

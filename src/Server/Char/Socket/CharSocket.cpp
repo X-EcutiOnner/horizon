@@ -59,8 +59,8 @@ void CharSocket::set_session(std::shared_ptr<CharSession> session) { std::atomic
  */
 void CharSocket::start()
 {
-	auto session = std::make_shared<CharSession>(get_socket_id(), shared_from_this());
-
+	auto session = std::make_shared<CharSession>(get_socket_id());
+	session->set_socket(shared_from_this());
 	set_session(session);
 
 	session->initialize();
@@ -79,7 +79,7 @@ void CharSocket::on_close()
 	HLog(info) << "Closed connection from " << remote_ip_address() << ".";
 
 	/* Perform socket manager cleanup. */
-	ClientSocktMgr->set_socket_for_removal(shared_from_this());
+	sClientSocketMgr->set_socket_for_removal(shared_from_this());
 }
 
 void CharSocket::on_error()
@@ -93,8 +93,8 @@ void CharSocket::on_error()
  */
 bool CharSocket::update()
 {
-	if (sChar->get_shutdown_stage() > SHUTDOWN_NOT_STARTED)
-		ClientSocktMgr->set_socket_for_removal(shared_from_this());
+	if (get_shutdown_stage() > SHUTDOWN_NOT_STARTED)
+		sClientSocketMgr->set_socket_for_removal(shared_from_this());
 
 	return BaseSocket::update();
 }
@@ -130,7 +130,7 @@ void CharSocket::read_handler()
 		
 		ByteBuffer b;
 		b.append(get_read_buffer().get_read_pointer(), packet_length);
-		get_recv_queue().push(std::move(b));
+		get_session()->get_recv_queue().push(std::move(b));
 		get_read_buffer().read_completed(packet_length);
 	}
 }

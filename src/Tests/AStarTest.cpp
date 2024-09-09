@@ -27,7 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "AStarTest"
 
 #include <boost/test/unit_test.hpp>
@@ -106,7 +106,7 @@ BOOST_AUTO_TEST_CASE(AStarTest)
 		} while (!start.is_within_range(end, MAX_VIEW_RANGE) && ((path = astar.findPath(start, end)).size() == 0 || (path.at(0).x() != end.x() && path.at(0).y() != end.y())));
 		
 		start_end.push_back(std::make_pair(start, end));
-		std::cout << "Generated " << i << " start: " << start.x() << ", " << start.y() << " end: " << end.x() << ", " << end.y() << std::endl;
+		//std::cout << "Generated " << i << " start: " << start.x() << ", " << start.y() << " end: " << end.x() << ", " << end.y() << std::endl;
 	}
 	
 	for (int i = 0; i < 10000; i++) {
@@ -117,9 +117,11 @@ BOOST_AUTO_TEST_CASE(AStarTest)
 		auto path = astar.findPath(start, end);
 		auto finish_time = std::chrono::high_resolution_clock::now();
 		auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(finish_time - start_time);
-		bool path_found = !(path.size() == 0 || (path.at(0).x() != end.x() && path.at(0).y() != end.y()));
-		printf("Manhattan: %lldus %d %s (%d, %d) -> (%d, %d)\n", elapsed.count(), i, path_found ? "path found" : "path not found", start.x(), start.y(), end.x(), end.y());
+		bool path_found = path.size() != 0;
+		//printf("Manhattan: %lldus %d %s size: %lld (%d, %d) -> (%d, %d)\n", elapsed.count(), i, path_found ? "path found" : "path not found", path.size(), start.x(), start.y(), end.x(), end.y());
 		total_time += elapsed.count();
+		if (path.size() == 0)
+			BOOST_FAIL("Path not found");
 #ifdef PRINT_FILE
 		std::ofstream mapfile;
 		char filename[100];

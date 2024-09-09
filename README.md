@@ -7,7 +7,7 @@
 ![Repo Size](https://img.shields.io/github/repo-size/horizonxyz/horizon.svg)
 ![Contributors](https://img.shields.io/github/contributors/horizonxyz/horizon)
 
-[![CMake](https://img.shields.io/badge/CMake-3.17-blue?logo=cmake)](https://cmake.org/) [![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)](https://isocpp.org/) [![Lua](https://img.shields.io/badge/Lua-5.4-blue?logo=lua)](https://www.lua.org/) [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql&logoColor=white)](https://www.mysql.com/) [![Boost](https://img.shields.io/badge/Boost-1.69.0-blue)](https://www.boost.org/) [![Readline](https://img.shields.io/badge/Readline-8.1-blue?logo=gnu)](https://tiswww.case.edu/php/chet/readline/rltop.html) [![sol2](https://img.shields.io/badge/sol2-3.2.3-blue.svg)](https://github.com/ThePhD/sol2)
+[![CMake](https://img.shields.io/badge/CMake-3.17-blue?logo=cmake)](https://cmake.org/) [![C++](https://img.shields.io/badge/C++-17-blue?logo=c%2B%2B)](https://isocpp.org/) [![Lua](https://img.shields.io/badge/Lua-5.4-blue?logo=lua)](https://www.lua.org/) [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql&logoColor=white)](https://www.mysql.com/) [![Boost](https://img.shields.io/badge/Boost-1.85.0-blue)](https://www.boost.org/) [![sol2](https://img.shields.io/badge/sol2-3.2.3-blue.svg)](https://github.com/ThePhD/sol2)
 
 HorizonXYZ/Horizon is a robust and versatile C++ project designed to supersede older Ragnarok Online emulators, namely from the eAthena family. 
 
@@ -85,22 +85,20 @@ To get a local copy up and running, follow these steps:
   - g++ or clang (version 4.5 or newer, recommended 5.0 or newer)
   - [CMake 3.7+](https://cmake.org/)
   - [Boost v1.60+](https://www.boost.org/)
-  - [Readline](https://tiswww.case.edu/php/chet/readline/rltop.html)
   - [Sol2](https://github.com/ThePhD/sol2)
-  - Mysql
-  - Mysql Connector C++
+  - [Zlib](https://zlib.net/)
 
 ### Hardware
 #### Minimum
 || Windows  | Linux  |
 |---|---|---|
-|RAM For Compiling| 4096MB  | 1024MB   |
+|RAM For Compiling| 8192MB  | 4096MB   |
 |RAM For Running| 2048MB  | 2048MB  |
 |CPU| 2 Cores | 1 Core |
 #### Recommended
 || Windows  | Linux  |
 |---|---|---|
-|RAM For Compiling| 8192MB  | 2048MB   |
+|RAM For Compiling| 16384MB  | 8192MB   |
 |RAM For Running| 4096MB  | 4096MB  |
 |CPU| 4 Cores | 2 Cores |
 ### Installation

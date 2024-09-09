@@ -27,7 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "ReferenceTypeListTest"
 
 #include "Core/Structures/LinkedList/ReferenceList/Reference.hpp"
@@ -473,7 +473,7 @@ BOOST_AUTO_TEST_CASE(ReferenceTypeListTest)
 
 	BOOST_CHECK_EQUAL(res->get_id(), ID_CHECK);
 
-	printf("Found res of type %c id %d\n", res->get_type(), res->get_id());
+	//printf("Found res of type %c id %d\n", res->get_type(), res->get_id());
 
 	for (int i = 0; i < MAX_A_TYPES; i++) {
 		a[i]->remove_reference();

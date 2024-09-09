@@ -27,7 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "LinkedListTest"
 
 #include "Core/Structures/LinkedList/Element.hpp"
@@ -79,25 +79,25 @@ BOOST_AUTO_TEST_CASE(LinkedListTest)
 
 	int idx = 9999;
 	for (TestListHead::iterator it = h.begin(); it != TestListHead::iterator(nullptr); ++it) {
-		printf("pre-increment: %d\n", it->get_var());
+		//printf("pre-increment: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx--]);
 	}
 
 	idx = 9999;
 	for (TestListHead::iterator it = h.begin(); it != TestListHead::iterator(nullptr); it++) {
-		printf("reverse post-increment: %d\n", it->get_var());
+		//printf("reverse post-increment: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx--]);
 	}
 
 	idx = 0;
 	for (TestListHead::iterator it = h.end(); it != TestListHead::iterator(nullptr); --it) {
-		printf("pre-decrement: %d\n", it->get_var());
+		//printf("pre-decrement: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx++]);
 	}
 
 	idx = 0;
 	for (TestListHead::iterator it = h.end(); it != TestListHead::iterator(nullptr); it--) {
-		printf("post-decrement: %d\n", it->get_var());
+		//printf("post-decrement: %d\n", it->get_var());
 		BOOST_CHECK_EQUAL(it->get_var(), var[idx++]);
 	}
 }

@@ -91,6 +91,8 @@ struct character_server_configuration
   std::time_t session_max_timeout() { return _session_max_timeout; }
   void set_session_max_timeout(std::time_t timeout) { _session_max_timeout = timeout; }
 
+	int max_network_threads() { return _max_network_threads; }
+	void set_max_network_threads(int threads) { _max_network_threads = threads; }
 private:
 	std::string _start_map{"new_1-1"};
 	int16_t _start_x{53}, _start_y{111};
@@ -102,7 +104,8 @@ private:
 	bool _char_hard_delete;
 	int32_t _pincode_expiry;
 	int32_t _pincode_max_retry;
-  std::time_t _session_max_timeout;
+	std::time_t _session_max_timeout;
+	int _max_network_threads{1};
 };
 	
 public:
@@ -118,7 +121,8 @@ public:
 	bool read_config();
 	void initialize_cli_commands();
 
-	void initialize_core();
+	void initialize() override;
+	void finalize() override;
 
 	character_server_configuration &config() { return _char_server_config; }
 

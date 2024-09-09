@@ -28,9 +28,9 @@
  **************************************************/
 
 #include "ItemDB.hpp"
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
-#include "Server/Zone/LUA/Components/ItemComponent.hpp"
-#include "Server/Zone/LUA/Components/EntityComponent.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
+#include "Server/Zone/Script/Components/ItemComponent.hpp"
+#include "Server/Zone/Script/Components/UnitComponent.hpp"
 #include "Server/Zone/Game/StaticDB/JobDB.hpp"
 #include "Server/Zone/Zone.hpp"
 
@@ -73,12 +73,12 @@ bool ItemDatabase::load()
 	lua->open_libraries(sol::lib::base);
 	lua->open_libraries(sol::lib::package);
 
-	std::shared_ptr<EntityComponent> entity_component = std::make_shared<EntityComponent>();
+	std::shared_ptr<UnitComponent> unit_component = std::make_shared<UnitComponent>();
 	std::shared_ptr<ItemComponent> item_component = std::make_shared<ItemComponent>();
 	
-	entity_component->sync_definitions(lua);
-	entity_component->sync_data_types(lua);
-	entity_component->sync_functions(lua);
+	unit_component->sync_definitions(lua);
+	unit_component->sync_data_types(lua);
+	unit_component->sync_functions(lua);
 
 	item_component->sync_definitions(lua);
 	item_component->sync_data_types(lua);
@@ -89,8 +89,8 @@ bool ItemDatabase::load()
 	
 	try {
 		std::string file_path = sZone->config().get_static_db_path().string() + "item_db.lua";
-	    sol::load_result fx = lua->load_file(file_path);
-		sol::table item_tbl = fx();
+	    lua->script_file(file_path);
+		sol::table item_tbl = lua->get<sol::table>("item_db");
 		total_entries = load_items(item_tbl, file_path);
 		auto stop = std::chrono::high_resolution_clock::now();
 		HLog(info) << "Loaded " << total_entries << " entries from '" << file_path << "' (" << std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count() << "µs, Max Collisions: " << _item_db.max_collisions() << ").";
@@ -658,15 +658,15 @@ bool ItemDatabase::load_weapon_attribute_modifiers_db()
 	lua->open_libraries(sol::lib::base);
 
 	std::shared_ptr<ItemComponent> item_component = std::make_shared<ItemComponent>();
-	std::shared_ptr<EntityComponent> entity_component = std::make_shared<EntityComponent>();
+	std::shared_ptr<UnitComponent> unit_component = std::make_shared<UnitComponent>();
 
 	item_component->sync_definitions(lua);
 	item_component->sync_data_types(lua);
 	item_component->sync_functions(lua);
 
-	entity_component->sync_definitions(lua);
-	entity_component->sync_data_types(lua);
-	entity_component->sync_functions(lua);
+	unit_component->sync_definitions(lua);
+	unit_component->sync_data_types(lua);
+	unit_component->sync_functions(lua);
 	
 	int total_entries = 0;
 

@@ -213,10 +213,27 @@ uint32_t GetULong(const unsigned char* buf)
 	| (((uint32_t)(buf[3])) << 0x18);
 }
 
+uint64_t GetULongLong(const unsigned char* buf)
+{
+    return (((uint64_t)(buf[0])))
+    | (((uint64_t)(buf[1])) << 0x08)
+    | (((uint64_t)(buf[2])) << 0x10)
+    | (((uint64_t)(buf[3])) << 0x18)
+    | (((uint64_t)(buf[4])) << 0x20)
+    | (((uint64_t)(buf[5])) << 0x28)
+    | (((uint64_t)(buf[6])) << 0x30)
+    | (((uint64_t)(buf[7])) << 0x38);
+}
+
 // Reads an int32 in little-endian from the buffer
 int32_t GetLong(const unsigned char *buf)
 {
 	return (int32_t) GetULong(buf);
+}
+
+int64_t GetLongLong(const unsigned char *buf)
+{
+	return (int64_t) GetULongLong(buf);
 }
 
 uint32_t Concatenate(uint32_t a, uint32_t b)

@@ -22441,7 +22441,7 @@ local skill_db = {
 },
 [ "NC_MAINFRAME" ] = {
 	Id = 2266,
-	Description = "Mainframe Restructure",
+	Description = "Kernel Restructure",
 	MaxLevel = 4,
 	NumberOfHits = 0,
 },

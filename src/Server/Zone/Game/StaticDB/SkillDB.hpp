@@ -29,10 +29,13 @@
 
 #ifndef HORIZON_ZONE_STATICDB_SKILLDB_HPP
 #define HORIZON_ZONE_STATICDB_SKILLDB_HPP
+#include "Core/Multithreading/LockedLookupTable.hpp"
  // Linux
 #include "Server/Zone/Definitions/BattleDefinitions.hpp"
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
 #include "Server/Zone/Definitions/SkillDefinitions.hpp"
+
+#include <sol/sol.hpp>
 
 namespace Horizon
 {

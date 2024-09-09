@@ -30,6 +30,10 @@
 #ifndef HORIZON_ZONE_GAME_MAP_COORDINATES_HPP
 #define HORIZON_ZONE_GAME_MAP_COORDINATES_HPP
 
+#include <cinttypes>
+#include <cassert>
+#include <cmath>
+
 template <int16_t MAX_COORDINATES>
 class Coordinates
 {
@@ -90,6 +94,14 @@ public:
 		int y = std::max(0, std::min((_y + range), (int) BOUNDS));
 
 		return Coordinates<BOUNDS>(x, y);
+	}
+
+	// d=√((x2 – x1)² + (y2 – y1)²)
+	template<int16_t BOUNDS>
+	int distance_from(Coordinates<BOUNDS> const &bounds) const
+	{
+		int distance = std::sqrt(std::pow(bounds.x() - _x, 2) + std::pow(bounds.y() - _y, 2));
+		return distance;
 	}
 	
 	template<int16_t BLOCK_SIZE, int16_t BLOCK_COUNT>

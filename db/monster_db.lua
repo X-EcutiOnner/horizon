@@ -57,7 +57,7 @@ local monster_db = {
 	},
 	ViewRange = view range                 (int, defaults to 1),
 	ChaseRange = chase range               (int, defaults to 1),
-	Size = size                            (string, defaults to "EntitySize.Small"),
+	Size = size                            (string, defaults to "UnitSize.Small"),
 	Race = race                            (string, defaults to "MonsterRace.Formless"),
 	Element = { type, level }              (string/int, defaults to "Ele_Neutral"),
 	Mode = {
@@ -134,7 +134,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -182,7 +182,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -228,7 +228,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 512,
@@ -258,7 +258,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -303,7 +303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -351,7 +351,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 0 },
 	Mode = {
@@ -388,7 +388,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -433,7 +433,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -476,7 +476,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -521,7 +521,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -565,7 +565,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -610,7 +610,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -652,7 +652,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -698,7 +698,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -742,7 +742,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -788,7 +788,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -835,7 +835,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -882,7 +882,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -927,7 +927,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -972,7 +972,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -1017,7 +1017,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -1065,7 +1065,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 10,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -1110,7 +1110,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -1158,7 +1158,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -1204,7 +1204,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -1248,7 +1248,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -1297,7 +1297,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -1336,7 +1336,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -1384,7 +1384,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -1433,7 +1433,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -1478,7 +1478,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -1523,7 +1523,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -1568,7 +1568,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -1616,7 +1616,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -1659,7 +1659,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -1708,7 +1708,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -1756,7 +1756,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -1804,7 +1804,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -1863,7 +1863,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -1922,7 +1922,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -1967,7 +1967,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -2015,7 +2015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -2064,7 +2064,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 10,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2100,7 +2100,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -2148,7 +2148,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -2196,7 +2196,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -2254,7 +2254,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	MoveSpeed = 1000,
@@ -2294,7 +2294,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -2337,7 +2337,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -2380,7 +2380,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -2424,7 +2424,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -2470,7 +2470,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2516,7 +2516,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -2565,7 +2565,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -2614,7 +2614,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2658,7 +2658,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2703,7 +2703,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2750,7 +2750,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -2798,7 +2798,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -2857,7 +2857,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -2902,7 +2902,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -2952,7 +2952,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -2995,7 +2995,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -3039,7 +3039,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -3083,7 +3083,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -3131,7 +3131,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -3176,7 +3176,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -3221,7 +3221,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -3264,7 +3264,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -3312,7 +3312,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -3357,7 +3357,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -3405,7 +3405,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -3454,7 +3454,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -3496,7 +3496,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -3541,7 +3541,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3575,7 +3575,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -3619,7 +3619,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -3667,7 +3667,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3710,7 +3710,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3753,7 +3753,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3796,7 +3796,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3839,7 +3839,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3882,7 +3882,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -3925,7 +3925,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -3968,7 +3968,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4011,7 +4011,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -4066,7 +4066,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -4125,7 +4125,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4176,7 +4176,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -4228,7 +4228,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -4280,7 +4280,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -4332,7 +4332,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4384,7 +4384,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -4436,7 +4436,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -4482,7 +4482,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4528,7 +4528,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -4580,7 +4580,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	MoveSpeed = 1000,
@@ -4619,7 +4619,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -4669,7 +4669,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -4719,7 +4719,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -4768,7 +4768,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -4819,7 +4819,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -4869,7 +4869,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4913,7 +4913,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -4958,7 +4958,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -5004,7 +5004,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5053,7 +5053,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5098,7 +5098,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -5143,7 +5143,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -5194,7 +5194,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -5240,7 +5240,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -5288,7 +5288,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -5346,7 +5346,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5391,7 +5391,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -5436,7 +5436,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5495,7 +5495,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -5540,7 +5540,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -5590,7 +5590,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -5634,7 +5634,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5682,7 +5682,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -5734,7 +5734,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -5779,7 +5779,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -5829,7 +5829,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -5877,7 +5877,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -5925,7 +5925,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -5973,7 +5973,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -6021,7 +6021,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -6065,7 +6065,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -6110,7 +6110,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -6158,7 +6158,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -6208,7 +6208,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -6258,7 +6258,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -6308,7 +6308,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -6355,7 +6355,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -6402,7 +6402,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -6450,7 +6450,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -6498,7 +6498,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -6546,7 +6546,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -6592,7 +6592,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -6641,7 +6641,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -6689,7 +6689,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -6732,7 +6732,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	MoveSpeed = 800,
@@ -6771,7 +6771,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -6820,7 +6820,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -6865,7 +6865,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -6909,7 +6909,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -6956,7 +6956,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -7015,7 +7015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -7066,7 +7066,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -7114,7 +7114,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -7173,7 +7173,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -7223,7 +7223,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -7270,7 +7270,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -7314,7 +7314,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -7361,7 +7361,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -7409,7 +7409,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -7457,7 +7457,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -7516,7 +7516,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -7560,7 +7560,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -7619,7 +7619,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -7665,7 +7665,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -7709,7 +7709,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -7757,7 +7757,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -7805,7 +7805,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -7853,7 +7853,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -7901,7 +7901,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -7946,7 +7946,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -7990,7 +7990,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -8036,7 +8036,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -8084,7 +8084,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -8131,7 +8131,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -8178,7 +8178,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -8225,7 +8225,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -8272,7 +8272,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -8318,7 +8318,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -8361,7 +8361,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -8407,7 +8407,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -8451,7 +8451,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -8499,7 +8499,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -8545,7 +8545,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -8595,7 +8595,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -8637,7 +8637,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -8674,7 +8674,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -8722,7 +8722,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -8770,7 +8770,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 1 },
 	MoveSpeed = 150,
@@ -8805,7 +8805,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -8853,7 +8853,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -8901,7 +8901,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -8949,7 +8949,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -9007,7 +9007,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -9055,7 +9055,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -9105,7 +9105,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -9156,7 +9156,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -9205,7 +9205,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -9255,7 +9255,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -9303,7 +9303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -9351,7 +9351,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -9401,7 +9401,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -9450,7 +9450,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -9498,7 +9498,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -9547,7 +9547,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -9594,7 +9594,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -9647,7 +9647,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -9699,7 +9699,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -9751,7 +9751,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -9801,7 +9801,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -9852,7 +9852,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -9903,7 +9903,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -9952,7 +9952,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -10000,7 +10000,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -10049,7 +10049,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -10097,7 +10097,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -10147,7 +10147,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -10195,7 +10195,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -10243,7 +10243,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -10294,7 +10294,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -10345,7 +10345,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -10394,7 +10394,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -10443,7 +10443,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -10493,7 +10493,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -10543,7 +10543,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -10591,7 +10591,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -10641,7 +10641,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -10690,7 +10690,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -10740,7 +10740,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -10789,7 +10789,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -10834,7 +10834,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -10877,7 +10877,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -10921,7 +10921,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	MoveSpeed = 1000,
@@ -10961,7 +10961,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -11004,7 +11004,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -11051,7 +11051,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -11099,7 +11099,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	MoveSpeed = 1000,
@@ -11138,7 +11138,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -11184,7 +11184,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -11230,7 +11230,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -11276,7 +11276,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -11319,7 +11319,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -11363,7 +11363,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -11408,7 +11408,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -11458,7 +11458,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -11502,7 +11502,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -11546,7 +11546,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -11591,7 +11591,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -11636,7 +11636,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -11682,7 +11682,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -11727,7 +11727,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -11778,7 +11778,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -11838,7 +11838,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -11897,7 +11897,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -11943,7 +11943,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -11994,7 +11994,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -12044,7 +12044,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -12093,7 +12093,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -12143,7 +12143,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -12189,7 +12189,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -12241,7 +12241,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -12290,7 +12290,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -12336,7 +12336,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -12388,7 +12388,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -12439,7 +12439,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -12489,7 +12489,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -12535,7 +12535,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -12579,7 +12579,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -12628,7 +12628,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -12678,7 +12678,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -12724,7 +12724,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -12769,7 +12769,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -12812,7 +12812,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -12871,7 +12871,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -12921,7 +12921,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -12963,7 +12963,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -13008,7 +13008,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -13054,7 +13054,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -13098,7 +13098,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -13143,7 +13143,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -13194,7 +13194,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -13239,7 +13239,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -13284,7 +13284,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -13330,7 +13330,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -13383,7 +13383,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -13429,7 +13429,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -13470,7 +13470,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -13511,7 +13511,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -13549,7 +13549,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -13585,7 +13585,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -13637,7 +13637,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -13687,7 +13687,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -13737,7 +13737,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -13788,7 +13788,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -13839,7 +13839,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -13890,7 +13890,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -13942,7 +13942,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -13992,7 +13992,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -14042,7 +14042,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -14092,7 +14092,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -14142,7 +14142,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -14193,7 +14193,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -14244,7 +14244,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -14296,7 +14296,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -14347,7 +14347,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -14398,7 +14398,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -14449,7 +14449,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -14499,7 +14499,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -14551,7 +14551,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -14601,7 +14601,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -14651,7 +14651,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -14701,7 +14701,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -14752,7 +14752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -14811,7 +14811,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -14861,7 +14861,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -14906,7 +14906,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -14956,7 +14956,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -15002,7 +15002,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -15050,7 +15050,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -15100,7 +15100,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -15150,7 +15150,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -15202,7 +15202,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -15253,7 +15253,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -15298,7 +15298,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -15347,7 +15347,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15391,7 +15391,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15435,7 +15435,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15479,7 +15479,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15523,7 +15523,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15567,7 +15567,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15611,7 +15611,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15655,7 +15655,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15699,7 +15699,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15743,7 +15743,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15787,7 +15787,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15831,7 +15831,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15875,7 +15875,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15919,7 +15919,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -15963,7 +15963,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16007,7 +16007,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16051,7 +16051,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16095,7 +16095,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16139,7 +16139,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16183,7 +16183,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16227,7 +16227,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16271,7 +16271,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16315,7 +16315,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16359,7 +16359,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16403,7 +16403,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16447,7 +16447,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16491,7 +16491,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16535,7 +16535,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16579,7 +16579,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16623,7 +16623,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16667,7 +16667,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16711,7 +16711,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16755,7 +16755,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16799,7 +16799,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16843,7 +16843,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16887,7 +16887,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16931,7 +16931,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -16975,7 +16975,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -17019,7 +17019,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -17063,7 +17063,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -17108,7 +17108,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -17152,7 +17152,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -17197,7 +17197,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -17245,7 +17245,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -17291,7 +17291,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -17333,7 +17333,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -17377,7 +17377,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -17429,7 +17429,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -17475,7 +17475,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -17522,7 +17522,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -17581,7 +17581,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -17632,7 +17632,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -17678,7 +17678,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -17726,7 +17726,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -17774,7 +17774,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Poison, 3 },
 	Mode = {
@@ -17820,7 +17820,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -17869,7 +17869,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -17913,7 +17913,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -17958,7 +17958,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -18005,7 +18005,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -18051,7 +18051,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -18096,7 +18096,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -18142,7 +18142,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -18190,7 +18190,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -18237,7 +18237,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -18289,7 +18289,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -18347,7 +18347,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -18393,7 +18393,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -18440,7 +18440,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -18486,7 +18486,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -18524,7 +18524,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -18562,7 +18562,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -18608,7 +18608,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -18653,7 +18653,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -18698,7 +18698,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -18744,7 +18744,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -18803,7 +18803,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -18847,7 +18847,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -18898,7 +18898,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -18943,7 +18943,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -18990,7 +18990,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -19036,7 +19036,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -19085,7 +19085,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -19134,7 +19134,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 0 },
 	MoveSpeed = 0,
@@ -19165,7 +19165,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -19214,7 +19214,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -19259,7 +19259,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -19304,7 +19304,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 0,
@@ -19335,7 +19335,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -19382,7 +19382,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -19427,7 +19427,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 0,
@@ -19457,7 +19457,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -19505,7 +19505,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -19556,7 +19556,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -19599,7 +19599,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -19659,7 +19659,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -19696,7 +19696,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -19734,7 +19734,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -19773,7 +19773,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -19812,7 +19812,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -19850,7 +19850,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -19888,7 +19888,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -19926,7 +19926,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -19964,7 +19964,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -20003,7 +20003,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -20041,7 +20041,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -20080,7 +20080,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -20119,7 +20119,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -20158,7 +20158,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -20196,7 +20196,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -20235,7 +20235,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -20273,7 +20273,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -20311,7 +20311,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -20349,7 +20349,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -20387,7 +20387,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -20425,7 +20425,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -20463,7 +20463,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -20501,7 +20501,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -20539,7 +20539,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -20577,7 +20577,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -20618,7 +20618,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -20656,7 +20656,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -20694,7 +20694,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -20732,7 +20732,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -20772,7 +20772,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -20812,7 +20812,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -20852,7 +20852,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -20891,7 +20891,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -20929,7 +20929,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -20967,7 +20967,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -21006,7 +21006,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -21045,7 +21045,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -21083,7 +21083,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -21123,7 +21123,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -21162,7 +21162,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -21200,7 +21200,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -21239,7 +21239,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -21277,7 +21277,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -21315,7 +21315,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -21353,7 +21353,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -21391,7 +21391,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -21429,7 +21429,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -21467,7 +21467,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -21505,7 +21505,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -21544,7 +21544,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -21582,7 +21582,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -21620,7 +21620,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -21658,7 +21658,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -21696,7 +21696,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -21734,7 +21734,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -21772,7 +21772,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -21810,7 +21810,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -21848,7 +21848,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -21887,7 +21887,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -21926,7 +21926,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -21964,7 +21964,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -22002,7 +22002,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -22040,7 +22040,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -22079,7 +22079,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -22117,7 +22117,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -22156,7 +22156,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -22194,7 +22194,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -22235,7 +22235,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -22275,7 +22275,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -22315,7 +22315,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -22353,7 +22353,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -22392,7 +22392,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -22431,7 +22431,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -22472,7 +22472,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -22531,7 +22531,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -22579,7 +22579,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -22624,7 +22624,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -22671,7 +22671,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 200,
@@ -22701,7 +22701,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -22749,7 +22749,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -22797,7 +22797,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -22845,7 +22845,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -22889,7 +22889,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 200,
@@ -22921,7 +22921,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -22978,7 +22978,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -23027,7 +23027,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -23074,7 +23074,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -23123,7 +23123,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -23172,7 +23172,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -23220,7 +23220,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -23267,7 +23267,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -23316,7 +23316,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -23366,7 +23366,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -23421,7 +23421,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -23469,7 +23469,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -23516,7 +23516,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -23560,7 +23560,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -23607,7 +23607,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -23650,7 +23650,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -23697,7 +23697,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -23748,7 +23748,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -23797,7 +23797,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -23840,7 +23840,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -23875,7 +23875,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -23916,7 +23916,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -23952,7 +23952,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -23990,7 +23990,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -24030,7 +24030,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -24070,7 +24070,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -24105,7 +24105,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -24141,7 +24141,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -24183,7 +24183,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -24226,7 +24226,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -24262,7 +24262,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -24301,7 +24301,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -24339,7 +24339,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -24379,7 +24379,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -24417,7 +24417,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -24455,7 +24455,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -24493,7 +24493,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -24531,7 +24531,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -24571,7 +24571,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -24606,7 +24606,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -24641,7 +24641,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -24683,7 +24683,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -24721,7 +24721,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -24755,7 +24755,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -24793,7 +24793,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -24831,7 +24831,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -24869,7 +24869,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -24909,7 +24909,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -24948,7 +24948,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -24984,7 +24984,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -25020,7 +25020,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -25056,7 +25056,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -25096,7 +25096,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -25135,7 +25135,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -25170,7 +25170,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -25204,7 +25204,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -25240,7 +25240,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -25278,7 +25278,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -25316,7 +25316,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -25356,7 +25356,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -25391,7 +25391,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -25429,7 +25429,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -25469,7 +25469,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -25511,7 +25511,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -25546,7 +25546,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -25586,7 +25586,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -25627,7 +25627,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -25669,7 +25669,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -25709,7 +25709,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -25747,7 +25747,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -25782,7 +25782,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -25817,7 +25817,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -25855,7 +25855,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -25893,7 +25893,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -25927,7 +25927,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -25969,7 +25969,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -26005,7 +26005,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -26043,7 +26043,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -26077,7 +26077,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -26118,7 +26118,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -26159,7 +26159,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -26211,7 +26211,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -26271,7 +26271,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -26320,7 +26320,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -26364,7 +26364,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -26409,7 +26409,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -26458,7 +26458,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -26502,7 +26502,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -26536,7 +26536,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -26570,7 +26570,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -26608,7 +26608,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -26653,7 +26653,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -26693,7 +26693,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -26733,7 +26733,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -26768,7 +26768,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -26807,7 +26807,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -26844,7 +26844,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -26884,7 +26884,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -26925,7 +26925,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -26965,7 +26965,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -27005,7 +27005,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -27045,7 +27045,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -27080,7 +27080,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -27121,7 +27121,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -27164,7 +27164,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -27203,7 +27203,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -27244,7 +27244,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -27284,7 +27284,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -27328,7 +27328,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -27373,7 +27373,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -27419,7 +27419,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -27465,7 +27465,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -27510,7 +27510,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -27555,7 +27555,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -27602,7 +27602,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -27648,7 +27648,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -27696,7 +27696,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -27747,7 +27747,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -27792,7 +27792,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -27840,7 +27840,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -27888,7 +27888,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -27938,7 +27938,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -27998,7 +27998,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -28036,7 +28036,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -28076,7 +28076,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -28127,7 +28127,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -28172,7 +28172,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -28215,7 +28215,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -28259,7 +28259,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -28317,7 +28317,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -28364,7 +28364,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -28409,7 +28409,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -28454,7 +28454,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -28504,7 +28504,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -28554,7 +28554,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -28603,7 +28603,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -28653,7 +28653,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -28702,7 +28702,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -28752,7 +28752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -28798,7 +28798,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -28845,7 +28845,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -28892,7 +28892,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -28939,7 +28939,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -28986,7 +28986,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -29033,7 +29033,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -29091,7 +29091,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -29150,7 +29150,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -29209,7 +29209,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -29268,7 +29268,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -29327,7 +29327,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -29387,7 +29387,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -29436,7 +29436,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 3 },
 	Mode = {
@@ -29485,7 +29485,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -29534,7 +29534,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -29583,7 +29583,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -29632,7 +29632,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -29682,7 +29682,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -29741,7 +29741,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 3 },
 	Mode = {
@@ -29783,7 +29783,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -29825,7 +29825,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -29867,7 +29867,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -29909,7 +29909,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -29951,7 +29951,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -29990,7 +29990,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -30030,7 +30030,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -30069,7 +30069,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -30108,7 +30108,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -30157,7 +30157,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -30198,7 +30198,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -30246,7 +30246,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -30294,7 +30294,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -30342,7 +30342,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -30390,7 +30390,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -30430,7 +30430,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -30471,7 +30471,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -30519,7 +30519,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -30567,7 +30567,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -30615,7 +30615,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -30663,7 +30663,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -30708,7 +30708,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -30759,7 +30759,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -30807,7 +30807,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -30845,7 +30845,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -30883,7 +30883,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -30941,7 +30941,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -30989,7 +30989,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -31034,7 +31034,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -31088,7 +31088,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -31131,7 +31131,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -31170,7 +31170,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -31218,7 +31218,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -31266,7 +31266,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -31313,7 +31313,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -31359,7 +31359,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -31405,7 +31405,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -31451,7 +31451,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -31498,7 +31498,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -31548,7 +31548,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -31597,7 +31597,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -31649,7 +31649,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -31700,7 +31700,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -31752,7 +31752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -31804,7 +31804,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -31856,7 +31856,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -31908,7 +31908,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -31960,7 +31960,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32012,7 +32012,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32072,7 +32072,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32119,7 +32119,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32166,7 +32166,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32213,7 +32213,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -32260,7 +32260,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -32308,7 +32308,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -32356,7 +32356,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -32400,7 +32400,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -32448,7 +32448,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -32496,7 +32496,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -32541,7 +32541,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -32601,7 +32601,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -32653,7 +32653,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 2 },
 	MoveSpeed = 1000,
@@ -32694,7 +32694,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -32735,7 +32735,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -32775,7 +32775,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -32809,7 +32809,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -32847,7 +32847,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -32882,7 +32882,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -32918,7 +32918,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -32953,7 +32953,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -32989,7 +32989,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -33026,7 +33026,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -33072,7 +33072,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -33110,7 +33110,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -33154,7 +33154,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -33213,7 +33213,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33262,7 +33262,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33311,7 +33311,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33356,7 +33356,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -33401,7 +33401,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33443,7 +33443,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33485,7 +33485,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -33526,7 +33526,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -33565,7 +33565,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33606,7 +33606,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -33644,7 +33644,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -33684,7 +33684,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -33726,7 +33726,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -33764,7 +33764,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -33802,7 +33802,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -33841,7 +33841,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -33875,7 +33875,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -33933,7 +33933,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -33983,7 +33983,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -34032,7 +34032,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -34084,7 +34084,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -34137,7 +34137,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -34177,7 +34177,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -34215,7 +34215,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -34253,7 +34253,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -34291,7 +34291,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -34329,7 +34329,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -34371,7 +34371,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -34413,7 +34413,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -34456,7 +34456,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -34499,7 +34499,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -34546,7 +34546,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -34589,7 +34589,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -34633,7 +34633,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -34691,7 +34691,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -34740,7 +34740,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -34789,7 +34789,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -34837,7 +34837,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -34885,7 +34885,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -34934,7 +34934,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -34982,7 +34982,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -35030,7 +35030,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -35072,7 +35072,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -35120,7 +35120,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -35169,7 +35169,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -35227,7 +35227,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -35271,7 +35271,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -35315,7 +35315,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -35359,7 +35359,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -35405,7 +35405,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -35449,7 +35449,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -35508,7 +35508,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -35550,7 +35550,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -35592,7 +35592,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -35634,7 +35634,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -35678,7 +35678,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -35721,7 +35721,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -35760,7 +35760,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -35800,7 +35800,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -35842,7 +35842,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -35881,7 +35881,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -35934,7 +35934,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -35983,7 +35983,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -36031,7 +36031,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -36067,7 +36067,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -36112,7 +36112,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -36158,7 +36158,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -36204,7 +36204,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -36251,7 +36251,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -36296,7 +36296,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -36341,7 +36341,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -36386,7 +36386,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -36432,7 +36432,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -36478,7 +36478,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -36524,7 +36524,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -36570,7 +36570,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -36616,7 +36616,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -36659,7 +36659,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -36699,7 +36699,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -36755,7 +36755,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -36798,7 +36798,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -36831,7 +36831,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -36873,7 +36873,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -36929,7 +36929,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -36972,7 +36972,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -37015,7 +37015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -37053,7 +37053,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -37094,7 +37094,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -37138,7 +37138,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -37182,7 +37182,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -37224,7 +37224,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -37267,7 +37267,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -37310,7 +37310,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -37354,7 +37354,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -37401,7 +37401,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -37454,7 +37454,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -37505,7 +37505,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -37557,7 +37557,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -37616,7 +37616,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -37668,7 +37668,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -37710,7 +37710,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -37752,7 +37752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -37792,7 +37792,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -37842,7 +37842,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -37889,7 +37889,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -37942,7 +37942,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -37989,7 +37989,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -38027,7 +38027,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -38067,7 +38067,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -38110,7 +38110,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -38157,7 +38157,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -38201,7 +38201,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -38238,7 +38238,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -38280,7 +38280,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -38322,7 +38322,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -38364,7 +38364,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -38404,7 +38404,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -38446,7 +38446,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -38488,7 +38488,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -38533,7 +38533,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -38581,7 +38581,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -38627,7 +38627,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -38672,7 +38672,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -38716,7 +38716,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -38760,7 +38760,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -38805,7 +38805,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -38853,7 +38853,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -38897,7 +38897,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -38938,7 +38938,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -38988,7 +38988,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -39039,7 +39039,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -39090,7 +39090,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -39140,7 +39140,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -39181,7 +39181,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -39227,7 +39227,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -39280,7 +39280,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -39339,7 +39339,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -39381,7 +39381,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -39423,7 +39423,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -39482,7 +39482,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -39526,7 +39526,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -39572,7 +39572,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -39613,7 +39613,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -39654,7 +39654,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -39698,7 +39698,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -39742,7 +39742,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -39788,7 +39788,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -39836,7 +39836,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -39883,7 +39883,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -39931,7 +39931,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -39989,7 +39989,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -40028,7 +40028,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -40072,7 +40072,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -40113,7 +40113,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -40159,7 +40159,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -40198,7 +40198,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -40242,7 +40242,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -40282,7 +40282,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -40322,7 +40322,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -40372,7 +40372,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -40412,7 +40412,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -40451,7 +40451,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -40493,7 +40493,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -40535,7 +40535,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -40572,7 +40572,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -40609,7 +40609,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -40648,7 +40648,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -40686,7 +40686,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -40724,7 +40724,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40762,7 +40762,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40796,7 +40796,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40831,7 +40831,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40865,7 +40865,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40899,7 +40899,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40934,7 +40934,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -40969,7 +40969,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41004,7 +41004,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41039,7 +41039,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41074,7 +41074,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41109,7 +41109,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41145,7 +41145,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -41195,7 +41195,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -41252,7 +41252,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -41303,7 +41303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -41353,7 +41353,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -41404,7 +41404,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -41455,7 +41455,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -41498,7 +41498,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -41541,7 +41541,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -41584,7 +41584,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -41628,7 +41628,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -41677,7 +41677,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -41723,7 +41723,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -41769,7 +41769,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -41821,7 +41821,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -41863,7 +41863,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -41905,7 +41905,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -41944,7 +41944,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -41986,7 +41986,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -42020,7 +42020,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -42054,7 +42054,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -42088,7 +42088,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -42126,7 +42126,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42170,7 +42170,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42214,7 +42214,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42258,7 +42258,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42302,7 +42302,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42346,7 +42346,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42390,7 +42390,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42434,7 +42434,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42478,7 +42478,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42522,7 +42522,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42564,7 +42564,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -42603,7 +42603,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -42639,7 +42639,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -42676,7 +42676,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42721,7 +42721,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42766,7 +42766,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42811,7 +42811,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42857,7 +42857,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -42901,7 +42901,7 @@ local monster_db = {
 	},
 	ViewRange = 16,
 	ChaseRange = 16,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -42953,7 +42953,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -42999,7 +42999,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -43035,7 +43035,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -43071,7 +43071,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -43107,7 +43107,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -43144,7 +43144,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -43179,7 +43179,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -43219,7 +43219,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -43258,7 +43258,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -43292,7 +43292,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -43327,7 +43327,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -43361,7 +43361,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -43405,7 +43405,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -43450,7 +43450,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -43494,7 +43494,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -43538,7 +43538,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -43581,7 +43581,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -43623,7 +43623,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -43674,7 +43674,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -43722,7 +43722,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -43770,7 +43770,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -43819,7 +43819,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -43868,7 +43868,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -43917,7 +43917,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -43973,7 +43973,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -44014,7 +44014,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -44053,7 +44053,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -44092,7 +44092,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -44133,7 +44133,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -44173,7 +44173,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -44220,7 +44220,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -44271,7 +44271,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -44315,7 +44315,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -44363,7 +44363,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -44415,7 +44415,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -44467,7 +44467,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -44513,7 +44513,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -44563,7 +44563,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -44615,7 +44615,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -44663,7 +44663,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -44710,7 +44710,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -44747,7 +44747,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -44785,7 +44785,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -44836,7 +44836,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -44870,7 +44870,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -44904,7 +44904,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -44944,7 +44944,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -44993,7 +44993,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -45042,7 +45042,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -45087,7 +45087,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -45132,7 +45132,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -45178,7 +45178,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -45218,7 +45218,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -45261,7 +45261,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -45299,7 +45299,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -45345,7 +45345,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -45392,7 +45392,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -45438,7 +45438,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 4 },
 	MoveSpeed = 1000,
@@ -45473,7 +45473,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -45521,7 +45521,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -45567,7 +45567,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -45614,7 +45614,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -45663,7 +45663,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -45710,7 +45710,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -45754,7 +45754,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -45797,7 +45797,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -45855,7 +45855,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -45904,7 +45904,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -45952,7 +45952,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -45996,7 +45996,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -46046,7 +46046,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -46089,7 +46089,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -46126,7 +46126,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -46171,7 +46171,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -46217,7 +46217,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -46262,7 +46262,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -46300,7 +46300,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 2000,
@@ -46333,7 +46333,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -46368,7 +46368,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -46402,7 +46402,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -46445,7 +46445,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -46479,7 +46479,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -46513,7 +46513,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -46556,7 +46556,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -46598,7 +46598,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -46641,7 +46641,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -46678,7 +46678,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -46715,7 +46715,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -46752,7 +46752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -46789,7 +46789,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -46827,7 +46827,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -46870,7 +46870,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -46911,7 +46911,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -46953,7 +46953,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -46994,7 +46994,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -47040,7 +47040,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -47087,7 +47087,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -47136,7 +47136,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -47176,7 +47176,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -47217,7 +47217,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -47256,7 +47256,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -47294,7 +47294,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -47332,7 +47332,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -47370,7 +47370,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -47406,7 +47406,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -47451,7 +47451,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -47496,7 +47496,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -47541,7 +47541,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -47585,7 +47585,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -47630,7 +47630,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -47679,7 +47679,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -47719,7 +47719,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -47777,7 +47777,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -47821,7 +47821,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -47868,7 +47868,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -47916,7 +47916,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -47958,7 +47958,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -48001,7 +48001,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -48047,7 +48047,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -48092,7 +48092,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -48133,7 +48133,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -48173,7 +48173,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -48214,7 +48214,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -48254,7 +48254,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -48295,7 +48295,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	MoveSpeed = 1000,
@@ -48325,7 +48325,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -48366,7 +48366,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -48412,7 +48412,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -48457,7 +48457,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -48504,7 +48504,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -48551,7 +48551,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -48609,7 +48609,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -48648,7 +48648,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -48686,7 +48686,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -48724,7 +48724,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -48763,7 +48763,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -48812,7 +48812,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -48857,7 +48857,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -48915,7 +48915,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -48973,7 +48973,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -49031,7 +49031,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -49089,7 +49089,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -49145,7 +49145,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -49203,7 +49203,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -49262,7 +49262,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -49320,7 +49320,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -49377,7 +49377,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -49436,7 +49436,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -49494,7 +49494,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -49552,7 +49552,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Holy, 2 },
 	Mode = {
@@ -49611,7 +49611,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -49669,7 +49669,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -49727,7 +49727,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -49785,7 +49785,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -49844,7 +49844,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -49902,7 +49902,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -49959,7 +49959,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -50019,7 +50019,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -50053,7 +50053,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -50087,7 +50087,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -50121,7 +50121,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -50155,7 +50155,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -50189,7 +50189,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -50223,7 +50223,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -50257,7 +50257,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -50291,7 +50291,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -50325,7 +50325,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -50359,7 +50359,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -50393,7 +50393,7 @@ local monster_db = {
 	},
 	ViewRange = 5,
 	ChaseRange = 0,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -50427,7 +50427,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -50466,7 +50466,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -50502,7 +50502,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -50538,7 +50538,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -50580,7 +50580,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -50623,7 +50623,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -50676,7 +50676,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -50723,7 +50723,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -50768,7 +50768,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -50815,7 +50815,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -50848,7 +50848,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -50893,7 +50893,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -50939,7 +50939,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -50976,7 +50976,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -51013,7 +51013,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -51050,7 +51050,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -51087,7 +51087,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -51124,7 +51124,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -51160,7 +51160,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -51199,7 +51199,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -51239,7 +51239,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -51281,7 +51281,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -51316,7 +51316,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -51351,7 +51351,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -51387,7 +51387,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -51429,7 +51429,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -51476,7 +51476,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 3 },
 	Mode = {
@@ -51521,7 +51521,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -51565,7 +51565,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -51611,7 +51611,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -51655,7 +51655,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -51714,7 +51714,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -51750,7 +51750,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -51785,7 +51785,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -51820,7 +51820,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -51857,7 +51857,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -51908,7 +51908,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -51958,7 +51958,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -52008,7 +52008,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -52058,7 +52058,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -52118,7 +52118,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 2000,
@@ -52155,7 +52155,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 2000,
@@ -52191,7 +52191,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 2000,
@@ -52227,7 +52227,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	MoveSpeed = 2000,
@@ -52264,7 +52264,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -52304,7 +52304,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -52345,7 +52345,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -52386,7 +52386,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -52428,7 +52428,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -52478,7 +52478,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -52528,7 +52528,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -52577,7 +52577,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -52627,7 +52627,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -52677,7 +52677,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -52727,7 +52727,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -52777,7 +52777,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -52827,7 +52827,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -52877,7 +52877,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -52927,7 +52927,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -52977,7 +52977,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53027,7 +53027,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53079,7 +53079,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53131,7 +53131,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53183,7 +53183,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53235,7 +53235,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53287,7 +53287,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -53324,7 +53324,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53371,7 +53371,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53413,7 +53413,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53464,7 +53464,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -53504,7 +53504,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -53545,7 +53545,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53591,7 +53591,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53643,7 +53643,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -53689,7 +53689,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -53725,7 +53725,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53776,7 +53776,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -53836,7 +53836,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53883,7 +53883,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -53935,7 +53935,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -53971,7 +53971,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -54018,7 +54018,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -54053,7 +54053,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -54106,7 +54106,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -54142,7 +54142,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -54178,7 +54178,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -54223,7 +54223,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -54259,7 +54259,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -54295,7 +54295,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -54330,7 +54330,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -54365,7 +54365,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -54400,7 +54400,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -54436,7 +54436,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -54471,7 +54471,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -54507,7 +54507,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -54550,7 +54550,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -54598,7 +54598,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -54646,7 +54646,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -54694,7 +54694,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -54743,7 +54743,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -54792,7 +54792,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -54840,7 +54840,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -54889,7 +54889,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -54932,7 +54932,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -54975,7 +54975,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -55018,7 +55018,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -55061,7 +55061,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -55104,7 +55104,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -55147,7 +55147,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -55190,7 +55190,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -55247,7 +55247,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -55305,7 +55305,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -55361,7 +55361,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -55418,7 +55418,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -55475,7 +55475,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -55531,7 +55531,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -55587,7 +55587,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -55622,7 +55622,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -55658,7 +55658,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -55694,7 +55694,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 1 },
 	MoveSpeed = 400,
@@ -55725,7 +55725,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	MoveSpeed = 200,
@@ -55756,7 +55756,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	MoveSpeed = 445,
@@ -55786,7 +55786,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -55832,7 +55832,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -55891,7 +55891,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -55941,7 +55941,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 4 },
 	Mode = {
@@ -55999,7 +55999,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -56050,7 +56050,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -56109,7 +56109,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -56160,7 +56160,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -56218,7 +56218,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -56268,7 +56268,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56303,7 +56303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56338,7 +56338,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56373,7 +56373,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56408,7 +56408,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56443,7 +56443,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56478,7 +56478,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56514,7 +56514,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56550,7 +56550,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56586,7 +56586,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56622,7 +56622,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56658,7 +56658,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56694,7 +56694,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56730,7 +56730,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56766,7 +56766,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56802,7 +56802,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56838,7 +56838,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56874,7 +56874,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56910,7 +56910,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56945,7 +56945,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -56981,7 +56981,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -57022,7 +57022,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -57063,7 +57063,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -57104,7 +57104,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -57146,7 +57146,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -57197,7 +57197,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -57248,7 +57248,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -57299,7 +57299,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -57349,7 +57349,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -57399,7 +57399,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -57449,7 +57449,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -57499,7 +57499,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -57544,7 +57544,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57579,7 +57579,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57614,7 +57614,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57649,7 +57649,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57684,7 +57684,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57719,7 +57719,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57754,7 +57754,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57789,7 +57789,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57824,7 +57824,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57859,7 +57859,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57894,7 +57894,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57929,7 +57929,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57964,7 +57964,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -57999,7 +57999,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -58034,7 +58034,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -58069,7 +58069,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -58104,7 +58104,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -58139,7 +58139,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -58174,7 +58174,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -58209,7 +58209,7 @@ local monster_db = {
 	},
 	ViewRange = 1,
 	ChaseRange = 1,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 400,
@@ -58240,7 +58240,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -58288,7 +58288,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -58336,7 +58336,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -58387,7 +58387,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -58437,7 +58437,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -58484,7 +58484,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -58531,7 +58531,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -58578,7 +58578,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -58621,7 +58621,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -58666,7 +58666,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -58700,7 +58700,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -58752,7 +58752,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -58791,7 +58791,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -58827,7 +58827,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -58863,7 +58863,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -58907,7 +58907,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -58954,7 +58954,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -58996,7 +58996,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -59039,7 +59039,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59088,7 +59088,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -59121,7 +59121,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	MoveSpeed = 2000,
@@ -59152,7 +59152,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -59193,7 +59193,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -59230,7 +59230,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -59273,7 +59273,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -59307,7 +59307,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59343,7 +59343,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Holy, 1 },
 	Mode = {
@@ -59386,7 +59386,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -59422,7 +59422,7 @@ local monster_db = {
 	},
 	ViewRange = 12,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -59459,7 +59459,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59501,7 +59501,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -59542,7 +59542,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59584,7 +59584,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 4 },
 	Mode = {
@@ -59643,7 +59643,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59686,7 +59686,7 @@ local monster_db = {
 	},
 	ViewRange = 12,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -59722,7 +59722,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -59758,7 +59758,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59800,7 +59800,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -59835,7 +59835,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59878,7 +59878,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59920,7 +59920,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -59963,7 +59963,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -60005,7 +60005,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -60048,7 +60048,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -60084,7 +60084,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -60136,7 +60136,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -60188,7 +60188,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -60240,7 +60240,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -60291,7 +60291,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -60333,7 +60333,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -60385,7 +60385,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -60427,7 +60427,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -60479,7 +60479,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -60521,7 +60521,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -60575,7 +60575,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -60623,7 +60623,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -60672,7 +60672,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -60721,7 +60721,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -60770,7 +60770,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 4 },
 	Mode = {
@@ -60819,7 +60819,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -60868,7 +60868,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 4 },
 	Mode = {
@@ -60917,7 +60917,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -60965,7 +60965,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -61015,7 +61015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61050,7 +61050,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61085,7 +61085,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61120,7 +61120,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61155,7 +61155,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61190,7 +61190,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61225,7 +61225,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -61268,7 +61268,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -61308,7 +61308,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -61369,7 +61369,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -61417,7 +61417,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	MoveSpeed = 400,
@@ -61448,7 +61448,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	MoveSpeed = 300,
@@ -61479,7 +61479,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	MoveSpeed = 300,
@@ -61509,7 +61509,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	MoveSpeed = 400,
@@ -61547,7 +61547,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	MoveSpeed = 200,
@@ -61585,7 +61585,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	MoveSpeed = 200,
@@ -61624,7 +61624,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	MoveSpeed = 200,
@@ -61664,7 +61664,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -61698,7 +61698,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -61732,7 +61732,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -61766,7 +61766,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -61800,7 +61800,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -61829,7 +61829,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = "RC_Human",
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -61879,7 +61879,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -61951,7 +61951,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -61999,7 +61999,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -62049,7 +62049,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -62098,7 +62098,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -62146,7 +62146,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -62194,7 +62194,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -62242,7 +62242,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -62293,7 +62293,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -62344,7 +62344,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -62395,7 +62395,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -62447,7 +62447,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 16,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -62498,7 +62498,7 @@ local monster_db = {
 	},
 	ViewRange = 14,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -62550,7 +62550,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -62603,7 +62603,7 @@ local monster_db = {
 	},
 	ViewRange = 12,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -62653,7 +62653,7 @@ local monster_db = {
 	},
 	ViewRange = 12,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -62702,7 +62702,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -62749,7 +62749,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -62797,7 +62797,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -62845,7 +62845,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -62885,7 +62885,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -62928,7 +62928,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -62968,7 +62968,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -63052,7 +63052,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 4 },
 	Mode = {
@@ -63106,7 +63106,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -63156,7 +63156,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -63206,7 +63206,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -63264,7 +63264,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -63316,7 +63316,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -63364,7 +63364,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -63412,7 +63412,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -63459,7 +63459,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -63511,7 +63511,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information, --]]
@@ -63554,7 +63554,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63597,7 +63597,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63640,7 +63640,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63683,7 +63683,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63726,7 +63726,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63769,7 +63769,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63812,7 +63812,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63855,7 +63855,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63898,7 +63898,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63941,7 +63941,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -63984,7 +63984,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64027,7 +64027,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64070,7 +64070,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64113,7 +64113,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64156,7 +64156,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 2 },
 	Mode = {  --[[ Needs more information --]]
@@ -64199,7 +64199,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {  --[[ Needs more information --]]
@@ -64243,7 +64243,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {  --[[ Needs more information --]]
@@ -64286,7 +64286,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64329,7 +64329,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {  --[[ Needs more information --]]
@@ -64408,7 +64408,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -64458,7 +64458,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -64506,7 +64506,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -64556,7 +64556,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -64602,7 +64602,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -64650,7 +64650,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -64697,7 +64697,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -64744,7 +64744,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -64789,7 +64789,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -64837,7 +64837,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -64880,7 +64880,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -64926,7 +64926,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -64977,7 +64977,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -65021,7 +65021,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -65066,7 +65066,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -65117,7 +65117,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -65163,7 +65163,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -65206,7 +65206,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -65257,7 +65257,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -65303,7 +65303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -65349,7 +65349,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -65395,7 +65395,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -65443,7 +65443,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -65491,7 +65491,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -65538,7 +65538,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -65586,7 +65586,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -65631,7 +65631,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -65682,7 +65682,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -65725,7 +65725,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -65772,7 +65772,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -65818,7 +65818,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -65864,7 +65864,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -65910,7 +65910,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -65953,7 +65953,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -66002,7 +66002,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -66049,7 +66049,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -66092,7 +66092,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -66140,7 +66140,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -66190,7 +66190,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -66238,7 +66238,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -66286,7 +66286,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -66330,7 +66330,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -66375,7 +66375,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -66421,7 +66421,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -66465,7 +66465,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -66510,7 +66510,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -66558,7 +66558,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -66606,7 +66606,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -66657,7 +66657,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -66703,7 +66703,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -66751,7 +66751,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -66795,7 +66795,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -66840,7 +66840,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -66888,7 +66888,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -66936,7 +66936,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -66986,7 +66986,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -67036,7 +67036,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -67086,7 +67086,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -67134,7 +67134,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -67176,7 +67176,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -67224,7 +67224,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -67272,7 +67272,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -67322,7 +67322,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -67372,7 +67372,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -67416,7 +67416,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -67464,7 +67464,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -67512,7 +67512,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -67563,7 +67563,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -67611,7 +67611,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -67655,7 +67655,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -67700,7 +67700,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -67745,7 +67745,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -67793,7 +67793,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -67845,7 +67845,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -67892,7 +67892,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -67936,7 +67936,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -67978,7 +67978,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -68020,7 +68020,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -68065,7 +68065,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -68115,7 +68115,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -68165,7 +68165,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -68209,7 +68209,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -68260,7 +68260,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -68311,7 +68311,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -68362,7 +68362,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -68410,7 +68410,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -68458,7 +68458,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -68504,7 +68504,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -68552,7 +68552,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -68600,7 +68600,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 2 },
 	Mode = {
@@ -68648,7 +68648,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -68695,7 +68695,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -68745,7 +68745,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -68793,7 +68793,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -68838,7 +68838,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -68883,7 +68883,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -68928,7 +68928,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -68973,7 +68973,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -69018,7 +69018,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69063,7 +69063,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69108,7 +69108,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69153,7 +69153,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -69197,7 +69197,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69245,7 +69245,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 4 },
 	Mode = {
@@ -69292,7 +69292,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -69336,7 +69336,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -69381,7 +69381,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -69428,7 +69428,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -69476,7 +69476,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -69524,7 +69524,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -69568,7 +69568,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -69612,7 +69612,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -69660,7 +69660,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -69708,7 +69708,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69758,7 +69758,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -69808,7 +69808,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -69853,7 +69853,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -69900,7 +69900,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -69944,7 +69944,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -69996,7 +69996,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -70044,7 +70044,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -70088,7 +70088,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -70135,7 +70135,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -70185,7 +70185,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -70236,7 +70236,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -70284,7 +70284,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -70328,7 +70328,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -70372,7 +70372,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -70416,7 +70416,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -70460,7 +70460,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -70509,7 +70509,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -70549,7 +70549,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -70588,7 +70588,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -70632,7 +70632,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -70684,7 +70684,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -70729,7 +70729,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -70773,7 +70773,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -70821,7 +70821,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -70869,7 +70869,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -70913,7 +70913,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -70964,7 +70964,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -71015,7 +71015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Angel,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -71066,7 +71066,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -71109,7 +71109,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -71155,7 +71155,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -71203,7 +71203,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -71251,7 +71251,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -71299,7 +71299,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -71344,7 +71344,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -71389,7 +71389,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -71437,7 +71437,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -71485,7 +71485,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -71533,7 +71533,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -71578,7 +71578,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -71623,7 +71623,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -71673,7 +71673,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -71720,7 +71720,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -71771,7 +71771,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -71815,7 +71815,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -71864,7 +71864,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -71909,7 +71909,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -71957,7 +71957,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -72006,7 +72006,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -72050,7 +72050,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -72101,7 +72101,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -72151,7 +72151,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -72197,7 +72197,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -72237,7 +72237,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -72281,7 +72281,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -72325,7 +72325,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -72373,7 +72373,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -72425,7 +72425,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -72474,7 +72474,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -72519,7 +72519,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -72564,7 +72564,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -72609,7 +72609,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -72655,7 +72655,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -72700,7 +72700,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -72750,7 +72750,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -72795,7 +72795,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -72841,7 +72841,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -72888,7 +72888,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -72934,7 +72934,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -72979,7 +72979,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -73031,7 +73031,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -73075,7 +73075,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -73124,7 +73124,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -73172,7 +73172,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -73222,7 +73222,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -73264,7 +73264,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -73312,7 +73312,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -73356,7 +73356,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -73403,7 +73403,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -73452,7 +73452,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -73497,7 +73497,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -73542,7 +73542,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -73587,7 +73587,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -73636,7 +73636,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -73680,7 +73680,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -73725,7 +73725,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -73770,7 +73770,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -73820,7 +73820,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -73868,7 +73868,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -73916,7 +73916,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -73961,7 +73961,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -74005,7 +74005,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -74049,7 +74049,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -74093,7 +74093,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -74138,7 +74138,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -74188,7 +74188,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -74238,7 +74238,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -74284,7 +74284,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -74330,7 +74330,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -74379,7 +74379,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -74428,7 +74428,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -74478,7 +74478,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -74528,7 +74528,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -74579,7 +74579,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -74627,7 +74627,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -74675,7 +74675,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -74717,7 +74717,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -74759,7 +74759,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -74806,7 +74806,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -74853,7 +74853,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -74899,7 +74899,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -74947,7 +74947,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -74997,7 +74997,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -75047,7 +75047,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -75094,7 +75094,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -75141,7 +75141,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -75187,7 +75187,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -75232,7 +75232,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -75277,7 +75277,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -75323,7 +75323,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -75373,7 +75373,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -75421,7 +75421,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -75469,7 +75469,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -75518,7 +75518,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -75563,7 +75563,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -75611,7 +75611,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -75655,7 +75655,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -75700,7 +75700,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -75744,7 +75744,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -75792,7 +75792,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -75843,7 +75843,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -75889,7 +75889,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 3 },
 	Mode = {
@@ -75938,7 +75938,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -75984,7 +75984,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -76033,7 +76033,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -76081,7 +76081,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -76132,7 +76132,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -76177,7 +76177,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -76222,7 +76222,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -76268,7 +76268,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -76318,7 +76318,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -76368,7 +76368,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -76418,7 +76418,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -76468,7 +76468,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -76511,7 +76511,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -76556,7 +76556,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -76601,7 +76601,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -76647,7 +76647,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -76692,7 +76692,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 3 },
 	Mode = {
@@ -76738,7 +76738,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -76783,7 +76783,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -76828,7 +76828,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -76873,7 +76873,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -76918,7 +76918,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -76963,7 +76963,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 2 },
 	Mode = {
@@ -77014,7 +77014,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -77062,7 +77062,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -77111,7 +77111,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -77162,7 +77162,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -77211,7 +77211,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -77255,7 +77255,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -77303,7 +77303,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -77351,7 +77351,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -77399,7 +77399,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -77447,7 +77447,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -77495,7 +77495,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -77540,7 +77540,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -77590,7 +77590,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -77640,7 +77640,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -77691,7 +77691,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -77738,7 +77738,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -77788,7 +77788,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -77838,7 +77838,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -77888,7 +77888,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -77938,7 +77938,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -77983,7 +77983,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78028,7 +78028,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78073,7 +78073,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -78120,7 +78120,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78167,7 +78167,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78214,7 +78214,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Fish,
 	Element = { Element.Water, 2 },
 	Mode = {
@@ -78264,7 +78264,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -78310,7 +78310,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -78356,7 +78356,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Insect,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -78402,7 +78402,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78450,7 +78450,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -78495,7 +78495,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Insect,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -78541,7 +78541,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -78589,7 +78589,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Brute,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -78632,7 +78632,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78677,7 +78677,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78726,7 +78726,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -78776,7 +78776,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -78825,7 +78825,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -78873,7 +78873,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Wind, 2 },
 	Mode = {
@@ -78924,7 +78924,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -78969,7 +78969,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -79018,7 +79018,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -79063,7 +79063,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Wind, 1 },
 	Mode = {
@@ -79110,7 +79110,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -79158,7 +79158,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -79211,7 +79211,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -79263,7 +79263,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Fire, 2 },
 	Mode = {
@@ -79306,7 +79306,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Earth, 1 },
 	Mode = {
@@ -79345,7 +79345,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -79387,7 +79387,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -79426,7 +79426,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -79468,7 +79468,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Earth, 4 },
 	Mode = {
@@ -79510,7 +79510,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -79552,7 +79552,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -79590,7 +79590,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Poison, 1 },
 	Mode = {
@@ -79628,7 +79628,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 4 },
 	Mode = {
@@ -79672,7 +79672,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Angel,
 	Element = { Element.Holy, 3 },
 	Mode = {
@@ -79716,7 +79716,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 2 },
 	Mode = {
@@ -79755,7 +79755,7 @@ local monster_db = {
 	},
 	ViewRange = 7,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Neutral, 1 },
 	MoveSpeed = 300,
@@ -79802,7 +79802,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -79844,7 +79844,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -79887,7 +79887,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -79930,7 +79930,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 3 },
 	Mode = {
@@ -79973,7 +79973,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -80015,7 +80015,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -80057,7 +80057,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -80100,7 +80100,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -80143,7 +80143,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 1 },
 	Mode = {
@@ -80186,7 +80186,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 2 },
 	Mode = {
@@ -80229,7 +80229,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -80272,7 +80272,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -80318,7 +80318,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 3 },
 	Mode = {
@@ -80427,7 +80427,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Undead, 3 },
 	Mode = {
@@ -80475,7 +80475,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -80562,7 +80562,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Undead,
 	Element = { Element.Undead, 4 },
 	Mode = {
@@ -80648,7 +80648,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Neutral, 4 },
 	Mode = {
@@ -80745,7 +80745,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -80778,7 +80778,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -80811,7 +80811,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -80844,7 +80844,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Fire, 1 },
 	Mode = {
@@ -80861,7 +80861,7 @@ local monster_db = {
 [ "J_REB_SHECIL1" ] = {
 	Id = 3169,
 	Name = "Shooting Target",
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -80872,7 +80872,7 @@ local monster_db = {
 [ "J_REB_SHECIL2" ] = {
 	Id = 3170,
 	Name = "Shooting Target",
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -80891,7 +80891,7 @@ local monster_db = {
 	AttackRange = 10,
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Dragon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -80934,7 +80934,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = "RC_Human",
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -80974,7 +80974,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81009,7 +81009,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81054,7 +81054,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81100,7 +81100,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81135,7 +81135,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81170,7 +81170,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81205,7 +81205,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Plant,
 	Element = { Element.Water, 1 },
 	Mode = {
@@ -81354,7 +81354,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -81392,7 +81392,7 @@ local monster_db = {
 	},
 	ViewRange = 0,
 	ChaseRange = 0,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Ghost, 1 },
 	Mode = {
@@ -81466,7 +81466,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -81508,7 +81508,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -81545,7 +81545,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 2 },
 	Mode = {
@@ -81614,7 +81614,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 1 },
 	Mode = {
@@ -81678,7 +81678,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Small,
+	Size = UnitSize.Small,
 	Race = MonsterRace.Formless,
 	Element = { Element.Neutral, 1 },
 	Mode = {
@@ -81712,7 +81712,7 @@ local monster_db = {
 	},
 	ViewRange = 12,
 	ChaseRange = 10,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Demon,
 	Element = { Element.Dark, 3 },
 	Mode = {
@@ -81793,7 +81793,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Wind, 3 },
 	Mode = {
@@ -81835,7 +81835,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Medium,
+	Size = UnitSize.Medium,
 	Race = MonsterRace.Demon,
 	Element = { Element.Fire, 3 },
 	Mode = {
@@ -81877,7 +81877,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Brute,
 	Element = { Element.Neutral, 3 },
 	Mode = {
@@ -81919,7 +81919,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.DemiHuman,
 	Element = { Element.Earth, 2 },
 	Mode = {
@@ -81961,7 +81961,7 @@ local monster_db = {
 	},
 	ViewRange = 10,
 	ChaseRange = 12,
-	Size = EntitySize.Large,
+	Size = UnitSize.Large,
 	Race = MonsterRace.Formless,
 	Element = { Element.Ghost, 3 },
 	Mode = {

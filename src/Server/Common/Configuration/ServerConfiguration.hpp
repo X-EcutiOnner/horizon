@@ -34,11 +34,23 @@
 #include <boost/filesystem.hpp>
 #include <vector>
 
+enum test_run_type
+{
+	TEST_RUN_NONE         = 0x0,
+	TEST_RUN_MINIMAL      = 0x1,
+	TEST_RUN_WITH_NETWORK = 0x2,
+};
 struct general_server_configuration
 {
 	/* Minimal Load for Test Run */
-	bool is_test_run() const { return minimal; }
-	void set_test_run() { this->minimal = true; }
+	int get_test_run() const { return _test_run; }
+	void set_test_run(test_run_type type) { this->_test_run |= (int) type; }
+	void unset_test_run(test_run_type type) { this->_test_run &= ~((int) type); }
+
+	bool is_test_run() const { return _test_run > 0; }
+	bool is_test_run_minimal() const { return (_test_run&TEST_RUN_MINIMAL) == TEST_RUN_MINIMAL ? true : false; }
+	bool is_test_run_with_network() const { return (_test_run&TEST_RUN_WITH_NETWORK) == TEST_RUN_WITH_NETWORK ? true : false; }
+
 	/* Configuration File Path */
 	const boost::filesystem::path &get_config_file_path() const { return _config_file_path; }
 	void set_config_file_path(const boost::filesystem::path &path) { _config_file_path = path; }
@@ -52,7 +64,7 @@ struct general_server_configuration
     uint16_t get_listen_port() const { return _listen_port; }
     void set_listen_port(uint16_t listen_port) { _listen_port = listen_port; }
 
-	bool minimal{false};
+	int _test_run{TEST_RUN_NONE};
     
     const std::string &get_db_host() const { return _db_host; }
     void set_db_host(std::string &&host) { _db_host = host; }

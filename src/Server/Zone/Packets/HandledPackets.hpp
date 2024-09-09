@@ -60,11 +60,11 @@ ID_CZ_ACK_ANSWER_MACRO_DETECTOR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_ANSWER_MACRO_DETECTOR
  *
  */ 
-class CZ_ACK_ANSWER_MACRO_DETECTOR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_ANSWER_MACRO_DETECTOR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_ANSWER_MACRO_DETECTOR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_ANSWER_MACRO_DETECTOR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_ANSWER_MACRO_DETECTOR, s)
 	{}
 	virtual ~CZ_ACK_ANSWER_MACRO_DETECTOR() {}
 
@@ -100,11 +100,11 @@ ID_CZ_ACK_AU_BOT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_AU_BOT
  *
  */ 
-class CZ_ACK_AU_BOT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_AU_BOT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_AU_BOT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_AU_BOT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_AU_BOT, s)
 	{}
 	virtual ~CZ_ACK_AU_BOT() {}
 
@@ -146,11 +146,11 @@ ID_CZ_ACK_CASH_PASSWORD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_CASH_PASSWORD
  *
  */ 
-class CZ_ACK_CASH_PASSWORD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_CASH_PASSWORD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_CASH_PASSWORD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_CASH_PASSWORD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_CASH_PASSWORD, s)
 	{}
 	virtual ~CZ_ACK_CASH_PASSWORD() {}
 
@@ -192,11 +192,11 @@ ID_CZ_ACK_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_EXCHANGE_ITEM
  *
  */ 
-class CZ_ACK_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_ACK_EXCHANGE_ITEM() {}
 
@@ -239,11 +239,11 @@ ID_CZ_ACK_GAME_GUARD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_GAME_GUARD
  *
  */ 
-class CZ_ACK_GAME_GUARD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_GAME_GUARD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_GAME_GUARD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_GAME_GUARD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_GAME_GUARD, s)
 	{}
 	virtual ~CZ_ACK_GAME_GUARD() {}
 
@@ -285,11 +285,11 @@ ID_CZ_ACK_REQ_ADD_FRIENDS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_REQ_ADD_FRIENDS
  *
  */ 
-class CZ_ACK_REQ_ADD_FRIENDS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_REQ_ADD_FRIENDS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_REQ_ADD_FRIENDS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_REQ_ADD_FRIENDS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_REQ_ADD_FRIENDS, s)
 	{}
 	virtual ~CZ_ACK_REQ_ADD_FRIENDS() {}
 
@@ -334,11 +334,11 @@ ID_CZ_ACK_SELECT_DEALTYPE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_SELECT_DEALTYPE
  *
  */ 
-class CZ_ACK_SELECT_DEALTYPE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_SELECT_DEALTYPE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_SELECT_DEALTYPE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_SELECT_DEALTYPE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_SELECT_DEALTYPE, s)
 	{}
 	virtual ~CZ_ACK_SELECT_DEALTYPE() {}
 
@@ -1000,11 +1000,11 @@ ID_CZ_ACK_STORE_PASSWORD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACK_STORE_PASSWORD
  *
  */ 
-class CZ_ACK_STORE_PASSWORD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACK_STORE_PASSWORD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACK_STORE_PASSWORD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACK_STORE_PASSWORD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACK_STORE_PASSWORD, s)
 	{}
 	virtual ~CZ_ACK_STORE_PASSWORD() {}
 
@@ -1049,11 +1049,11 @@ ID_CZ_ACTIVE_QUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ACTIVE_QUEST
  *
  */ 
-class CZ_ACTIVE_QUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ACTIVE_QUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ACTIVE_QUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ACTIVE_QUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ACTIVE_QUEST, s)
 	{}
 	virtual ~CZ_ACTIVE_QUEST() {}
 
@@ -1097,11 +1097,11 @@ ID_CZ_ADD_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ADD_EXCHANGE_ITEM
  *
  */ 
-class CZ_ADD_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ADD_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ADD_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ADD_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ADD_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_ADD_EXCHANGE_ITEM() {}
 
@@ -1804,11 +1804,11 @@ ID_CZ_ADD_FRIENDS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ADD_FRIENDS
  *
  */ 
-class CZ_ADD_FRIENDS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ADD_FRIENDS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ADD_FRIENDS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ADD_FRIENDS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ADD_FRIENDS, s)
 	{}
 	virtual ~CZ_ADD_FRIENDS() {}
 
@@ -1842,11 +1842,11 @@ ID_CZ_ADVENTURER_AGENCY_JOIN_REQ = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ADVENTURER_AGENCY_JOIN_REQ
  *
  */ 
-class CZ_ADVENTURER_AGENCY_JOIN_REQ : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ADVENTURER_AGENCY_JOIN_REQ : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ADVENTURER_AGENCY_JOIN_REQ(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ADVENTURER_AGENCY_JOIN_REQ, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ADVENTURER_AGENCY_JOIN_REQ, s)
 	{}
 	virtual ~CZ_ADVENTURER_AGENCY_JOIN_REQ() {}
 
@@ -1879,11 +1879,11 @@ ID_CZ_ADVENTURER_AGENCY_JOIN_RESULT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ADVENTURER_AGENCY_JOIN_RESULT
  *
  */ 
-class CZ_ADVENTURER_AGENCY_JOIN_RESULT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ADVENTURER_AGENCY_JOIN_RESULT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ADVENTURER_AGENCY_JOIN_RESULT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ADVENTURER_AGENCY_JOIN_RESULT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ADVENTURER_AGENCY_JOIN_RESULT, s)
 	{}
 	virtual ~CZ_ADVENTURER_AGENCY_JOIN_RESULT() {}
 
@@ -1925,11 +1925,11 @@ ID_CZ_AGREE_STARPLACE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AGREE_STARPLACE
  *
  */ 
-class CZ_AGREE_STARPLACE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AGREE_STARPLACE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AGREE_STARPLACE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AGREE_STARPLACE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AGREE_STARPLACE, s)
 	{}
 	virtual ~CZ_AGREE_STARPLACE() {}
 
@@ -1972,11 +1972,11 @@ ID_CZ_ALCHEMIST_RANK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALCHEMIST_RANK
  *
  */ 
-class CZ_ALCHEMIST_RANK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALCHEMIST_RANK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALCHEMIST_RANK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALCHEMIST_RANK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALCHEMIST_RANK, s)
 	{}
 	virtual ~CZ_ALCHEMIST_RANK() {}
 
@@ -2018,11 +2018,11 @@ ID_CZ_ALLY_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALLY_GUILD
  *
  */ 
-class CZ_ALLY_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALLY_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALLY_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALLY_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALLY_GUILD, s)
 	{}
 	virtual ~CZ_ALLY_GUILD() {}
 
@@ -2052,11 +2052,11 @@ ID_CZ_ALT_EQUIPMENT_ADD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALT_EQUIPMENT_ADD
  *
  */ 
-class CZ_ALT_EQUIPMENT_ADD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALT_EQUIPMENT_ADD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALT_EQUIPMENT_ADD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALT_EQUIPMENT_ADD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALT_EQUIPMENT_ADD, s)
 	{}
 	virtual ~CZ_ALT_EQUIPMENT_ADD() {}
 
@@ -2092,11 +2092,11 @@ ID_CZ_ALT_EQUIPMENT_EQUIP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALT_EQUIPMENT_EQUIP
  *
  */ 
-class CZ_ALT_EQUIPMENT_EQUIP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALT_EQUIPMENT_EQUIP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALT_EQUIPMENT_EQUIP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALT_EQUIPMENT_EQUIP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALT_EQUIPMENT_EQUIP, s)
 	{}
 	virtual ~CZ_ALT_EQUIPMENT_EQUIP() {}
 
@@ -2132,11 +2132,11 @@ ID_CZ_ALT_EQUIPMENT_REMOVE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALT_EQUIPMENT_REMOVE
  *
  */ 
-class CZ_ALT_EQUIPMENT_REMOVE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALT_EQUIPMENT_REMOVE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALT_EQUIPMENT_REMOVE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALT_EQUIPMENT_REMOVE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALT_EQUIPMENT_REMOVE, s)
 	{}
 	virtual ~CZ_ALT_EQUIPMENT_REMOVE() {}
 
@@ -2172,11 +2172,11 @@ ID_CZ_ALT_EQUIPMENT_SWITCH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ALT_EQUIPMENT_SWITCH
  *
  */ 
-class CZ_ALT_EQUIPMENT_SWITCH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ALT_EQUIPMENT_SWITCH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ALT_EQUIPMENT_SWITCH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ALT_EQUIPMENT_SWITCH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ALT_EQUIPMENT_SWITCH, s)
 	{}
 	virtual ~CZ_ALT_EQUIPMENT_SWITCH() {}
 
@@ -2212,11 +2212,11 @@ ID_CZ_ATTENDANCE_REWARD_REQUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ATTENDANCE_REWARD_REQUEST
  *
  */ 
-class CZ_ATTENDANCE_REWARD_REQUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ATTENDANCE_REWARD_REQUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ATTENDANCE_REWARD_REQUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ATTENDANCE_REWARD_REQUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ATTENDANCE_REWARD_REQUEST, s)
 	{}
 	virtual ~CZ_ATTENDANCE_REWARD_REQUEST() {}
 
@@ -2258,11 +2258,11 @@ ID_CZ_AUCTION_ADD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_ADD
  *
  */ 
-class CZ_AUCTION_ADD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_ADD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_ADD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_ADD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_ADD, s)
 	{}
 	virtual ~CZ_AUCTION_ADD() {}
 
@@ -2307,11 +2307,11 @@ ID_CZ_AUCTION_ADD_CANCEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_ADD_CANCEL
  *
  */ 
-class CZ_AUCTION_ADD_CANCEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_ADD_CANCEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_ADD_CANCEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_ADD_CANCEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_ADD_CANCEL, s)
 	{}
 	virtual ~CZ_AUCTION_ADD_CANCEL() {}
 
@@ -2354,11 +2354,11 @@ ID_CZ_AUCTION_ADD_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_ADD_ITEM
  *
  */ 
-class CZ_AUCTION_ADD_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_ADD_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_ADD_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_ADD_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_ADD_ITEM, s)
 	{}
 	virtual ~CZ_AUCTION_ADD_ITEM() {}
 
@@ -2402,11 +2402,11 @@ ID_CZ_AUCTION_BUY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_BUY
  *
  */ 
-class CZ_AUCTION_BUY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_BUY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_BUY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_BUY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_BUY, s)
 	{}
 	virtual ~CZ_AUCTION_BUY() {}
 
@@ -2450,11 +2450,11 @@ ID_CZ_AUCTION_CREATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_CREATE
  *
  */ 
-class CZ_AUCTION_CREATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_CREATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_CREATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_CREATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_CREATE, s)
 	{}
 	virtual ~CZ_AUCTION_CREATE() {}
 
@@ -2497,11 +2497,11 @@ ID_CZ_AUCTION_ITEM_SEARCH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_ITEM_SEARCH
  *
  */ 
-class CZ_AUCTION_ITEM_SEARCH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_ITEM_SEARCH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_ITEM_SEARCH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_ITEM_SEARCH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_ITEM_SEARCH, s)
 	{}
 	virtual ~CZ_AUCTION_ITEM_SEARCH() {}
 
@@ -2547,11 +2547,11 @@ ID_CZ_AUCTION_REQ_MY_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_REQ_MY_INFO
  *
  */ 
-class CZ_AUCTION_REQ_MY_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_REQ_MY_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_REQ_MY_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_REQ_MY_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_REQ_MY_INFO, s)
 	{}
 	virtual ~CZ_AUCTION_REQ_MY_INFO() {}
 
@@ -2594,11 +2594,11 @@ ID_CZ_AUCTION_REQ_MY_SELL_STOP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_AUCTION_REQ_MY_SELL_STOP
  *
  */ 
-class CZ_AUCTION_REQ_MY_SELL_STOP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_AUCTION_REQ_MY_SELL_STOP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_AUCTION_REQ_MY_SELL_STOP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_AUCTION_REQ_MY_SELL_STOP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_AUCTION_REQ_MY_SELL_STOP, s)
 	{}
 	virtual ~CZ_AUCTION_REQ_MY_SELL_STOP() {}
 
@@ -2641,11 +2641,11 @@ ID_CZ_BATTLEFIELD_CHAT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BATTLEFIELD_CHAT
  *
  */ 
-class CZ_BATTLEFIELD_CHAT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BATTLEFIELD_CHAT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BATTLEFIELD_CHAT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BATTLEFIELD_CHAT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BATTLEFIELD_CHAT, s)
 	{}
 	virtual ~CZ_BATTLEFIELD_CHAT() {}
 
@@ -2683,11 +2683,11 @@ ID_CZ_BATTLE_FIELD_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BATTLE_FIELD_LIST
  *
  */ 
-class CZ_BATTLE_FIELD_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BATTLE_FIELD_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BATTLE_FIELD_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BATTLE_FIELD_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BATTLE_FIELD_LIST, s)
 	{}
 	virtual ~CZ_BATTLE_FIELD_LIST() {}
 
@@ -2729,11 +2729,11 @@ ID_CZ_BLACKSMITH_RANK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BLACKSMITH_RANK
  *
  */ 
-class CZ_BLACKSMITH_RANK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BLACKSMITH_RANK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BLACKSMITH_RANK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BLACKSMITH_RANK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BLACKSMITH_RANK, s)
 	{}
 	virtual ~CZ_BLACKSMITH_RANK() {}
 
@@ -2772,11 +2772,11 @@ ID_CZ_BLOCKING_PLAY_CANCEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BLOCKING_PLAY_CANCEL
  *
  */ 
-class CZ_BLOCKING_PLAY_CANCEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BLOCKING_PLAY_CANCEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BLOCKING_PLAY_CANCEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BLOCKING_PLAY_CANCEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BLOCKING_PLAY_CANCEL, s)
 	{}
 	virtual ~CZ_BLOCKING_PLAY_CANCEL() {}
 
@@ -2818,11 +2818,11 @@ ID_CZ_BOT_CHECK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BOT_CHECK
  *
  */ 
-class CZ_BOT_CHECK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BOT_CHECK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BOT_CHECK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BOT_CHECK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BOT_CHECK, s)
 	{}
 	virtual ~CZ_BOT_CHECK() {}
 
@@ -2864,11 +2864,11 @@ ID_CZ_BROADCAST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_BROADCAST
  *
  */ 
-class CZ_BROADCAST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_BROADCAST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_BROADCAST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_BROADCAST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_BROADCAST, s)
 	{}
 	virtual ~CZ_BROADCAST() {}
 
@@ -2906,11 +2906,11 @@ ID_CZ_CAMERA_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CAMERA_INFO
  *
  */ 
-class CZ_CAMERA_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CAMERA_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CAMERA_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CAMERA_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CAMERA_INFO, s)
 	{}
 	virtual ~CZ_CAMERA_INFO() {}
 
@@ -2946,11 +2946,11 @@ ID_CZ_CANCEL_BATTLE_FIELD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CANCEL_BATTLE_FIELD
  *
  */ 
-class CZ_CANCEL_BATTLE_FIELD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CANCEL_BATTLE_FIELD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CANCEL_BATTLE_FIELD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CANCEL_BATTLE_FIELD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CANCEL_BATTLE_FIELD, s)
 	{}
 	virtual ~CZ_CANCEL_BATTLE_FIELD() {}
 
@@ -2992,11 +2992,11 @@ ID_CZ_CANCEL_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CANCEL_EXCHANGE_ITEM
  *
  */ 
-class CZ_CANCEL_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CANCEL_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CANCEL_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CANCEL_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CANCEL_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_CANCEL_EXCHANGE_ITEM() {}
 
@@ -3038,11 +3038,11 @@ ID_CZ_CANCEL_LOCKON = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CANCEL_LOCKON
  *
  */ 
-class CZ_CANCEL_LOCKON : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CANCEL_LOCKON : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CANCEL_LOCKON(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CANCEL_LOCKON, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CANCEL_LOCKON, s)
 	{}
 	virtual ~CZ_CANCEL_LOCKON() {}
 
@@ -3078,11 +3078,11 @@ ID_CZ_CANCEL_MERGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CANCEL_MERGE_ITEM
  *
  */ 
-class CZ_CANCEL_MERGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CANCEL_MERGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CANCEL_MERGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CANCEL_MERGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CANCEL_MERGE_ITEM, s)
 	{}
 	virtual ~CZ_CANCEL_MERGE_ITEM() {}
 
@@ -3124,11 +3124,11 @@ ID_CZ_CHANGE_CHATROOM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_CHATROOM
  *
  */ 
-class CZ_CHANGE_CHATROOM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_CHATROOM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_CHATROOM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_CHATROOM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_CHATROOM, s)
 	{}
 	virtual ~CZ_CHANGE_CHATROOM() {}
 
@@ -3431,11 +3431,11 @@ ID_CZ_CHANGE_DIRECTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_DIRECTION
  *
  */ 
-class CZ_CHANGE_DIRECTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_DIRECTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_DIRECTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_DIRECTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_DIRECTION, s)
 	{}
 	virtual ~CZ_CHANGE_DIRECTION() {}
 
@@ -3908,11 +3908,11 @@ ID_CZ_CHANGE_DIRECTION2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_DIRECTION2
  *
  */ 
-class CZ_CHANGE_DIRECTION2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_DIRECTION2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_DIRECTION2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_DIRECTION2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_DIRECTION2, s)
 	{}
 	virtual ~CZ_CHANGE_DIRECTION2() {}
 
@@ -3956,11 +3956,11 @@ ID_CZ_CHANGE_EFFECTSTATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_EFFECTSTATE
  *
  */ 
-class CZ_CHANGE_EFFECTSTATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_EFFECTSTATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_EFFECTSTATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_EFFECTSTATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_EFFECTSTATE, s)
 	{}
 	virtual ~CZ_CHANGE_EFFECTSTATE() {}
 
@@ -4003,11 +4003,11 @@ ID_CZ_CHANGE_GROUPEXPOPTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_GROUPEXPOPTION
  *
  */ 
-class CZ_CHANGE_GROUPEXPOPTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_GROUPEXPOPTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_GROUPEXPOPTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_GROUPEXPOPTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_GROUPEXPOPTION, s)
 	{}
 	virtual ~CZ_CHANGE_GROUPEXPOPTION() {}
 
@@ -4047,11 +4047,11 @@ ID_CZ_CHANGE_GROUP_MASTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_GROUP_MASTER
  *
  */ 
-class CZ_CHANGE_GROUP_MASTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_GROUP_MASTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_GROUP_MASTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_GROUP_MASTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_GROUP_MASTER, s)
 	{}
 	virtual ~CZ_CHANGE_GROUP_MASTER() {}
 
@@ -4094,11 +4094,11 @@ ID_CZ_CHANGE_MAPTYPE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHANGE_MAPTYPE
  *
  */ 
-class CZ_CHANGE_MAPTYPE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHANGE_MAPTYPE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHANGE_MAPTYPE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHANGE_MAPTYPE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHANGE_MAPTYPE, s)
 	{}
 	virtual ~CZ_CHANGE_MAPTYPE() {}
 
@@ -4137,11 +4137,11 @@ ID_CZ_CHECK_RECEIVE_CHARACTER_NAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHECK_RECEIVE_CHARACTER_NAME
  *
  */ 
-class CZ_CHECK_RECEIVE_CHARACTER_NAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHECK_RECEIVE_CHARACTER_NAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHECK_RECEIVE_CHARACTER_NAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHECK_RECEIVE_CHARACTER_NAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHECK_RECEIVE_CHARACTER_NAME, s)
 	{}
 	virtual ~CZ_CHECK_RECEIVE_CHARACTER_NAME() {}
 
@@ -4184,11 +4184,11 @@ ID_CZ_CHOOSE_MENU = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHOOSE_MENU
  *
  */ 
-class CZ_CHOOSE_MENU : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHOOSE_MENU : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHOOSE_MENU(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHOOSE_MENU, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHOOSE_MENU, s)
 	{}
 	virtual ~CZ_CHOOSE_MENU() {}
 
@@ -4222,11 +4222,11 @@ ID_CZ_CHOOSE_MENU_ZERO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CHOOSE_MENU_ZERO
  *
  */ 
-class CZ_CHOOSE_MENU_ZERO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHOOSE_MENU_ZERO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHOOSE_MENU_ZERO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHOOSE_MENU_ZERO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHOOSE_MENU_ZERO, s)
 	{}
 	virtual ~CZ_CHOOSE_MENU_ZERO() {}
 
@@ -4274,11 +4274,11 @@ ID_CZ_CHOPOKGI = 0x0000 // Disabled
  *       "I am" (space separated player name) "Super Novice~"
  *       "Help me out~ Please~ T_T"
  */ 
-class CZ_CHOPOKGI : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CHOPOKGI : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CHOPOKGI(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CHOPOKGI, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CHOPOKGI, s)
 	{}
 	virtual ~CZ_CHOPOKGI() {}
 
@@ -4314,11 +4314,11 @@ ID_CZ_CLAN_CHAT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLAN_CHAT
  *
  */ 
-class CZ_CLAN_CHAT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLAN_CHAT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLAN_CHAT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLAN_CHAT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLAN_CHAT, s)
 	{}
 	virtual ~CZ_CLAN_CHAT() {}
 
@@ -4359,11 +4359,11 @@ ID_CZ_CLIENT_VERSION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLIENT_VERSION
  *
  */ 
-class CZ_CLIENT_VERSION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLIENT_VERSION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLIENT_VERSION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLIENT_VERSION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLIENT_VERSION, s)
 	{}
 	virtual ~CZ_CLIENT_VERSION() {}
 
@@ -4400,11 +4400,11 @@ ID_CZ_CLOSE_BARGAIN_SALE_TOOL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_BARGAIN_SALE_TOOL
  *
  */ 
-class CZ_CLOSE_BARGAIN_SALE_TOOL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_BARGAIN_SALE_TOOL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_BARGAIN_SALE_TOOL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_BARGAIN_SALE_TOOL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_BARGAIN_SALE_TOOL, s)
 	{}
 	virtual ~CZ_CLOSE_BARGAIN_SALE_TOOL() {}
 
@@ -4446,11 +4446,11 @@ ID_CZ_CLOSE_DIALOG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_DIALOG
  *
  */ 
-class CZ_CLOSE_DIALOG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_DIALOG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_DIALOG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_DIALOG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_DIALOG, s)
 	{}
 	virtual ~CZ_CLOSE_DIALOG() {}
 
@@ -4483,11 +4483,11 @@ ID_CZ_CLOSE_REFORM_UI = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_REFORM_UI
  *
  */ 
-class CZ_CLOSE_REFORM_UI : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_REFORM_UI : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_REFORM_UI(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_REFORM_UI, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_REFORM_UI, s)
 	{}
 	virtual ~CZ_CLOSE_REFORM_UI() {}
 
@@ -4523,11 +4523,11 @@ ID_CZ_CLOSE_RODEXBOX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_RODEXBOX
  *
  */ 
-class CZ_CLOSE_RODEXBOX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_RODEXBOX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_RODEXBOX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_RODEXBOX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_RODEXBOX, s)
 	{}
 	virtual ~CZ_CLOSE_RODEXBOX() {}
 
@@ -4563,11 +4563,11 @@ ID_CZ_CLOSE_SEARCH_STORE_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_SEARCH_STORE_INFO
  *
  */ 
-class CZ_CLOSE_SEARCH_STORE_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_SEARCH_STORE_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_SEARCH_STORE_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_SEARCH_STORE_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_SEARCH_STORE_INFO, s)
 	{}
 	virtual ~CZ_CLOSE_SEARCH_STORE_INFO() {}
 
@@ -4606,11 +4606,11 @@ ID_CZ_CLOSE_SIMPLECASH_SHOP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_SIMPLECASH_SHOP
  *
  */ 
-class CZ_CLOSE_SIMPLECASH_SHOP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_SIMPLECASH_SHOP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_SIMPLECASH_SHOP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_SIMPLECASH_SHOP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_SIMPLECASH_SHOP, s)
 	{}
 	virtual ~CZ_CLOSE_SIMPLECASH_SHOP() {}
 
@@ -4638,11 +4638,11 @@ ID_CZ_CLOSE_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_STORE
  *
  */ 
-class CZ_CLOSE_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_STORE, s)
 	{}
 	virtual ~CZ_CLOSE_STORE() {}
 
@@ -4674,11 +4674,11 @@ ID_CZ_CLOSE_UI_ENCHANT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_UI_ENCHANT
  *
  */ 
-class CZ_CLOSE_UI_ENCHANT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_UI_ENCHANT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_UI_ENCHANT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_UI_ENCHANT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_UI_ENCHANT, s)
 	{}
 	virtual ~CZ_CLOSE_UI_ENCHANT() {}
 
@@ -4720,11 +4720,11 @@ ID_CZ_CLOSE_WINDOW = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CLOSE_WINDOW
  *
  */ 
-class CZ_CLOSE_WINDOW : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CLOSE_WINDOW : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CLOSE_WINDOW(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CLOSE_WINDOW, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CLOSE_WINDOW, s)
 	{}
 	virtual ~CZ_CLOSE_WINDOW() {}
 
@@ -5437,11 +5437,11 @@ ID_CZ_COMMAND_MER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_COMMAND_MER
  *
  */ 
-class CZ_COMMAND_MER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_COMMAND_MER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_COMMAND_MER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_COMMAND_MER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_COMMAND_MER, s)
 	{}
 	virtual ~CZ_COMMAND_MER() {}
 
@@ -5485,11 +5485,11 @@ ID_CZ_COMMAND_PET = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_COMMAND_PET
  *
  */ 
-class CZ_COMMAND_PET : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_COMMAND_PET : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_COMMAND_PET(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_COMMAND_PET, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_COMMAND_PET, s)
 	{}
 	virtual ~CZ_COMMAND_PET() {}
 
@@ -5523,11 +5523,11 @@ ID_CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA
  *
  */ 
-class CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA, s)
 	{}
 	virtual ~CZ_COMPLETE_APPLY_MACRO_DETECTOR_CAPTCHA() {}
 
@@ -5569,11 +5569,11 @@ ID_CZ_CONCLUDE_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CONCLUDE_EXCHANGE_ITEM
  *
  */ 
-class CZ_CONCLUDE_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CONCLUDE_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CONCLUDE_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CONCLUDE_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CONCLUDE_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_CONCLUDE_EXCHANGE_ITEM() {}
 
@@ -5615,11 +5615,11 @@ ID_CZ_CONFIG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CONFIG
  *
  */ 
-class CZ_CONFIG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CONFIG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CONFIG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CONFIG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CONFIG, s)
 	{}
 	virtual ~CZ_CONFIG() {}
 
@@ -5663,11 +5663,11 @@ ID_CZ_CONTACTNPC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CONTACTNPC
  *
  */ 
-class CZ_CONTACTNPC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CONTACTNPC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CONTACTNPC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CONTACTNPC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CONTACTNPC, s)
 	{}
 	virtual ~CZ_CONTACTNPC() {}
 
@@ -5705,11 +5705,11 @@ ID_CZ_COOLDOWN_RESET = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_COOLDOWN_RESET
  *
  */ 
-class CZ_COOLDOWN_RESET : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_COOLDOWN_RESET : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_COOLDOWN_RESET(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_COOLDOWN_RESET, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_COOLDOWN_RESET, s)
 	{}
 	virtual ~CZ_COOLDOWN_RESET() {}
 
@@ -5751,11 +5751,11 @@ ID_CZ_CREATE_CHATROOM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_CREATE_CHATROOM
  *
  */ 
-class CZ_CREATE_CHATROOM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_CREATE_CHATROOM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_CREATE_CHATROOM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_CREATE_CHATROOM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_CREATE_CHATROOM, s)
 	{}
 	virtual ~CZ_CREATE_CHATROOM() {}
 
@@ -5802,11 +5802,11 @@ ID_CZ_DEATH_QUESTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DEATH_QUESTION
  *
  */ 
-class CZ_DEATH_QUESTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DEATH_QUESTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DEATH_QUESTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DEATH_QUESTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DEATH_QUESTION, s)
 	{}
 	virtual ~CZ_DEATH_QUESTION() {}
 
@@ -5848,11 +5848,11 @@ ID_CZ_DELETE_FRIENDS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DELETE_FRIENDS
  *
  */ 
-class CZ_DELETE_FRIENDS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DELETE_FRIENDS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DELETE_FRIENDS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DELETE_FRIENDS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DELETE_FRIENDS, s)
 	{}
 	virtual ~CZ_DELETE_FRIENDS() {}
 
@@ -5896,11 +5896,11 @@ ID_CZ_DISCONNECT_ALL_CHARACTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DISCONNECT_ALL_CHARACTER
  *
  */ 
-class CZ_DISCONNECT_ALL_CHARACTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DISCONNECT_ALL_CHARACTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DISCONNECT_ALL_CHARACTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DISCONNECT_ALL_CHARACTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DISCONNECT_ALL_CHARACTER, s)
 	{}
 	virtual ~CZ_DISCONNECT_ALL_CHARACTER() {}
 
@@ -5942,11 +5942,11 @@ ID_CZ_DISCONNECT_CHARACTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DISCONNECT_CHARACTER
  *
  */ 
-class CZ_DISCONNECT_CHARACTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DISCONNECT_CHARACTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DISCONNECT_CHARACTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DISCONNECT_CHARACTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DISCONNECT_CHARACTER, s)
 	{}
 	virtual ~CZ_DISCONNECT_CHARACTER() {}
 
@@ -5989,11 +5989,11 @@ ID_CZ_DORIDORI = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DORIDORI
  *
  */ 
-class CZ_DORIDORI : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DORIDORI : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DORIDORI(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DORIDORI, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DORIDORI, s)
 	{}
 	virtual ~CZ_DORIDORI() {}
 
@@ -6029,11 +6029,11 @@ ID_CZ_DYNAMICNPC_CREATE_REQUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_DYNAMICNPC_CREATE_REQUEST
  *
  */ 
-class CZ_DYNAMICNPC_CREATE_REQUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_DYNAMICNPC_CREATE_REQUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_DYNAMICNPC_CREATE_REQUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_DYNAMICNPC_CREATE_REQUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_DYNAMICNPC_CREATE_REQUEST, s)
 	{}
 	virtual ~CZ_DYNAMICNPC_CREATE_REQUEST() {}
 
@@ -6329,11 +6329,11 @@ ID_CZ_ENTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ENTER
  *
  */ 
-class CZ_ENTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ENTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ENTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ENTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ENTER, s)
 	{}
 	virtual ~CZ_ENTER() {}
 
@@ -6826,11 +6826,11 @@ ID_CZ_ENTER2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ENTER2
  *
  */ 
-class CZ_ENTER2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ENTER2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ENTER2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ENTER2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ENTER2, s)
 	{}
 	virtual ~CZ_ENTER2() {}
 
@@ -6877,11 +6877,11 @@ ID_CZ_EQUIPWIN_MICROSCOPE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_EQUIPWIN_MICROSCOPE
  *
  */ 
-class CZ_EQUIPWIN_MICROSCOPE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_EQUIPWIN_MICROSCOPE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_EQUIPWIN_MICROSCOPE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_EQUIPWIN_MICROSCOPE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_EQUIPWIN_MICROSCOPE, s)
 	{}
 	virtual ~CZ_EQUIPWIN_MICROSCOPE() {}
 
@@ -6910,11 +6910,11 @@ ID_CZ_ES_CANCEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ES_CANCEL
  *
  */ 
-class CZ_ES_CANCEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ES_CANCEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ES_CANCEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ES_CANCEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ES_CANCEL, s)
 	{}
 	virtual ~CZ_ES_CANCEL() {}
 
@@ -6942,11 +6942,11 @@ ID_CZ_ES_CHOOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ES_CHOOSE
  *
  */ 
-class CZ_ES_CHOOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ES_CHOOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ES_CHOOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ES_CHOOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ES_CHOOSE, s)
 	{}
 	virtual ~CZ_ES_CHOOSE() {}
 
@@ -6974,11 +6974,11 @@ ID_CZ_ES_GET_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ES_GET_LIST
  *
  */ 
-class CZ_ES_GET_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ES_GET_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ES_GET_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ES_GET_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ES_GET_LIST, s)
 	{}
 	virtual ~CZ_ES_GET_LIST() {}
 
@@ -7020,11 +7020,11 @@ ID_CZ_EXEC_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_EXEC_EXCHANGE_ITEM
  *
  */ 
-class CZ_EXEC_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_EXEC_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_EXEC_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_EXEC_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_EXEC_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_EXEC_EXCHANGE_ITEM() {}
 
@@ -7066,11 +7066,11 @@ ID_CZ_EXIT_ROOM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_EXIT_ROOM
  *
  */ 
-class CZ_EXIT_ROOM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_EXIT_ROOM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_EXIT_ROOM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_EXIT_ROOM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_EXIT_ROOM, s)
 	{}
 	virtual ~CZ_EXIT_ROOM() {}
 
@@ -7098,11 +7098,11 @@ ID_CZ_GAMEGUARD_LINGO_READY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GAMEGUARD_LINGO_READY
  *
  */ 
-class CZ_GAMEGUARD_LINGO_READY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GAMEGUARD_LINGO_READY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GAMEGUARD_LINGO_READY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GAMEGUARD_LINGO_READY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GAMEGUARD_LINGO_READY, s)
 	{}
 	virtual ~CZ_GAMEGUARD_LINGO_READY() {}
 
@@ -7795,11 +7795,11 @@ ID_CZ_GANGSI_RANK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GANGSI_RANK
  *
  */ 
-class CZ_GANGSI_RANK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GANGSI_RANK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GANGSI_RANK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GANGSI_RANK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GANGSI_RANK, s)
 	{}
 	virtual ~CZ_GANGSI_RANK() {}
 
@@ -7832,11 +7832,11 @@ ID_CZ_GET_ACCOUNT_LIMTIED_SALE_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GET_ACCOUNT_LIMTIED_SALE_LIST
  *
  */ 
-class CZ_GET_ACCOUNT_LIMTIED_SALE_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GET_ACCOUNT_LIMTIED_SALE_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GET_ACCOUNT_LIMTIED_SALE_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GET_ACCOUNT_LIMTIED_SALE_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GET_ACCOUNT_LIMTIED_SALE_LIST, s)
 	{}
 	virtual ~CZ_GET_ACCOUNT_LIMTIED_SALE_LIST() {}
 
@@ -7872,11 +7872,11 @@ ID_CZ_GM_FULLSTRIP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GM_FULLSTRIP
  *
  */ 
-class CZ_GM_FULLSTRIP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GM_FULLSTRIP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GM_FULLSTRIP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GM_FULLSTRIP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GM_FULLSTRIP, s)
 	{}
 	virtual ~CZ_GM_FULLSTRIP() {}
 
@@ -7912,11 +7912,11 @@ ID_CZ_GPK_AUTH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GPK_AUTH
  *
  */ 
-class CZ_GPK_AUTH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GPK_AUTH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GPK_AUTH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GPK_AUTH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GPK_AUTH, s)
 	{}
 	virtual ~CZ_GPK_AUTH() {}
 
@@ -7952,11 +7952,11 @@ ID_CZ_GPK_DYNCODE_RELOAD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GPK_DYNCODE_RELOAD
  *
  */ 
-class CZ_GPK_DYNCODE_RELOAD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GPK_DYNCODE_RELOAD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GPK_DYNCODE_RELOAD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GPK_DYNCODE_RELOAD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GPK_DYNCODE_RELOAD, s)
 	{}
 	virtual ~CZ_GPK_DYNCODE_RELOAD() {}
 
@@ -7989,11 +7989,11 @@ ID_CZ_GRADE_ENCHANT_CLOSE_UI = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GRADE_ENCHANT_CLOSE_UI
  *
  */ 
-class CZ_GRADE_ENCHANT_CLOSE_UI : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GRADE_ENCHANT_CLOSE_UI : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GRADE_ENCHANT_CLOSE_UI(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GRADE_ENCHANT_CLOSE_UI, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GRADE_ENCHANT_CLOSE_UI, s)
 	{}
 	virtual ~CZ_GRADE_ENCHANT_CLOSE_UI() {}
 
@@ -8026,11 +8026,11 @@ ID_CZ_GRADE_ENCHANT_REQUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GRADE_ENCHANT_REQUEST
  *
  */ 
-class CZ_GRADE_ENCHANT_REQUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GRADE_ENCHANT_REQUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GRADE_ENCHANT_REQUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GRADE_ENCHANT_REQUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GRADE_ENCHANT_REQUEST, s)
 	{}
 	virtual ~CZ_GRADE_ENCHANT_REQUEST() {}
 
@@ -8063,11 +8063,11 @@ ID_CZ_GRADE_ENCHANT_SELECT_EQUIPMENT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GRADE_ENCHANT_SELECT_EQUIPMENT
  *
  */ 
-class CZ_GRADE_ENCHANT_SELECT_EQUIPMENT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GRADE_ENCHANT_SELECT_EQUIPMENT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GRADE_ENCHANT_SELECT_EQUIPMENT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GRADE_ENCHANT_SELECT_EQUIPMENT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GRADE_ENCHANT_SELECT_EQUIPMENT, s)
 	{}
 	virtual ~CZ_GRADE_ENCHANT_SELECT_EQUIPMENT() {}
 
@@ -8106,11 +8106,11 @@ ID_CZ_GROUPINFO_CHANGE_V2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GROUPINFO_CHANGE_V2
  *
  */ 
-class CZ_GROUPINFO_CHANGE_V2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GROUPINFO_CHANGE_V2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GROUPINFO_CHANGE_V2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GROUPINFO_CHANGE_V2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GROUPINFO_CHANGE_V2, s)
 	{}
 	virtual ~CZ_GROUPINFO_CHANGE_V2() {}
 
@@ -8155,11 +8155,11 @@ ID_CZ_GUILD_CHAT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GUILD_CHAT
  *
  */ 
-class CZ_GUILD_CHAT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GUILD_CHAT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GUILD_CHAT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GUILD_CHAT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GUILD_CHAT, s)
 	{}
 	virtual ~CZ_GUILD_CHAT() {}
 
@@ -8203,11 +8203,11 @@ ID_CZ_GUILD_NOTICE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GUILD_NOTICE
  *
  */ 
-class CZ_GUILD_NOTICE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GUILD_NOTICE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GUILD_NOTICE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GUILD_NOTICE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GUILD_NOTICE, s)
 	{}
 	virtual ~CZ_GUILD_NOTICE() {}
 
@@ -8252,11 +8252,11 @@ ID_CZ_GUILD_ZENY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_GUILD_ZENY
  *
  */ 
-class CZ_GUILD_ZENY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_GUILD_ZENY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_GUILD_ZENY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_GUILD_ZENY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_GUILD_ZENY, s)
 	{}
 	virtual ~CZ_GUILD_ZENY() {}
 
@@ -8284,11 +8284,11 @@ ID_CZ_HACKSHIELD_CRC_MSG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_HACKSHIELD_CRC_MSG
  *
  */ 
-class CZ_HACKSHIELD_CRC_MSG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_HACKSHIELD_CRC_MSG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_HACKSHIELD_CRC_MSG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_HACKSHIELD_CRC_MSG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_HACKSHIELD_CRC_MSG, s)
 	{}
 	virtual ~CZ_HACKSHIELD_CRC_MSG() {}
 
@@ -8330,11 +8330,11 @@ ID_CZ_HACKSH_CPX_MSG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_HACKSH_CPX_MSG
  *
  */ 
-class CZ_HACKSH_CPX_MSG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_HACKSH_CPX_MSG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_HACKSH_CPX_MSG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_HACKSH_CPX_MSG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_HACKSH_CPX_MSG, s)
 	{}
 	virtual ~CZ_HACKSH_CPX_MSG() {}
 
@@ -8376,11 +8376,11 @@ ID_CZ_HUNTINGLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_HUNTINGLIST
  *
  */ 
-class CZ_HUNTINGLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_HUNTINGLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_HUNTINGLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_HUNTINGLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_HUNTINGLIST, s)
 	{}
 	virtual ~CZ_HUNTINGLIST() {}
 
@@ -8422,11 +8422,11 @@ ID_CZ_INPUT_EDITDLG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INPUT_EDITDLG
  *
  */ 
-class CZ_INPUT_EDITDLG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INPUT_EDITDLG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INPUT_EDITDLG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INPUT_EDITDLG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INPUT_EDITDLG, s)
 	{}
 	virtual ~CZ_INPUT_EDITDLG() {}
 
@@ -8470,11 +8470,11 @@ ID_CZ_INPUT_EDITDLGSTR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INPUT_EDITDLGSTR
  *
  */ 
-class CZ_INPUT_EDITDLGSTR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INPUT_EDITDLGSTR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INPUT_EDITDLGSTR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INPUT_EDITDLGSTR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INPUT_EDITDLGSTR, s)
 	{}
 	virtual ~CZ_INPUT_EDITDLGSTR() {}
 
@@ -8513,11 +8513,11 @@ ID_CZ_INVENTORY_EXPAND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INVENTORY_EXPAND
  *
  */ 
-class CZ_INVENTORY_EXPAND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INVENTORY_EXPAND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INVENTORY_EXPAND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INVENTORY_EXPAND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INVENTORY_EXPAND, s)
 	{}
 	virtual ~CZ_INVENTORY_EXPAND() {}
 
@@ -8553,11 +8553,11 @@ ID_CZ_INVENTORY_EXPAND_CONFIRMED = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INVENTORY_EXPAND_CONFIRMED
  *
  */ 
-class CZ_INVENTORY_EXPAND_CONFIRMED : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INVENTORY_EXPAND_CONFIRMED : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INVENTORY_EXPAND_CONFIRMED(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INVENTORY_EXPAND_CONFIRMED, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INVENTORY_EXPAND_CONFIRMED, s)
 	{}
 	virtual ~CZ_INVENTORY_EXPAND_CONFIRMED() {}
 
@@ -8593,11 +8593,11 @@ ID_CZ_INVENTORY_EXPAND_REJECTED = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INVENTORY_EXPAND_REJECTED
  *
  */ 
-class CZ_INVENTORY_EXPAND_REJECTED : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INVENTORY_EXPAND_REJECTED : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INVENTORY_EXPAND_REJECTED(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INVENTORY_EXPAND_REJECTED, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INVENTORY_EXPAND_REJECTED, s)
 	{}
 	virtual ~CZ_INVENTORY_EXPAND_REJECTED() {}
 
@@ -8633,11 +8633,11 @@ ID_CZ_INVENTORY_TAB = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_INVENTORY_TAB
  *
  */ 
-class CZ_INVENTORY_TAB : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_INVENTORY_TAB : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_INVENTORY_TAB(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_INVENTORY_TAB, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_INVENTORY_TAB, s)
 	{}
 	virtual ~CZ_INVENTORY_TAB() {}
 
@@ -8679,11 +8679,11 @@ ID_CZ_IRMAIL_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_IRMAIL_LIST
  *
  */ 
-class CZ_IRMAIL_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_IRMAIL_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_IRMAIL_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_IRMAIL_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_IRMAIL_LIST, s)
 	{}
 	virtual ~CZ_IRMAIL_LIST() {}
 
@@ -8725,11 +8725,11 @@ ID_CZ_IRMAIL_SEND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_IRMAIL_SEND
  *
  */ 
-class CZ_IRMAIL_SEND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_IRMAIL_SEND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_IRMAIL_SEND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_IRMAIL_SEND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_IRMAIL_SEND, s)
 	{}
 	virtual ~CZ_IRMAIL_SEND() {}
 
@@ -9421,11 +9421,11 @@ ID_CZ_ITEMLISTWIN_RES = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEMLISTWIN_RES
  *
  */ 
-class CZ_ITEMLISTWIN_RES : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEMLISTWIN_RES : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEMLISTWIN_RES(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEMLISTWIN_RES, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEMLISTWIN_RES, s)
 	{}
 	virtual ~CZ_ITEMLISTWIN_RES() {}
 
@@ -9467,11 +9467,11 @@ ID_CZ_ITEM_CREATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_CREATE
  *
  */ 
-class CZ_ITEM_CREATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_CREATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_CREATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_CREATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_CREATE, s)
 	{}
 	virtual ~CZ_ITEM_CREATE() {}
 
@@ -9508,11 +9508,11 @@ ID_CZ_ITEM_CREATE_EX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_CREATE_EX
  *
  */ 
-class CZ_ITEM_CREATE_EX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_CREATE_EX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_CREATE_EX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_CREATE_EX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_CREATE_EX, s)
 	{}
 	virtual ~CZ_ITEM_CREATE_EX() {}
 
@@ -9801,11 +9801,11 @@ ID_CZ_ITEM_PICKUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_PICKUP
  *
  */ 
-class CZ_ITEM_PICKUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_PICKUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_PICKUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_PICKUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_PICKUP, s)
 	{}
 	virtual ~CZ_ITEM_PICKUP() {}
 
@@ -10333,11 +10333,11 @@ ID_CZ_ITEM_PICKUP2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_PICKUP2
  *
  */ 
-class CZ_ITEM_PICKUP2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_PICKUP2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_PICKUP2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_PICKUP2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_PICKUP2, s)
 	{}
 	virtual ~CZ_ITEM_PICKUP2() {}
 
@@ -10380,11 +10380,11 @@ ID_CZ_ITEM_PICKUP_NEW_JAPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_PICKUP_NEW_JAPEN
  *
  */ 
-class CZ_ITEM_PICKUP_NEW_JAPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_PICKUP_NEW_JAPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_PICKUP_NEW_JAPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_PICKUP_NEW_JAPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_PICKUP_NEW_JAPEN, s)
 	{}
 	virtual ~CZ_ITEM_PICKUP_NEW_JAPEN() {}
 
@@ -10416,11 +10416,11 @@ ID_CZ_ITEM_REFORM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_REFORM
  *
  */ 
-class CZ_ITEM_REFORM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_REFORM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_REFORM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_REFORM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_REFORM, s)
 	{}
 	virtual ~CZ_ITEM_REFORM() {}
 
@@ -10710,11 +10710,11 @@ ID_CZ_ITEM_THROW = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_THROW
  *
  */ 
-class CZ_ITEM_THROW : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_THROW : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_THROW(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_THROW, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_THROW, s)
 	{}
 	virtual ~CZ_ITEM_THROW() {}
 
@@ -11219,11 +11219,11 @@ ID_CZ_ITEM_THROW2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_ITEM_THROW2
  *
  */ 
-class CZ_ITEM_THROW2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_ITEM_THROW2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_ITEM_THROW2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_ITEM_THROW2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_ITEM_THROW2, s)
 	{}
 	virtual ~CZ_ITEM_THROW2() {}
 
@@ -11267,11 +11267,11 @@ ID_CZ_JOIN_BABY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_JOIN_BABY
  *
  */ 
-class CZ_JOIN_BABY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_JOIN_BABY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_JOIN_BABY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_JOIN_BABY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_JOIN_BABY, s)
 	{}
 	virtual ~CZ_JOIN_BABY() {}
 
@@ -11978,11 +11978,11 @@ ID_CZ_JOIN_BATTLE_FIELD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_JOIN_BATTLE_FIELD
  *
  */ 
-class CZ_JOIN_BATTLE_FIELD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_JOIN_BATTLE_FIELD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_JOIN_BATTLE_FIELD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_JOIN_BATTLE_FIELD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_JOIN_BATTLE_FIELD, s)
 	{}
 	virtual ~CZ_JOIN_BATTLE_FIELD() {}
 
@@ -12024,11 +12024,11 @@ ID_CZ_JOIN_COUPLE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_JOIN_COUPLE
  *
  */ 
-class CZ_JOIN_COUPLE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_JOIN_COUPLE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_JOIN_COUPLE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_JOIN_COUPLE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_JOIN_COUPLE, s)
 	{}
 	virtual ~CZ_JOIN_COUPLE() {}
 
@@ -12070,11 +12070,11 @@ ID_CZ_JOIN_GROUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_JOIN_GROUP
  *
  */ 
-class CZ_JOIN_GROUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_JOIN_GROUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_JOIN_GROUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_JOIN_GROUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_JOIN_GROUP, s)
 	{}
 	virtual ~CZ_JOIN_GROUP() {}
 
@@ -12118,11 +12118,11 @@ ID_CZ_JOIN_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_JOIN_GUILD
  *
  */ 
-class CZ_JOIN_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_JOIN_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_JOIN_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_JOIN_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_JOIN_GUILD, s)
 	{}
 	virtual ~CZ_JOIN_GUILD() {}
 
@@ -12166,11 +12166,11 @@ ID_CZ_KILLER_RANK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_KILLER_RANK
  *
  */ 
-class CZ_KILLER_RANK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_KILLER_RANK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_KILLER_RANK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_KILLER_RANK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_KILLER_RANK, s)
 	{}
 	virtual ~CZ_KILLER_RANK() {}
 
@@ -12212,11 +12212,11 @@ ID_CZ_KSY_EVENT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_KSY_EVENT
  *
  */ 
-class CZ_KSY_EVENT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_KSY_EVENT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_KSY_EVENT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_KSY_EVENT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_KSY_EVENT, s)
 	{}
 	virtual ~CZ_KSY_EVENT() {}
 
@@ -12258,11 +12258,11 @@ ID_CZ_LESSEFFECT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_LESSEFFECT
  * Notification of the state of client command /effect.
  */ 
-class CZ_LESSEFFECT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_LESSEFFECT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_LESSEFFECT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_LESSEFFECT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_LESSEFFECT, s)
 	{}
 	virtual ~CZ_LESSEFFECT() {}
 
@@ -12305,11 +12305,11 @@ ID_CZ_LOCALBROADCAST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_LOCALBROADCAST
  *
  */ 
-class CZ_LOCALBROADCAST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_LOCALBROADCAST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_LOCALBROADCAST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_LOCALBROADCAST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_LOCALBROADCAST, s)
 	{}
 	virtual ~CZ_LOCALBROADCAST() {}
 
@@ -12347,11 +12347,11 @@ ID_CZ_MACRO_ITEM_PICKUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_ITEM_PICKUP
  *
  */ 
-class CZ_MACRO_ITEM_PICKUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_ITEM_PICKUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_ITEM_PICKUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_ITEM_PICKUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_ITEM_PICKUP, s)
 	{}
 	virtual ~CZ_MACRO_ITEM_PICKUP() {}
 
@@ -12387,11 +12387,11 @@ ID_CZ_MACRO_REQUEST_ACT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_REQUEST_ACT
  *
  */ 
-class CZ_MACRO_REQUEST_ACT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_REQUEST_ACT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_REQUEST_ACT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_REQUEST_ACT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_REQUEST_ACT, s)
 	{}
 	virtual ~CZ_MACRO_REQUEST_ACT() {}
 
@@ -12427,11 +12427,11 @@ ID_CZ_MACRO_REQUEST_MOVE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_REQUEST_MOVE
  *
  */ 
-class CZ_MACRO_REQUEST_MOVE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_REQUEST_MOVE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_REQUEST_MOVE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_REQUEST_MOVE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_REQUEST_MOVE, s)
 	{}
 	virtual ~CZ_MACRO_REQUEST_MOVE() {}
 
@@ -12467,11 +12467,11 @@ ID_CZ_MACRO_START = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_START
  *
  */ 
-class CZ_MACRO_START : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_START : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_START(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_START, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_START, s)
 	{}
 	virtual ~CZ_MACRO_START() {}
 
@@ -12507,11 +12507,11 @@ ID_CZ_MACRO_STOP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_STOP
  *
  */ 
-class CZ_MACRO_STOP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_STOP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_STOP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_STOP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_STOP, s)
 	{}
 	virtual ~CZ_MACRO_STOP() {}
 
@@ -12547,11 +12547,11 @@ ID_CZ_MACRO_USE_SKILL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_USE_SKILL
  *
  */ 
-class CZ_MACRO_USE_SKILL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_USE_SKILL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_USE_SKILL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_USE_SKILL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_USE_SKILL, s)
 	{}
 	virtual ~CZ_MACRO_USE_SKILL() {}
 
@@ -12587,11 +12587,11 @@ ID_CZ_MACRO_USE_SKILL_TOGROUND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MACRO_USE_SKILL_TOGROUND
  *
  */ 
-class CZ_MACRO_USE_SKILL_TOGROUND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MACRO_USE_SKILL_TOGROUND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MACRO_USE_SKILL_TOGROUND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MACRO_USE_SKILL_TOGROUND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MACRO_USE_SKILL_TOGROUND, s)
 	{}
 	virtual ~CZ_MACRO_USE_SKILL_TOGROUND() {}
 
@@ -12633,11 +12633,11 @@ ID_CZ_MAIL_ADD_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_ADD_ITEM
  *
  */ 
-class CZ_MAIL_ADD_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_ADD_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_ADD_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_ADD_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_ADD_ITEM, s)
 	{}
 	virtual ~CZ_MAIL_ADD_ITEM() {}
 
@@ -12681,11 +12681,11 @@ ID_CZ_MAIL_DELETE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_DELETE
  *
  */ 
-class CZ_MAIL_DELETE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_DELETE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_DELETE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_DELETE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_DELETE, s)
 	{}
 	virtual ~CZ_MAIL_DELETE() {}
 
@@ -12728,11 +12728,11 @@ ID_CZ_MAIL_GET_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_GET_ITEM
  *
  */ 
-class CZ_MAIL_GET_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_GET_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_GET_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_GET_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_GET_ITEM, s)
 	{}
 	virtual ~CZ_MAIL_GET_ITEM() {}
 
@@ -12775,11 +12775,11 @@ ID_CZ_MAIL_GET_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_GET_LIST
  *
  */ 
-class CZ_MAIL_GET_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_GET_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_GET_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_GET_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_GET_LIST, s)
 	{}
 	virtual ~CZ_MAIL_GET_LIST() {}
 
@@ -12821,11 +12821,11 @@ ID_CZ_MAIL_OPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_OPEN
  *
  */ 
-class CZ_MAIL_OPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_OPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_OPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_OPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_OPEN, s)
 	{}
 	virtual ~CZ_MAIL_OPEN() {}
 
@@ -12868,11 +12868,11 @@ ID_CZ_MAIL_RESET_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_RESET_ITEM
  *
  */ 
-class CZ_MAIL_RESET_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_RESET_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_RESET_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_RESET_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_RESET_ITEM, s)
 	{}
 	virtual ~CZ_MAIL_RESET_ITEM() {}
 
@@ -12915,11 +12915,11 @@ ID_CZ_MAIL_SEND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAIL_SEND
  *
  */ 
-class CZ_MAIL_SEND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAIL_SEND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAIL_SEND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAIL_SEND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAIL_SEND, s)
 	{}
 	virtual ~CZ_MAIL_SEND() {}
 
@@ -12966,11 +12966,11 @@ ID_CZ_MAKE_GROUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAKE_GROUP
  *
  */ 
-class CZ_MAKE_GROUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAKE_GROUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAKE_GROUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAKE_GROUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAKE_GROUP, s)
 	{}
 	virtual ~CZ_MAKE_GROUP() {}
 
@@ -13013,11 +13013,11 @@ ID_CZ_MAKE_GROUP2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MAKE_GROUP2
  *
  */ 
-class CZ_MAKE_GROUP2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MAKE_GROUP2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MAKE_GROUP2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MAKE_GROUP2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MAKE_GROUP2, s)
 	{}
 	virtual ~CZ_MAKE_GROUP2() {}
 
@@ -13062,11 +13062,11 @@ ID_CZ_MEMORIALDUNGEON_COMMAND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MEMORIALDUNGEON_COMMAND
  *
  */ 
-class CZ_MEMORIALDUNGEON_COMMAND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MEMORIALDUNGEON_COMMAND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MEMORIALDUNGEON_COMMAND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MEMORIALDUNGEON_COMMAND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MEMORIALDUNGEON_COMMAND, s)
 	{}
 	virtual ~CZ_MEMORIALDUNGEON_COMMAND() {}
 
@@ -13109,11 +13109,11 @@ ID_CZ_MER_COMMAND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MER_COMMAND
  *
  */ 
-class CZ_MER_COMMAND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MER_COMMAND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MER_COMMAND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MER_COMMAND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MER_COMMAND, s)
 	{}
 	virtual ~CZ_MER_COMMAND() {}
 
@@ -13155,11 +13155,11 @@ ID_CZ_MONSTER_TALK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MONSTER_TALK
  *
  */ 
-class CZ_MONSTER_TALK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MONSTER_TALK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MONSTER_TALK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MONSTER_TALK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MONSTER_TALK, s)
 	{}
 	virtual ~CZ_MONSTER_TALK() {}
 
@@ -13201,11 +13201,11 @@ ID_CZ_MOVETO_MAP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVETO_MAP
  *
  */ 
-class CZ_MOVETO_MAP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVETO_MAP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVETO_MAP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVETO_MAP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVETO_MAP, s)
 	{}
 	virtual ~CZ_MOVETO_MAP() {}
 
@@ -13250,11 +13250,11 @@ ID_CZ_MOVE_ITEM_FROM_BODY_TO_CART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_BODY_TO_CART
  *
  */ 
-class CZ_MOVE_ITEM_FROM_BODY_TO_CART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_BODY_TO_CART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_BODY_TO_CART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_CART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_CART, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_BODY_TO_CART() {}
 
@@ -13292,11 +13292,11 @@ ID_CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE
  *
  */ 
-class CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_BODY_TO_GUILDSTORAGE() {}
 
@@ -13579,11 +13579,11 @@ ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_BODY_TO_STORE
  *
  */ 
-class CZ_MOVE_ITEM_FROM_BODY_TO_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_BODY_TO_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_BODY_TO_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_BODY_TO_STORE() {}
 
@@ -14113,11 +14113,11 @@ ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_BODY_TO_STORE2
  *
  */ 
-class CZ_MOVE_ITEM_FROM_BODY_TO_STORE2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_BODY_TO_STORE2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_BODY_TO_STORE2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_BODY_TO_STORE2, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_BODY_TO_STORE2() {}
 
@@ -14161,11 +14161,11 @@ ID_CZ_MOVE_ITEM_FROM_CART_TO_BODY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_CART_TO_BODY
  *
  */ 
-class CZ_MOVE_ITEM_FROM_CART_TO_BODY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_CART_TO_BODY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_CART_TO_BODY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_BODY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_BODY, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_CART_TO_BODY() {}
 
@@ -14203,11 +14203,11 @@ ID_CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE
  *
  */ 
-class CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_CART_TO_GUILDSTORAGE() {}
 
@@ -14251,11 +14251,11 @@ ID_CZ_MOVE_ITEM_FROM_CART_TO_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_CART_TO_STORE
  *
  */ 
-class CZ_MOVE_ITEM_FROM_CART_TO_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_CART_TO_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_CART_TO_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_CART_TO_STORE, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_CART_TO_STORE() {}
 
@@ -14293,11 +14293,11 @@ ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY
  *
  */ 
-class CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_BODY() {}
 
@@ -14335,11 +14335,11 @@ ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART
  *
  */ 
-class CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_GUILDSTORAGE_TO_CART() {}
 
@@ -14635,11 +14635,11 @@ ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_STORE_TO_BODY
  *
  */ 
-class CZ_MOVE_ITEM_FROM_STORE_TO_BODY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_STORE_TO_BODY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_STORE_TO_BODY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_STORE_TO_BODY() {}
 
@@ -15144,11 +15144,11 @@ ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_STORE_TO_BODY2
  *
  */ 
-class CZ_MOVE_ITEM_FROM_STORE_TO_BODY2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_STORE_TO_BODY2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_STORE_TO_BODY2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_BODY2, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_STORE_TO_BODY2() {}
 
@@ -15192,11 +15192,11 @@ ID_CZ_MOVE_ITEM_FROM_STORE_TO_CART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_MOVE_ITEM_FROM_STORE_TO_CART
  *
  */ 
-class CZ_MOVE_ITEM_FROM_STORE_TO_CART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_MOVE_ITEM_FROM_STORE_TO_CART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_MOVE_ITEM_FROM_STORE_TO_CART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_CART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_MOVE_ITEM_FROM_STORE_TO_CART, s)
 	{}
 	virtual ~CZ_MOVE_ITEM_FROM_STORE_TO_CART() {}
 
@@ -15240,11 +15240,11 @@ ID_CZ_NOTIFY_ACTORINIT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NOTIFY_ACTORINIT
  *
  */ 
-class CZ_NOTIFY_ACTORINIT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NOTIFY_ACTORINIT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NOTIFY_ACTORINIT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NOTIFY_ACTORINIT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NOTIFY_ACTORINIT, s)
 	{}
 	virtual ~CZ_NOTIFY_ACTORINIT() {}
 
@@ -15280,11 +15280,11 @@ ID_CZ_NPC_BARTER_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_BARTER_CLOSE
  *
  */ 
-class CZ_NPC_BARTER_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_BARTER_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_BARTER_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_BARTER_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_BARTER_CLOSE, s)
 	{}
 	virtual ~CZ_NPC_BARTER_CLOSE() {}
 
@@ -15320,11 +15320,11 @@ ID_CZ_NPC_BARTER_PURCHASE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_BARTER_PURCHASE
  *
  */ 
-class CZ_NPC_BARTER_PURCHASE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_BARTER_PURCHASE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_BARTER_PURCHASE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_BARTER_PURCHASE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_BARTER_PURCHASE, s)
 	{}
 	virtual ~CZ_NPC_BARTER_PURCHASE() {}
 
@@ -15357,11 +15357,11 @@ ID_CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE
  *
  */ 
-class CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE, s)
 	{}
 	virtual ~CZ_NPC_EXPANDED_BARTER_MARKET_CLOSE() {}
 
@@ -15394,11 +15394,11 @@ ID_CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE
  *
  */ 
-class CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE, s)
 	{}
 	virtual ~CZ_NPC_EXPANDED_BARTER_MARKET_PURCHASE() {}
 
@@ -15434,11 +15434,11 @@ ID_CZ_NPC_MARKET_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_MARKET_CLOSE
  *
  */ 
-class CZ_NPC_MARKET_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_MARKET_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_MARKET_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_MARKET_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_MARKET_CLOSE, s)
 	{}
 	virtual ~CZ_NPC_MARKET_CLOSE() {}
 
@@ -15474,11 +15474,11 @@ ID_CZ_NPC_MARKET_PURCHASE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_MARKET_PURCHASE
  *
  */ 
-class CZ_NPC_MARKET_PURCHASE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_MARKET_PURCHASE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_MARKET_PURCHASE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_MARKET_PURCHASE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_MARKET_PURCHASE, s)
 	{}
 	virtual ~CZ_NPC_MARKET_PURCHASE() {}
 
@@ -15514,11 +15514,11 @@ ID_CZ_NPC_TRADE_QUIT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPC_TRADE_QUIT
  *
  */ 
-class CZ_NPC_TRADE_QUIT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPC_TRADE_QUIT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPC_TRADE_QUIT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPC_TRADE_QUIT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPC_TRADE_QUIT, s)
 	{}
 	virtual ~CZ_NPC_TRADE_QUIT() {}
 
@@ -15554,11 +15554,11 @@ ID_CZ_NPROTECTGAMEGUARDCSAUTH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_NPROTECTGAMEGUARDCSAUTH
  *
  */ 
-class CZ_NPROTECTGAMEGUARDCSAUTH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_NPROTECTGAMEGUARDCSAUTH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_NPROTECTGAMEGUARDCSAUTH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_NPROTECTGAMEGUARDCSAUTH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_NPROTECTGAMEGUARDCSAUTH, s)
 	{}
 	virtual ~CZ_NPROTECTGAMEGUARDCSAUTH() {}
 
@@ -15594,11 +15594,11 @@ ID_CZ_OFFLINE_STORE_CREATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_OFFLINE_STORE_CREATE
  *
  */ 
-class CZ_OFFLINE_STORE_CREATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_OFFLINE_STORE_CREATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_OFFLINE_STORE_CREATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_OFFLINE_STORE_CREATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_OFFLINE_STORE_CREATE, s)
 	{}
 	virtual ~CZ_OFFLINE_STORE_CREATE() {}
 
@@ -15634,11 +15634,11 @@ ID_CZ_OPEN_BARGAIN_SALE_TOOL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_OPEN_BARGAIN_SALE_TOOL
  *
  */ 
-class CZ_OPEN_BARGAIN_SALE_TOOL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_OPEN_BARGAIN_SALE_TOOL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_OPEN_BARGAIN_SALE_TOOL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_OPEN_BARGAIN_SALE_TOOL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_OPEN_BARGAIN_SALE_TOOL, s)
 	{}
 	virtual ~CZ_OPEN_BARGAIN_SALE_TOOL() {}
 
@@ -15683,11 +15683,11 @@ ID_CZ_OPEN_RODEXBOX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_OPEN_RODEXBOX
  *
  */ 
-class CZ_OPEN_RODEXBOX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_OPEN_RODEXBOX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_OPEN_RODEXBOX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_OPEN_RODEXBOX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_OPEN_RODEXBOX, s)
 	{}
 	virtual ~CZ_OPEN_RODEXBOX() {}
 
@@ -15729,11 +15729,11 @@ ID_CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST
  *
  */ 
-class CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST, s)
 	{}
 	virtual ~CZ_OPEN_SIMPLE_CASHSHOP_ITEMLIST() {}
 
@@ -15769,11 +15769,11 @@ ID_CZ_PARTY_BOOKING_REQ_DELETE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_BOOKING_REQ_DELETE
  *
  */ 
-class CZ_PARTY_BOOKING_REQ_DELETE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_BOOKING_REQ_DELETE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_BOOKING_REQ_DELETE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_DELETE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_DELETE, s)
 	{}
 	virtual ~CZ_PARTY_BOOKING_REQ_DELETE() {}
 
@@ -16498,11 +16498,11 @@ ID_CZ_PARTY_BOOKING_REQ_REGISTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_BOOKING_REQ_REGISTER
  *
  */ 
-class CZ_PARTY_BOOKING_REQ_REGISTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_BOOKING_REQ_REGISTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_BOOKING_REQ_REGISTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_REGISTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_REGISTER, s)
 	{}
 	virtual ~CZ_PARTY_BOOKING_REQ_REGISTER() {}
 
@@ -16541,11 +16541,11 @@ ID_CZ_PARTY_BOOKING_REQ_SEARCH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_BOOKING_REQ_SEARCH
  *
  */ 
-class CZ_PARTY_BOOKING_REQ_SEARCH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_BOOKING_REQ_SEARCH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_BOOKING_REQ_SEARCH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_SEARCH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_SEARCH, s)
 	{}
 	virtual ~CZ_PARTY_BOOKING_REQ_SEARCH() {}
 
@@ -16586,11 +16586,11 @@ ID_CZ_PARTY_BOOKING_REQ_UPDATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_BOOKING_REQ_UPDATE
  *
  */ 
-class CZ_PARTY_BOOKING_REQ_UPDATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_BOOKING_REQ_UPDATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_BOOKING_REQ_UPDATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_UPDATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_BOOKING_REQ_UPDATE, s)
 	{}
 	virtual ~CZ_PARTY_BOOKING_REQ_UPDATE() {}
 
@@ -16633,11 +16633,11 @@ ID_CZ_PARTY_CONFIG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_CONFIG
  *
  */ 
-class CZ_PARTY_CONFIG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_CONFIG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_CONFIG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_CONFIG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_CONFIG, s)
 	{}
 	virtual ~CZ_PARTY_CONFIG() {}
 
@@ -17119,11 +17119,11 @@ ID_CZ_PARTY_JOIN_REQ = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_JOIN_REQ
  *
  */ 
-class CZ_PARTY_JOIN_REQ : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_JOIN_REQ : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_JOIN_REQ(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_JOIN_REQ, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_JOIN_REQ, s)
 	{}
 	virtual ~CZ_PARTY_JOIN_REQ() {}
 
@@ -17166,11 +17166,11 @@ ID_CZ_PARTY_JOIN_REQ_ACK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_JOIN_REQ_ACK
  *
  */ 
-class CZ_PARTY_JOIN_REQ_ACK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_JOIN_REQ_ACK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_JOIN_REQ_ACK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_JOIN_REQ_ACK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_JOIN_REQ_ACK, s)
 	{}
 	virtual ~CZ_PARTY_JOIN_REQ_ACK() {}
 
@@ -17197,11 +17197,11 @@ ID_CZ_PARTY_RECRUIT_ACK_RECALL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_ACK_RECALL
  *
  */ 
-class CZ_PARTY_RECRUIT_ACK_RECALL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_ACK_RECALL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_ACK_RECALL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_ACK_RECALL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_ACK_RECALL, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_ACK_RECALL() {}
 
@@ -17226,11 +17226,11 @@ ID_CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST
  *
  */ 
-class CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_ADD_FILTERLINGLIST() {}
 
@@ -17255,11 +17255,11 @@ ID_CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER
  *
  */ 
-class CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_CANCEL_VOLUNTEER() {}
 
@@ -17284,11 +17284,11 @@ ID_CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER
  *
  */ 
-class CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REFUSE_VOLUNTEER() {}
 
@@ -17313,11 +17313,11 @@ ID_CZ_PARTY_RECRUIT_REQ_DELETE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REQ_DELETE
  *
  */ 
-class CZ_PARTY_RECRUIT_REQ_DELETE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REQ_DELETE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REQ_DELETE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_DELETE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_DELETE, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REQ_DELETE() {}
 
@@ -17342,11 +17342,11 @@ ID_CZ_PARTY_RECRUIT_REQ_REGISTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REQ_REGISTER
  *
  */ 
-class CZ_PARTY_RECRUIT_REQ_REGISTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REQ_REGISTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REQ_REGISTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_REGISTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_REGISTER, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REQ_REGISTER() {}
 
@@ -17371,11 +17371,11 @@ ID_CZ_PARTY_RECRUIT_REQ_SEARCH = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REQ_SEARCH
  *
  */ 
-class CZ_PARTY_RECRUIT_REQ_SEARCH : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REQ_SEARCH : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REQ_SEARCH(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_SEARCH, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_SEARCH, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REQ_SEARCH() {}
 
@@ -17400,11 +17400,11 @@ ID_CZ_PARTY_RECRUIT_REQ_UPDATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REQ_UPDATE
  *
  */ 
-class CZ_PARTY_RECRUIT_REQ_UPDATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REQ_UPDATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REQ_UPDATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_UPDATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_UPDATE, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REQ_UPDATE() {}
 
@@ -17429,11 +17429,11 @@ ID_CZ_PARTY_RECRUIT_REQ_VOLUNTEER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_REQ_VOLUNTEER
  *
  */ 
-class CZ_PARTY_RECRUIT_REQ_VOLUNTEER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_REQ_VOLUNTEER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_REQ_VOLUNTEER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_VOLUNTEER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_REQ_VOLUNTEER, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_REQ_VOLUNTEER() {}
 
@@ -17458,11 +17458,11 @@ ID_CZ_PARTY_RECRUIT_SHOW_EQUIPMENT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_SHOW_EQUIPMENT
  *
  */ 
-class CZ_PARTY_RECRUIT_SHOW_EQUIPMENT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_SHOW_EQUIPMENT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_SHOW_EQUIPMENT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_SHOW_EQUIPMENT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_SHOW_EQUIPMENT, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_SHOW_EQUIPMENT() {}
 
@@ -17487,11 +17487,11 @@ ID_CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST
  *
  */ 
-class CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST, s)
 	{}
 	virtual ~CZ_PARTY_RECRUIT_SUB_FILTERLINGLIST() {}
 
@@ -17533,11 +17533,11 @@ ID_CZ_PC_BUY_CASH_POINT_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PC_BUY_CASH_POINT_ITEM
  *
  */ 
-class CZ_PC_BUY_CASH_POINT_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PC_BUY_CASH_POINT_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PC_BUY_CASH_POINT_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PC_BUY_CASH_POINT_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PC_BUY_CASH_POINT_ITEM, s)
 	{}
 	virtual ~CZ_PC_BUY_CASH_POINT_ITEM() {}
 
@@ -17583,11 +17583,11 @@ ID_CZ_PC_PURCHASE_ITEMLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PC_PURCHASE_ITEMLIST
  *
  */ 
-class CZ_PC_PURCHASE_ITEMLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PC_PURCHASE_ITEMLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PC_PURCHASE_ITEMLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST, s)
 	{}
 	virtual ~CZ_PC_PURCHASE_ITEMLIST() {}
 
@@ -17631,11 +17631,11 @@ ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PC_PURCHASE_ITEMLIST_FROMMC
  *
  */ 
-class CZ_PC_PURCHASE_ITEMLIST_FROMMC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PC_PURCHASE_ITEMLIST_FROMMC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PC_PURCHASE_ITEMLIST_FROMMC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC, s)
 	{}
 	virtual ~CZ_PC_PURCHASE_ITEMLIST_FROMMC() {}
 
@@ -17674,11 +17674,11 @@ ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PC_PURCHASE_ITEMLIST_FROMMC2
  *
  */ 
-class CZ_PC_PURCHASE_ITEMLIST_FROMMC2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PC_PURCHASE_ITEMLIST_FROMMC2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PC_PURCHASE_ITEMLIST_FROMMC2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PC_PURCHASE_ITEMLIST_FROMMC2, s)
 	{}
 	virtual ~CZ_PC_PURCHASE_ITEMLIST_FROMMC2() {}
 
@@ -17724,11 +17724,11 @@ ID_CZ_PC_SELL_ITEMLIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PC_SELL_ITEMLIST
  *
  */ 
-class CZ_PC_SELL_ITEMLIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PC_SELL_ITEMLIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PC_SELL_ITEMLIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PC_SELL_ITEMLIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PC_SELL_ITEMLIST, s)
 	{}
 	virtual ~CZ_PC_SELL_ITEMLIST() {}
 
@@ -17773,11 +17773,11 @@ ID_CZ_PETEGG_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PETEGG_INFO
  *
  */ 
-class CZ_PETEGG_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PETEGG_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PETEGG_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PETEGG_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PETEGG_INFO, s)
 	{}
 	virtual ~CZ_PETEGG_INFO() {}
 
@@ -17819,11 +17819,11 @@ ID_CZ_PET_ACT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PET_ACT
  *
  */ 
-class CZ_PET_ACT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PET_ACT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PET_ACT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PET_ACT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PET_ACT, s)
 	{}
 	virtual ~CZ_PET_ACT() {}
 
@@ -17860,11 +17860,11 @@ ID_CZ_PET_EVOLUTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PET_EVOLUTION
  *
  */ 
-class CZ_PET_EVOLUTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PET_EVOLUTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PET_EVOLUTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PET_EVOLUTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PET_EVOLUTION, s)
 	{}
 	virtual ~CZ_PET_EVOLUTION() {}
 
@@ -17903,11 +17903,11 @@ ID_CZ_PING = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PING
  *
  */ 
-class CZ_PING : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PING : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PING(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PING, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PING, s)
 	{}
 	virtual ~CZ_PING() {}
 
@@ -17949,11 +17949,11 @@ ID_CZ_PKMODE_CHANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PKMODE_CHANGE
  *
  */ 
-class CZ_PKMODE_CHANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PKMODE_CHANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PKMODE_CHANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PKMODE_CHANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PKMODE_CHANGE, s)
 	{}
 	virtual ~CZ_PKMODE_CHANGE() {}
 
@@ -17989,11 +17989,11 @@ ID_CZ_PRIVATE_AIRSHIP_REQUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PRIVATE_AIRSHIP_REQUEST
  *
  */ 
-class CZ_PRIVATE_AIRSHIP_REQUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PRIVATE_AIRSHIP_REQUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PRIVATE_AIRSHIP_REQUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PRIVATE_AIRSHIP_REQUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PRIVATE_AIRSHIP_REQUEST, s)
 	{}
 	virtual ~CZ_PRIVATE_AIRSHIP_REQUEST() {}
 
@@ -18043,11 +18043,11 @@ ID_CZ_PROGRESS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_PROGRESS
  *
  */ 
-class CZ_PROGRESS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_PROGRESS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_PROGRESS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_PROGRESS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_PROGRESS, s)
 	{}
 	virtual ~CZ_PROGRESS() {}
 
@@ -18080,11 +18080,11 @@ ID_CZ_RANDOM_COMBINE_ITEM_UI_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RANDOM_COMBINE_ITEM_UI_CLOSE
  *
  */ 
-class CZ_RANDOM_COMBINE_ITEM_UI_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RANDOM_COMBINE_ITEM_UI_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RANDOM_COMBINE_ITEM_UI_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RANDOM_COMBINE_ITEM_UI_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RANDOM_COMBINE_ITEM_UI_CLOSE, s)
 	{}
 	virtual ~CZ_RANDOM_COMBINE_ITEM_UI_CLOSE() {}
 
@@ -18117,11 +18117,11 @@ ID_CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE
  *
  */ 
-class CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE, s)
 	{}
 	virtual ~CZ_RANDOM_UPGRADE_ITEM_UI_CLOSE() {}
 
@@ -18163,11 +18163,11 @@ ID_CZ_RECALL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RECALL
  *
  */ 
-class CZ_RECALL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RECALL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RECALL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RECALL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RECALL, s)
 	{}
 	virtual ~CZ_RECALL() {}
 
@@ -18210,11 +18210,11 @@ ID_CZ_RECALL_GID = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RECALL_GID
  *
  */ 
-class CZ_RECALL_GID : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RECALL_GID : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RECALL_GID(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RECALL_GID, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RECALL_GID, s)
 	{}
 	virtual ~CZ_RECALL_GID() {}
 
@@ -18251,11 +18251,11 @@ ID_CZ_RECALL_SSO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RECALL_SSO
  *
  */ 
-class CZ_RECALL_SSO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RECALL_SSO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RECALL_SSO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RECALL_SSO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RECALL_SSO, s)
 	{}
 	virtual ~CZ_RECALL_SSO() {}
 
@@ -18292,11 +18292,11 @@ ID_CZ_RECV_ROULETTE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RECV_ROULETTE_ITEM
  *
  */ 
-class CZ_RECV_ROULETTE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RECV_ROULETTE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RECV_ROULETTE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RECV_ROULETTE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RECV_ROULETTE_ITEM, s)
 	{}
 	virtual ~CZ_RECV_ROULETTE_ITEM() {}
 
@@ -18332,11 +18332,11 @@ ID_CZ_REFINE_ADD_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REFINE_ADD_ITEM
  *
  */ 
-class CZ_REFINE_ADD_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REFINE_ADD_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REFINE_ADD_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REFINE_ADD_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REFINE_ADD_ITEM, s)
 	{}
 	virtual ~CZ_REFINE_ADD_ITEM() {}
 
@@ -18372,11 +18372,11 @@ ID_CZ_REFINE_ITEM_REQUEST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REFINE_ITEM_REQUEST
  *
  */ 
-class CZ_REFINE_ITEM_REQUEST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REFINE_ITEM_REQUEST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REFINE_ITEM_REQUEST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REFINE_ITEM_REQUEST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REFINE_ITEM_REQUEST, s)
 	{}
 	virtual ~CZ_REFINE_ITEM_REQUEST() {}
 
@@ -18412,11 +18412,11 @@ ID_CZ_REFINE_WINDOW_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REFINE_WINDOW_CLOSE
  *
  */ 
-class CZ_REFINE_WINDOW_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REFINE_WINDOW_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REFINE_WINDOW_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REFINE_WINDOW_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REFINE_WINDOW_CLOSE, s)
 	{}
 	virtual ~CZ_REFINE_WINDOW_CLOSE() {}
 
@@ -18458,11 +18458,11 @@ ID_CZ_REGISTER_GUILD_EMBLEM_IMG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REGISTER_GUILD_EMBLEM_IMG
  *
  */ 
-class CZ_REGISTER_GUILD_EMBLEM_IMG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REGISTER_GUILD_EMBLEM_IMG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REGISTER_GUILD_EMBLEM_IMG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REGISTER_GUILD_EMBLEM_IMG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REGISTER_GUILD_EMBLEM_IMG, s)
 	{}
 	virtual ~CZ_REGISTER_GUILD_EMBLEM_IMG() {}
 
@@ -18506,11 +18506,11 @@ ID_CZ_REG_CHANGE_GUILD_POSITIONINFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REG_CHANGE_GUILD_POSITIONINFO
  *
  */ 
-class CZ_REG_CHANGE_GUILD_POSITIONINFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REG_CHANGE_GUILD_POSITIONINFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REG_CHANGE_GUILD_POSITIONINFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REG_CHANGE_GUILD_POSITIONINFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REG_CHANGE_GUILD_POSITIONINFO, s)
 	{}
 	virtual ~CZ_REG_CHANGE_GUILD_POSITIONINFO() {}
 
@@ -18554,11 +18554,11 @@ ID_CZ_REMEMBER_WARPPOINT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REMEMBER_WARPPOINT
  *
  */ 
-class CZ_REMEMBER_WARPPOINT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REMEMBER_WARPPOINT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REMEMBER_WARPPOINT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REMEMBER_WARPPOINT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REMEMBER_WARPPOINT, s)
 	{}
 	virtual ~CZ_REMEMBER_WARPPOINT() {}
 
@@ -18600,11 +18600,11 @@ ID_CZ_REMOVE_AID = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REMOVE_AID
  *
  */ 
-class CZ_REMOVE_AID : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REMOVE_AID : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REMOVE_AID(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REMOVE_AID, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REMOVE_AID, s)
 	{}
 	virtual ~CZ_REMOVE_AID() {}
 
@@ -18640,11 +18640,11 @@ ID_CZ_REMOVE_AID_SSO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REMOVE_AID_SSO
  *
  */ 
-class CZ_REMOVE_AID_SSO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REMOVE_AID_SSO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REMOVE_AID_SSO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REMOVE_AID_SSO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REMOVE_AID_SSO, s)
 	{}
 	virtual ~CZ_REMOVE_AID_SSO() {}
 
@@ -18687,11 +18687,11 @@ ID_CZ_RENAME_MER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RENAME_MER
  *
  */ 
-class CZ_RENAME_MER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RENAME_MER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RENAME_MER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RENAME_MER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RENAME_MER, s)
 	{}
 	virtual ~CZ_RENAME_MER() {}
 
@@ -18734,11 +18734,11 @@ ID_CZ_RENAME_PET = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RENAME_PET
  *
  */ 
-class CZ_RENAME_PET : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RENAME_PET : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RENAME_PET(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RENAME_PET, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RENAME_PET, s)
 	{}
 	virtual ~CZ_RENAME_PET() {}
 
@@ -18775,11 +18775,11 @@ ID_CZ_REPLY_ENTRY_QUEUE_ADMISSION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REPLY_ENTRY_QUEUE_ADMISSION
  *
  */ 
-class CZ_REPLY_ENTRY_QUEUE_ADMISSION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REPLY_ENTRY_QUEUE_ADMISSION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REPLY_ENTRY_QUEUE_ADMISSION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REPLY_ENTRY_QUEUE_ADMISSION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REPLY_ENTRY_QUEUE_ADMISSION, s)
 	{}
 	virtual ~CZ_REPLY_ENTRY_QUEUE_ADMISSION() {}
 
@@ -18815,11 +18815,11 @@ ID_CZ_REPLY_LOBBY_ADMISSION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REPLY_LOBBY_ADMISSION
  *
  */ 
-class CZ_REPLY_LOBBY_ADMISSION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REPLY_LOBBY_ADMISSION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REPLY_LOBBY_ADMISSION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REPLY_LOBBY_ADMISSION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REPLY_LOBBY_ADMISSION, s)
 	{}
 	virtual ~CZ_REPLY_LOBBY_ADMISSION() {}
 
@@ -18861,11 +18861,11 @@ ID_CZ_REQMAKINGHOMUN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQMAKINGHOMUN
  *
  */ 
-class CZ_REQMAKINGHOMUN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQMAKINGHOMUN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQMAKINGHOMUN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQMAKINGHOMUN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQMAKINGHOMUN, s)
 	{}
 	virtual ~CZ_REQMAKINGHOMUN() {}
 
@@ -18907,11 +18907,11 @@ ID_CZ_REQMAKINGITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQMAKINGITEM
  *
  */ 
-class CZ_REQMAKINGITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQMAKINGITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQMAKINGITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQMAKINGITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQMAKINGITEM, s)
 	{}
 	virtual ~CZ_REQMAKINGITEM() {}
 
@@ -19191,11 +19191,11 @@ ID_CZ_REQNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQNAME
  *
  */ 
-class CZ_REQNAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQNAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQNAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQNAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQNAME, s)
 	{}
 	virtual ~CZ_REQNAME() {}
 
@@ -19692,11 +19692,11 @@ ID_CZ_REQNAME2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQNAME2
  *
  */ 
-class CZ_REQNAME2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQNAME2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQNAME2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQNAME2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQNAME2, s)
 	{}
 	virtual ~CZ_REQNAME2() {}
 
@@ -19971,11 +19971,11 @@ ID_CZ_REQNAME_BYGID = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQNAME_BYGID
  *
  */ 
-class CZ_REQNAME_BYGID : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQNAME_BYGID : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQNAME_BYGID(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQNAME_BYGID, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQNAME_BYGID, s)
 	{}
 	virtual ~CZ_REQNAME_BYGID() {}
 
@@ -20504,11 +20504,11 @@ ID_CZ_REQNAME_BYGID2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQNAME_BYGID2
  *
  */ 
-class CZ_REQNAME_BYGID2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQNAME_BYGID2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQNAME_BYGID2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQNAME_BYGID2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQNAME_BYGID2, s)
 	{}
 	virtual ~CZ_REQNAME_BYGID2() {}
 
@@ -20779,11 +20779,11 @@ ID_CZ_REQUEST_ACT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_ACT
  *
  */ 
-class CZ_REQUEST_ACT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_ACT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_ACT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_ACT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_ACT, s)
 	{}
 	virtual ~CZ_REQUEST_ACT() {}
 
@@ -21301,11 +21301,11 @@ ID_CZ_REQUEST_ACT2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_ACT2
  *
  */ 
-class CZ_REQUEST_ACT2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_ACT2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_ACT2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_ACT2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_ACT2, s)
 	{}
 	virtual ~CZ_REQUEST_ACT2() {}
 
@@ -21349,11 +21349,11 @@ ID_CZ_REQUEST_ACTNPC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_ACTNPC
  * Request to do an action with homunculus/mercenary
  */ 
-class CZ_REQUEST_ACTNPC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_ACTNPC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_ACTNPC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_ACTNPC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_ACTNPC, s)
 	{}
 	virtual ~CZ_REQUEST_ACTNPC() {}
 
@@ -21438,11 +21438,11 @@ ID_CZ_REQUEST_CHAT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_CHAT
  *
  */ 
-class CZ_REQUEST_CHAT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_CHAT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_CHAT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_CHAT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_CHAT, s)
 	{}
 	virtual ~CZ_REQUEST_CHAT() {}
 
@@ -21486,11 +21486,11 @@ ID_CZ_REQUEST_CHAT_PARTY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_CHAT_PARTY
  *
  */ 
-class CZ_REQUEST_CHAT_PARTY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_CHAT_PARTY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_CHAT_PARTY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_CHAT_PARTY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_CHAT_PARTY, s)
 	{}
 	virtual ~CZ_REQUEST_CHAT_PARTY() {}
 
@@ -21768,11 +21768,11 @@ ID_CZ_REQUEST_MOVE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_MOVE
  *
  */ 
-class CZ_REQUEST_MOVE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_MOVE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_MOVE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_MOVE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_MOVE, s)
 	{}
 	virtual ~CZ_REQUEST_MOVE() {}
 
@@ -22292,11 +22292,11 @@ ID_CZ_REQUEST_MOVE2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_MOVE2
  *
  */ 
-class CZ_REQUEST_MOVE2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_MOVE2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_MOVE2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_MOVE2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_MOVE2, s)
 	{}
 	virtual ~CZ_REQUEST_MOVE2() {}
 
@@ -22340,11 +22340,11 @@ ID_CZ_REQUEST_MOVENPC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_MOVENPC
  *
  */ 
-class CZ_REQUEST_MOVENPC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_MOVENPC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_MOVENPC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_MOVENPC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_MOVENPC, s)
 	{}
 	virtual ~CZ_REQUEST_MOVENPC() {}
 
@@ -22389,11 +22389,11 @@ ID_CZ_REQUEST_MOVETOOWNER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_MOVETOOWNER
  *
  */ 
-class CZ_REQUEST_MOVETOOWNER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_MOVETOOWNER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_MOVETOOWNER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_MOVETOOWNER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_MOVETOOWNER, s)
 	{}
 	virtual ~CZ_REQUEST_MOVETOOWNER() {}
 
@@ -22436,11 +22436,11 @@ ID_CZ_REQUEST_MOVE_NEW_JAPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_MOVE_NEW_JAPEN
  *
  */ 
-class CZ_REQUEST_MOVE_NEW_JAPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_MOVE_NEW_JAPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_MOVE_NEW_JAPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_MOVE_NEW_JAPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_MOVE_NEW_JAPEN, s)
 	{}
 	virtual ~CZ_REQUEST_MOVE_NEW_JAPEN() {}
 
@@ -22472,11 +22472,11 @@ ID_CZ_REQUEST_PERFECT_ENCHANT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_PERFECT_ENCHANT
  *
  */ 
-class CZ_REQUEST_PERFECT_ENCHANT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_PERFECT_ENCHANT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_PERFECT_ENCHANT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_PERFECT_ENCHANT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_PERFECT_ENCHANT, s)
 	{}
 	virtual ~CZ_REQUEST_PERFECT_ENCHANT() {}
 
@@ -22518,11 +22518,11 @@ ID_CZ_REQUEST_QUIT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_QUIT
  *
  */ 
-class CZ_REQUEST_QUIT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_QUIT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_QUIT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_QUIT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_QUIT, s)
 	{}
 	virtual ~CZ_REQUEST_QUIT() {}
 
@@ -22554,11 +22554,11 @@ ID_CZ_REQUEST_RANDOM_ENCHANT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_RANDOM_ENCHANT
  *
  */ 
-class CZ_REQUEST_RANDOM_ENCHANT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_RANDOM_ENCHANT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_RANDOM_ENCHANT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_RANDOM_ENCHANT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_RANDOM_ENCHANT, s)
 	{}
 	virtual ~CZ_REQUEST_RANDOM_ENCHANT() {}
 
@@ -22590,11 +22590,11 @@ ID_CZ_REQUEST_RESET_ENCHANT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_RESET_ENCHANT
  *
  */ 
-class CZ_REQUEST_RESET_ENCHANT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_RESET_ENCHANT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_RESET_ENCHANT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_RESET_ENCHANT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_RESET_ENCHANT, s)
 	{}
 	virtual ~CZ_REQUEST_RESET_ENCHANT() {}
 
@@ -22931,11 +22931,11 @@ ID_CZ_REQUEST_TIME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_TIME
  *
  */ 
-class CZ_REQUEST_TIME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_TIME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_TIME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_TIME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_TIME, s)
 	{}
 	virtual ~CZ_REQUEST_TIME() {}
 
@@ -23445,11 +23445,11 @@ ID_CZ_REQUEST_TIME2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_TIME2
  *
  */ 
-class CZ_REQUEST_TIME2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_TIME2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_TIME2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_TIME2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_TIME2, s)
 	{}
 	virtual ~CZ_REQUEST_TIME2() {}
 
@@ -23482,11 +23482,11 @@ ID_CZ_REQUEST_UPGRADE_ENCHANT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQUEST_UPGRADE_ENCHANT
  *
  */ 
-class CZ_REQUEST_UPGRADE_ENCHANT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQUEST_UPGRADE_ENCHANT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQUEST_UPGRADE_ENCHANT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQUEST_UPGRADE_ENCHANT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQUEST_UPGRADE_ENCHANT, s)
 	{}
 	virtual ~CZ_REQUEST_UPGRADE_ENCHANT() {}
 
@@ -23528,11 +23528,11 @@ ID_CZ_REQ_ACCOUNTNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ACCOUNTNAME
  *
  */ 
-class CZ_REQ_ACCOUNTNAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ACCOUNTNAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ACCOUNTNAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ACCOUNTNAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ACCOUNTNAME, s)
 	{}
 	virtual ~CZ_REQ_ACCOUNTNAME() {}
 
@@ -23569,11 +23569,11 @@ ID_CZ_REQ_ACH_REWARD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ACH_REWARD
  *
  */ 
-class CZ_REQ_ACH_REWARD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ACH_REWARD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ACH_REWARD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ACH_REWARD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ACH_REWARD, s)
 	{}
 	virtual ~CZ_REQ_ACH_REWARD() {}
 
@@ -23609,11 +23609,11 @@ ID_CZ_REQ_ADD_ITEM_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ADD_ITEM_RODEX
  *
  */ 
-class CZ_REQ_ADD_ITEM_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ADD_ITEM_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ADD_ITEM_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ADD_ITEM_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ADD_ITEM_RODEX, s)
 	{}
 	virtual ~CZ_REQ_ADD_ITEM_RODEX() {}
 
@@ -23646,11 +23646,11 @@ ID_CZ_REQ_AGIT_INVESTMENT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_AGIT_INVESTMENT
  *
  */ 
-class CZ_REQ_AGIT_INVESTMENT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_AGIT_INVESTMENT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_AGIT_INVESTMENT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_AGIT_INVESTMENT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_AGIT_INVESTMENT, s)
 	{}
 	virtual ~CZ_REQ_AGIT_INVESTMENT() {}
 
@@ -23692,11 +23692,11 @@ ID_CZ_REQ_ALLY_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ALLY_GUILD
  *
  */ 
-class CZ_REQ_ALLY_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ALLY_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ALLY_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ALLY_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ALLY_GUILD, s)
 	{}
 	virtual ~CZ_REQ_ALLY_GUILD() {}
 
@@ -23735,11 +23735,11 @@ ID_CZ_REQ_APPLY_BARGAIN_SALE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_APPLY_BARGAIN_SALE_ITEM
  *
  */ 
-class CZ_REQ_APPLY_BARGAIN_SALE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_APPLY_BARGAIN_SALE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_APPLY_BARGAIN_SALE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_APPLY_BARGAIN_SALE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_APPLY_BARGAIN_SALE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_APPLY_BARGAIN_SALE_ITEM() {}
 
@@ -23772,11 +23772,11 @@ ID_CZ_REQ_APPLY_MACRO_DETECTOR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_APPLY_MACRO_DETECTOR
  *
  */ 
-class CZ_REQ_APPLY_MACRO_DETECTOR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_APPLY_MACRO_DETECTOR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_APPLY_MACRO_DETECTOR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_APPLY_MACRO_DETECTOR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_APPLY_MACRO_DETECTOR, s)
 	{}
 	virtual ~CZ_REQ_APPLY_MACRO_DETECTOR() {}
 
@@ -23812,11 +23812,11 @@ ID_CZ_REQ_BANKING_CHECK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BANKING_CHECK
  *
  */ 
-class CZ_REQ_BANKING_CHECK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BANKING_CHECK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BANKING_CHECK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BANKING_CHECK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BANKING_CHECK, s)
 	{}
 	virtual ~CZ_REQ_BANKING_CHECK() {}
 
@@ -23852,11 +23852,11 @@ ID_CZ_REQ_BANKING_DEPOSIT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BANKING_DEPOSIT
  *
  */ 
-class CZ_REQ_BANKING_DEPOSIT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BANKING_DEPOSIT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BANKING_DEPOSIT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BANKING_DEPOSIT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BANKING_DEPOSIT, s)
 	{}
 	virtual ~CZ_REQ_BANKING_DEPOSIT() {}
 
@@ -23892,11 +23892,11 @@ ID_CZ_REQ_BANKING_WITHDRAW = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BANKING_WITHDRAW
  *
  */ 
-class CZ_REQ_BANKING_WITHDRAW : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BANKING_WITHDRAW : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BANKING_WITHDRAW(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BANKING_WITHDRAW, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BANKING_WITHDRAW, s)
 	{}
 	virtual ~CZ_REQ_BANKING_WITHDRAW() {}
 
@@ -23938,11 +23938,11 @@ ID_CZ_REQ_BAN_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BAN_GUILD
  *
  */ 
-class CZ_REQ_BAN_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BAN_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BAN_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BAN_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BAN_GUILD, s)
 	{}
 	virtual ~CZ_REQ_BAN_GUILD() {}
 
@@ -23982,11 +23982,11 @@ ID_CZ_REQ_BATTLE_STATE_MONITOR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BATTLE_STATE_MONITOR
  *
  */ 
-class CZ_REQ_BATTLE_STATE_MONITOR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BATTLE_STATE_MONITOR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BATTLE_STATE_MONITOR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BATTLE_STATE_MONITOR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BATTLE_STATE_MONITOR, s)
 	{}
 	virtual ~CZ_REQ_BATTLE_STATE_MONITOR() {}
 
@@ -24022,11 +24022,11 @@ ID_CZ_REQ_BEFORE_WORLD_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BEFORE_WORLD_INFO
  *
  */ 
-class CZ_REQ_BEFORE_WORLD_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BEFORE_WORLD_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BEFORE_WORLD_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BEFORE_WORLD_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BEFORE_WORLD_INFO, s)
 	{}
 	virtual ~CZ_REQ_BEFORE_WORLD_INFO() {}
 
@@ -24068,11 +24068,11 @@ ID_CZ_REQ_BUY_FROMMC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_BUY_FROMMC
  *
  */ 
-class CZ_REQ_BUY_FROMMC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_BUY_FROMMC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_BUY_FROMMC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_BUY_FROMMC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_BUY_FROMMC, s)
 	{}
 	virtual ~CZ_REQ_BUY_FROMMC() {}
 
@@ -24109,11 +24109,11 @@ ID_CZ_REQ_CANCEL_WRITE_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CANCEL_WRITE_RODEX
  *
  */ 
-class CZ_REQ_CANCEL_WRITE_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CANCEL_WRITE_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CANCEL_WRITE_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CANCEL_WRITE_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CANCEL_WRITE_RODEX, s)
 	{}
 	virtual ~CZ_REQ_CANCEL_WRITE_RODEX() {}
 
@@ -24155,11 +24155,11 @@ ID_CZ_REQ_CARTOFF = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CARTOFF
  *
  */ 
-class CZ_REQ_CARTOFF : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CARTOFF : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CARTOFF(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CARTOFF, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CARTOFF, s)
 	{}
 	virtual ~CZ_REQ_CARTOFF() {}
 
@@ -24195,11 +24195,11 @@ ID_CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO
  *
  */ 
-class CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO, s)
 	{}
 	virtual ~CZ_REQ_CASH_BARGAIN_SALE_ITEM_INFO() {}
 
@@ -24241,11 +24241,11 @@ ID_CZ_REQ_CHANGECART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CHANGECART
  *
  */ 
-class CZ_REQ_CHANGECART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CHANGECART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CHANGECART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CHANGECART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CHANGECART, s)
 	{}
 	virtual ~CZ_REQ_CHANGECART() {}
 
@@ -24288,11 +24288,11 @@ ID_CZ_REQ_CHANGE_MEMBERPOS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CHANGE_MEMBERPOS
  *
  */ 
-class CZ_REQ_CHANGE_MEMBERPOS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CHANGE_MEMBERPOS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CHANGE_MEMBERPOS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CHANGE_MEMBERPOS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CHANGE_MEMBERPOS, s)
 	{}
 	virtual ~CZ_REQ_CHANGE_MEMBERPOS() {}
 
@@ -24330,11 +24330,11 @@ ID_CZ_REQ_CHANGE_TITLE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CHANGE_TITLE
  *
  */ 
-class CZ_REQ_CHANGE_TITLE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CHANGE_TITLE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CHANGE_TITLE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CHANGE_TITLE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CHANGE_TITLE, s)
 	{}
 	virtual ~CZ_REQ_CHANGE_TITLE() {}
 
@@ -24785,11 +24785,11 @@ ID_CZ_REQ_CLICK_TO_BUYING_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLICK_TO_BUYING_STORE
  *
  */ 
-class CZ_REQ_CLICK_TO_BUYING_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLICK_TO_BUYING_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLICK_TO_BUYING_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLICK_TO_BUYING_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLICK_TO_BUYING_STORE, s)
 	{}
 	virtual ~CZ_REQ_CLICK_TO_BUYING_STORE() {}
 
@@ -24832,11 +24832,11 @@ ID_CZ_REQ_CLOSESTORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLOSESTORE
  *
  */ 
-class CZ_REQ_CLOSESTORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLOSESTORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLOSESTORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLOSESTORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLOSESTORE, s)
 	{}
 	virtual ~CZ_REQ_CLOSESTORE() {}
 
@@ -24872,11 +24872,11 @@ ID_CZ_REQ_CLOSE_BANKING = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLOSE_BANKING
  *
  */ 
-class CZ_REQ_CLOSE_BANKING : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLOSE_BANKING : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLOSE_BANKING(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLOSE_BANKING, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLOSE_BANKING, s)
 	{}
 	virtual ~CZ_REQ_CLOSE_BANKING() {}
 
@@ -25580,11 +25580,11 @@ ID_CZ_REQ_CLOSE_BUYING_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLOSE_BUYING_STORE
  *
  */ 
-class CZ_REQ_CLOSE_BUYING_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLOSE_BUYING_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLOSE_BUYING_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLOSE_BUYING_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLOSE_BUYING_STORE, s)
 	{}
 	virtual ~CZ_REQ_CLOSE_BUYING_STORE() {}
 
@@ -25620,11 +25620,11 @@ ID_CZ_REQ_CLOSE_GUILD_STORAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLOSE_GUILD_STORAGE
  *
  */ 
-class CZ_REQ_CLOSE_GUILD_STORAGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLOSE_GUILD_STORAGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLOSE_GUILD_STORAGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLOSE_GUILD_STORAGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLOSE_GUILD_STORAGE, s)
 	{}
 	virtual ~CZ_REQ_CLOSE_GUILD_STORAGE() {}
 
@@ -25660,11 +25660,11 @@ ID_CZ_REQ_CLOSE_ROULETTE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_CLOSE_ROULETTE
  *
  */ 
-class CZ_REQ_CLOSE_ROULETTE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_CLOSE_ROULETTE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_CLOSE_ROULETTE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_CLOSE_ROULETTE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_CLOSE_ROULETTE, s)
 	{}
 	virtual ~CZ_REQ_CLOSE_ROULETTE() {}
 
@@ -25700,11 +25700,11 @@ ID_CZ_REQ_COUNT_BARGAIN_SALE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_COUNT_BARGAIN_SALE_ITEM
  *
  */ 
-class CZ_REQ_COUNT_BARGAIN_SALE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_COUNT_BARGAIN_SALE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_COUNT_BARGAIN_SALE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_COUNT_BARGAIN_SALE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_COUNT_BARGAIN_SALE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_COUNT_BARGAIN_SALE_ITEM() {}
 
@@ -25746,11 +25746,11 @@ ID_CZ_REQ_DELETE_RELATED_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_DELETE_RELATED_GUILD
  *
  */ 
-class CZ_REQ_DELETE_RELATED_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_DELETE_RELATED_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_DELETE_RELATED_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_DELETE_RELATED_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_DELETE_RELATED_GUILD, s)
 	{}
 	virtual ~CZ_REQ_DELETE_RELATED_GUILD() {}
 
@@ -25788,11 +25788,11 @@ ID_CZ_REQ_DELETE_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_DELETE_RODEX
  *
  */ 
-class CZ_REQ_DELETE_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_DELETE_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_DELETE_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_DELETE_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_DELETE_RODEX, s)
 	{}
 	virtual ~CZ_REQ_DELETE_RODEX() {}
 
@@ -25834,11 +25834,11 @@ ID_CZ_REQ_DISCONNECT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_DISCONNECT
  *
  */ 
-class CZ_REQ_DISCONNECT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_DISCONNECT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_DISCONNECT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_DISCONNECT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_DISCONNECT, s)
 	{}
 	virtual ~CZ_REQ_DISCONNECT() {}
 
@@ -25881,11 +25881,11 @@ ID_CZ_REQ_DISORGANIZE_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_DISORGANIZE_GUILD
  *
  */ 
-class CZ_REQ_DISORGANIZE_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_DISORGANIZE_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_DISORGANIZE_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_DISORGANIZE_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_DISORGANIZE_GUILD, s)
 	{}
 	virtual ~CZ_REQ_DISORGANIZE_GUILD() {}
 
@@ -25928,11 +25928,11 @@ ID_CZ_REQ_EMOTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_EMOTION
  *
  */ 
-class CZ_REQ_EMOTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_EMOTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_EMOTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_EMOTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_EMOTION, s)
 	{}
 	virtual ~CZ_REQ_EMOTION() {}
 
@@ -25975,11 +25975,11 @@ ID_CZ_REQ_ENTER_ROOM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ENTER_ROOM
  *
  */ 
-class CZ_REQ_ENTER_ROOM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ENTER_ROOM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ENTER_ROOM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ENTER_ROOM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ENTER_ROOM, s)
 	{}
 	virtual ~CZ_REQ_ENTER_ROOM() {}
 
@@ -26017,11 +26017,11 @@ ID_CZ_REQ_ENTRY_QUEUE_APPLY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ENTRY_QUEUE_APPLY
  *
  */ 
-class CZ_REQ_ENTRY_QUEUE_APPLY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ENTRY_QUEUE_APPLY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ENTRY_QUEUE_APPLY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_APPLY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_APPLY, s)
 	{}
 	virtual ~CZ_REQ_ENTRY_QUEUE_APPLY() {}
 
@@ -26057,11 +26057,11 @@ ID_CZ_REQ_ENTRY_QUEUE_CANCEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ENTRY_QUEUE_CANCEL
  *
  */ 
-class CZ_REQ_ENTRY_QUEUE_CANCEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ENTRY_QUEUE_CANCEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ENTRY_QUEUE_CANCEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_CANCEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_CANCEL, s)
 	{}
 	virtual ~CZ_REQ_ENTRY_QUEUE_CANCEL() {}
 
@@ -26097,11 +26097,11 @@ ID_CZ_REQ_ENTRY_QUEUE_RANKING = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ENTRY_QUEUE_RANKING
  *
  */ 
-class CZ_REQ_ENTRY_QUEUE_RANKING : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ENTRY_QUEUE_RANKING : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ENTRY_QUEUE_RANKING(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_RANKING, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ENTRY_QUEUE_RANKING, s)
 	{}
 	virtual ~CZ_REQ_ENTRY_QUEUE_RANKING() {}
 
@@ -26143,11 +26143,11 @@ ID_CZ_REQ_EXCHANGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_EXCHANGE_ITEM
  *
  */ 
-class CZ_REQ_EXCHANGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_EXCHANGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_EXCHANGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_EXCHANGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_EXCHANGE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_EXCHANGE_ITEM() {}
 
@@ -26190,11 +26190,11 @@ ID_CZ_REQ_EXPEL_GROUP_MEMBER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_EXPEL_GROUP_MEMBER
  *
  */ 
-class CZ_REQ_EXPEL_GROUP_MEMBER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_EXPEL_GROUP_MEMBER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_EXPEL_GROUP_MEMBER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_EXPEL_GROUP_MEMBER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_EXPEL_GROUP_MEMBER, s)
 	{}
 	virtual ~CZ_REQ_EXPEL_GROUP_MEMBER() {}
 
@@ -26238,11 +26238,11 @@ ID_CZ_REQ_EXPEL_MEMBER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_EXPEL_MEMBER
  *
  */ 
-class CZ_REQ_EXPEL_MEMBER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_EXPEL_MEMBER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_EXPEL_MEMBER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_EXPEL_MEMBER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_EXPEL_MEMBER, s)
 	{}
 	virtual ~CZ_REQ_EXPEL_MEMBER() {}
 
@@ -26279,11 +26279,11 @@ ID_CZ_REQ_GENERATE_ROULETTE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GENERATE_ROULETTE
  *
  */ 
-class CZ_REQ_GENERATE_ROULETTE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GENERATE_ROULETTE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GENERATE_ROULETTE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GENERATE_ROULETTE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GENERATE_ROULETTE, s)
 	{}
 	virtual ~CZ_REQ_GENERATE_ROULETTE() {}
 
@@ -26325,11 +26325,11 @@ ID_CZ_REQ_GIVE_MANNER_BYNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GIVE_MANNER_BYNAME
  *
  */ 
-class CZ_REQ_GIVE_MANNER_BYNAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GIVE_MANNER_BYNAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GIVE_MANNER_BYNAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GIVE_MANNER_BYNAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GIVE_MANNER_BYNAME, s)
 	{}
 	virtual ~CZ_REQ_GIVE_MANNER_BYNAME() {}
 
@@ -26372,11 +26372,11 @@ ID_CZ_REQ_GIVE_MANNER_POINT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GIVE_MANNER_POINT
  *
  */ 
-class CZ_REQ_GIVE_MANNER_POINT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GIVE_MANNER_POINT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GIVE_MANNER_POINT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GIVE_MANNER_POINT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GIVE_MANNER_POINT, s)
 	{}
 	virtual ~CZ_REQ_GIVE_MANNER_POINT() {}
 
@@ -26415,11 +26415,11 @@ ID_CZ_REQ_GUILDSTORAGE_LOG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILDSTORAGE_LOG
  *
  */ 
-class CZ_REQ_GUILDSTORAGE_LOG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILDSTORAGE_LOG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILDSTORAGE_LOG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILDSTORAGE_LOG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILDSTORAGE_LOG, s)
 	{}
 	virtual ~CZ_REQ_GUILDSTORAGE_LOG() {}
 
@@ -26461,11 +26461,11 @@ ID_CZ_REQ_GUILD_EMBLEM_IMG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_EMBLEM_IMG
  *
  */ 
-class CZ_REQ_GUILD_EMBLEM_IMG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_EMBLEM_IMG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_EMBLEM_IMG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG, s)
 	{}
 	virtual ~CZ_REQ_GUILD_EMBLEM_IMG() {}
 
@@ -26498,11 +26498,11 @@ ID_CZ_REQ_GUILD_EMBLEM_IMG2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_EMBLEM_IMG2
  *
  */ 
-class CZ_REQ_GUILD_EMBLEM_IMG2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_EMBLEM_IMG2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_EMBLEM_IMG2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG2, s)
 	{}
 	virtual ~CZ_REQ_GUILD_EMBLEM_IMG2() {}
 
@@ -26535,11 +26535,11 @@ ID_CZ_REQ_GUILD_EMBLEM_IMG3 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_EMBLEM_IMG3
  *
  */ 
-class CZ_REQ_GUILD_EMBLEM_IMG3 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_EMBLEM_IMG3 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_EMBLEM_IMG3(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG3, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_EMBLEM_IMG3, s)
 	{}
 	virtual ~CZ_REQ_GUILD_EMBLEM_IMG3() {}
 
@@ -26581,11 +26581,11 @@ ID_CZ_REQ_GUILD_MEMBER_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_MEMBER_INFO
  *
  */ 
-class CZ_REQ_GUILD_MEMBER_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_MEMBER_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_MEMBER_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_MEMBER_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_MEMBER_INFO, s)
 	{}
 	virtual ~CZ_REQ_GUILD_MEMBER_INFO() {}
 
@@ -26627,11 +26627,11 @@ ID_CZ_REQ_GUILD_MENU = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_MENU
  *
  */ 
-class CZ_REQ_GUILD_MENU : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_MENU : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_MENU(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_MENU, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_MENU, s)
 	{}
 	virtual ~CZ_REQ_GUILD_MENU() {}
 
@@ -26674,11 +26674,11 @@ ID_CZ_REQ_GUILD_MENUINTERFACE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_MENUINTERFACE
  *
  */ 
-class CZ_REQ_GUILD_MENUINTERFACE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_MENUINTERFACE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_MENUINTERFACE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_MENUINTERFACE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_MENUINTERFACE, s)
 	{}
 	virtual ~CZ_REQ_GUILD_MENUINTERFACE() {}
 
@@ -26714,11 +26714,11 @@ ID_CZ_REQ_GUILD_NAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_GUILD_NAME
  *
  */ 
-class CZ_REQ_GUILD_NAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_GUILD_NAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_GUILD_NAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_GUILD_NAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_GUILD_NAME, s)
 	{}
 	virtual ~CZ_REQ_GUILD_NAME() {}
 
@@ -26760,11 +26760,11 @@ ID_CZ_REQ_HOSTILE_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_HOSTILE_GUILD
  *
  */ 
-class CZ_REQ_HOSTILE_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_HOSTILE_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_HOSTILE_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_HOSTILE_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_HOSTILE_GUILD, s)
 	{}
 	virtual ~CZ_REQ_HOSTILE_GUILD() {}
 
@@ -26807,11 +26807,11 @@ ID_CZ_REQ_ITEMCOMPOSITION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEMCOMPOSITION
  *
  */ 
-class CZ_REQ_ITEMCOMPOSITION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEMCOMPOSITION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEMCOMPOSITION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEMCOMPOSITION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEMCOMPOSITION, s)
 	{}
 	virtual ~CZ_REQ_ITEMCOMPOSITION() {}
 
@@ -26855,11 +26855,11 @@ ID_CZ_REQ_ITEMCOMPOSITION_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEMCOMPOSITION_LIST
  *
  */ 
-class CZ_REQ_ITEMCOMPOSITION_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEMCOMPOSITION_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEMCOMPOSITION_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEMCOMPOSITION_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEMCOMPOSITION_LIST, s)
 	{}
 	virtual ~CZ_REQ_ITEMCOMPOSITION_LIST() {}
 
@@ -26902,11 +26902,11 @@ ID_CZ_REQ_ITEMIDENTIFY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEMIDENTIFY
  *
  */ 
-class CZ_REQ_ITEMIDENTIFY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEMIDENTIFY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEMIDENTIFY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEMIDENTIFY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEMIDENTIFY, s)
 	{}
 	virtual ~CZ_REQ_ITEMIDENTIFY() {}
 
@@ -26949,11 +26949,11 @@ ID_CZ_REQ_ITEMREPAIR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEMREPAIR
  *
  */ 
-class CZ_REQ_ITEMREPAIR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEMREPAIR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEMREPAIR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEMREPAIR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEMREPAIR, s)
 	{}
 	virtual ~CZ_REQ_ITEMREPAIR() {}
 
@@ -26990,11 +26990,11 @@ ID_CZ_REQ_ITEMREPAIR2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEMREPAIR2
  *
  */ 
-class CZ_REQ_ITEMREPAIR2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEMREPAIR2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEMREPAIR2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEMREPAIR2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEMREPAIR2, s)
 	{}
 	virtual ~CZ_REQ_ITEMREPAIR2() {}
 
@@ -27030,11 +27030,11 @@ ID_CZ_REQ_ITEM_FROM_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ITEM_FROM_RODEX
  *
  */ 
-class CZ_REQ_ITEM_FROM_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ITEM_FROM_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ITEM_FROM_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ITEM_FROM_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ITEM_FROM_RODEX, s)
 	{}
 	virtual ~CZ_REQ_ITEM_FROM_RODEX() {}
 
@@ -27076,11 +27076,11 @@ ID_CZ_REQ_JOIN_BABY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_JOIN_BABY
  *
  */ 
-class CZ_REQ_JOIN_BABY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_JOIN_BABY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_JOIN_BABY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_JOIN_BABY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_JOIN_BABY, s)
 	{}
 	virtual ~CZ_REQ_JOIN_BABY() {}
 
@@ -27123,11 +27123,11 @@ ID_CZ_REQ_JOIN_COUPLE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_JOIN_COUPLE
  *
  */ 
-class CZ_REQ_JOIN_COUPLE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_JOIN_COUPLE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_JOIN_COUPLE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_JOIN_COUPLE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_JOIN_COUPLE, s)
 	{}
 	virtual ~CZ_REQ_JOIN_COUPLE() {}
 
@@ -27169,11 +27169,11 @@ ID_CZ_REQ_JOIN_GROUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_JOIN_GROUP
  *
  */ 
-class CZ_REQ_JOIN_GROUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_JOIN_GROUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_JOIN_GROUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_JOIN_GROUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_JOIN_GROUP, s)
 	{}
 	virtual ~CZ_REQ_JOIN_GROUP() {}
 
@@ -27216,11 +27216,11 @@ ID_CZ_REQ_JOIN_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_JOIN_GUILD
  *
  */ 
-class CZ_REQ_JOIN_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_JOIN_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_JOIN_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_JOIN_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_JOIN_GUILD, s)
 	{}
 	virtual ~CZ_REQ_JOIN_GUILD() {}
 
@@ -27257,11 +27257,11 @@ ID_CZ_REQ_JOIN_GUILD2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_JOIN_GUILD2
  *
  */ 
-class CZ_REQ_JOIN_GUILD2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_JOIN_GUILD2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_JOIN_GUILD2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_JOIN_GUILD2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_JOIN_GUILD2, s)
 	{}
 	virtual ~CZ_REQ_JOIN_GUILD2() {}
 
@@ -27304,11 +27304,11 @@ ID_CZ_REQ_LEAVE_GROUP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_LEAVE_GROUP
  *
  */ 
-class CZ_REQ_LEAVE_GROUP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_LEAVE_GROUP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_LEAVE_GROUP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_LEAVE_GROUP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_LEAVE_GROUP, s)
 	{}
 	virtual ~CZ_REQ_LEAVE_GROUP() {}
 
@@ -27350,11 +27350,11 @@ ID_CZ_REQ_LEAVE_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_LEAVE_GUILD
  *
  */ 
-class CZ_REQ_LEAVE_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_LEAVE_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_LEAVE_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_LEAVE_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_LEAVE_GUILD, s)
 	{}
 	virtual ~CZ_REQ_LEAVE_GUILD() {}
 
@@ -27400,11 +27400,11 @@ ID_CZ_REQ_MAIL_RETURN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MAIL_RETURN
  *
  */ 
-class CZ_REQ_MAIL_RETURN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MAIL_RETURN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MAIL_RETURN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MAIL_RETURN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MAIL_RETURN, s)
 	{}
 	virtual ~CZ_REQ_MAIL_RETURN() {}
 
@@ -27448,11 +27448,11 @@ ID_CZ_REQ_MAKE_GUILD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MAKE_GUILD
  *
  */ 
-class CZ_REQ_MAKE_GUILD : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MAKE_GUILD : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MAKE_GUILD(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MAKE_GUILD, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MAKE_GUILD, s)
 	{}
 	virtual ~CZ_REQ_MAKE_GUILD() {}
 
@@ -27496,11 +27496,11 @@ ID_CZ_REQ_MAKINGARROW = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MAKINGARROW
  *
  */ 
-class CZ_REQ_MAKINGARROW : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MAKINGARROW : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MAKINGARROW(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MAKINGARROW, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MAKINGARROW, s)
 	{}
 	virtual ~CZ_REQ_MAKINGARROW() {}
 
@@ -27543,11 +27543,11 @@ ID_CZ_REQ_MAKINGITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MAKINGITEM
  *
  */ 
-class CZ_REQ_MAKINGITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MAKINGITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MAKINGITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MAKINGITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MAKINGITEM, s)
 	{}
 	virtual ~CZ_REQ_MAKINGITEM() {}
 
@@ -27585,11 +27585,11 @@ ID_CZ_REQ_MERGE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MERGE_ITEM
  *
  */ 
-class CZ_REQ_MERGE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MERGE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MERGE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MERGE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MERGE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_MERGE_ITEM() {}
 
@@ -27622,11 +27622,11 @@ ID_CZ_REQ_MOVE_GUILD_AGIT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_MOVE_GUILD_AGIT
  *
  */ 
-class CZ_REQ_MOVE_GUILD_AGIT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_MOVE_GUILD_AGIT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_MOVE_GUILD_AGIT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_MOVE_GUILD_AGIT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_MOVE_GUILD_AGIT, s)
 	{}
 	virtual ~CZ_REQ_MOVE_GUILD_AGIT() {}
 
@@ -27662,11 +27662,11 @@ ID_CZ_REQ_NEXT_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_NEXT_RODEX
  *
  */ 
-class CZ_REQ_NEXT_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_NEXT_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_NEXT_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_NEXT_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_NEXT_RODEX, s)
 	{}
 	virtual ~CZ_REQ_NEXT_RODEX() {}
 
@@ -27708,11 +27708,11 @@ ID_CZ_REQ_NEXT_SCRIPT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_NEXT_SCRIPT
  *
  */ 
-class CZ_REQ_NEXT_SCRIPT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_NEXT_SCRIPT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_NEXT_SCRIPT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_NEXT_SCRIPT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_NEXT_SCRIPT, s)
 	{}
 	virtual ~CZ_REQ_NEXT_SCRIPT() {}
 
@@ -27749,11 +27749,11 @@ ID_CZ_REQ_ONECLICK_ITEMIDENTIFY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ONECLICK_ITEMIDENTIFY
  *
  */ 
-class CZ_REQ_ONECLICK_ITEMIDENTIFY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ONECLICK_ITEMIDENTIFY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ONECLICK_ITEMIDENTIFY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ONECLICK_ITEMIDENTIFY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ONECLICK_ITEMIDENTIFY, s)
 	{}
 	virtual ~CZ_REQ_ONECLICK_ITEMIDENTIFY() {}
 
@@ -27796,11 +27796,11 @@ ID_CZ_REQ_OPENSTORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPENSTORE
  *
  */ 
-class CZ_REQ_OPENSTORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPENSTORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPENSTORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPENSTORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPENSTORE, s)
 	{}
 	virtual ~CZ_REQ_OPENSTORE() {}
 
@@ -27845,11 +27845,11 @@ ID_CZ_REQ_OPENSTORE2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPENSTORE2
  *
  */ 
-class CZ_REQ_OPENSTORE2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPENSTORE2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPENSTORE2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPENSTORE2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPENSTORE2, s)
 	{}
 	virtual ~CZ_REQ_OPENSTORE2() {}
 
@@ -27889,11 +27889,11 @@ ID_CZ_REQ_OPEN_BANKING = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_BANKING
  *
  */ 
-class CZ_REQ_OPEN_BANKING : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_BANKING : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_BANKING(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_BANKING, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_BANKING, s)
 	{}
 	virtual ~CZ_REQ_OPEN_BANKING() {}
 
@@ -28581,11 +28581,11 @@ ID_CZ_REQ_OPEN_BUYING_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_BUYING_STORE
  *
  */ 
-class CZ_REQ_OPEN_BUYING_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_BUYING_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_BUYING_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_BUYING_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_BUYING_STORE, s)
 	{}
 	virtual ~CZ_REQ_OPEN_BUYING_STORE() {}
 
@@ -28626,11 +28626,11 @@ ID_CZ_REQ_OPEN_GUILD_STORAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_GUILD_STORAGE
  *
  */ 
-class CZ_REQ_OPEN_GUILD_STORAGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_GUILD_STORAGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_GUILD_STORAGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_GUILD_STORAGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_GUILD_STORAGE, s)
 	{}
 	virtual ~CZ_REQ_OPEN_GUILD_STORAGE() {}
 
@@ -28672,11 +28672,11 @@ ID_CZ_REQ_OPEN_MEMBER_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_MEMBER_INFO
  *
  */ 
-class CZ_REQ_OPEN_MEMBER_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_MEMBER_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_MEMBER_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_MEMBER_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_MEMBER_INFO, s)
 	{}
 	virtual ~CZ_REQ_OPEN_MEMBER_INFO() {}
 
@@ -28712,11 +28712,11 @@ ID_CZ_REQ_OPEN_ROULETTE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_ROULETTE
  *
  */ 
-class CZ_REQ_OPEN_ROULETTE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_ROULETTE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_ROULETTE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_ROULETTE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_ROULETTE, s)
 	{}
 	virtual ~CZ_REQ_OPEN_ROULETTE() {}
 
@@ -28752,11 +28752,11 @@ ID_CZ_REQ_OPEN_UI = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_UI
  *
  */ 
-class CZ_REQ_OPEN_UI : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_UI : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_UI(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_UI, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_UI, s)
 	{}
 	virtual ~CZ_REQ_OPEN_UI() {}
 
@@ -28792,11 +28792,11 @@ ID_CZ_REQ_OPEN_WRITE_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_OPEN_WRITE_RODEX
  *
  */ 
-class CZ_REQ_OPEN_WRITE_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_OPEN_WRITE_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_OPEN_WRITE_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_OPEN_WRITE_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_OPEN_WRITE_RODEX, s)
 	{}
 	virtual ~CZ_REQ_OPEN_WRITE_RODEX() {}
 
@@ -28832,11 +28832,11 @@ ID_CZ_REQ_PARTY_NAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_PARTY_NAME
  *
  */ 
-class CZ_REQ_PARTY_NAME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_PARTY_NAME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_PARTY_NAME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_PARTY_NAME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_PARTY_NAME, s)
 	{}
 	virtual ~CZ_REQ_PARTY_NAME() {}
 
@@ -28869,11 +28869,11 @@ ID_CZ_REQ_PLAYER_AID_IN_RANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_PLAYER_AID_IN_RANGE
  *
  */ 
-class CZ_REQ_PLAYER_AID_IN_RANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_PLAYER_AID_IN_RANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_PLAYER_AID_IN_RANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_PLAYER_AID_IN_RANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_PLAYER_AID_IN_RANGE, s)
 	{}
 	virtual ~CZ_REQ_PLAYER_AID_IN_RANGE() {}
 
@@ -28906,11 +28906,11 @@ ID_CZ_REQ_PREVIEW_MACRO_DETECTOR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_PREVIEW_MACRO_DETECTOR
  *
  */ 
-class CZ_REQ_PREVIEW_MACRO_DETECTOR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_PREVIEW_MACRO_DETECTOR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_PREVIEW_MACRO_DETECTOR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_PREVIEW_MACRO_DETECTOR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_PREVIEW_MACRO_DETECTOR, s)
 	{}
 	virtual ~CZ_REQ_PREVIEW_MACRO_DETECTOR() {}
 
@@ -28946,11 +28946,11 @@ ID_CZ_REQ_PVPPOINT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_PVPPOINT
  *
  */ 
-class CZ_REQ_PVPPOINT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_PVPPOINT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_PVPPOINT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_PVPPOINT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_PVPPOINT, s)
 	{}
 	virtual ~CZ_REQ_PVPPOINT() {}
 
@@ -28985,11 +28985,11 @@ ID_CZ_REQ_RANDOM_COMBINE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_RANDOM_COMBINE_ITEM
  *
  */ 
-class CZ_REQ_RANDOM_COMBINE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_RANDOM_COMBINE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_RANDOM_COMBINE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_RANDOM_COMBINE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_RANDOM_COMBINE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_RANDOM_COMBINE_ITEM() {}
 
@@ -29022,11 +29022,11 @@ ID_CZ_REQ_RANDOM_UPGRADE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_RANDOM_UPGRADE_ITEM
  *
  */ 
-class CZ_REQ_RANDOM_UPGRADE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_RANDOM_UPGRADE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_RANDOM_UPGRADE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_RANDOM_UPGRADE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_RANDOM_UPGRADE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_RANDOM_UPGRADE_ITEM() {}
 
@@ -29062,11 +29062,11 @@ ID_CZ_REQ_RANKING = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_RANKING
  *
  */ 
-class CZ_REQ_RANKING : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_RANKING : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_RANKING(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_RANKING, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_RANKING, s)
 	{}
 	virtual ~CZ_REQ_RANKING() {}
 
@@ -29103,11 +29103,11 @@ ID_CZ_REQ_READ_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_READ_RODEX
  *
  */ 
-class CZ_REQ_READ_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_READ_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_READ_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_READ_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_READ_RODEX, s)
 	{}
 	virtual ~CZ_REQ_READ_RODEX() {}
 
@@ -29152,11 +29152,11 @@ ID_CZ_REQ_REFRESH_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_REFRESH_RODEX
  *
  */ 
-class CZ_REQ_REFRESH_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_REFRESH_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_REFRESH_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_REFRESH_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_REFRESH_RODEX, s)
 	{}
 	virtual ~CZ_REQ_REFRESH_RODEX() {}
 
@@ -29198,11 +29198,11 @@ ID_CZ_REQ_REMAINTIME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_REMAINTIME
  *
  */ 
-class CZ_REQ_REMAINTIME : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_REMAINTIME : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_REMAINTIME(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_REMAINTIME, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_REMAINTIME, s)
 	{}
 	virtual ~CZ_REQ_REMAINTIME() {}
 
@@ -29238,11 +29238,11 @@ ID_CZ_REQ_REMOVE_BARGAIN_SALE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_REMOVE_BARGAIN_SALE_ITEM
  *
  */ 
-class CZ_REQ_REMOVE_BARGAIN_SALE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_REMOVE_BARGAIN_SALE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_REMOVE_BARGAIN_SALE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_REMOVE_BARGAIN_SALE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_REMOVE_BARGAIN_SALE_ITEM, s)
 	{}
 	virtual ~CZ_REQ_REMOVE_BARGAIN_SALE_ITEM() {}
 
@@ -29278,11 +29278,11 @@ ID_CZ_REQ_REMOVE_RODEX_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_REMOVE_RODEX_ITEM
  *
  */ 
-class CZ_REQ_REMOVE_RODEX_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_REMOVE_RODEX_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_REMOVE_RODEX_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_REMOVE_RODEX_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_REMOVE_RODEX_ITEM, s)
 	{}
 	virtual ~CZ_REQ_REMOVE_RODEX_ITEM() {}
 
@@ -29324,11 +29324,11 @@ ID_CZ_REQ_ROLE_CHANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ROLE_CHANGE
  *
  */ 
-class CZ_REQ_ROLE_CHANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ROLE_CHANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ROLE_CHANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ROLE_CHANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ROLE_CHANGE, s)
 	{}
 	virtual ~CZ_REQ_ROLE_CHANGE() {}
 
@@ -29366,11 +29366,11 @@ ID_CZ_REQ_ROULETTE_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ROULETTE_INFO
  *
  */ 
-class CZ_REQ_ROULETTE_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ROULETTE_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ROULETTE_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ROULETTE_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ROULETTE_INFO, s)
 	{}
 	virtual ~CZ_REQ_ROULETTE_INFO() {}
 
@@ -29406,11 +29406,11 @@ ID_CZ_REQ_SCHEDULER_CASHITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_SCHEDULER_CASHITEM
  *
  */ 
-class CZ_REQ_SCHEDULER_CASHITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_SCHEDULER_CASHITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_SCHEDULER_CASHITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_SCHEDULER_CASHITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_SCHEDULER_CASHITEM, s)
 	{}
 	virtual ~CZ_REQ_SCHEDULER_CASHITEM() {}
 
@@ -29455,11 +29455,11 @@ ID_CZ_REQ_SEND_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_SEND_RODEX
  *
  */ 
-class CZ_REQ_SEND_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_SEND_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_SEND_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_SEND_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_SEND_RODEX, s)
 	{}
 	virtual ~CZ_REQ_SEND_RODEX() {}
 
@@ -29495,11 +29495,11 @@ ID_CZ_REQ_SE_CASH_TAB_CODE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_SE_CASH_TAB_CODE
  *
  */ 
-class CZ_REQ_SE_CASH_TAB_CODE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_SE_CASH_TAB_CODE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_SE_CASH_TAB_CODE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_SE_CASH_TAB_CODE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_SE_CASH_TAB_CODE, s)
 	{}
 	virtual ~CZ_REQ_SE_CASH_TAB_CODE() {}
 
@@ -29541,11 +29541,11 @@ ID_CZ_REQ_STATUS = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_STATUS
  *
  */ 
-class CZ_REQ_STATUS : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_STATUS : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_STATUS(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_STATUS, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_STATUS, s)
 	{}
 	virtual ~CZ_REQ_STATUS() {}
 
@@ -29588,11 +29588,11 @@ ID_CZ_REQ_STATUS_GM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_STATUS_GM
  *
  */ 
-class CZ_REQ_STATUS_GM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_STATUS_GM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_STATUS_GM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_STATUS_GM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_STATUS_GM, s)
 	{}
 	virtual ~CZ_REQ_STATUS_GM() {}
 
@@ -29629,11 +29629,11 @@ ID_CZ_REQ_STYLE_CHANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_STYLE_CHANGE
  *
  */ 
-class CZ_REQ_STYLE_CHANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_STYLE_CHANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_STYLE_CHANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_STYLE_CHANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_STYLE_CHANGE, s)
 	{}
 	virtual ~CZ_REQ_STYLE_CHANGE() {}
 
@@ -29669,11 +29669,11 @@ ID_CZ_REQ_STYLE_CHANGE2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_STYLE_CHANGE2
  *
  */ 
-class CZ_REQ_STYLE_CHANGE2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_STYLE_CHANGE2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_STYLE_CHANGE2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_STYLE_CHANGE2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_STYLE_CHANGE2, s)
 	{}
 	virtual ~CZ_REQ_STYLE_CHANGE2() {}
 
@@ -29715,11 +29715,11 @@ ID_CZ_REQ_TAKEOFF_EQUIP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_TAKEOFF_EQUIP
  *
  */ 
-class CZ_REQ_TAKEOFF_EQUIP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_TAKEOFF_EQUIP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_TAKEOFF_EQUIP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_TAKEOFF_EQUIP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_TAKEOFF_EQUIP, s)
 	{}
 	virtual ~CZ_REQ_TAKEOFF_EQUIP() {}
 
@@ -29752,11 +29752,11 @@ ID_CZ_REQ_TAKEOFF_EQUIP_ALL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_TAKEOFF_EQUIP_ALL
  *
  */ 
-class CZ_REQ_TAKEOFF_EQUIP_ALL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_TAKEOFF_EQUIP_ALL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_TAKEOFF_EQUIP_ALL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_TAKEOFF_EQUIP_ALL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_TAKEOFF_EQUIP_ALL, s)
 	{}
 	virtual ~CZ_REQ_TAKEOFF_EQUIP_ALL() {}
 
@@ -30484,11 +30484,11 @@ ID_CZ_REQ_TRADE_BUYING_STORE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_TRADE_BUYING_STORE
  *
  */ 
-class CZ_REQ_TRADE_BUYING_STORE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_TRADE_BUYING_STORE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_TRADE_BUYING_STORE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_TRADE_BUYING_STORE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_TRADE_BUYING_STORE, s)
 	{}
 	virtual ~CZ_REQ_TRADE_BUYING_STORE() {}
 
@@ -30525,11 +30525,11 @@ ID_CZ_REQ_UPLOAD_MACRO_DETECTOR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_UPLOAD_MACRO_DETECTOR
  *
  */ 
-class CZ_REQ_UPLOAD_MACRO_DETECTOR : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_UPLOAD_MACRO_DETECTOR : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_UPLOAD_MACRO_DETECTOR(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_UPLOAD_MACRO_DETECTOR, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_UPLOAD_MACRO_DETECTOR, s)
 	{}
 	virtual ~CZ_REQ_UPLOAD_MACRO_DETECTOR() {}
 
@@ -30571,11 +30571,11 @@ ID_CZ_REQ_USER_COUNT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_USER_COUNT
  *
  */ 
-class CZ_REQ_USER_COUNT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_USER_COUNT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_USER_COUNT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_USER_COUNT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_USER_COUNT, s)
 	{}
 	virtual ~CZ_REQ_USER_COUNT() {}
 
@@ -30617,11 +30617,11 @@ ID_CZ_REQ_WEAPONREFINE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_WEAPONREFINE
  *
  */ 
-class CZ_REQ_WEAPONREFINE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_WEAPONREFINE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_WEAPONREFINE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_WEAPONREFINE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_WEAPONREFINE, s)
 	{}
 	virtual ~CZ_REQ_WEAPONREFINE() {}
 
@@ -30664,11 +30664,11 @@ ID_CZ_REQ_WEAR_EQUIP = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_WEAR_EQUIP
  *
  */ 
-class CZ_REQ_WEAR_EQUIP : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_WEAR_EQUIP : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_WEAR_EQUIP(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_WEAR_EQUIP, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_WEAR_EQUIP, s)
 	{}
 	virtual ~CZ_REQ_WEAR_EQUIP() {}
 
@@ -30706,11 +30706,11 @@ ID_CZ_REQ_WEAR_EQUIP_V5 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_WEAR_EQUIP_V5
  *
  */ 
-class CZ_REQ_WEAR_EQUIP_V5 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_WEAR_EQUIP_V5 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_WEAR_EQUIP_V5(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_WEAR_EQUIP_V5, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_WEAR_EQUIP_V5, s)
 	{}
 	virtual ~CZ_REQ_WEAR_EQUIP_V5() {}
 
@@ -30754,11 +30754,11 @@ ID_CZ_REQ_WHISPER_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_WHISPER_LIST
  *
  */ 
-class CZ_REQ_WHISPER_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_WHISPER_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_WHISPER_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_WHISPER_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_WHISPER_LIST, s)
 	{}
 	virtual ~CZ_REQ_WHISPER_LIST() {}
 
@@ -30794,11 +30794,11 @@ ID_CZ_REQ_ZENY_FROM_RODEX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_REQ_ZENY_FROM_RODEX
  *
  */ 
-class CZ_REQ_ZENY_FROM_RODEX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_REQ_ZENY_FROM_RODEX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_REQ_ZENY_FROM_RODEX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_REQ_ZENY_FROM_RODEX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_REQ_ZENY_FROM_RODEX, s)
 	{}
 	virtual ~CZ_REQ_ZENY_FROM_RODEX() {}
 
@@ -30840,11 +30840,11 @@ ID_CZ_RESET = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RESET
  *
  */ 
-class CZ_RESET : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RESET : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RESET(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RESET, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RESET, s)
 	{}
 	virtual ~CZ_RESET() {}
 
@@ -30886,11 +30886,11 @@ ID_CZ_RESTART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_RESTART
  *
  */ 
-class CZ_RESTART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_RESTART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_RESTART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_RESTART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_RESTART, s)
 	{}
 	virtual ~CZ_RESTART() {}
 
@@ -31332,11 +31332,11 @@ ID_CZ_SEARCH_STORE_INFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SEARCH_STORE_INFO
  *
  */ 
-class CZ_SEARCH_STORE_INFO : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SEARCH_STORE_INFO : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SEARCH_STORE_INFO(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SEARCH_STORE_INFO, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SEARCH_STORE_INFO, s)
 	{}
 	virtual ~CZ_SEARCH_STORE_INFO() {}
 
@@ -32048,11 +32048,11 @@ ID_CZ_SEARCH_STORE_INFO_NEXT_PAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SEARCH_STORE_INFO_NEXT_PAGE
  *
  */ 
-class CZ_SEARCH_STORE_INFO_NEXT_PAGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SEARCH_STORE_INFO_NEXT_PAGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SEARCH_STORE_INFO_NEXT_PAGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SEARCH_STORE_INFO_NEXT_PAGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SEARCH_STORE_INFO_NEXT_PAGE, s)
 	{}
 	virtual ~CZ_SEARCH_STORE_INFO_NEXT_PAGE() {}
 
@@ -32091,11 +32091,11 @@ ID_CZ_SEEK_PARTY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SEEK_PARTY
  *
  */ 
-class CZ_SEEK_PARTY : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SEEK_PARTY : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SEEK_PARTY(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SEEK_PARTY, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SEEK_PARTY, s)
 	{}
 	virtual ~CZ_SEEK_PARTY() {}
 
@@ -32134,11 +32134,11 @@ ID_CZ_SEEK_PARTY_MEMBER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SEEK_PARTY_MEMBER
  *
  */ 
-class CZ_SEEK_PARTY_MEMBER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SEEK_PARTY_MEMBER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SEEK_PARTY_MEMBER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SEEK_PARTY_MEMBER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SEEK_PARTY_MEMBER, s)
 	{}
 	virtual ~CZ_SEEK_PARTY_MEMBER() {}
 
@@ -32180,11 +32180,11 @@ ID_CZ_SELECTAUTOSPELL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SELECTAUTOSPELL
  *
  */ 
-class CZ_SELECTAUTOSPELL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SELECTAUTOSPELL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SELECTAUTOSPELL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SELECTAUTOSPELL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SELECTAUTOSPELL, s)
 	{}
 	virtual ~CZ_SELECTAUTOSPELL() {}
 
@@ -32220,11 +32220,11 @@ ID_CZ_SELECTCART = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SELECTCART
  *
  */ 
-class CZ_SELECTCART : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SELECTCART : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SELECTCART(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SELECTCART, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SELECTCART, s)
 	{}
 	virtual ~CZ_SELECTCART() {}
 
@@ -32266,11 +32266,11 @@ ID_CZ_SELECT_PETEGG = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SELECT_PETEGG
  *
  */ 
-class CZ_SELECT_PETEGG : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SELECT_PETEGG : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SELECT_PETEGG(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SELECT_PETEGG, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SELECT_PETEGG, s)
 	{}
 	virtual ~CZ_SELECT_PETEGG() {}
 
@@ -32312,11 +32312,11 @@ ID_CZ_SELECT_WARPPOINT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SELECT_WARPPOINT
  *
  */ 
-class CZ_SELECT_WARPPOINT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SELECT_WARPPOINT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SELECT_WARPPOINT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SELECT_WARPPOINT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SELECT_WARPPOINT, s)
 	{}
 	virtual ~CZ_SELECT_WARPPOINT() {}
 
@@ -32358,11 +32358,11 @@ ID_CZ_SETTING_WHISPER_PC = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SETTING_WHISPER_PC
  *
  */ 
-class CZ_SETTING_WHISPER_PC : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SETTING_WHISPER_PC : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SETTING_WHISPER_PC(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SETTING_WHISPER_PC, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SETTING_WHISPER_PC, s)
 	{}
 	virtual ~CZ_SETTING_WHISPER_PC() {}
 
@@ -32404,11 +32404,11 @@ ID_CZ_SETTING_WHISPER_STATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SETTING_WHISPER_STATE
  *
  */ 
-class CZ_SETTING_WHISPER_STATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SETTING_WHISPER_STATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SETTING_WHISPER_STATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SETTING_WHISPER_STATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SETTING_WHISPER_STATE, s)
 	{}
 	virtual ~CZ_SETTING_WHISPER_STATE() {}
 
@@ -32444,11 +32444,11 @@ ID_CZ_SE_CASHSHOP_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SE_CASHSHOP_CLOSE
  *
  */ 
-class CZ_SE_CASHSHOP_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SE_CASHSHOP_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SE_CASHSHOP_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SE_CASHSHOP_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SE_CASHSHOP_CLOSE, s)
 	{}
 	virtual ~CZ_SE_CASHSHOP_CLOSE() {}
 
@@ -32484,11 +32484,11 @@ ID_CZ_SE_CASHSHOP_OPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SE_CASHSHOP_OPEN
  *
  */ 
-class CZ_SE_CASHSHOP_OPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SE_CASHSHOP_OPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SE_CASHSHOP_OPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SE_CASHSHOP_OPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SE_CASHSHOP_OPEN, s)
 	{}
 	virtual ~CZ_SE_CASHSHOP_OPEN() {}
 
@@ -32521,11 +32521,11 @@ ID_CZ_SE_CASHSHOP_OPEN2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SE_CASHSHOP_OPEN2
  *
  */ 
-class CZ_SE_CASHSHOP_OPEN2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SE_CASHSHOP_OPEN2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SE_CASHSHOP_OPEN2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SE_CASHSHOP_OPEN2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SE_CASHSHOP_OPEN2, s)
 	{}
 	virtual ~CZ_SE_CASHSHOP_OPEN2() {}
 
@@ -32561,11 +32561,11 @@ ID_CZ_SE_PC_BUY_CASHITEM_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SE_PC_BUY_CASHITEM_LIST
  *
  */ 
-class CZ_SE_PC_BUY_CASHITEM_LIST : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SE_PC_BUY_CASHITEM_LIST : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SE_PC_BUY_CASHITEM_LIST(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SE_PC_BUY_CASHITEM_LIST, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SE_PC_BUY_CASHITEM_LIST, s)
 	{}
 	virtual ~CZ_SE_PC_BUY_CASHITEM_LIST() {}
 
@@ -32607,11 +32607,11 @@ ID_CZ_SHIFT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SHIFT
  *
  */ 
-class CZ_SHIFT : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SHIFT : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SHIFT(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SHIFT, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SHIFT, s)
 	{}
 	virtual ~CZ_SHIFT() {}
 
@@ -32656,11 +32656,11 @@ ID_CZ_SHORTCUTKEYBAR_ROTATE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SHORTCUTKEYBAR_ROTATE
  *
  */ 
-class CZ_SHORTCUTKEYBAR_ROTATE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SHORTCUTKEYBAR_ROTATE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SHORTCUTKEYBAR_ROTATE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SHORTCUTKEYBAR_ROTATE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SHORTCUTKEYBAR_ROTATE, s)
 	{}
 	virtual ~CZ_SHORTCUTKEYBAR_ROTATE() {}
 
@@ -32711,11 +32711,11 @@ ID_CZ_SHORTCUT_KEY_CHANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SHORTCUT_KEY_CHANGE
  *
  */ 
-class CZ_SHORTCUT_KEY_CHANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SHORTCUT_KEY_CHANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SHORTCUT_KEY_CHANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SHORTCUT_KEY_CHANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SHORTCUT_KEY_CHANGE, s)
 	{}
 	virtual ~CZ_SHORTCUT_KEY_CHANGE() {}
 
@@ -32754,11 +32754,11 @@ ID_CZ_SIMPLE_BUY_CASH_POINT_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SIMPLE_BUY_CASH_POINT_ITEM
  *
  */ 
-class CZ_SIMPLE_BUY_CASH_POINT_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SIMPLE_BUY_CASH_POINT_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SIMPLE_BUY_CASH_POINT_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SIMPLE_BUY_CASH_POINT_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SIMPLE_BUY_CASH_POINT_ITEM, s)
 	{}
 	virtual ~CZ_SIMPLE_BUY_CASH_POINT_ITEM() {}
 
@@ -32794,11 +32794,11 @@ ID_CZ_SIMPLE_CASH_BTNSHOW = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SIMPLE_CASH_BTNSHOW
  *
  */ 
-class CZ_SIMPLE_CASH_BTNSHOW : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SIMPLE_CASH_BTNSHOW : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SIMPLE_CASH_BTNSHOW(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SIMPLE_CASH_BTNSHOW, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SIMPLE_CASH_BTNSHOW, s)
 	{}
 	virtual ~CZ_SIMPLE_CASH_BTNSHOW() {}
 
@@ -32837,11 +32837,11 @@ ID_CZ_SKILL_SELECT_RESPONSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SKILL_SELECT_RESPONSE
  *
  */ 
-class CZ_SKILL_SELECT_RESPONSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SKILL_SELECT_RESPONSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SKILL_SELECT_RESPONSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SKILL_SELECT_RESPONSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SKILL_SELECT_RESPONSE, s)
 	{}
 	virtual ~CZ_SKILL_SELECT_RESPONSE() {}
 
@@ -32869,11 +32869,11 @@ ID_CZ_SRPACKETR2_START = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SRPACKETR2_START
  *
  */ 
-class CZ_SRPACKETR2_START : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SRPACKETR2_START : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SRPACKETR2_START(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SRPACKETR2_START, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SRPACKETR2_START, s)
 	{}
 	virtual ~CZ_SRPACKETR2_START() {}
 
@@ -32901,11 +32901,11 @@ ID_CZ_SRPACKET_START = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SRPACKET_START
  *
  */ 
-class CZ_SRPACKET_START : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SRPACKET_START : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SRPACKET_START(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SRPACKET_START, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SRPACKET_START, s)
 	{}
 	virtual ~CZ_SRPACKET_START() {}
 
@@ -33595,11 +33595,11 @@ ID_CZ_SSILIST_ITEM_CLICK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_SSILIST_ITEM_CLICK
  *
  */ 
-class CZ_SSILIST_ITEM_CLICK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_SSILIST_ITEM_CLICK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_SSILIST_ITEM_CLICK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_SSILIST_ITEM_CLICK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_SSILIST_ITEM_CLICK, s)
 	{}
 	virtual ~CZ_SSILIST_ITEM_CLICK() {}
 
@@ -33641,11 +33641,11 @@ ID_CZ_STANDING_RESURRECTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_STANDING_RESURRECTION
  *
  */ 
-class CZ_STANDING_RESURRECTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_STANDING_RESURRECTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_STANDING_RESURRECTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_STANDING_RESURRECTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_STANDING_RESURRECTION, s)
 	{}
 	virtual ~CZ_STANDING_RESURRECTION() {}
 
@@ -33681,11 +33681,11 @@ ID_CZ_START_USE_SKILL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_START_USE_SKILL
  *
  */ 
-class CZ_START_USE_SKILL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_START_USE_SKILL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_START_USE_SKILL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_START_USE_SKILL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_START_USE_SKILL, s)
 	{}
 	virtual ~CZ_START_USE_SKILL() {}
 
@@ -33727,11 +33727,11 @@ ID_CZ_STATUS_CHANGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_STATUS_CHANGE
  *
  */ 
-class CZ_STATUS_CHANGE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_STATUS_CHANGE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_STATUS_CHANGE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_STATUS_CHANGE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_STATUS_CHANGE, s)
 	{}
 	virtual ~CZ_STATUS_CHANGE() {}
 
@@ -33769,11 +33769,11 @@ ID_CZ_STOP_USE_SKILL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_STOP_USE_SKILL
  *
  */ 
-class CZ_STOP_USE_SKILL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_STOP_USE_SKILL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_STOP_USE_SKILL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_STOP_USE_SKILL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_STOP_USE_SKILL, s)
 	{}
 	virtual ~CZ_STOP_USE_SKILL() {}
 
@@ -33809,11 +33809,11 @@ ID_CZ_STYLE_CLOSE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_STYLE_CLOSE
  *
  */ 
-class CZ_STYLE_CLOSE : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_STYLE_CLOSE : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_STYLE_CLOSE(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_STYLE_CLOSE, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_STYLE_CLOSE, s)
 	{}
 	virtual ~CZ_STYLE_CLOSE() {}
 
@@ -33855,11 +33855,11 @@ ID_CZ_TAEKWON_RANK = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_TAEKWON_RANK
  *
  */ 
-class CZ_TAEKWON_RANK : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_TAEKWON_RANK : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_TAEKWON_RANK(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_TAEKWON_RANK, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_TAEKWON_RANK, s)
 	{}
 	virtual ~CZ_TAEKWON_RANK() {}
 
@@ -33901,11 +33901,11 @@ ID_CZ_TRYCAPTURE_MONSTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_TRYCAPTURE_MONSTER
  *
  */ 
-class CZ_TRYCAPTURE_MONSTER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_TRYCAPTURE_MONSTER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_TRYCAPTURE_MONSTER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_TRYCAPTURE_MONSTER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_TRYCAPTURE_MONSTER, s)
 	{}
 	virtual ~CZ_TRYCAPTURE_MONSTER() {}
 
@@ -33941,11 +33941,11 @@ ID_CZ_TRYCOLLECTION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_TRYCOLLECTION
  *
  */ 
-class CZ_TRYCOLLECTION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_TRYCOLLECTION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_TRYCOLLECTION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_TRYCOLLECTION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_TRYCOLLECTION, s)
 	{}
 	virtual ~CZ_TRYCOLLECTION() {}
 
@@ -33978,11 +33978,11 @@ ID_CZ_UNINSTALLATION = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UNINSTALLATION
  *
  */ 
-class CZ_UNINSTALLATION : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UNINSTALLATION : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UNINSTALLATION(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UNINSTALLATION, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UNINSTALLATION, s)
 	{}
 	virtual ~CZ_UNINSTALLATION() {}
 
@@ -34007,11 +34007,11 @@ ID_CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5
  *
  */ 
-class CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5, s)
 	{}
 	virtual ~CZ_UNKNOWN_BOOKING_SOMMON_MEMBER_08f5() {}
 
@@ -34039,11 +34039,11 @@ ID_CZ_UNUSED_MER_UPGRADE_SKILLLEVEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UNUSED_MER_UPGRADE_SKILLLEVEL
  *
  */ 
-class CZ_UNUSED_MER_UPGRADE_SKILLLEVEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UNUSED_MER_UPGRADE_SKILLLEVEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UNUSED_MER_UPGRADE_SKILLLEVEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UNUSED_MER_UPGRADE_SKILLLEVEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UNUSED_MER_UPGRADE_SKILLLEVEL, s)
 	{}
 	virtual ~CZ_UNUSED_MER_UPGRADE_SKILLLEVEL() {}
 
@@ -34071,11 +34071,11 @@ ID_CZ_UNUSED_MER_USE_SKILL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UNUSED_MER_USE_SKILL
  *
  */ 
-class CZ_UNUSED_MER_USE_SKILL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UNUSED_MER_USE_SKILL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UNUSED_MER_USE_SKILL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UNUSED_MER_USE_SKILL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UNUSED_MER_USE_SKILL, s)
 	{}
 	virtual ~CZ_UNUSED_MER_USE_SKILL() {}
 
@@ -34117,11 +34117,11 @@ ID_CZ_UPGRADE_SKILLLEVEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UPGRADE_SKILLLEVEL
  *
  */ 
-class CZ_UPGRADE_SKILLLEVEL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UPGRADE_SKILLLEVEL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UPGRADE_SKILLLEVEL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UPGRADE_SKILLLEVEL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UPGRADE_SKILLLEVEL, s)
 	{}
 	virtual ~CZ_UPGRADE_SKILLLEVEL() {}
 
@@ -34155,11 +34155,11 @@ ID_CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA
  *
  */ 
-class CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA, s)
 	{}
 	virtual ~CZ_UPLOAD_MACRO_DETECTOR_CAPTCHA() {}
 
@@ -34187,11 +34187,11 @@ ID_CZ_USE_ITEM = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_ITEM
  *
  */ 
-class CZ_USE_ITEM : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_ITEM : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_ITEM(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_ITEM, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_ITEM, s)
 	{}
 	virtual ~CZ_USE_ITEM() {}
 
@@ -34232,11 +34232,11 @@ ID_CZ_USE_ITEM2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_ITEM2
  *
  */ 
-class CZ_USE_ITEM2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_ITEM2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_ITEM2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_ITEM2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_ITEM2, s)
 	{}
 	virtual ~CZ_USE_ITEM2() {}
 
@@ -34280,11 +34280,11 @@ ID_CZ_USE_ITEM_NEW_JAPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_ITEM_NEW_JAPEN
  *
  */ 
-class CZ_USE_ITEM_NEW_JAPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_ITEM_NEW_JAPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_ITEM_NEW_JAPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_ITEM_NEW_JAPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_ITEM_NEW_JAPEN, s)
 	{}
 	virtual ~CZ_USE_ITEM_NEW_JAPEN() {}
 
@@ -34558,11 +34558,11 @@ ID_CZ_USE_SKILL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL
  *
  */ 
-class CZ_USE_SKILL : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL, s)
 	{}
 	virtual ~CZ_USE_SKILL() {}
 
@@ -35079,11 +35079,11 @@ ID_CZ_USE_SKILL2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL2
  *
  */ 
-class CZ_USE_SKILL2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL2, s)
 	{}
 	virtual ~CZ_USE_SKILL2() {}
 
@@ -35128,11 +35128,11 @@ ID_CZ_USE_SKILL_NEW_JAPEN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL_NEW_JAPEN
  *
  */ 
-class CZ_USE_SKILL_NEW_JAPEN : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL_NEW_JAPEN : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL_NEW_JAPEN(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL_NEW_JAPEN, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL_NEW_JAPEN, s)
 	{}
 	virtual ~CZ_USE_SKILL_NEW_JAPEN() {}
 
@@ -35415,11 +35415,11 @@ ID_CZ_USE_SKILL_TOGROUND = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL_TOGROUND
  *
  */ 
-class CZ_USE_SKILL_TOGROUND : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL_TOGROUND : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL_TOGROUND(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND, s)
 	{}
 	virtual ~CZ_USE_SKILL_TOGROUND() {}
 
@@ -35946,11 +35946,11 @@ ID_CZ_USE_SKILL_TOGROUND2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL_TOGROUND2
  *
  */ 
-class CZ_USE_SKILL_TOGROUND2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL_TOGROUND2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL_TOGROUND2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND2, s)
 	{}
 	virtual ~CZ_USE_SKILL_TOGROUND2() {}
 
@@ -36230,11 +36230,11 @@ ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL_TOGROUND_WITHTALKBOX
  *
  */ 
-class CZ_USE_SKILL_TOGROUND_WITHTALKBOX : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL_TOGROUND_WITHTALKBOX : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL_TOGROUND_WITHTALKBOX(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX, s)
 	{}
 	virtual ~CZ_USE_SKILL_TOGROUND_WITHTALKBOX() {}
 
@@ -36483,11 +36483,11 @@ ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_USE_SKILL_TOGROUND_WITHTALKBOX2
  *
  */ 
-class CZ_USE_SKILL_TOGROUND_WITHTALKBOX2 : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_USE_SKILL_TOGROUND_WITHTALKBOX2 : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_USE_SKILL_TOGROUND_WITHTALKBOX2(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX2, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_USE_SKILL_TOGROUND_WITHTALKBOX2, s)
 	{}
 	virtual ~CZ_USE_SKILL_TOGROUND_WITHTALKBOX2() {}
 
@@ -36534,11 +36534,11 @@ ID_CZ_WHISPER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: CZ_WHISPER
  *
  */ 
-class CZ_WHISPER : public Base::NetworkPacketHandler<ZoneSession>
+class CZ_WHISPER : public Base::NetworkPacket<ZoneSession>
 {
 public:
 	CZ_WHISPER(std::shared_ptr<ZoneSession> s)
-	: NetworkPacketHandler<ZoneSession>(ID_CZ_WHISPER, s)
+	: NetworkPacket<ZoneSession>(ID_CZ_WHISPER, s)
 	{}
 	virtual ~CZ_WHISPER() {}
 

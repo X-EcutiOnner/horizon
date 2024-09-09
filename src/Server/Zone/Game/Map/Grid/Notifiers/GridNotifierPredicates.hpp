@@ -30,7 +30,7 @@
 #ifndef HORIZON_ZONE_GAME_MAP_GRIDNOTIFIERPREDICATES_HPP
 #define HORIZON_ZONE_GAME_MAP_GRIDNOTIFIERPREDICATES_HPP
 
-#include "Server/Zone/Game/Entities/Entity.hpp"
+#include "Server/Zone/Game/Units/Unit.hpp"
 #include "Server/Zone/Game/Map/Grid/GridDefinitions.hpp"
 
 class GUIDCheckPredicate
@@ -38,9 +38,9 @@ class GUIDCheckPredicate
 public:
 	GUIDCheckPredicate(uint32_t guid) : _guid(guid) { }
 
-	bool operator()(std::weak_ptr<Horizon::Zone::Entity> entity)
+	bool operator()(std::weak_ptr<Horizon::Zone::Unit> unit)
 	{
-		return !entity.expired() && ((entity.lock())->guid() == _guid);
+		return !unit.expired() && ((unit.lock())->guid() == _guid);
 	}
 
 private:
@@ -50,16 +50,16 @@ private:
 class RangeCheckPredicate
 {
 public:
-	RangeCheckPredicate(std::weak_ptr<Horizon::Zone::Entity> source)
+	RangeCheckPredicate(std::weak_ptr<Horizon::Zone::Unit> source)
 	: _source(source){ }
 
-	bool operator()(std::weak_ptr<Horizon::Zone::Entity> target, uint16_t range = MAX_VIEW_RANGE)
+	bool operator()(std::weak_ptr<Horizon::Zone::Unit> target, uint16_t range = MAX_VIEW_RANGE)
 	{
 		return !_source.expired() && !target.expired() && _source.lock()->is_in_range_of(target.lock(), range);
 	}
 
 private:
-	std::weak_ptr<Horizon::Zone::Entity> _source;
+	std::weak_ptr<Horizon::Zone::Unit> _source;
 };
 
 class AOETargetTypePredicate
@@ -68,7 +68,7 @@ public:
 	AOETargetTypePredicate(int aoe_target_mask)
 	: _aoe_target_mask(aoe_target_mask){ }
 
-	bool operator()(std::weak_ptr<Horizon::Zone::Entity> target)
+	bool operator()(std::weak_ptr<Horizon::Zone::Unit> target)
 	{
 		return !target.expired() && (target.lock())->is_of_type(_aoe_target_mask);
 	}

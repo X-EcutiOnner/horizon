@@ -36,8 +36,8 @@ namespace Horizon
 {
 namespace Auth
 {
-	typedef std::shared_ptr<Base::NetworkPacketHandler<AuthSession>> HPacketStructPtrType;
-	typedef std::shared_ptr<Base::NetworkPacketTransmitter<AuthSession>> TPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<AuthSession>> HPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<AuthSession>> TPacketStructPtrType;
 	typedef std::pair<int16_t, HPacketStructPtrType> HPacketTablePairType;
 	typedef std::pair<int16_t, TPacketStructPtrType> TPacketTablePairType;
 /**

@@ -31,7 +31,6 @@
 #include "Server/Common/Configuration/Horizon.hpp"
 #include "Server/Char/Char.hpp"
 
-#include <mysqlx/xdevapi.h>
 using namespace Horizon::Char;
 
 /**
@@ -55,6 +54,7 @@ ByteBuffer& HC_ACCOUNT_ID::serialize()
  */
 void HC_ACCEPT_DELETECHAR::deliver()
 {
+	serialize();
 	transmit();
 }
 
@@ -68,12 +68,10 @@ ByteBuffer& HC_ACCEPT_DELETECHAR::serialize()
  */
 bool HC_ACCEPT_ENTER::prepare(uint32_t account_id, uint8_t max_char_slots, uint8_t permitted_slots, uint8_t total_premium_slots)
 {
-	mysqlx::RowResult rr;
-
-	mysqlx::Session db_session = sChar->database_pool()->get_connection();
+	std::shared_ptr<boost::mysql::tcp_ssl_connection> conn = sChar->get_database_connection();
 	
 	try {
-		rr = db_session.sql("SELECT "
+		boost::mysql::statement stmt = conn->prepare_statement("SELECT "
 			"a.`id`, a.`account_id`, a.`slot`, a.`name`, a.`online`, a.`gender`, a.`delete_reserved_at`, a.`deleted_at`, a.`unban_time`, " // 0 - 8
 			"a.`rename_count`, a.`last_unique_id`, a.`hotkey_row_index`, a.`change_slot_count`, a.`font`, a.`show_equip`, a.`allow_party`, " // 9 - 15
 			"a.`partner_aid`, a.`father_aid`, a.`mother_aid`, a.`child_aid`, a.`party_id`, a.`guild_id`, a.`pet_id`, a.`homun_id`, " // 16 - 23
@@ -83,11 +81,10 @@ bool HC_ACCEPT_ENTER::prepare(uint32_t account_id, uint8_t max_char_slots, uint8
 			"b.`sp`, b.`status_points`, b.`skill_points`, b.`body_state`, b.`virtue`, b.`honor`, b.`manner`, b.`hair_style_id`, " // 46 - 53
 			"b.`hair_color_id`, b.`cloth_color_id`, b.`body_id`, b.`weapon_view_id`, b.`shield_view_id`, b.`head_top_view_id`, b.`head_mid_view_id`, " // 54 - 60
 			"b.`head_bottom_view_id`, b.`robe_view_id` " // 61 - 62
-			"FROM `characters` as a LEFT JOIN `character_status` as b ON a.id = b.id WHERE a.account_id = ? AND a.deleted_at = ?")
-			.bind(account_id, 0)
-			.execute();
-
-		std::list<mysqlx::Row> rs = rr.fetchAll();
+			"FROM `characters` as a LEFT JOIN `character_status` as b ON a.id = b.id WHERE a.account_id = ? AND a.deleted_at = ?");
+		auto a1 = stmt.bind(account_id, 0);
+		boost::mysql::results results;
+		conn->execute(a1, results);
 
 #if PACKET_VERSION >= 20100413
 		_max_char_slots = max_char_slots;
@@ -95,62 +92,60 @@ bool HC_ACCEPT_ENTER::prepare(uint32_t account_id, uint8_t max_char_slots, uint8
 		_total_premium_slots = total_premium_slots;
 #endif
 
-		std::cout << rs.size() << std::endl;
-
 		_packet_length = 0;
-		for (auto r : rs) {
+		for (auto r : results.rows()) {
 			s_hc_character_list_data c;
-			c._character_id = r[0].get<int>();;          ///< 0
-			c._base_experience = r[34].get<int64_t>();
-			c._zeny = r[36].get<int64_t>();                    ///< 8
-			c._job_experience = r[35].get<int64_t>();
-			c._job_level = r[33].get<int>();               ///< 16
+			c._character_id = r[0].as_uint64();          ///< 0
+			c._base_experience = r[34].as_uint64();
+			c._zeny = r[36].as_uint64();                    ///< 8
+			c._job_experience = r[35].as_uint64();
+			c._job_level = r[33].as_uint64();               ///< 16
 			c._sc_opt1 = 0;                 ///< 20 Probably OPT1 / 2
 			c._sc_opt2 = 0;                 ///< 24
-			c._body_state = r[49].get<int64_t>();              ///< 28
-			c._virtue = r[50].get<int>();                  ///< 32
-			c._honor = r[51].get<int>();                   ///< 36
-			c._status_points = r[47].get<int>();           ///< 40
-			c._hp = r[44].get<int>();                      ///< 42
-			c._maximum_hp = r[43].get<int>();              ///< 46
-			c._sp = r[46].get<int>();                      ///< 50
-			c._maximum_sp = r[45].get<int>();              ///< 52
+			c._body_state = r[49].as_uint64();              ///< 28
+			c._virtue = r[50].as_int64();                  ///< 32
+			c._honor = r[51].as_uint64();                   ///< 36
+			c._status_points = r[47].as_uint64();           ///< 40
+			c._hp = r[44].as_uint64();                      ///< 42
+			c._maximum_hp = r[43].as_uint64();              ///< 46
+			c._sp = r[46].as_uint64();                      ///< 50
+			c._maximum_sp = r[45].as_uint64();              ///< 52
 			c._walk_speed = int16_t(DEFAULT_MOVEMENT_SPEED);              ///< 54
-			c._job_id = r[31].get<int>();                  ///< 56
-			c._hair_view_id = r[53].get<int>();            ///< 58
+			c._job_id = r[31].as_uint64();                  ///< 56
+			c._hair_view_id = r[53].as_uint64();            ///< 58
 #if PACKET_VERSION >= 20141022
-			c._body_view_id = r[56].get<int>();            ///< 60 p->body in hercules.
+			c._body_view_id = r[56].as_uint64();            ///< 60 p->body in hercules.
 #endif
-			c._weapon_view_id = r[57].get<int>();          ///< 62 OPTION_* in hercules.
-			c._base_level = r[32].get<int>();              ///< 64
-			c._skill_point = r[48].get<int>();             ///< 66
-			c._head_bottom_view_id = r[61].get<int>();     ///< 68
-			c._shield_id = r[58].get<int>();               ///< 70
-			c._head_top_view_id = r[59].get<int>();        ///< 72
-			c._head_mid_view_id = r[60].get<int>();        ///< 74
-			c._hair_color_id = r[61].get<int>();           ///< 76
-			c._clothes_color_id = r[55].get<int>();        ///< 78
+			c._weapon_view_id = r[57].as_uint64();          ///< 62 OPTION_* in hercules.
+			c._base_level = r[32].as_uint64();              ///< 64
+			c._skill_point = r[48].as_uint64();             ///< 66
+			c._head_bottom_view_id = r[61].as_uint64();     ///< 68
+			c._shield_id = r[58].as_uint64();               ///< 70
+			c._head_top_view_id = r[59].as_uint64();        ///< 72
+			c._head_mid_view_id = r[60].as_uint64();        ///< 74
+			c._hair_color_id = r[61].as_uint64();           ///< 76
+			c._clothes_color_id = r[55].as_uint64();        ///< 78
 
-			std::string lname = r[3].get<std::string>();
+			std::string lname = r[3].as_string();
 			strncpy(c._name, lname.c_str(), MAX_UNIT_NAME_LENGTH);  ///< 80
 
-			c._strength = r[37].get<int>();                 ///< 104
-			c._agility = r[38].get<int>();
-			c._vitality = r[39].get<int>();
-			c._intelligence = r[40].get<int>();
-			c._dexterity = r[41].get<int>();
-			c._luck = r[42].get<int>();
-			c._char_slot = r[2].get<int>();               ///< 110
+			c._strength = r[37].as_uint64();                 ///< 104
+			c._agility = r[38].as_uint64();
+			c._vitality = r[39].as_uint64();
+			c._intelligence = r[40].as_uint64();
+			c._dexterity = r[41].as_uint64();
+			c._luck = r[42].as_uint64();
+			c._char_slot = r[2].as_int64();               ///< 110
 #if PACKET_VERSION >= 20061023
-			c._rename_count = r[9].get<int>() ? 0 : 1;            ///< 112
+			c._rename_count = r[9].as_uint64() ? 0 : 1;            ///< 112
 #endif
 #if (PACKET_VERSION >= 20100720 && PACKET_VERSION <= 20100727) || PACKET_VERSION >= 20100803
-			std::string current_map = r[25].get<std::string>();
+			std::string current_map = r[25].as_string();
 			strncpy(c._map_name, current_map.c_str(), MAP_NAME_LENGTH_EXT);///< 114
 #endif
 #if PACKET_VERSION >= 20100803
-			if (r[6].get<int>() != 0) {             ///< 130
-				std::chrono::system_clock::duration dn = std::chrono::system_clock::duration(r[6].get<int>());
+			if (r[6].as_int64() != 0) {             ///< 130
+				std::chrono::system_clock::duration dn = std::chrono::system_clock::duration(r[6].as_int64());
 				c._deleted_at = dn.count() * std::chrono::system_clock::period::num / std::chrono::system_clock::period::den;
 			}
 			else {
@@ -158,35 +153,31 @@ bool HC_ACCEPT_ENTER::prepare(uint32_t account_id, uint8_t max_char_slots, uint8
 			}
 #endif
 #if PACKET_VERSION >= 20110111
-			c._robe_view_id = r[62].get<int>();            ///< 134
+			c._robe_view_id = r[62].as_uint64();            ///< 134
 #endif
 #if PACKET_VERSION != 20111116 //2011-11-16 wants 136, ask gravity.
 #if PACKET_VERSION >= 20110928
-			c._change_slot_count = r[12].get<int>() ? 1 : 0;       ///< 138
+			c._change_slot_count = r[12].as_uint64() ? 1 : 0;       ///< 138
 #endif
 #if PACKET_VERSION >= 20111025
-			c._addon_option = r[9].get<int>() ? 1 : 0;            ///< 142 1: Displays "Addon" on side-bar.
+			c._addon_option = r[9].as_uint64() ? 1 : 0;            ///< 142 1: Displays "Addon" on side-bar.
 #endif
 #if PACKET_VERSION >= 20141016
-			c._gender = r[5].get<std::string>() == "M" ? 1 : r[5].get<std::string>() == "F" ? 0 : 99;                   ///< 146 0: Female, 1: Male, 99: Account-based.
+			c._gender = r[5].as_string() == "M" ? 1 : r[5].as_string() == "F" ? 0 : 99;                   ///< 146 0: Female, 1: Male, 99: Account-based.
 #endif
 #endif
 			_packet_length += sizeof(c);
 			_characters.push_back(c);
 		} // end for
 	}
-	catch (mysqlx::Error& error) {
+	catch (boost::mysql::error_with_diagnostics &error) {
 		HLog(error) << "HC_ACCEPT_ENTER::prepare: " << error.what();
-		sChar->database_pool()->release_connection(std::move(db_session));
 		return false;
 	}
 	catch (std::exception& error) {
 		HLog(error) << "HC_ACCEPT_ENTER::prepare: " << error.what();
-		sChar->database_pool()->release_connection(std::move(db_session));
 		return false;
 	}
-
-	sChar->database_pool()->release_connection(std::move(db_session));
 
 #if PACKET_VERSION >= 20100413
 	_packet_length += 27;
@@ -639,11 +630,11 @@ int32_t HC_ACK_CHARINFO_PER_PAGE::prepare(bool empty)
 
 	if (!empty) {
 
-		mysqlx::RowResult rr;
+		std::shared_ptr<boost::mysql::tcp_ssl_connection> conn = sChar->get_database_connection();
 
-		mysqlx::Session db_session = sChar->database_pool()->get_connection();
+		boost::mysql::results results;
 		try {
-			rr = db_session.sql("SELECT "
+			boost::mysql::statement stmt = conn->prepare_statement("SELECT "
 				"a.`id`, a.`account_id`, a.`slot`, a.`name`, a.`online`, a.`gender`, a.`delete_reserved_at`, a.`deleted_at`, a.`unban_time`, "
 				"a.`rename_count`, a.`last_unique_id`, a.`hotkey_row_index`, a.`change_slot_count`, a.`font`, a.`show_equip`, a.`allow_party`, "
 				"a.`partner_aid`, a.`father_aid`, a.`mother_aid`, a.`child_aid`, a.`party_id`, a.`guild_id`, a.`pet_id`, a.`homun_id`, "
@@ -653,75 +644,70 @@ int32_t HC_ACK_CHARINFO_PER_PAGE::prepare(bool empty)
 				"b.`sp`, b.`status_points`, b.`skill_points`, b.`body_state`, b.`virtue`, b.`honor`, b.`manner`, b.`hair_style_id`, "
 				"b.`hair_color_id`, b.`cloth_color_id`, b.`body_id`, b.`weapon_view_id`, b.`shield_view_id`, b.`head_top_view_id`, b.`head_mid_view_id`, "
 				"b.`head_bottom_view_id`, b.`robe_view_id` "
-				"FROM `characters` as a LEFT JOIN `character_status` as b ON a.id = b.id WHERE a.account_id = ? AND a.deleted_at = ?")
-				.bind(get_session()->get_session_data()._account_id, 0)
-				.execute();
+				"FROM `characters` as a LEFT JOIN `character_status` as b ON a.id = b.id WHERE a.account_id = ? AND a.deleted_at = ?");
+			auto a1 = stmt.bind(get_session()->get_session_data()._account_id, 0);
+			conn->execute(a1, results);
 		}
-		catch (mysqlx::Error& error) {
+		catch (boost::mysql::error_with_diagnostics &error) {
 			HLog(error) << "HC_ACK_CHARINFO_PER_PAGE::prepare:" << error.what();
-			sChar->database_pool()->release_connection(std::move(db_session));
 			return false;
 		}
 
-		sChar->database_pool()->release_connection(std::move(db_session));
-		
-		std::list<mysqlx::Row> rs = rr.fetchAll();
-
-		for (auto r : rs)
+		for (auto r : results.rows())
 		{
 			s_hc_character_list_data c;
 
-			c._character_id = r[0].get<int>();          ///< 0
-			c._base_experience = r[34].get<int64_t>();
-			c._zeny = r[36].get<int64_t>();                    ///< 8
-			c._job_experience = r[35].get<int64_t>();
-			c._job_level = r[33].get<int>();               ///< 16
+			c._character_id = r[0].as_uint64();          ///< 0
+			c._base_experience = r[34].as_uint64();
+			c._zeny = r[36].as_uint64();                    ///< 8
+			c._job_experience = r[35].as_uint64();
+			c._job_level = r[33].as_uint64();               ///< 16
 			c._sc_opt1 = 0;                 ///< 20 Probably OPT1 / 2
 			c._sc_opt2 = 0;                 ///< 24
-			c._body_state = r[49].get<int>();              ///< 28
-			c._virtue = r[50].get<int>();                  ///< 32
-			c._honor = r[51].get<int>();                   ///< 36
-			c._status_points = r[47].get<int>();           ///< 40
-			c._hp = r[44].get<int>();                      ///< 42
-			c._maximum_hp = r[43].get<int>();              ///< 46
-			c._sp = r[46].get<int>();                      ///< 50
-			c._maximum_sp = r[45].get<int>();              ///< 52
+			c._body_state = r[49].as_uint64();              ///< 28
+			c._virtue = r[50].as_int64();                  ///< 32
+			c._honor = r[51].as_uint64();                   ///< 36
+			c._status_points = r[47].as_uint64();           ///< 40
+			c._hp = r[44].as_uint64();                      ///< 42
+			c._maximum_hp = r[43].as_uint64();              ///< 46
+			c._sp = r[46].as_uint64();                      ///< 50
+			c._maximum_sp = r[45].as_uint64();              ///< 52
 			c._walk_speed = int16_t(DEFAULT_MOVEMENT_SPEED);              ///< 54
-			c._job_id = r[31].get<int>();                  ///< 56
-			c._hair_view_id = r[53].get<int>();            ///< 58
+			c._job_id = r[31].as_uint64();                  ///< 56
+			c._hair_view_id = r[53].as_uint64();            ///< 58
 #if PACKET_VERSION >= 20141022
-			c._body_view_id = r[56].get<int>();            ///< 60 p->body in hercules.
+			c._body_view_id = r[56].as_uint64();            ///< 60 p->body in hercules.
 #endif
-			c._weapon_view_id = r[57].get<int>();          ///< 62 OPTION_* in hercules.
-			c._base_level = r[32].get<int>();              ///< 64
-			c._skill_point = r[48].get<int>();             ///< 66
-			c._head_bottom_view_id = r[61].get<int>();     ///< 68
-			c._shield_id = r[58].get<int>();               ///< 70
-			c._head_top_view_id = r[59].get<int>();        ///< 72
-			c._head_mid_view_id = r[60].get<int>();        ///< 74
-			c._hair_color_id = r[54].get<int>();           ///< 76
-			c._clothes_color_id = r[55].get<int>();        ///< 78
+			c._weapon_view_id = r[57].as_uint64();          ///< 62 OPTION_* in hercules.
+			c._base_level = r[32].as_uint64();              ///< 64
+			c._skill_point = r[48].as_uint64();             ///< 66
+			c._head_bottom_view_id = r[61].as_uint64();     ///< 68
+			c._shield_id = r[58].as_uint64();               ///< 70
+			c._head_top_view_id = r[59].as_uint64();        ///< 72
+			c._head_mid_view_id = r[60].as_uint64();        ///< 74
+			c._hair_color_id = r[54].as_uint64();           ///< 76
+			c._clothes_color_id = r[55].as_uint64();        ///< 78
 
-			std::string lname = r[3].get<std::string>();
+			std::string lname = r[3].as_string();
 			strncpy(c._name, lname.c_str(), MAX_UNIT_NAME_LENGTH);  ///< 80
 
-			c._strength = r[37].get<int>();                 ///< 104
-			c._agility = r[38].get<int>();
-			c._vitality = r[39].get<int>();
-			c._intelligence = r[40].get<int>();
-			c._dexterity = r[41].get<int>();
-			c._luck = r[42].get<int>();
-			c._char_slot = r[2].get<int>();               ///< 110
+			c._strength = r[37].as_uint64();                 ///< 104
+			c._agility = r[38].as_uint64();
+			c._vitality = r[39].as_uint64();
+			c._intelligence = r[40].as_uint64();
+			c._dexterity = r[41].as_uint64();
+			c._luck = r[42].as_uint64();
+			c._char_slot = r[2].as_int64();               ///< 110
 #if PACKET_VERSION >= 20061023
-			c._rename_count = r[9].get<int>() ? 0 : 1;            ///< 112
+			c._rename_count = r[9].as_uint64() ? 0 : 1;            ///< 112
 #endif
 #if (PACKET_VERSION >= 20100720 && PACKET_VERSION <= 20100727) || PACKET_VERSION >= 20100803
-			std::string current_map = r[25].get<std::string>();
+			std::string current_map = r[25].as_string();
 			strncpy(c._map_name, current_map.c_str(), MAP_NAME_LENGTH_EXT);///< 114
 #endif
 #if PACKET_VERSION >= 20100803
-			if (r[6].get<int>() != 0) {
-				std::chrono::system_clock::duration dn = std::chrono::system_clock::duration(r[6].get<int>());
+			if (r[6].as_int64() != 0) {
+				std::chrono::system_clock::duration dn = std::chrono::system_clock::duration(r[6].as_int64());
 				c._deleted_at = dn.count() * std::chrono::system_clock::period::num / std::chrono::system_clock::period::den;
 			}
 			else {
@@ -729,17 +715,17 @@ int32_t HC_ACK_CHARINFO_PER_PAGE::prepare(bool empty)
 			}
 #endif
 #if PACKET_VERSION >= 20110111
-			c._robe_view_id = r[62].get<int>();            ///< 134
+			c._robe_view_id = r[62].as_uint64();            ///< 134
 #endif
 #if PACKET_VERSION != 20111116 //2011-11-16 wants 136, ask gravity.
 #if PACKET_VERSION >= 20110928
-			c._change_slot_count = r[12].get<int>() ? 1 : 0;       ///< 138
+			c._change_slot_count = r[12].as_uint64() ? 1 : 0;       ///< 138
 #endif
 #if PACKET_VERSION >= 20111025
-			c._addon_option = r[9].get<int>() ? 1 : 0;            ///< 142 1: Displays "Addon" on side-bar.
+			c._addon_option = r[9].as_uint64() ? 1 : 0;            ///< 142 1: Displays "Addon" on side-bar.
 #endif
 #if PACKET_VERSION >= 20141016
-			c._gender = r[5].get<std::string>() == "M" ? 1 : r[5].get<std::string>() == "F" ? 0 : 99;                   ///< 146 0: Female, 1: Male, 99: Account-based.
+			c._gender = r[5].as_string() == "M" ? 1 : r[5].as_string() == "F" ? 0 : 99;                   ///< 146 0: Female, 1: Male, 99: Account-based.
 #endif
 #endif
 			_packet_length += sizeof(c);

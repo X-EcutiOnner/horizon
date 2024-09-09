@@ -29,25 +29,31 @@
 #################################
 # Project Setup
 #################################
-cmake_minimum_required (VERSION 3.7 FATAL_ERROR)
+cmake_minimum_required (VERSION 3.15 FATAL_ERROR)
+#################################
+# Project Policies
+#################################
+cmake_policy(SET CMP0091 NEW)
+
+project("Horizon")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(PROJECT_NAME "Horizon")
 
-project (${PROJECT_NAME})
 enable_language(CXX)
 enable_language(C)
-
-if (NOT CMAKE_BUILD_TYPE)
-	set(CMAKE_BUILD_TYPE Debug)
-endif()
-
-message(STATUS "Project ${PROJECT_NAME} initiated configuring in ${CMAKE_BUILD_TYPE} mode.")
 
 #################################
 # CMAKE Module Path
 #################################
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/macros")
+
+#################################
+# Set static linking for all libraries Unix, Linux not Windows
+#################################
+if (NOT MSVC AND NOT WITH_ASAN AND NOT WITH_LSAN AND NOT WITH_TSAN)
+	set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+	set(CMAKE_EXE_LINKER_FLAGS "-static -static-libgcc -static-libstdc++")
+endif()
 
 #################################
 # Find revision ID and hash of the sourcetree
@@ -75,15 +81,7 @@ include(AutoCollect)
 #################
 # Generate version.hpp File
 #################
-set(CMAKE_DISABLE_SOURCE_CHANGES OFF)
-set(CMAKE_DISABLE_IN_SOURCE_BUILD OFF)
 include(cmake/genversion/genversion.cmake)
-
-#################################
-# Disable in-source builds and changes
-#################################
-set(CMAKE_DISABLE_SOURCE_CHANGES ON)
-set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
 
 #################################
 # print out the results before continuing
@@ -97,33 +95,70 @@ check_cxx_source_compiles("
 	int main() { std::wregex r(L\".*\"); }"
 				STD_HAS_WORKING_WREGEX)
 
-
 #################################
 # Boost Library
 #################################
-set(BOOST_REQUIRED_VERSION 1.69.0)
+set(BOOST_REQUIRED_VERSION 1.82.0)
 
-set(BOOST_COMPONENTS locale filesystem log log_setup)
+set(BOOST_COMPONENTS locale filesystem system log log_setup charconv)
 
 if (WITH_TESTS)
 	set(BOOST_COMPONENTS ${BOOST_COMPONENTS} unit_test_framework)
 endif()
 
-message(STATUS "Boost Components: ${BOOST_COMPONENTS}")
+# Remove warnings for new versions of Boost
+set(Boost_NO_WARN_NEW_VERSIONS 1)
+# Enable static linking for Boost
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_MULTITHREADED ON)
+
+# Ensure that BOOST_FILESYSTEM_DYN_LINK is not defined
+if(DEFINED BOOST_FILESYSTEM_DYN_LINK)
+    unset(BOOST_FILESYSTEM_DYN_LINK CACHE)
+endif()
+# Ensure that BOOST_FILESYSTEM_DYN_LINK is not defined
+if(DEFINED BOOST_LOG_DYN_LINK)
+    unset(BOOST_LOG_DYN_LINK CACHE)
+endif()
+
+# Define BOOST_FILESYSTEM_STATIC_LINK for static linking
+add_definitions(-DBOOST_FILESYSTEM_STATIC_LINK)
+# Define BOOST_LOG_STATIC_LINK for static linking
+add_definitions(-DBOOST_LOG_STATIC_LINK)
 
 find_package(Boost ${BOOST_REQUIRED_VERSION} REQUIRED COMPONENTS ${BOOST_COMPONENTS})
 
+# Fix: error LNK2038: mismatch detected for 'boost_log_abi': value 'v2_mt_nt6' doesn't match value 'v2_mt_nt62'
+if (WIN32)
+    if (CMAKE_SYSTEM_VERSION VERSION_GREATER_EQUAL 10.0.2)
+		message(STATUS "Hotfix: Target system is Windows 11. Setting OS specific instructions for Boost.Log library linkage...")
+		add_definitions(-D_WIN32_WINNT=0x0602)
+	elseif (CMAKE_SYSTEM_VERSION VERSION_GREATER_EQUAL 10.0.1)
+		message(STATUS "Hotfix: Target system is Windows 10.  Setting OS specific instructions for for Boost.Log library linkage...")
+		add_definitions(-D_WIN32_WINNT=0x0601)
+    else()
+        message(STATUS "Target system is older than Windows 10, it is unsupported.")
+    endif()
+endif()
+
 #################
-# Readline Library
+# (Linux) Lib QuadMath for Boost.Charconv Requried by Boost.Mysql
 #################
-set(Readline_FIND_REQUIRED true)
-include(FindReadline)
+if (UNIX)
+	include(FindQuadMath)
+endif()
+
+#################
+# OpenSSL Library
+#################
+set(OPENSSL_USE_STATIC_LIBS TRUE)
+find_package(OpenSSL REQUIRED)
 
 ###############
-# LuaJit
+# Lua
 ###############
-set(LUA_FIND_REQUIRED true)
-include(FindLua)
+set(LUA_USE_STATIC_LIBS TRUE)
+find_package(Lua 5.0 REQUIRED)
 
 ###############
 # Sol2
@@ -133,21 +168,12 @@ find_package(sol2 3.3.0 REQUIRED)
 elseif(UNIX)
 include(FindSol2)
 endif()
+
 #################
 # Find ZLIB
 #################
+set(ZLIB_USE_STATIC_LIBS TRUE)
 find_package(ZLIB REQUIRED)
-
-#################
-# Find MySQL
-#################	
-if (WIN32)
-find_package(libmysql REQUIRED)
-find_package(unofficial-mysql-connector-cpp CONFIG REQUIRED)
-elseif(UNIX)
-find_package(MySQL REQUIRED)
-include(FindMySQLCPPConn8)
-endif()
 
 #################
 # Horizon Project Source

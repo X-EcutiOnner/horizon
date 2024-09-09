@@ -108,6 +108,7 @@ bool Horizon::Tools::MapCache::ParseGRFLoadResult(std::pair<uint8_t, grf_load_re
 				return true;
 			case GRF_LOAD_FORMAT_ERROR:
 				printf("GRF: Invalid or unknown grf header format. aborting...\n");
+				printf("GRF: Possible over 2GB in size...\n");
 				return true;
 			case GRF_LOAD_INVALID_VERSION:
 				printf("GRF: Invalid grf version %x. aborting...\n", problematic_grf.getGRFVersion());

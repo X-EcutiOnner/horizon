@@ -1,21 +1,29 @@
 -- At command functions!
+
+-- @storage
+local function storage(player, args)
+	storage = player:storage(tonumber(args[2]))
+	storage:notify_all()
+end
+
+-- @zeny
 local function zeny(player, args)
-	status = player:entity():status()
+	status = player:unit():status()
 	status:zeny():set(tonumber(args[2]))
 end
 -- @statpoint
 local function statpoint(player, args)
-	status = player:entity():status()
+	status = player:unit():status()
 	status:status_point():set(tonumber(args[2]))
 end
 -- @skillpoint
 local function skillpoint(player, args)
-	status = player:entity():status()
+	status = player:unit():status()
 	status:skill_point():set(tonumber(args[2]))
 end
 -- @resetskillpoints
 local function resetskillpoints(player, args)
-	status = player:entity():status()
+	status = player:unit():status()
 	status:skill_point():set(0)
 end
 -- @job
@@ -30,7 +38,7 @@ local function speed(player, args)
 	end
 
 	player:message("Movement speed has been set to " .. args[2])
-	player:entity():status():movement_speed():set(tonumber(args[2]))
+	player:unit():status():movement_speed():set(tonumber(args[2]))
 
 	return true
 end
@@ -60,7 +68,7 @@ local function mapmove(player, args)
 		player:move_to_map(map_obj, coords)
 		player:message("Moved to " .. map .. " (" .. player:map_coords():x() .. ", " .. player:map_coords():y() .. ")")
 	else
-		map_obj = player:entity():map()
+		map_obj = player:unit():map()
 		player:move_to_map(map_obj, coords)
 		coords = player:map_coords()
 		player:message("Jumped to " .. coords:x() .. " " .. coords:y())
@@ -116,9 +124,9 @@ local function iteminfo(player, args)
 end
 
 local function change_base_level_cmd(player, args)
-	local blvl = player:entity():status():base_level()
-	local bexp = player:entity():status():base_experience()
-	local nbexp = player:entity():status():next_base_experience()
+	local blvl = player:unit():status():base_level()
+	local bexp = player:unit():status():base_experience()
+	local nbexp = player:unit():status():next_base_experience()
 	local amount = tonumber(args[2])
 	if amount == nil or amount == 0 then
 		player:message("Usage: @blvl <amount>")
@@ -297,7 +305,7 @@ end
 
 function at_commands:init(player, cmd)
 	self.player = player
-	self.player_guid = player:entity():guid()
+	self.player_guid = player:unit():guid()
 	self.cmd = cmd
 	self.cmd_args = explode(" ", cmd)
 end

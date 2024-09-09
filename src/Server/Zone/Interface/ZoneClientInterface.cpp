@@ -25,24 +25,30 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#include "CharClientInterface.hpp"
+#include "ZoneClientInterface.hpp"
 
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
 
-#include "Server/Zone/Game/Entities/Battle/Combat.hpp"
-#include "Server/Zone/Game/Entities/Player/Assets/Inventory.hpp"
-#include "Server/Zone/Game/Entities/Player/Assets/Storage.hpp"
-#include "Server/Zone/Game/Entities/Player/Player.hpp"
-#include "Server/Zone/Game/Entities/Traits/Status.hpp"
-#include "Server/Zone/Game/Entities/Item/Item.hpp"
+#include "Server/Zone/Game/Units/Battle/Combat.hpp"
+#include "Server/Zone/Game/Units/Player/Assets/Inventory.hpp"
+#include "Server/Zone/Game/Units/Player/Assets/Storage.hpp"
+#include "Server/Zone/Game/Units/Player/Player.hpp"
+#include "Server/Zone/Game/Units/Traits/Status.hpp"
+#include "Server/Zone/Game/Units/Item/Item.hpp"
 #include "Server/Zone/Game/Map/Map.hpp"
-#include "Server/Zone/Game/Map/MapManager.hpp"
-#include "Server/Zone/Game/Map/MapContainerThread.hpp"
 #include "Server/Zone/Game/StaticDB/SkillDB.hpp"
 #include "Server/Zone/Game/SkillSystem/SkillExecution.hpp"
 #include "Server/Zone/Session/ZoneSession.hpp"
 #include "Server/Zone/SocketMgr/ClientSocketMgr.hpp"
+#include "Server/Common/System.hpp"
+#include "Server/Common/Server.hpp"
+
+#include <boost/uuid/uuid.hpp>
+#include <boost/uuid/uuid_io.hpp>
+#include <boost/uuid/random_generator.hpp>
+
+#include "Server/Zone/ZoneSystem.hpp"
 #include "Server/Zone/Zone.hpp"
 
 using namespace Horizon::Zone;
@@ -60,61 +66,74 @@ ZoneClientInterface::~ZoneClientInterface()
 
 bool ZoneClientInterface::login(uint32_t account_id, uint32_t char_id, uint32_t auth_code, uint32_t client_time, uint8_t gender)
 {	
-	mysqlx::Session session = sZone->database_pool()->get_connection();
-	mysqlx::RowResult rr = session.sql("SELECT `current_server` FROM `session_data` WHERE `game_account_id` = ? AND `auth_code` = ?")
-		.bind(account_id, auth_code)
-		.execute();
-	mysqlx::Row r = rr.fetchOne();
+	std::shared_ptr<Horizon::System::RuntimeContextChain> chain = std::make_shared<Horizon::System::RuntimeContextChain>(Horizon::System::RUNTIME_RUNTIME);
+	std::shared_ptr<Horizon::Zone::SCENARIO_LOGIN> s_login = std::make_shared<Horizon::Zone::SCENARIO_LOGIN>(sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager());
+	std::shared_ptr<Horizon::Zone::SCENARIO_LOGIN::Login> w_login = std::make_shared<Horizon::Zone::SCENARIO_LOGIN::Login>(s_login);
 
-	if (r.isNull()) {
-		HLog(error) << "Login error! Session data for game account " << account_id << " and authentication code " << auth_code << " does not exist.";
-		return false;
+	Horizon::Zone::s_scenario_login_request w_l_request;
+	w_l_request.account_id = account_id;
+	w_l_request.char_id = char_id;
+	w_l_request.auth_code = auth_code;
+	w_l_request.client_time = client_time;
+	w_l_request.gender = gender;
+
+	s_login->get_runtime_synchronization_mutex().lock();
+	s_login->set_session(get_session());
+	w_login->set_request(w_l_request);
+	s_login->get_runtime_synchronization_mutex().unlock();
+	s_login->push(w_login);
+
+	chain->push(s_login);
+
+	sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_resource_manager().add<RESOURCE_PRIORITY_PRIMARY>(get_session()->get_session_id(), get_session());
+
+	sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager().push(chain);
+
+	while(s_login->get_context_result() != Horizon::System::RUNTIME_CONTEXT_PASS)
+	{
+		std::this_thread::sleep_for(std::chrono::microseconds(100));
+	};
+
+	std::shared_ptr<Horizon::System::RuntimeContextChain> chain_2 = std::make_shared<Horizon::System::RuntimeContextChain>(Horizon::System::RUNTIME_RUNTIME);
+
+	std::shared_ptr<Horizon::Zone::SCENARIO_CREATE_PLAYER> s_create_player;
+	s_create_player = std::make_shared<Horizon::Zone::SCENARIO_CREATE_PLAYER>(sZone->get_component_of_type<Horizon::Zone::GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC, 1)->get_system_routine_manager());
+
+	std::shared_ptr<Horizon::Zone::SCENARIO_CREATE_PLAYER::CreatePlayer> w_create_player = std::make_shared<Horizon::Zone::SCENARIO_CREATE_PLAYER::CreatePlayer>(s_create_player);
+	s_create_player->get_runtime_synchronization_mutex().lock();
+	w_create_player->set_request(Horizon::Zone::s_player_loaded_data{(int32_t)account_id});
+	s_create_player->set_previous_context_result(s_login->get_result());
+	s_create_player->set_session(get_session());
+	s_create_player->get_runtime_synchronization_mutex().unlock();
+	s_create_player->push(w_create_player);
+
+	std::shared_ptr<Horizon::Zone::SCENARIO_LOGIN_RESPONSE> s_login_response;
+	s_login_response = std::make_shared<Horizon::Zone::SCENARIO_LOGIN_RESPONSE>(sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager());
+	s_login_response->get_runtime_synchronization_mutex().lock();
+	s_login_response->set_session(get_session());
+	s_login_response->get_runtime_synchronization_mutex().unlock();
+
+	std::shared_ptr<Horizon::Zone::SCENARIO_LOGIN_RESPONSE::LoginResponse> w_login_response = std::make_shared<Horizon::Zone::SCENARIO_LOGIN_RESPONSE::LoginResponse>(s_login_response);
+	Horizon::Zone::SCENARIO_LOGIN_RESPONSE::s_scenario_login_response_request w_l_r_request;
+
+	w_l_r_request.account_id = account_id;
+	w_l_r_request.current_x = s_login->get_result().get_one().current_x;
+	w_l_r_request.current_y = s_login->get_result().get_one().current_y;
+	w_l_r_request.font = 1;
+
+	w_login_response->set_request(w_l_r_request);
+	s_login_response->push(w_login_response);
+
+	chain_2->push(s_create_player);
+	chain_2->push(s_login_response);
+
+	sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager().push(chain_2);
+
+	while(s_login_response->get_context_result() != Horizon::System::RUNTIME_CONTEXT_PASS) {
+		std::this_thread::sleep_for(std::chrono::microseconds(100));
 	}
 
-	std::string current_server = r[0].get<std::string>();
-	if (current_server.compare("Z") == 0) { // Already on Zone.
-		ZC_REFUSE_ENTER pkt(get_session());
-		pkt.deliver(ZONE_SERV_ERROR_REJECT);
-		return false;
-	}
-
-	mysqlx::RowResult rr2 = session.sql("SELECT `gender`, `group_id` FROM `game_accounts` WHERE `id` = ?")
-		.bind(account_id)
-		.execute();
-	mysqlx::Row r2 = rr2.fetchOne();
-	
-	if (r2.isNull()) {
-		HLog(error) << "Login error! Game account with id " << account_id << " does not exist.";
-		return false;
-	}
-	
-	session.sql("UPDATE `session_data` SET `current_server` = ? WHERE `game_account_id` = ? AND `auth_code` = ?")
-		.bind("Z", account_id, auth_code)
-		.execute();
-
-	uint64_t uuid = sZone->to_uuid((int8_t) ENTITY_PLAYER, account_id, char_id, 0);
-	std::shared_ptr<Horizon::Zone::Entities::Player> pl = std::make_shared<Horizon::Zone::Entities::Player>(get_session(), uuid);
-
-	pl->create(char_id, r2[0].get<std::string>(), r2[1].get<int>());
-
-	ZC_AID zc_aid(get_session());
-	zc_aid.deliver(pl->guid());
-	
-	ZC_ACCEPT_ENTER2 zc_ae2(get_session());
-	zc_ae2.deliver(pl->map_coords().x(), pl->map_coords().y(), DIR_SOUTH, pl->character()._font); // edit third argument to saved font.
-	
-	get_session()->set_player(pl);
-
-	// Add the player to the map after the player has been created and added to the session.
-	// This is done to prevent the player from being added to the map container before being added to the session.
-	// The player is initialized within the map container, so the player must be added to the session first.
-	pl->map()->container()->manage_session(SESSION_ACTION_ADD, get_session());
-	
-	ClientSocktMgr->set_socket_for_removal(get_session()->get_socket());
-	
-	sZone->database_pool()->release_connection(std::move(session));
-	
-	HLog(info) << "Player (" << pl->guid() << ") " << pl->name() << " has logged in.";
+	get_session()->player()->initialize();
 	return true;
 }
 
@@ -123,18 +142,27 @@ bool ZoneClientInterface::login(uint32_t account_id, uint32_t char_id, uint32_t 
  */
 bool ZoneClientInterface::restart(uint8_t type)
 {
-	ZC_RESTART_ACK rpkt(get_session());
-	
-	switch (type) {
-		case 0:
-			HLog(info) << "Character is being respawned.";
-			break;
-		default:
-			rpkt.deliver(type);
-			HLog(info) << "Character has moved to the character server.";
-			break;
-	}
-	
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK> s_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK>(sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager());
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> w_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask>(s_task);
+	s_task->get_runtime_synchronization_mutex().lock();
+	s_task->set_session(get_session());
+	w_task->set_task([type](std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> task) {
+		std::shared_ptr<ZoneSession> session = std::dynamic_pointer_cast<Horizon::Zone::ActiveRuntimeScenario>(task->get_runtime_context())->get_session();
+		ZC_RESTART_ACK rpkt(session);
+		switch (type) {
+			case 0:
+				task->get_message_agent().set_status_message("Character (GUID:" + std::to_string(session->player()->guid()) + ") is being respawned.");
+				break;
+			default:
+				task->get_message_agent().set_status_message("Character (GUID:" + std::to_string(session->player()->guid()) + ") has moved to the character server.");
+				break;
+		};
+		rpkt.deliver(type);
+	});
+	s_task->get_runtime_synchronization_mutex().unlock();
+	s_task->push(w_task);
+	sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager().push(s_task);
+
 	return true;
 }
 
@@ -155,33 +183,43 @@ void ZoneClientInterface::pvpinfo(int character_id, int account_id)
 }
 bool ZoneClientInterface::disconnect(int8_t type)
 {
-	ZC_ACK_REQ_DISCONNECT pkt(get_session());
-	
-	HLog(debug) << "ZoneClientInterface::disconnect: Type :" << type;
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK> s_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK>(sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager());
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> w_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask>(s_task);
+	s_task->get_runtime_synchronization_mutex().lock();
+	s_task->set_session(get_session());
+	w_task->set_task([type](std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> task) {
+		std::shared_ptr<ZoneSession> session = std::dynamic_pointer_cast<Horizon::Zone::ActiveRuntimeScenario>(task->get_runtime_context())->get_session();
+		ZC_ACK_REQ_DISCONNECT rpkt(session);
+		rpkt.deliver(type);
+	});
+	s_task->get_runtime_synchronization_mutex().unlock();
+	s_task->push(w_task);
+	sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager().push(s_task);
 
-	pkt.deliver(type); // 0 => Quit, 1 => Wait for 10 seconds
-	
-	MapMgr->manage_session_in_map(SESSION_ACTION_LOGOUT_AND_REMOVE, get_session()->get_map_name(), get_session());
+	//sZone->get_component_of_type<GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC)->get_map_process().manage_session_in_map(SESSION_ACTION_LOGOUT_AND_REMOVE, get_session()->get_map_name(), get_session());
 	return true;
 }
 bool ZoneClientInterface::update_session(int32_t account_id)
 {
-	mysqlx::Session session = sZone->database_pool()->get_connection();
-	mysqlx::RowResult rr = session.sql("SELECT `current_server` FROM `session_data` WHERE `id` = ?")
-		.bind(account_id)
-		.execute();
-	mysqlx::Row r = rr.fetchOne();
+	std::shared_ptr<boost::mysql::tcp_ssl_connection> conn = sZone->get_database_connection();
 
+	boost::mysql::statement stmt = conn->prepare_statement("SELECT `current_server` FROM `session_data` WHERE `id` = ?");
+	auto b1 = stmt.bind(account_id);
+	boost::mysql::results results;
+	conn->execute(b1, results);
+	
 	HLog(debug) << "Updating session from I.P. address " << get_session()->get_socket()->remote_ip_address();
 
-	if (r.isNull()) {
+	if (results.rows().empty()) {
 		ZC_ACK_REQ_DISCONNECT pkt(get_session());
 		HLog(warning) << "Invalid connection for account with ID " << account_id << ", session wasn't found.";
 		pkt.deliver(0);
 		return false;
 	}
 
-	std::string current_server = r[0].get<std::string>();
+	auto r = results.rows()[0];
+
+	std::string current_server = r[0].as_string();
 
 	if (current_server.compare("C") != 0) {
 		ZC_ACK_REQ_DISCONNECT pkt(get_session());
@@ -190,19 +228,39 @@ bool ZoneClientInterface::update_session(int32_t account_id)
 		return false;
 	}
 	
-	session.sql("UPDATE `session_data` SET `last_update` = ? WHERE `game_account_id` = ?")
-		.bind(account_id, std::time(nullptr))
-		.execute();
+	stmt = conn->prepare_statement("UPDATE `session_data` SET `last_update` = ? WHERE `game_account_id` = ?");
+	auto b2 = stmt.bind(account_id, std::time(nullptr));
+	conn->execute(b2, results);
 
-	sZone->database_pool()->release_connection(std::move(session));
 	return true;
 }
 bool ZoneClientInterface::walk_to_coordinates(uint16_t x, uint16_t y, uint8_t dir)
 {
-	if (get_session()->player() == nullptr)
-		return false;
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK> s_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK>(sZone->get_component_of_type<Horizon::Zone::ZoneRuntime>(Horizon::System::RUNTIME_RUNTIME)->get_system_routine_manager());
+	std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> w_task = std::make_shared<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask>(s_task);
+	s_task->get_runtime_synchronization_mutex().lock();
+	s_task->set_session(get_session());
+	w_task->set_task([x, y](std::shared_ptr<Horizon::Zone::SCENARIO_GENERIC_TASK::GenericTask> task) {
+		std::shared_ptr<ZoneSession> session = std::dynamic_pointer_cast<Horizon::Zone::ActiveRuntimeScenario>(task->get_runtime_context())->get_session();
 
-	get_session()->player()->walk_to_coordinates(x, y);
+		if (session->player() == nullptr)
+			return;
+
+		session->player()->walk_to_coordinates(x, y);
+	});
+	s_task->push(w_task);
+	int segment_number = sZone->get_segment_number_for_resource<Horizon::Zone::GameLogicProcess, RESOURCE_PRIORITY_TERTIARY, uint64_t, std::shared_ptr<Horizon::Zone::Unit>>(Horizon::System::RUNTIME_GAMELOGIC, get_session()->player()->uuid(), nullptr);
+	
+	s_task->get_runtime_synchronization_mutex().unlock();
+
+	if (segment_number == 0) {
+		HLog(warning) << "ZoneClientInterface::walk_to_coordinates:Player " << get_session()->player()->guid() << " is not in a map.";
+		return false;
+	}
+
+	sZone->get_component_of_type<Horizon::Zone::GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC, segment_number)->get_system_routine_manager().push(s_task);
+
+
 	return true;
 }
 bool ZoneClientInterface::notify_time()
@@ -213,21 +271,21 @@ bool ZoneClientInterface::notify_time()
 }
 
 
-bool ZoneClientInterface::notify_entity_name(uint32_t guid)
+bool ZoneClientInterface::notify_unit_name(uint32_t guid)
 {
-	std::shared_ptr<Entity> entity = get_session()->player()->get_nearby_entity(guid);
+	std::shared_ptr<Unit> unit = get_session()->player()->get_nearby_unit(guid);
 	
-	if (entity == nullptr)
+	if (unit == nullptr)
 		return false;
 
 #if (CLIENT_TYPE == 'M' && PACKET_VERSION >= 20150225) \
 	|| (CLIENT_TYPE == 'R' && PACKET_VERSION >= 20141126) \
 	|| (CLIENT_TYPE == 'Z')
 	ZC_ACK_REQNAMEALL2 req(get_session());
-	req.deliver(guid, std::string(entity->name()) , "", "", "", 0);
+	req.deliver(guid, std::string(unit->name()) , "", "", "", 0);
 #else
 	ZC_ACK_REQNAMEALL req(get_session());
-	req.deliver(guid, std::string(entity->name()), "", "", "");
+	req.deliver(guid, std::string(unit->name()), "", "", "");
 #endif
 	
 	return true;
@@ -237,14 +295,14 @@ bool ZoneClientInterface::stop_attack()
 	get_session()->player()->stop_attack();
 	return true;
 }
-item_viewport_entry ZoneClientInterface::create_viewport_item_entry(std::shared_ptr<Entities::Item> item)
+item_viewport_entry ZoneClientInterface::create_viewport_item_entry(std::shared_ptr<Units::Item> item)
 {
 	item_viewport_entry entry;
 
 	if (item == nullptr)
 		return entry;
 	
-	entry.guid = item->guid();
+	entry._guid = item->guid();
 	entry.item_id = item->config()->item_id;
 	entry.x = item->map_coords().x();
 	entry.y = item->map_coords().y();
@@ -255,43 +313,43 @@ item_viewport_entry ZoneClientInterface::create_viewport_item_entry(std::shared_
 
 	return entry;
 }
-entity_viewport_entry ZoneClientInterface::create_viewport_entry(std::shared_ptr<Entity> entity)
+unit_viewport_entry ZoneClientInterface::create_viewport_entry(std::shared_ptr<Unit> unit)
 {
-	entity_viewport_entry entry;
+	unit_viewport_entry entry;
 
-	if (entity == nullptr)
+	if (unit == nullptr)
 		return entry;
 	
-	std::shared_ptr<Horizon::Zone::Traits::Status> status = entity->status();
+	std::shared_ptr<Horizon::Zone::Traits::Status> status = unit->status();
 
 	if (status == nullptr)
 		return entry;
 
-	entry.guid = entity->guid();
-	entry.unit_type = entity->type();
+	entry._guid = unit->guid();
+	entry._unit_type = unit->type();
 	entry.speed = status->movement_speed()->total();
 	entry.body_state = 0;
 	entry.health_state = 0;
 	entry.effect_state = 0;
-	entry.job_id = entity->job_id();
+	entry.job_id = unit->job_id();
 	entry.hair_style_id = status->hair_style()->get();
 	entry.hair_color_id = status->hair_color()->get();
 	entry.robe_id = status->robe_sprite()->get();
 	entry.guild_id = 0;
 	entry.guild_emblem_version = 0;
-	entry.honor = entity->type() == ENTITY_PLAYER ? status->honor()->total() : 0;
-	entry.virtue = entity->type() == ENTITY_PLAYER ? status->virtue()->total() : 0;
+	entry.honor = unit->type() == UNIT_PLAYER ? status->honor()->total() : 0;
+	entry.virtue = unit->type() == UNIT_PLAYER ? status->virtue()->total() : 0;
 	entry.in_pk_mode = 0;
-	entry.current_x = entity->map_coords().x();
-	entry.current_y = entity->map_coords().y();
-	entry.current_dir = entity->direction();
+	entry.current_x = unit->map_coords().x();
+	entry.current_y = unit->map_coords().y();
+	entry.current_dir = unit->direction();
 	
-	if (entity->is_walking()) {
-		entry.to_x = entity->dest_coords().x();
-		entry.to_y = entity->dest_coords().y();
+	if (unit->is_walking()) {
+		entry.to_x = unit->dest_coords().x();
+		entry.to_y = unit->dest_coords().y();
 	}
 	
-	entry.posture = entity->posture();
+	entry.posture = unit->posture();
 	entry.base_level = status->base_level()->total();
 	entry.font = 1;
 
@@ -306,16 +364,16 @@ entity_viewport_entry ZoneClientInterface::create_viewport_entry(std::shared_ptr
 	
 	entry.is_boss = 0;
 	entry.body_style_id = 0;
-	std::strncpy(entry.name, entity->name().c_str(), entity->name().size());
+	std::strncpy(entry.name, unit->name().c_str(), unit->name().size());
 	
-	switch (entry.unit_type)
+	switch (entry._unit_type)
 	{
-		case ENTITY_PLAYER:
-			entry.character_id = entity->downcast<Horizon::Zone::Entities::Player>()->character()._character_id;
+		case UNIT_PLAYER:
+			entry.character_id = unit->downcast<Horizon::Zone::Units::Player>()->character()._character_id;
 			entry.x_size = entry.y_size = 0;
-			entry.gender = entity->downcast<Horizon::Zone::Entities::Player>()->character()._gender;
+			entry.gender = unit->downcast<Horizon::Zone::Units::Player>()->character()._gender;
 			break;
-		case ENTITY_NPC:
+		case UNIT_NPC:
 		default:
 			entry.x_size = entry.y_size = 0;
 			break;
@@ -335,7 +393,7 @@ bool ZoneClientInterface::notify_movement_stop(int32_t guid, int16_t x, int16_t 
 	pkt.deliver(guid, x, y);
 	return true;
 }
-bool ZoneClientInterface::notify_viewport_add_entity(entity_viewport_entry entry)
+bool ZoneClientInterface::notify_viewport_add_unit(unit_viewport_entry entry)
 {
 #if PACKET_VERSION >= 20150513
 	ZC_NOTIFY_STANDENTRY11 pkt(get_session());
@@ -343,13 +401,13 @@ bool ZoneClientInterface::notify_viewport_add_entity(entity_viewport_entry entry
 #endif
 	return true;
 }
-bool ZoneClientInterface::notify_viewport_spawn_entity(entity_viewport_entry entry)
+bool ZoneClientInterface::notify_viewport_spawn_unit(unit_viewport_entry entry)
 {
 	ZC_NOTIFY_NEWENTRY11 pkt(get_session());
 	pkt.deliver(entry);
 	return true;
 }
-bool ZoneClientInterface::notify_viewport_moving_entity(entity_viewport_entry entry)
+bool ZoneClientInterface::notify_viewport_moving_unit(unit_viewport_entry entry)
 {
 #if PACKET_VERSION >= 20150513
 	ZC_NOTIFY_MOVEENTRY11 pkt(get_session());
@@ -363,19 +421,19 @@ bool ZoneClientInterface::notify_viewport_item_entry(item_viewport_entry entry)
 	pkt.deliver(entry);
 	return true;
 }
-bool ZoneClientInterface::notify_entity_move(int32_t guid, MapCoords from, MapCoords to)
+bool ZoneClientInterface::notify_unit_move(int32_t guid, MapCoords from, MapCoords to)
 {
 	ZC_NOTIFY_MOVE pkt(get_session());
 	pkt.deliver(guid, from.x(), from.y(), to.x(), to.y());
 	return true;
 }
-bool ZoneClientInterface::notify_viewport_remove_entity(std::shared_ptr<Entity> entity, entity_viewport_notification_type type)
+bool ZoneClientInterface::notify_viewport_remove_unit(std::shared_ptr<Unit> unit, unit_viewport_notification_type type)
 {
-	if (entity == nullptr)
+	if (unit == nullptr)
 		 return false;
 
 	ZC_NOTIFY_VANISH pkt(get_session());
-	pkt.deliver(entity->guid(), type);
+	pkt.deliver(unit->guid(), type);
 	return true;
 }
 bool ZoneClientInterface::notify_initial_status()
@@ -423,7 +481,7 @@ bool ZoneClientInterface::notify_initial_status()
 
 	return true;
 }
-bool ZoneClientInterface::notify_appearance_update(entity_appearance_type type, int32_t value, int32_t value2)
+bool ZoneClientInterface::notify_appearance_update(unit_appearance_type type, int32_t value, int32_t value2)
 {
 	ZC_SPRITE_CHANGE2 pkt(get_session());
 	pkt.deliver(get_session()->player()->guid(), type, value, value2);
@@ -501,7 +559,7 @@ bool ZoneClientInterface::notify_zeny_update()
 }
 bool ZoneClientInterface::increase_status_point(status_point_type type, uint8_t amount)
 {
-	std::shared_ptr<Horizon::Zone::Entities::Player> pl = get_session()->player();
+	std::shared_ptr<Horizon::Zone::Units::Player> pl = get_session()->player();
 
 	if (pl == nullptr)
 		return false;
@@ -627,8 +685,9 @@ void ZoneClientInterface::parse_chat_message(std::string message)
 	int guid = get_session()->player()->guid();
 	int msg_first_char = get_session()->player()->name().size() + 3;
 
+	// @TODO @commands
 	if (message[msg_first_char] == '@') {
-		get_session()->player()->map()->container()->get_lua_manager()->player()->perform_command_from_player(get_session()->player(), &message[msg_first_char + 1]);
+		sZone->get_component_of_type<Horizon::Zone::ScriptManager>(Horizon::System::RUNTIME_SCRIPTVM)->player()->perform_command_from_player(get_session()->player(), &message[msg_first_char + 1]);
 		return;
 	}
 
@@ -668,16 +727,17 @@ void ZoneClientInterface::whisper_message(const char *name, int32_t name_length,
 
 	HLog(debug) << name << " : " << message;
 
-	std::shared_ptr<Horizon::Zone::Entities::Player> player = MapMgr->find_player(name);
+	// @TODO
+	//std::shared_ptr<Horizon::Zone::Units::Player> player = sZone->get_component_of_type<GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC)->find_player(name);
 
-	ZC_ACK_WHISPER02 pkt(get_session());
-	if (player != nullptr)
-		pkt.deliver(WRT_SUCCESS, player->character()._character_id);
-	else
-		pkt.deliver(WRT_RECIPIENT_OFFLINE, 0);
-
-	ZC_WHISPER pkt2(player->get_session());
-	pkt2.deliver(get_session()->player()->name(), message, player->account()._group_id >= 99 ? true : false);
+	//ZC_ACK_WHISPER02 pkt(get_session());
+	//if (player != nullptr)
+	//	pkt.deliver(WRT_SUCCESS, player->character()._character_id);
+	//else
+	//	pkt.deliver(WRT_RECIPIENT_OFFLINE, 0);
+//
+	//ZC_WHISPER pkt2(player->get_session());
+	//pkt2.deliver(get_session()->player()->name(), message, player->account()._group_id >= 99 ? true : false);
 }
 void ZoneClientInterface::use_item(int16_t inventory_index, int32_t guid)
 {
@@ -1050,7 +1110,7 @@ bool ZoneClientInterface::notify_learnt_skill_list()
 
 void ZoneClientInterface::use_skill_on_target(int16_t skill_lv, int16_t skill_id, int target_guid)
 {
-	std::shared_ptr<Entity> target = get_session()->player()->get_nearby_entity(target_guid);
+	std::shared_ptr<Unit> target = get_session()->player()->get_nearby_unit(target_guid);
 	
 	if (target == nullptr)
 		return;
@@ -1150,7 +1210,7 @@ void ZoneClientInterface::action_request(int32_t target_guid, player_action_type
 		}
 		case PLAYER_ACT_ATTACK:
 		{
-			std::shared_ptr<Entity> target = get_session()->player()->get_nearby_entity(target_guid);
+			std::shared_ptr<Unit> target = get_session()->player()->get_nearby_unit(target_guid);
 			
 			CombatRegistry::MeleeExecutionOperation::MeleeExecutionOperand::s_melee_execution_operation_config config;
 			config.continuous = continuous;

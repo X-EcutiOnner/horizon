@@ -29,7 +29,11 @@
 #ifndef HORIZON_ZONE_ITEM_DEFINITIONS
 #define HORIZON_ZONE_ITEM_DEFINITIONS
 
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
+#include <string>
+#include <vector>
+#include <memory>
+#include <array>
 
 #define ITEM_NAME_LENGTH 50
 #define UNKNOWN_ITEM_ID 512 // Apple

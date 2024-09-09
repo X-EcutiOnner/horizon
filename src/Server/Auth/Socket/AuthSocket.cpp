@@ -35,6 +35,11 @@
 
 using namespace Horizon::Auth;
 
+AuthSocket::AuthSocket(uint64_t uid)
+: Socket(uid)
+{
+}
+
 AuthSocket::AuthSocket(uint64_t uid, std::shared_ptr<tcp::socket> socket)
 : Socket(uid, socket)
 {
@@ -57,8 +62,8 @@ void AuthSocket::set_session(std::shared_ptr<AuthSession> session) { std::atomic
  */
 void AuthSocket::start()
 {
-	auto session = std::make_shared<AuthSession>(get_socket_id(), shared_from_this());
-    
+	auto session = std::make_shared<AuthSession>(get_socket_id());
+    session->set_socket(shared_from_this());
 	set_session(session);
 
     session->initialize();
@@ -78,7 +83,7 @@ void AuthSocket::on_close()
 	HLog(info) << "Closed connection from " << remote_ip_address();
 
 	/* Perform socket manager cleanup. */
-	ClientSocktMgr->set_socket_for_removal(shared_from_this());
+	sClientSocketMgr->set_socket_for_removal(shared_from_this());
 }
 
 /**
@@ -97,8 +102,8 @@ void AuthSocket::on_error()
  */
 bool AuthSocket::update()
 {
-	if (sAuth->get_shutdown_stage() >= SHUTDOWN_INITIATED)
-		ClientSocktMgr->set_socket_for_removal(shared_from_this());
+	if (get_shutdown_stage() >= SHUTDOWN_INITIATED)
+		sClientSocketMgr->set_socket_for_removal(shared_from_this());
 
 	return BaseSocket::update();
 }
@@ -114,7 +119,12 @@ void AuthSocket::read_handler()
 		uint16_t packet_id = 0x0;
 		memcpy(&packet_id, get_read_buffer().get_read_pointer(), sizeof(uint16_t));
 		
-		HPacketTablePairType p = get_session()->pkt_tbl()->get_hpacket_info(packet_id);
+		std::pair<uint16_t, std::shared_ptr<Base::NetworkPacket<AuthSession>>> p;
+		p = get_session()->pkt_tbl()->get_hpacket_info(packet_id);
+
+		if (p.first == 0) { // 
+			p = get_session()->pkt_tbl()->get_tpacket_info(packet_id);
+		}
 		
 		int16_t packet_length = p.first;
 		
@@ -133,7 +143,7 @@ void AuthSocket::read_handler()
 		
 		ByteBuffer b;
 		b.append(get_read_buffer().get_read_pointer(), packet_length);
-		get_recv_queue().push(std::move(b));
+		get_session()->get_recv_queue().push(std::move(b));
 		get_read_buffer().read_completed(packet_length);
 	}
 }

@@ -40,9 +40,8 @@ using namespace Horizon::Auth;
  * Horizon Constructor.
  */
 AuthServer::AuthServer()
-: Server(), _update_timer(_io_service)
+: Server(), _update_timer(get_io_context())
 {
-	initialize_cli_commands();
 }
 
 /**
@@ -93,7 +92,7 @@ bool AuthServer::read_config()
 			c._type = cfg.get<uint16_t>("Type");
 			c._is_new = cfg.get<uint16_t>("IsNew");
 			
-			sAuth->get_auth_config().add_char_server(c);
+			get_auth_config().add_char_server(c);
 			
 			HLog(info) << "Character server '" << c._name << "' is configured.";
 		});
@@ -102,9 +101,18 @@ bool AuthServer::read_config()
 		return false;
 	}
 	
-	int char_server_count = sAuth->get_auth_config().get_char_servers().size();
+	int char_server_count = get_auth_config().get_char_servers().size();
 	HLog(info) << char_server_count << " character servers were configured.";
 	
+	// Max network threads
+	if (tbl.get<sol::object>("max_network_threads") != sol::lua_nil) {
+		get_auth_config().set_max_network_threads(tbl.get<int>("max_network_threads"));
+	} else {
+		horizon_config_error("max_network_threads", 1);
+	}
+
+	HLog(info) << "Max Network Threads set to '" << get_auth_config().max_network_threads() << "'.";
+
 	/**
 	 * Process Configuration that is common between servers.
 	 */
@@ -126,7 +134,7 @@ bool AuthServer::clicmd_reload_config(std::string /*cmd*/)
 {
 	HLog(info) << "Reloading configuration from '" << general_conf().get_config_file_path() << "'";
 
-	return sAuth->read_config();
+	return read_config();
 }
 
 bool AuthServer::clicmd_create_new_account(std::string cmd)
@@ -152,35 +160,81 @@ bool AuthServer::clicmd_create_new_account(std::string cmd)
 	game_account_gender_type gender = separated_args.size() >= 7 ? ((separated_args[6] == "M" ? ACCOUNT_GENDER_MALE : (separated_args[6] == "F" ? ACCOUNT_GENDER_FEMALE : ACCOUNT_GENDER_NONE))) : ACCOUNT_GENDER_NONE;
 	int group_id = separated_args.size() >= 8 ? std::stoi(separated_args[7]) : 0;
 	int character_slots = separated_args.size() >= 9 ? std::stoi(separated_args[8]) : 3;
-
-	mysqlx::Session db_session = sAuth->database_pool()->get_connection();
 	
 	try {
-		auto res = db_session.sql("SELECT `id` FROM game_accounts WHERE `username` = ?").bind(username).execute();
-		mysqlx::Row r = res.fetchOne();
+		auto b1 = get_database_connection()->prepare_statement("SELECT `id` FROM game_accounts WHERE `username` = ?").bind(username);
+		boost::mysql::results results;
+		get_database_connection()->execute(b1, results);
 
-		if (!r.isNull()) {
+		if (!results.rows().empty()) {
 			HLog(error) << "Account with username '" << username << "' already exists.";
-			sAuth->database_pool()->release_connection(std::move(db_session));
 			return false;
 		}
 
-		db_session.sql("INSERT INTO `game_accounts` (`username`, `hash`, `gender`, `email`, `birth_date`, `character_slots`, `pincode`, `group_id`, `state`) "
-			"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);")
-			.bind(username, password, gender == ACCOUNT_GENDER_MALE ? "M" : (gender == ACCOUNT_GENDER_FEMALE ? "F" : "NA"), 
-				email, birthdate, character_slots, pincode, group_id, (int)ACCOUNT_STATE_NONE)
-			.execute();
+		std::vector<unsigned char> salt;
+		std::vector<unsigned char> hash;
+
+		sAuth->generate_salt(salt);
+		sAuth->hash_password(password, salt, hash);
+		boost::mysql::statement stmt = get_database_connection()->prepare_statement("INSERT INTO `game_accounts` (`username`, `hash`, `salt`, `gender`, `email`, `birth_date`, `character_slots`, `pincode`, `group_id`, `state`) "
+			"VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+		auto b2 = stmt.bind(username, hash, salt, gender == ACCOUNT_GENDER_MALE ? "M" : (gender == ACCOUNT_GENDER_FEMALE ? "F" : "NA"), 
+				email, birthdate, character_slots, pincode, group_id, (int)ACCOUNT_STATE_NONE);
+		get_database_connection()->execute(b2, results);
 	}
-	catch (mysqlx::Error& err) {
-		HLog(error) << err.what();
-		sAuth->database_pool()->release_connection(std::move(db_session));
+	catch (boost::mysql::error_with_diagnostics &error) {
+		HLog(error) << error.what();
 		return false;
 	}
-
-	sAuth->database_pool()->release_connection(std::move(db_session));
 	
 	HLog(info) << "Account '" << username << "' has been created successfully.";
 
+	return true;
+}
+
+bool AuthServer::clicmd_reset_password(std::string cmd)
+{
+	std::vector<std::string> separated_args;
+	std::string help_str = "Usage: reset-password <username> <new_password>";
+
+	boost::algorithm::split(separated_args, cmd, boost::algorithm::is_any_of(" "));
+
+	if (separated_args.size() < 3) {
+		HLog(error) << "reset-password command requires 2 arguments.";
+		HLog(error) << help_str;
+		return false;
+	}
+
+	std::string username = separated_args[1];
+	std::string new_password = separated_args[2];
+
+	try {
+		auto b1 = get_database_connection()->prepare_statement("SELECT `id` FROM game_accounts WHERE `username` = ?").bind(username);
+		boost::mysql::results results;
+		get_database_connection()->execute(b1, results);
+
+		if (results.rows().empty()) {
+			HLog(error) << "Account with username '" << username << "' does not exist.";
+			return false;
+		}
+
+		std::vector<unsigned char> salt;
+
+		sAuth->generate_salt(salt);
+
+		std::vector<unsigned char> hash;
+		sAuth->hash_password(new_password, salt, hash);
+
+		boost::mysql::statement stmt = get_database_connection()->prepare_statement("UPDATE `game_accounts` SET `hash` = ?, `salt` = ? WHERE `username` = ?");
+		auto b2 = stmt.bind(hash, salt, username);
+		get_database_connection()->execute(b2, results);
+
+		HLog(info) << "Password for account '" << username << "' has been reset successfully.";
+	}
+	catch (boost::mysql::error_with_diagnostics &error) {
+		HLog(error) << error.what();
+		return false;
+	}
 	return true;
 }
 
@@ -189,9 +243,12 @@ bool AuthServer::clicmd_create_new_account(std::string cmd)
  */
 void AuthServer::initialize_cli_commands()
 {
-	add_cli_command_func("reloadconf", std::bind(&AuthServer::clicmd_reload_config, this, std::placeholders::_1));
-	add_cli_command_func("create-account", std::bind(&AuthServer::clicmd_create_new_account, this, std::placeholders::_1));
-	Server::initialize_cli_commands();
+	if (general_conf().is_test_run() && general_conf().is_test_run_minimal())
+		return;
+
+	get_component_of_type<CommandLineProcess>(Horizon::System::RUNTIME_COMMANDLINE)->add_function("reloadconf", std::bind(&AuthServer::clicmd_reload_config, this, std::placeholders::_1));
+	get_component_of_type<CommandLineProcess>(Horizon::System::RUNTIME_COMMANDLINE)->add_function("create-account", std::bind(&AuthServer::clicmd_create_new_account, this, std::placeholders::_1));
+	get_component_of_type<CommandLineProcess>(Horizon::System::RUNTIME_COMMANDLINE)->add_function("reset-password", std::bind(&AuthServer::clicmd_reset_password, this, std::placeholders::_1));
 }
 
 /**
@@ -199,107 +256,102 @@ void AuthServer::initialize_cli_commands()
  * @param ioServiceRef
  * @param error
  */
-void SignalHandler(const boost::system::error_code &error, int /*signal*/)
+void SignalHandler(int signal_num)
 {
-	if (!error) {
-		sAuth->set_shutdown_stage(SHUTDOWN_INITIATED);
-		sAuth->set_shutdown_signal(SIGTERM);
+	if (sAuth->get_signal_interrupt_command_line_loop() == true) {
+		sAuth->set_signal_interrupt_command_line_loop(false);
+		// re-set the signal handler
+		signal(signal_num, SignalHandler);
+	} else {
+		set_shutdown_stage(SHUTDOWN_INITIATED);
+		set_shutdown_signal(SIGTERM);
 	}
 }
 
 void AuthServer::update(uint64_t time)
 {
-	process_cli_commands();
-
 	getScheduler().Update();
 	
-	ClientSocktMgr->update_socket_sessions(time);
+	sClientSocketMgr->manage_sockets(time);
+	sClientSocketMgr->update_sessions(time);
 	
-	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run()) {
+	if (get_shutdown_stage() == SHUTDOWN_NOT_STARTED && !general_conf().is_test_run_minimal()) {
 		_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
 		_update_timer.async_wait(std::bind(&AuthServer::update, this, std::time(nullptr)));
 	} else {
-		get_io_service().stop();
+	
+		for (auto i = _components.begin(); i != _components.end(); i++) {
+			HLog(info) << "Kernel component '" << i->second.ptr->get_type_string()  << " (" << i->second.segment_number << ")': " << (i->second.ptr->is_finalized() == true ? "Offline" : "Online (Shutting Down)") << " { CPU: " << i->second.ptr->get_thread_cpu_id() << ", uuid: " << i->first << " }";
+		}
+
+		/**
+		 * Cancel all pending tasks.
+		 */
+		getScheduler().CancelAll();
+
+		/**
+		 * Stop all networks
+		 */
+		sClientSocketMgr->stop();
+
+		finalize();
 	}
 }
 
-void AuthServer::initialize_core()
+void AuthServer::initialize()
 {
 	/**
 	 * Core Signal Handler
 	 */
-	boost::asio::signal_set signals(get_io_service(), SIGINT, SIGTERM);
-	// Set signal handler for callbacks.
-	// Set signal handlers (this must be done before starting io_service threads,
-	// because otherwise they would unblock and exit)
-	signals.async_wait(std::bind(&SignalHandler, std::placeholders::_1, std::placeholders::_2));
+	signal(SIGINT, SignalHandler);
+	signal(SIGTERM, SignalHandler);
+#ifndef WIN32
+	signal(SIGQUIT, SignalHandler);
+#endif
 
 	// Start Horizon Network
-	ClientSocktMgr->start(get_io_service(),
-						  general_conf().get_listen_ip(),
-						  general_conf().get_listen_port(),
-						  MAX_NETWORK_THREADS);
-
-	// Initialize core.
-	Server::initialize_core();
+	sClientSocketMgr->start(get_io_context(), 
+		general_conf().get_listen_ip(), 
+		general_conf().get_listen_port(), 
+		get_auth_config().max_network_threads(),
+		general_conf().is_test_run() && general_conf().is_test_run_with_network() == false);
 	
+	// Initialize core.
+	Server::initialize();
+	
+	Server::post_initialize();
+
+	initialize_cli_commands();
+		
 	_update_timer.expires_from_now(boost::posix_time::microseconds(MAX_CORE_UPDATE_INTERVAL));
 	_update_timer.async_wait(std::bind(&AuthServer::update, this, MAX_CORE_UPDATE_INTERVAL));
 
-	get_io_service().run();
-
-	HLog(info) << "Shutdown process initiated...";
-	
-	/**
-	 * Cancel all pending tasks.
-	 */
-	getScheduler().CancelAll();
-
-	/**
-	 * Server shutdown routine begins here...
-	 */
-	Server::finalize_core();
-
-	/**
-	 * Stop all networks
-	 */
-	ClientSocktMgr->stop_network();
-
-	/* Cancel signal handling. */
-	signals.cancel();
-
-	set_shutdown_stage(SHUTDOWN_CLEANUP_COMPLETE);
-}
-
-/**
- * Main Runtime Method
- * @param argc
- * @param argv
- * @return
- */
-int main(int argc, const char * argv[])
-{
-	std::srand(std::time(nullptr));
-	
-	if (argc > 1)
-		sAuth->parse_exec_args(argv, argc);
-
-	/*
-	 * Read Configuration Settings for
-	 * the Horizon Server.
-	 */
-	if (!sAuth->read_config())
-		exit(1); // Stop process if the file can't be read.
-
-	/**
-	 * Initialize the Common Core
-	 */
-	sAuth->initialize_core();
+	// Run the io_context until stop is called from the internal, finalizing thread.
+	// After stopping, execution will continue through the next line onwards.
+	// We actually finalize on this thread and not in any of io_context's internal threads.
+	get_io_context().run();
 
 	/*
 	 * Core Cleanup
 	 */
 	HLog(info) << "Server shutting down...";
 
-	return 0;
+	HLogShutdown;
+
+	set_shutdown_stage(SHUTDOWN_CLEANUP_COMPLETE);
+}
+
+void AuthServer::finalize()
+{
+	HLog(info) << "Shutdown process initiated...";
+
+	if (!get_io_context().stopped())
+		get_io_context().stop();
+
+	/**
+	 * Server shutdown routine begins here...
+	 */
+	Server::finalize();
+	
+	Server::post_finalize();
 }

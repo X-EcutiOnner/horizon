@@ -41,7 +41,7 @@
 #include <future>
 #include <type_traits>
 #include <boost/asio/ip/tcp.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 #include <boost/asio/write.hpp>
 #include <boost/asio/use_future.hpp>
 
@@ -50,6 +50,7 @@
 using boost::asio::ip::tcp;
 
 #define READ_BLOCK_SIZE 0x1000
+#define BOOST_BIND_GLOBAL_PLACEHOLDERS 1
 
 namespace Horizon
 {
@@ -80,6 +81,12 @@ template <class SocketType>
 class Socket : public std::enable_shared_from_this<SocketType>
 {
 public:
+	explicit Socket(uint64_t socket_id)
+	: _socket_id(socket_id), _socket(nullptr), _read_buffer(), _closed(false), _closing(false), _is_writing_async(false)
+	{
+		_read_buffer.resize(READ_BLOCK_SIZE);
+	}
+
 	explicit Socket(uint64_t socket_id, std::shared_ptr<tcp::socket> socket)
 	: _socket_id(socket_id), _socket(socket), _remote_ip_address(_socket->remote_endpoint().address().to_string()),
 	_remote_port(_socket->remote_endpoint().port()), _read_buffer(), _closed(false), _closing(false), _is_writing_async(false)
@@ -109,8 +116,9 @@ public:
 		if (_closed)
 			return false;
 
-		if (_is_writing_async || (_write_queue.empty() && !_closing))
+		if (_is_writing_async || (_write_queue.empty() && !_closing)) {
 			return true;
+		}
 
 		while (handle_queue())
 			;
@@ -157,7 +165,7 @@ public:
 								 boost::bind(&Socket<SocketType>::read_handler_internal, this, boost::placeholders::_1, boost::placeholders::_2));
 	}
 
-	void queue_buffer(ByteBuffer &&buffer) { _write_queue.push(std::move(buffer)); }
+	virtual void queue_buffer(ByteBuffer &&buffer) { _write_queue.push(std::move(buffer)); }
 
 	bool is_open() { return !_closed && !_closing; }
 
@@ -192,8 +200,6 @@ public:
 	void delayed_close_socket() { if (_closing.exchange(true)) return; }
 
     ByteBuffer &get_read_buffer() { return _read_buffer; }
-	
-	ThreadSafeQueue<ByteBuffer> &get_recv_queue() { return _buffer_recv_queue; }
 
 protected:
 	virtual void on_close() = 0;
@@ -317,6 +323,8 @@ private:
 
 		std::shared_ptr<ByteBuffer> to_send = _write_queue.front();
 
+		//HLog(debug) << "Sent bytes: " << to_send->to_string();
+		
 		std::size_t bytes_sent = write_buffer_and_send(*to_send, error);
 
 		/**
@@ -344,6 +352,8 @@ private:
 		return !_write_queue.empty() && bytes_sent;
 	}
 
+	std::shared_ptr<tcp::socket> get_socket() { return _socket; }
+
 private:
 	uint64_t _socket_id;
 	std::shared_ptr<tcp::socket> _socket;               ///< After accepting, the reference count of this pointer should be 1.
@@ -354,9 +364,6 @@ private:
 	std::atomic<bool> _closed;
 	std::atomic<bool> _closing;
 	bool _is_writing_async;
-
-public:
-	ThreadSafeQueue<ByteBuffer> _buffer_recv_queue;
 };
 }
 }

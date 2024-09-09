@@ -40,15 +40,12 @@ class Connector;
 /**
  * @brief Socket manager that handles sockets that were created by the connector.
  */
-template <class SocketType>
-class ConnectSocketMgr : public SocketMgr<SocketType>
+template <class SocketType, class NetworkThreadType>
+class ConnectSocketMgr : public SocketMgr<SocketType, NetworkThreadType>
 {
 	typedef std::map<std::string, std::shared_ptr<SocketType>> ConnectionMap;
-	typedef SocketMgr<SocketType> BaseSocketMgr;
+	typedef SocketMgr<SocketType, NetworkThreadType> BaseSocketMgr;
 public:
-	ConnectSocketMgr() { }
-	~ConnectSocketMgr() { }
-
 	/**
 	 * @brief Initialize and start connecting synchronously.
 	 *        This method also starts the networking threads for connected sockets.
@@ -59,7 +56,7 @@ public:
 	 * @param[in]     connections      number of connections to create and handle.
 	 * @return true on success, false on failure.
 	 */
-	std::shared_ptr<Connector> start(std::string const &connection_name, Server *server, std::string const &connect_ip, uint16_t port, uint32_t connections = 1)
+	virtual std::shared_ptr<Connector> start(std::string const &connection_name, Server *server, std::string const &connect_ip, uint16_t port, uint32_t connections = 1, bool minimal = false)
 	{
 		std::shared_ptr<Connector> connector;
 
@@ -75,9 +72,11 @@ public:
 
 		// Set the socket factory. & Start attempting to connect.
 		connector->set_socket_factory(std::bind(&BaseSocketMgr::get_new_socket, this));
-		connector->connect_with_callback(
-					std::bind(&ConnectSocketMgr<SocketType>::on_socket_open,
-						this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), connections);
+		
+		if (minimal == false)
+			connector->connect_with_callback(
+						std::bind(&ConnectSocketMgr<SocketType, NetworkThreadType>::on_socket_open,
+							this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3), connections);
 
 		return connector;
 	}
@@ -85,9 +84,12 @@ public:
 	/**
 	 * @brief Stop the Connector network and clear the connection pool.
 	 */
-	void stop_network() override
+	virtual bool stop_network() override
 	{
-		SocketMgr<SocketType>::stop_network();
+		if (!SocketMgr<SocketType, NetworkThreadType>::stop_network())
+			return false;
+
+		return true;
 	}
 
 	/**
@@ -99,7 +101,7 @@ public:
 	 */
 	void on_socket_open(std::string const &conn_name, std::shared_ptr<tcp::socket> const &tcp_socket, uint32_t thread_index)
 	{
-		std::shared_ptr<SocketType> socket = SocketMgr<SocketType>::on_socket_open(std::move(tcp_socket), thread_index);
+		std::shared_ptr<SocketType> socket = SocketMgr<SocketType, NetworkThreadType>::on_socket_open(std::move(tcp_socket), thread_index);
 		add_socket_to_connections(conn_name, socket);
 	}
 
@@ -116,7 +118,7 @@ public:
 
 		try {
 			return _connection_map.at(conn_name);
-		} catch (std::out_of_range &e) {
+		} catch (std::out_of_range &/*e*/) {
 			return std::shared_ptr<SocketType>();
 		}
 	}

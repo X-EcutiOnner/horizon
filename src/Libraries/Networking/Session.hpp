@@ -28,6 +28,7 @@
 #ifndef HORIZON_NETWORKING_SESSION_HPP
 #define HORIZON_NETWORKING_SESSION_HPP
 
+#include "Core/Multithreading/ThreadSafeQueue.hpp"
 #include "Libraries/Networking/Buffer/ByteBuffer.hpp"
 
 #include <memory>
@@ -53,8 +54,8 @@ template <class SocketType, class SessionType>
 class Session : public std::enable_shared_from_this<SessionType>
 {
 public:
-	Session(int64_t uid, std::weak_ptr<SocketType> socket)
-	: _uid(uid), _socket(socket)
+	Session(uint64_t uid)
+	: _uid(uid)
 	{
 		//
 	}
@@ -93,11 +94,16 @@ public:
 
 	//! @brief Get the unique id of the session.
 	//! @return int64_t
-	int64_t get_session_id() { return _uid; }
+	uint64_t get_session_id() { return _uid; }
+
+	//! @brief Receive queue of the buffer received by the socket.
+	//! @return Queue of ByteBuffer type.
+	ThreadSafeQueue<ByteBuffer> &get_recv_queue() { return _buffer_recv_queue; }
 private:
+	ThreadSafeQueue<ByteBuffer> _buffer_recv_queue;
 	std::weak_ptr<SocketType> _socket;
 	bool _is_initialized{ false };
-	int64_t _uid{ 0 };
+	uint64_t _uid{ 0 };
 };
 }
 }

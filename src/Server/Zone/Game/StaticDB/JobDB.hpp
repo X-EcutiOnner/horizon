@@ -30,8 +30,12 @@
 #ifndef HORIZON_ZONE_STATICDB_JOBDB_HPP
 #define HORIZON_ZONE_STATICDB_JOBDB_HPP
 
+#include "Core/Multithreading/LockedLookupTable.hpp"
 #include "Server/Zone/Definitions/ItemDefinitions.hpp"
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
+#include <array>
+#include <sol/sol.hpp>
+#include <map>
 
 namespace Horizon
 {

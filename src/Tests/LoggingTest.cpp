@@ -5,12 +5,11 @@
  *          http://www.boost.org/LICENSE_1_0.txt)
  */
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "LoggingTest"
 
-#define BOOST_LOG_DYN_LINK 1
-
 #include <boost/test/unit_test.hpp>
+
 #include <boost/log/core.hpp>
 #include <boost/log/trivial.hpp>
 #include <boost/log/expressions.hpp>
@@ -19,6 +18,8 @@
 #include <boost/log/utility/setup/common_attributes.hpp>
 #include <boost/log/sources/severity_logger.hpp>
 #include <boost/log/sources/record_ostream.hpp>
+
+#include "Core/Logging/Logger.hpp"
 
 namespace logging = boost::log;
 namespace src = boost::log::sources;
@@ -94,4 +95,13 @@ BOOST_AUTO_TEST_CASE(LoggingTest)
     BOOST_LOG_SEV(lg, warning) << "A warning severity message";
     BOOST_LOG_SEV(lg, error) << "An error severity message";
     BOOST_LOG_SEV(lg, fatal) << "A fatal severity message";
+
+    HLog(trace) << "A trace severity message";
+    HLog(debug) << "A debug severity message";
+    HLog(info) << "An informational severity message";
+    HLog(warning) << "A warning severity message";
+    HLog(error) << "An error severity message";
+    HLog(fatal) << "A fatal severity message";
+
+	HLogShutdown;
 }

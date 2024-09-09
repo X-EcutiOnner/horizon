@@ -1,5 +1,3 @@
-add_definitions(-D_WIN32_WINNT=0x0601)
-
 # set default configuration directory
 if (NOT CONF_DIR)
   set(CONF_DIR ${CMAKE_INSTALL_PREFIX}/config)

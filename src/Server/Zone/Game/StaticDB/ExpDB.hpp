@@ -30,16 +30,10 @@
 #ifndef HORIZON_ZONE_STATICDB_EXPDB_HPP
 #define HORIZON_ZONE_STATICDB_EXPDB_HPP
 
+#include "Core/Multithreading/LockedLookupTable.hpp"
 #include "Server/Common/Configuration/Horizon.hpp"
-
-#ifndef SOL_ALL_SAFETIES_ON
-#define SOL_ALL_SAFETIES_ON 1
-#endif
-#ifdef SOL_STD_VARIANT
-#define SOL_STD_VARIANT 0
-#endif
-
-
+#include <vector>
+#include <sol/sol.hpp>
 
 namespace Horizon
 {

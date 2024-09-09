@@ -2,18 +2,18 @@ local player, monster, with_drops, with_exp = ...
 
 local find_monster_by_id = require("scripts/modules/find_monster_by_id")
 
-local m_config = find_monster_by_id(monster:entity():job_id())
+local m_config = find_monster_by_id(monster:unit():job_id())
 
 print(player, monster, with_drops, with_exp)
 
-print("Player " .. player:entity():name() .. " Gained EXP: " .. m_config["Exp"] .. " Job EXP: " .. m_config["JExp"])
+print("Player " .. player:unit():name() .. " Gained EXP: " .. m_config["Exp"] .. " Job EXP: " .. m_config["JExp"])
 
-player_status = player:entity():status()
+player_status = player:unit():status()
 
-local stage = player:entity():combat_registry():create_combat_stage(os.time())
-stage:push_attribute_operation(player:entity(), monster:entity(), player_status:base_experience():attribute(), AttributeOperationType.AddToBase, m_config["Exp"])
-stage:push_attribute_operation(player:entity(), monster:entity(), player_status:job_experience():attribute(), AttributeOperationType.AddToBase, m_config["JExp"])
-player:entity():combat_registry():queue_combat_stage(stage)
+local stage = player:unit():combat_registry():create_combat_stage(os.time())
+stage:push_attribute_operation(player:unit(), monster:unit(), player_status:base_experience():attribute(), AttributeOperationType.AddToBase, m_config["Exp"])
+stage:push_attribute_operation(player:unit(), monster:unit(), player_status:job_experience():attribute(), AttributeOperationType.AddToBase, m_config["JExp"])
+player:unit():combat_registry():queue_combat_stage(stage)
 
 local drops = m_config["Drops"]
 math.randomseed(os.time())
@@ -26,7 +26,7 @@ if drops then
             -- Add the item to the player's inventory
             find_item_by_name = require("scripts/modules/find_item_by_name")
             item_config = find_item_by_name(key)
-            player:entity():map():add_new_item_drop(item_config["Id"], monster:entity():map_coords(), 1, 0);
+            player:unit():map():add_new_item_drop(item_config["Id"], monster:unit():map_coords(), 1, 0);
         end
     end
 end

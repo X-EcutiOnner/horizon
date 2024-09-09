@@ -42,10 +42,14 @@ add_library(mcache
 target_link_libraries(mcache
 	PUBLIC
 		grf
-		${ZLIB_LIBRARIES}
+		ZLIB::ZLIB
 		${Boost_LIBRARIES}
 		${LUA_LIBRARIES}
 )
+
+if (NOT MSVC)
+	target_link_options(mcache PRIVATE -Wl,-Bdynamic -lc -Wl,-Bstatic)
+endif()
 
 set(INCLUDE_DIRS
     ${PROJECT_SOURCE_DIR}/src
@@ -67,3 +71,8 @@ target_include_directories(mcache
 		${CMAKE_CURRENT_BINARY_DIR}
 )
 
+#Enable CMP0091 for MSVC Builds
+if (MSVC)
+set_property(TARGET mcache PROPERTY
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)

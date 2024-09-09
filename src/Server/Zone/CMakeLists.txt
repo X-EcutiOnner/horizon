@@ -29,26 +29,28 @@
 
 add_subdirectory(Game)
 add_subdirectory(Packets)
-add_subdirectory(LUA)
+add_subdirectory(Script)
+add_subdirectory(Persistence)
 add_subdirectory(Interface)
 
 set(DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(PRIVATE_SOURCES
+	${DIR}/Main.cpp
 	${DIR}/Zone.hpp
 	${DIR}/Zone.cpp
+	${DIR}/ZoneSystem.cpp
+	${DIR}/ZoneSystem.hpp
 	${DIR}/Interface/ZoneClientInterface.cpp
 	${DIR}/Interface/ZoneClientInterface.hpp
 	${DIR}/Session/ZoneSession.cpp
 	${DIR}/Session/ZoneSession.hpp
 	${DIR}/Socket/ZoneSocket.cpp
 	${DIR}/Socket/ZoneSocket.hpp
-	${DIR}/SocketMgr/ClientSocketMgr.cpp
 	${DIR}/SocketMgr/ClientSocketMgr.hpp
+	${DIR}/SocketMgr/ClientSocketMgr.cpp
 )
 
-GroupSources(${CMAKE_CURRENT_SOURCE_DIR})
-
-add_executable(zone
+set(ZONE_TARGET_SOURCES
 	${PRIVATE_SOURCES}
 	${COMMON_SOURCES}
 	${COMMON_HEADERS}
@@ -57,10 +59,18 @@ add_executable(zone
 	${PACKET_SOURCES}
 	${PACKET_HEADERS}
 	${GAME_SOURCES}
-	${LUA_SOURCES}
+	${SCRIPT_SOURCES}
+	${PERSISTENCE_SOURCES}
 	${INTERFACE_SOURCES}
-	${DATABASE_SOURCES}
 )
+
+GroupSources(${CMAKE_CURRENT_SOURCE_DIR})
+
+add_executable(zone
+	${ZONE_TARGET_SOURCES}
+)
+
+set(ZONE_TARGET_SOURCES ${ZONE_TARGET_SOURCES} PARENT_SCOPE)
 
 target_precompile_headers(zone
 	PUBLIC
@@ -68,17 +78,12 @@ target_precompile_headers(zone
 
 target_link_libraries(zone
 	PUBLIC
-        ${Boost_LIBRARIES}
+    	${Boost_LIBRARIES}
 		networking
 		mcache
-		${Readline_LIBRARY}
 		${LUA_LIBRARIES}
-		${MYSQL_LIBRARIES}
-		$<$<BOOL:${WIN32}>:unofficial::mysql-connector-cpp::connector>
-		$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_LIBRARIES}>
-		$<$<BOOL:${UNIX}>:-lssl>
-		$<$<BOOL:${UNIX}>:-lcrypto>
-		$<$<BOOL:${UNIX}>:-lresolv>
+		OpenSSL::SSL
+		${QUADMATH_LIBRARY}
 )
 
 set(INCLUDE_DIRS
@@ -90,18 +95,12 @@ CollectIncludeDirectories(
 	PUBLIC_INCLUDES
 )
 
-message(status ${MYSQL_INCLUDE_DIR})
 target_include_directories(zone
 	PUBLIC
 		${Boost_INCLUDE_DIRS}
 		${PUBLIC_INCLUDES}
-		${Readline_INCLUDE_DIR}
 		${LUA_INCLUDE_DIR}
 		${SOL2_INCLUDE_DIR}
-		${SQLPP11_INCLUDE_DIR}
-		${MYSQL_INCLUDE_DIR}
-		$<$<BOOL:${WIN32}>:${UNOFFICIAL_MYSQL_CONNECTOR_CPP_INCLUDE_DIR}>
-		$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_INCLUDE_DIR}>
 	PRIVATE
 		${CMAKE_CURRENT_BINARY_DIR}
 )
@@ -115,18 +114,11 @@ if (APPLE)
 	)
 endif()
 
-if (WITH_COVERAGE)
-	target_compile_options(zone INTERFACE
-		-O0        # no optimization
-		-g         # generate debug info
-		--coverage # sets all required flags
-	)
-	if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
-		target_link_options(zone INTERFACE --coverage)
-	else()
-		target_link_libraries(zone INTERFACE --coverage)
-	endif()
-endif()
+# Enable CMP0091 for MSVC Builds
+if (MSVC)
+set_property(TARGET zone PROPERTY
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)
 
 install(TARGETS zone
 	DESTINATION ${CMAKE_INSTALL_PREFIX}

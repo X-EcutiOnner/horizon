@@ -177,9 +177,35 @@ mcache_config_error_type Horizon::Libraries::MapCache::ReadMapListConfig()
 	// Read the file. If there is an error, report it and exit.
 	try {
 		sol::load_result fx = lua.load_file(getMapListPath().string());
-		map_tbl = fx();
+        // Check if the load result is valid
+        if (!fx.valid()) {
+            sol::error err = fx;
+            printf("MapList Config Error: Parse error at %s.\n", err.what());
+            return MCACHE_CONFIG_PARSE_ERROR;
+        }
+		
+		sol::protected_function_result result = fx();
+		
+		if (!result.valid()) {
+			sol::error err = result;
+			printf("MapList Config Error: Result parse error at %s.\n", err.what());
+			return MCACHE_CONFIG_PARSE_ERROR;
+		}
+
+		map_tbl = result;
+        // Check if map_tbl is a table
+        if (!map_tbl.valid() || map_tbl.get_type() != sol::type::table) {
+            printf("MapList Config Error: Expected a table but received a different type.\n");
+            return MCACHE_CONFIG_PARSE_ERROR;
+        }
+	} catch(const sol::error &e) {
+		printf("MapList Config Error: Parse error at %s.\n", e.what());
+		return MCACHE_CONFIG_PARSE_ERROR;
 	} catch(const std::exception &e) {
 		printf("MapList Config Error: Parse error at %s.\n", e.what());
+		return MCACHE_CONFIG_PARSE_ERROR;
+	} catch(...) {
+		printf("MapList Config Error: Parse error.\n");
 		return MCACHE_CONFIG_PARSE_ERROR;
 	}
 
@@ -202,9 +228,25 @@ mcache_grf_config_error_type Horizon::Libraries::MapCache::ReadGRFListConfig()
 	// Read the file. If there is an error, report it and exit.
 	try {
 		sol::load_result fx = lua.load_file(getGRFListPath().string());
-		grf_tbl = fx();
+		
+		if (!fx.valid()) {
+			sol::error err = fx;
+			printf("GRFList Parse error at %s.\n", err.what());
+			return MCACHE_GRF_CONF_PARSE_ERROR;
+		}
+
+		sol::protected_function_result result = fx();
+
+		if (!result.valid()) {
+			sol::error err = result;
+			printf("GRFList Parse error at %s.\n", err.what());
+			return MCACHE_GRF_CONF_PARSE_ERROR;
+		}
+
+		grf_tbl = result;
+
 	} catch(const std::exception &e) {
-		printf("Error: Parse error at %s.\n", e.what());
+		printf("Error: GRFList Parse error at %s.\n", e.what());
 		return MCACHE_GRF_CONF_PARSE_ERROR;
 	}
 

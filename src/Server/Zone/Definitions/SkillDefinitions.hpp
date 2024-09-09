@@ -36,7 +36,7 @@ namespace Horizon
 {
 namespace Zone
 {
-	class Entity;
+	class Unit;
 }
 }
 

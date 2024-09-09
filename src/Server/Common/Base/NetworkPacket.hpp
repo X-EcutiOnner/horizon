@@ -64,30 +64,8 @@ public:
 	 */
 	std::shared_ptr<SessionType> get_session() { return _session.lock(); }
     
-protected:
-    ByteBuffer _buffer;                    ///< Buffer storage facility for the packet stream.
-    uint16_t _packet_id;                   ///< ID of the network packet.
-    
-private:
-	std::weak_ptr<SessionType> _session;   ///< Pointer to the instantiated session object.
-};
-
-template<class SessionType>
-class NetworkPacketHandler : public NetworkPacket<SessionType>
-{
-public:
-	explicit NetworkPacketHandler(uint32_t pid, std::shared_ptr<SessionType> s) : NetworkPacket<SessionType>(pid, s) { }
-	virtual ~NetworkPacketHandler() { }
-	
-	virtual void handle(ByteBuffer &&buf) = 0;
-};
-
-template<class SessionType>
-class NetworkPacketTransmitter : public NetworkPacket<SessionType>
-{
-public:
-	explicit NetworkPacketTransmitter(uint32_t pid, std::shared_ptr<SessionType> s) : NetworkPacket<SessionType>(pid, s) { }
-	virtual ~NetworkPacketTransmitter() { }
+	virtual void handle(ByteBuffer &&buf) {}
+	virtual void deserialize(ByteBuffer &buf) {}
 	
 	/**
 	 * @brief Send an Asynchronous packet by queueing
@@ -104,10 +82,16 @@ public:
 	 * @param[in]     size   size of the buffer to be queued (default sizeof type T)
 	 */
 	void transmit(std::size_t size);
+protected:
+    ByteBuffer _buffer;                    ///< Buffer storage facility for the packet stream.
+    uint16_t _packet_id;                   ///< ID of the network packet.
+    
+private:
+	std::weak_ptr<SessionType> _session;   ///< Pointer to the instantiated session object.
 };
 
 template <class SessionType>
-void NetworkPacketTransmitter<SessionType>::transmit()
+void NetworkPacket<SessionType>::transmit()
 {
 	transmit(this->_buffer.active_length());
 }
@@ -119,7 +103,7 @@ void NetworkPacketTransmitter<SessionType>::transmit()
  * @param[in]     size   size of the buffer to be queued (default sizeof type T)
  */
 template <class SessionType>
-void NetworkPacketTransmitter<SessionType>::transmit(std::size_t size)
+void NetworkPacket<SessionType>::transmit(std::size_t size)
 {
 	std::shared_ptr<SessionType> s = this->get_session();
 	if (s == nullptr) {

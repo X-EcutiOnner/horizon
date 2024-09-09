@@ -28,17 +28,16 @@
  **************************************************/
 #include "ZoneSession.hpp"
 
-#include "Server/Zone/Game/Map/MapManager.hpp"
 #include "Server/Zone/Game/Map/Map.hpp"
 #include "Server/Zone/Socket/ZoneSocket.hpp"
 #include "Server/Zone/Zone.hpp"
 
 
 using namespace Horizon::Zone;
-using namespace Horizon::Zone::Entities;
+using namespace Horizon::Zone::Units;
 
-ZoneSession::ZoneSession(int64_t uid, std::shared_ptr<ZoneSocket> socket)
-: Session(uid, socket)
+ZoneSession::ZoneSession(uint64_t uid)
+: Session(uid)
 {
 }
 
@@ -62,7 +61,7 @@ void ZoneSession::initialize()
 		// since player is the map owning thread's responsibility, we wait for the
 		// session to start by letting the client send a CZ_ENTER packet.
 		// When the packet is sent, the player will be created by the Networking Thread.
-		// Initialized by the MapContainerThread.
+		// Initialized by the GameLogicProcess.
 		set_initialized(true);
 	}
 	catch (std::exception& error) {
@@ -106,7 +105,7 @@ void ZoneSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 
 /**
  * @brief Update loop for each Zone Session.
- * @thread called from MapContainerThread.
+ * @thread called from Runtime. @see Horizon::System::RUNTIME_RUNTIME
  */
 void ZoneSession::update(uint32_t /*diff*/)
 {
@@ -115,7 +114,7 @@ void ZoneSession::update(uint32_t /*diff*/)
 	if (get_socket() == nullptr || !get_socket()->is_open())
 		return;
 
-	while ((read_buf = get_socket()->_buffer_recv_queue.try_pop())) {
+	while ((read_buf = get_recv_queue().try_pop())) {
 		while (read_buf->active_length()) {
 			uint16_t packet_id = 0x0;
 			memcpy(&packet_id, read_buf->get_read_pointer(), sizeof(int16_t));
@@ -142,5 +141,5 @@ void ZoneSession::update(uint32_t /*diff*/)
  */
 void ZoneSession::perform_cleanup()
 {
-	MapMgr->manage_session_in_map(SESSION_ACTION_LOGOUT_AND_REMOVE, get_map_name(), shared_from_this());
+	//sZone->get_component_of_type<GameLogicProcess>(Horizon::System::RUNTIME_GAMELOGIC)->manage_session_in_map(SESSION_ACTION_LOGOUT_AND_REMOVE, get_map_name(), shared_from_this());
 }

@@ -40,11 +40,11 @@ class CharSession;
  * @brief Main object for the aegis packet: HC_ACCOUNT_ID
  *
  */
-class HC_ACCOUNT_ID : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACCOUNT_ID : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACCOUNT_ID(std::shared_ptr<CharSession> s)
-		: NetworkPacketTransmitter(0, s)
+		: NetworkPacket(0, s)
 	{ }
 	virtual ~HC_ACCOUNT_ID() { }
 
@@ -78,11 +78,11 @@ ID_HC_ACCEPT_DELETECHAR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACCEPT_DELETECHAR
  *
  */ 
-class HC_ACCEPT_DELETECHAR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACCEPT_DELETECHAR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACCEPT_DELETECHAR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACCEPT_DELETECHAR, s)
+	: NetworkPacket<CharSession>(ID_HC_ACCEPT_DELETECHAR, s)
 	{}
 	virtual ~HC_ACCEPT_DELETECHAR() {}
 
@@ -116,11 +116,11 @@ ID_HC_ACCEPT_ENTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACCEPT_ENTER
  *
  */ 
-class HC_ACCEPT_ENTER : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACCEPT_ENTER : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACCEPT_ENTER(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACCEPT_ENTER, s)
+	: NetworkPacket<CharSession>(ID_HC_ACCEPT_ENTER, s)
 	{}
 	virtual ~HC_ACCEPT_ENTER() {}
 
@@ -159,11 +159,11 @@ ID_HC_ACCEPT_ENTER2 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACCEPT_ENTER2
  *
  */ 
-class HC_ACCEPT_ENTER2 : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACCEPT_ENTER2 : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACCEPT_ENTER2(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACCEPT_ENTER2, s)
+	: NetworkPacket<CharSession>(ID_HC_ACCEPT_ENTER2, s)
 	{}
 	virtual ~HC_ACCEPT_ENTER2() {}
 
@@ -185,7 +185,7 @@ enum {
 	PACKET_VERSION >= 20040000
 ID_HC_ACCEPT_MAKECHAR = 0x006d
 #elif CLIENT_TYPE == 'M' && \
-	PACKET_VERSION >= 2020107
+	PACKET_VERSION >= 20201007 
 ID_HC_ACCEPT_MAKECHAR = 0x0b6f
 #elif CLIENT_TYPE == 'M' &&  \
 	PACKET_VERSION >= 20030000
@@ -207,11 +207,11 @@ ID_HC_ACCEPT_MAKECHAR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACCEPT_MAKECHAR
  *
  */ 
-class HC_ACCEPT_MAKECHAR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACCEPT_MAKECHAR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACCEPT_MAKECHAR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACCEPT_MAKECHAR, s)
+	: NetworkPacket<CharSession>(ID_HC_ACCEPT_MAKECHAR, s)
 	{}
 	virtual ~HC_ACCEPT_MAKECHAR() {}
 
@@ -240,11 +240,11 @@ ID_HC_ACK_CHANGE_CHARACTER_SLOT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACK_CHANGE_CHARACTER_SLOT
  *
  */ 
-class HC_ACK_CHANGE_CHARACTER_SLOT : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACK_CHANGE_CHARACTER_SLOT : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACK_CHANGE_CHARACTER_SLOT(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACK_CHANGE_CHARACTER_SLOT, s)
+	: NetworkPacket<CharSession>(ID_HC_ACK_CHANGE_CHARACTER_SLOT, s)
 	{}
 	virtual ~HC_ACK_CHANGE_CHARACTER_SLOT() {}
 
@@ -278,11 +278,11 @@ ID_HC_ACK_CHANGE_CHARNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACK_CHANGE_CHARNAME
  *
  */ 
-class HC_ACK_CHANGE_CHARNAME : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACK_CHANGE_CHARNAME : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACK_CHANGE_CHARNAME(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACK_CHANGE_CHARNAME, s)
+	: NetworkPacket<CharSession>(ID_HC_ACK_CHANGE_CHARNAME, s)
 	{}
 	virtual ~HC_ACK_CHANGE_CHARNAME() {}
 
@@ -313,11 +313,11 @@ ID_HC_ACK_CHARINFO_PER_PAGE = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACK_CHARINFO_PER_PAGE
  *
  */ 
-class HC_ACK_CHARINFO_PER_PAGE : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACK_CHARINFO_PER_PAGE : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACK_CHARINFO_PER_PAGE(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACK_CHARINFO_PER_PAGE, s)
+	: NetworkPacket<CharSession>(ID_HC_ACK_CHARINFO_PER_PAGE, s)
 	{}
 	virtual ~HC_ACK_CHARINFO_PER_PAGE() {}
 
@@ -354,11 +354,11 @@ ID_HC_ACK_IS_VALID_CHARNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_ACK_IS_VALID_CHARNAME
  *
  */ 
-class HC_ACK_IS_VALID_CHARNAME : public Base::NetworkPacketTransmitter<CharSession>
+class HC_ACK_IS_VALID_CHARNAME : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_ACK_IS_VALID_CHARNAME(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_ACK_IS_VALID_CHARNAME, s)
+	: NetworkPacket<CharSession>(ID_HC_ACK_IS_VALID_CHARNAME, s)
 	{}
 	virtual ~HC_ACK_IS_VALID_CHARNAME() {}
 
@@ -386,11 +386,11 @@ ID_HC_AVAILABLE_SECOND_PASSWD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_AVAILABLE_SECOND_PASSWD
  *
  */ 
-class HC_AVAILABLE_SECOND_PASSWD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_AVAILABLE_SECOND_PASSWD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_AVAILABLE_SECOND_PASSWD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_AVAILABLE_SECOND_PASSWD, s)
+	: NetworkPacket<CharSession>(ID_HC_AVAILABLE_SECOND_PASSWD, s)
 	{}
 	virtual ~HC_AVAILABLE_SECOND_PASSWD() {}
 
@@ -424,11 +424,11 @@ ID_HC_BLOCK_CHARACTER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_BLOCK_CHARACTER
  *
  */ 
-class HC_BLOCK_CHARACTER : public Base::NetworkPacketTransmitter<CharSession>
+class HC_BLOCK_CHARACTER : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_BLOCK_CHARACTER(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_BLOCK_CHARACTER, s)
+	: NetworkPacket<CharSession>(ID_HC_BLOCK_CHARACTER, s)
 	{}
 	virtual ~HC_BLOCK_CHARACTER() {}
 
@@ -460,11 +460,11 @@ ID_HC_CHARACTER_LIST = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_CHARACTER_LIST
  *
  */ 
-class HC_CHARACTER_LIST : public Base::NetworkPacketTransmitter<CharSession>
+class HC_CHARACTER_LIST : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_CHARACTER_LIST(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_CHARACTER_LIST, s)
+	: NetworkPacket<CharSession>(ID_HC_CHARACTER_LIST, s)
 	{}
 	virtual ~HC_CHARACTER_LIST() {}
 
@@ -492,11 +492,11 @@ ID_HC_CHARLIST_NOTIFY = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_CHARLIST_NOTIFY
  *
  */ 
-class HC_CHARLIST_NOTIFY : public Base::NetworkPacketTransmitter<CharSession>
+class HC_CHARLIST_NOTIFY : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_CHARLIST_NOTIFY(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_CHARLIST_NOTIFY, s)
+	: NetworkPacket<CharSession>(ID_HC_CHARLIST_NOTIFY, s)
 	{}
 	virtual ~HC_CHARLIST_NOTIFY() {}
 
@@ -530,11 +530,11 @@ ID_HC_CHARNOTBEENSELECTED = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_CHARNOTBEENSELECTED
  *
  */ 
-class HC_CHARNOTBEENSELECTED : public Base::NetworkPacketTransmitter<CharSession>
+class HC_CHARNOTBEENSELECTED : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_CHARNOTBEENSELECTED(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_CHARNOTBEENSELECTED, s)
+	: NetworkPacket<CharSession>(ID_HC_CHARNOTBEENSELECTED, s)
 	{}
 	virtual ~HC_CHARNOTBEENSELECTED() {}
 
@@ -562,11 +562,11 @@ ID_HC_CHECKBOT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_CHECKBOT
  *
  */ 
-class HC_CHECKBOT : public Base::NetworkPacketTransmitter<CharSession>
+class HC_CHECKBOT : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_CHECKBOT(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_CHECKBOT, s)
+	: NetworkPacket<CharSession>(ID_HC_CHECKBOT, s)
 	{}
 	virtual ~HC_CHECKBOT() {}
 
@@ -594,11 +594,11 @@ ID_HC_CHECKBOT_RESULT = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_CHECKBOT_RESULT
  *
  */ 
-class HC_CHECKBOT_RESULT : public Base::NetworkPacketTransmitter<CharSession>
+class HC_CHECKBOT_RESULT : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_CHECKBOT_RESULT(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_CHECKBOT_RESULT, s)
+	: NetworkPacket<CharSession>(ID_HC_CHECKBOT_RESULT, s)
 	{}
 	virtual ~HC_CHECKBOT_RESULT() {}
 
@@ -626,11 +626,11 @@ ID_HC_DELETE_CHAR3 = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_DELETE_CHAR3
  *
  */ 
-class HC_DELETE_CHAR3 : public Base::NetworkPacketTransmitter<CharSession>
+class HC_DELETE_CHAR3 : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_DELETE_CHAR3(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_DELETE_CHAR3, s)
+	: NetworkPacket<CharSession>(ID_HC_DELETE_CHAR3, s)
 	{}
 	virtual ~HC_DELETE_CHAR3() {}
 
@@ -664,11 +664,11 @@ ID_HC_DELETE_CHAR3_CANCEL = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_DELETE_CHAR3_CANCEL
  *
  */ 
-class HC_DELETE_CHAR3_CANCEL : public Base::NetworkPacketTransmitter<CharSession>
+class HC_DELETE_CHAR3_CANCEL : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_DELETE_CHAR3_CANCEL(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_DELETE_CHAR3_CANCEL, s)
+	: NetworkPacket<CharSession>(ID_HC_DELETE_CHAR3_CANCEL, s)
 	{}
 	virtual ~HC_DELETE_CHAR3_CANCEL() {}
 
@@ -698,11 +698,11 @@ ID_HC_DELETE_CHAR3_RESERVED = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_DELETE_CHAR3_RESERVED
  *
  */ 
-class HC_DELETE_CHAR3_RESERVED : public Base::NetworkPacketTransmitter<CharSession>
+class HC_DELETE_CHAR3_RESERVED : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_DELETE_CHAR3_RESERVED(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_DELETE_CHAR3_RESERVED, s)
+	: NetworkPacket<CharSession>(ID_HC_DELETE_CHAR3_RESERVED, s)
 	{}
 	virtual ~HC_DELETE_CHAR3_RESERVED() {}
 
@@ -733,11 +733,11 @@ ID_HC_DELETE_SECOND_PASSWD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_DELETE_SECOND_PASSWD
  *
  */ 
-class HC_DELETE_SECOND_PASSWD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_DELETE_SECOND_PASSWD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_DELETE_SECOND_PASSWD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_DELETE_SECOND_PASSWD, s)
+	: NetworkPacket<CharSession>(ID_HC_DELETE_SECOND_PASSWD, s)
 	{}
 	virtual ~HC_DELETE_SECOND_PASSWD() {}
 
@@ -771,11 +771,11 @@ enum pincode_edit_response : short {
  * @brief Main object for the aegis packet: HC_EDIT_SECOND_PASSWD
  *
  */ 
-class HC_EDIT_SECOND_PASSWD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_EDIT_SECOND_PASSWD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_EDIT_SECOND_PASSWD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_EDIT_SECOND_PASSWD, s)
+	: NetworkPacket<CharSession>(ID_HC_EDIT_SECOND_PASSWD, s)
 	{}
 	virtual ~HC_EDIT_SECOND_PASSWD() {}
 
@@ -811,11 +811,11 @@ ID_HC_MAKE_SECOND_PASSWD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_MAKE_SECOND_PASSWD
  *
  */ 
-class HC_MAKE_SECOND_PASSWD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_MAKE_SECOND_PASSWD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_MAKE_SECOND_PASSWD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_MAKE_SECOND_PASSWD, s)
+	: NetworkPacket<CharSession>(ID_HC_MAKE_SECOND_PASSWD, s)
 	{}
 	virtual ~HC_MAKE_SECOND_PASSWD() {}
 
@@ -845,11 +845,11 @@ ID_HC_NOTIFY_ACCESSIBLE_MAPNAME = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_NOTIFY_ACCESSIBLE_MAPNAME
  *
  */ 
-class HC_NOTIFY_ACCESSIBLE_MAPNAME : public Base::NetworkPacketTransmitter<CharSession>
+class HC_NOTIFY_ACCESSIBLE_MAPNAME : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_NOTIFY_ACCESSIBLE_MAPNAME(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_NOTIFY_ACCESSIBLE_MAPNAME, s)
+	: NetworkPacket<CharSession>(ID_HC_NOTIFY_ACCESSIBLE_MAPNAME, s)
 	{}
 	virtual ~HC_NOTIFY_ACCESSIBLE_MAPNAME() {}
 
@@ -892,11 +892,11 @@ ID_HC_NOTIFY_ZONESVR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_NOTIFY_ZONESVR
  *
  */ 
-class HC_NOTIFY_ZONESVR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_NOTIFY_ZONESVR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_NOTIFY_ZONESVR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_NOTIFY_ZONESVR, s)
+	: NetworkPacket<CharSession>(ID_HC_NOTIFY_ZONESVR, s)
 	{}
 	virtual ~HC_NOTIFY_ZONESVR() {}
 
@@ -928,11 +928,11 @@ ID_HC_NOT_AVAILABLE_SECOND_PASSWD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_NOT_AVAILABLE_SECOND_PASSWD
  *
  */ 
-class HC_NOT_AVAILABLE_SECOND_PASSWD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_NOT_AVAILABLE_SECOND_PASSWD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_NOT_AVAILABLE_SECOND_PASSWD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_NOT_AVAILABLE_SECOND_PASSWD, s)
+	: NetworkPacket<CharSession>(ID_HC_NOT_AVAILABLE_SECOND_PASSWD, s)
 	{}
 	virtual ~HC_NOT_AVAILABLE_SECOND_PASSWD() {}
 
@@ -960,11 +960,11 @@ ID_HC_QUEUE_ORDER = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_QUEUE_ORDER
  *
  */ 
-class HC_QUEUE_ORDER : public Base::NetworkPacketTransmitter<CharSession>
+class HC_QUEUE_ORDER : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_QUEUE_ORDER(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_QUEUE_ORDER, s)
+	: NetworkPacket<CharSession>(ID_HC_QUEUE_ORDER, s)
 	{}
 	virtual ~HC_QUEUE_ORDER() {}
 
@@ -998,11 +998,11 @@ ID_HC_REFUSE_DELETECHAR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_REFUSE_DELETECHAR
  *
  */ 
-class HC_REFUSE_DELETECHAR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_REFUSE_DELETECHAR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_REFUSE_DELETECHAR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_REFUSE_DELETECHAR, s)
+	: NetworkPacket<CharSession>(ID_HC_REFUSE_DELETECHAR, s)
 	{}
 	virtual ~HC_REFUSE_DELETECHAR() {}
 
@@ -1041,11 +1041,11 @@ enum hc_char_connect_error_type : uint8_t
  * @brief Main object for the aegis packet: HC_REFUSE_ENTER
  *
  */ 
-class HC_REFUSE_ENTER : public Base::NetworkPacketTransmitter<CharSession>
+class HC_REFUSE_ENTER : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_REFUSE_ENTER(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_REFUSE_ENTER, s)
+	: NetworkPacket<CharSession>(ID_HC_REFUSE_ENTER, s)
 	{}
 	virtual ~HC_REFUSE_ENTER() {}
 
@@ -1087,11 +1087,11 @@ ID_HC_REFUSE_MAKECHAR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_REFUSE_MAKECHAR
  *
  */ 
-class HC_REFUSE_MAKECHAR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_REFUSE_MAKECHAR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_REFUSE_MAKECHAR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_REFUSE_MAKECHAR, s)
+	: NetworkPacket<CharSession>(ID_HC_REFUSE_MAKECHAR, s)
 	{}
 	virtual ~HC_REFUSE_MAKECHAR() {}
 
@@ -1126,11 +1126,11 @@ ID_HC_REFUSE_SELECTCHAR = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_REFUSE_SELECTCHAR
  *
  */ 
-class HC_REFUSE_SELECTCHAR : public Base::NetworkPacketTransmitter<CharSession>
+class HC_REFUSE_SELECTCHAR : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_REFUSE_SELECTCHAR(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_REFUSE_SELECTCHAR, s)
+	: NetworkPacket<CharSession>(ID_HC_REFUSE_SELECTCHAR, s)
 	{}
 	virtual ~HC_REFUSE_SELECTCHAR() {}
 
@@ -1164,11 +1164,11 @@ ID_HC_REQUEST_CHARACTER_PASSWORD = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_REQUEST_CHARACTER_PASSWORD
  *
  */ 
-class HC_REQUEST_CHARACTER_PASSWORD : public Base::NetworkPacketTransmitter<CharSession>
+class HC_REQUEST_CHARACTER_PASSWORD : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_REQUEST_CHARACTER_PASSWORD(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_REQUEST_CHARACTER_PASSWORD, s)
+	: NetworkPacket<CharSession>(ID_HC_REQUEST_CHARACTER_PASSWORD, s)
 	{}
 	virtual ~HC_REQUEST_CHARACTER_PASSWORD() {}
 
@@ -1230,11 +1230,11 @@ enum hc_pincode_login_response2 {
  * @brief Main object for the aegis packet: HC_SECOND_PASSWD_LOGIN
  *
  */ 
-class HC_SECOND_PASSWD_LOGIN : public Base::NetworkPacketTransmitter<CharSession>
+class HC_SECOND_PASSWD_LOGIN : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_SECOND_PASSWD_LOGIN(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_SECOND_PASSWD_LOGIN, s)
+	: NetworkPacket<CharSession>(ID_HC_SECOND_PASSWD_LOGIN, s)
 	{}
 	virtual ~HC_SECOND_PASSWD_LOGIN() {}
 
@@ -1273,11 +1273,11 @@ ID_HC_SECOND_PASSWD_REQ = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_SECOND_PASSWD_REQ
  *
  */ 
-class HC_SECOND_PASSWD_REQ : public Base::NetworkPacketTransmitter<CharSession>
+class HC_SECOND_PASSWD_REQ : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_SECOND_PASSWD_REQ(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_SECOND_PASSWD_REQ, s)
+	: NetworkPacket<CharSession>(ID_HC_SECOND_PASSWD_REQ, s)
 	{}
 	virtual ~HC_SECOND_PASSWD_REQ() {}
 
@@ -1305,11 +1305,11 @@ ID_HC_SECRETSCAN_DATA = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_SECRETSCAN_DATA
  *
  */ 
-class HC_SECRETSCAN_DATA : public Base::NetworkPacketTransmitter<CharSession>
+class HC_SECRETSCAN_DATA : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_SECRETSCAN_DATA(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_SECRETSCAN_DATA, s)
+	: NetworkPacket<CharSession>(ID_HC_SECRETSCAN_DATA, s)
 	{}
 	virtual ~HC_SECRETSCAN_DATA() {}
 
@@ -1337,11 +1337,11 @@ ID_HC_UPDATE_CHARINFO = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_UPDATE_CHARINFO
  *
  */ 
-class HC_UPDATE_CHARINFO : public Base::NetworkPacketTransmitter<CharSession>
+class HC_UPDATE_CHARINFO : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_UPDATE_CHARINFO(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_UPDATE_CHARINFO, s)
+	: NetworkPacket<CharSession>(ID_HC_UPDATE_CHARINFO, s)
 	{}
 	virtual ~HC_UPDATE_CHARINFO() {}
 
@@ -1369,11 +1369,11 @@ ID_HC_WAITING_LOGIN = 0x0000 // Disabled
  * @brief Main object for the aegis packet: HC_WAITING_LOGIN
  *
  */ 
-class HC_WAITING_LOGIN : public Base::NetworkPacketTransmitter<CharSession>
+class HC_WAITING_LOGIN : public Base::NetworkPacket<CharSession>
 {
 public:
 	HC_WAITING_LOGIN(std::shared_ptr<CharSession> s)
-	: NetworkPacketTransmitter<CharSession>(ID_HC_WAITING_LOGIN, s)
+	: NetworkPacket<CharSession>(ID_HC_WAITING_LOGIN, s)
 	{}
 	virtual ~HC_WAITING_LOGIN() {}
 

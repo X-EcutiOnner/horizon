@@ -42,6 +42,12 @@ target_include_directories(grf
 		${PROJECT_SOURCE_DIR}/src
 		${Boost_INCLUDE_DIRS})
 
+#Enable policy CMP0091 for MSVC builds
+if (MSVC)
+	set_property(TARGET grf PROPERTY
+		MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)
+
 set_target_properties(grf
 	PROPERTIES
 	LINKER_LANGUAGE CXX

@@ -43,6 +43,7 @@
 #include <boost/locale.hpp>
 #include <thread>
 #include <fstream>
+#include <iomanip>
 
 GRF::GRF()
 {
@@ -206,7 +207,7 @@ grf_load_result_type GRF::load()
 	if (std::strcmp((const char *) grf_header, "Master of Magic") != 0)
 		return GRF_LOAD_MAGIC_ERROR;
 
-	if (!grf_ifs.seekg(GetLong(grf_header + 0x1e), grf_ifs.cur))
+	if (grf_ifs.seekg(GetLongLong(grf_header + 0x1e), std::ios::cur).fail())
 		return GRF_LOAD_FORMAT_ERROR;
 
 	// Set GRF Version.

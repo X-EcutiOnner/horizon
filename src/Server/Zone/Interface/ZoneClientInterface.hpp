@@ -29,7 +29,7 @@
 #define HORIZON_ZONECLIENTINTERFACE_HPP
 
 #include "Server/Common/Base/NetworkPacket.hpp"
-#include "Server/Zone/Definitions/EntityDefinitions.hpp"
+#include "Server/Zone/Definitions/UnitDefinitions.hpp"
 #include "Server/Zone/Definitions/SkillDefinitions.hpp"
 #include "Server/Zone/Definitions/PlayerDefinitions.hpp"
 #include "Server/Common/Interfaces/ClientInterface.hpp"
@@ -41,7 +41,7 @@ namespace Horizon
 {
 namespace Zone
 {
-namespace Entities
+namespace Units
 {
 	namespace Traits
 	{
@@ -49,7 +49,7 @@ namespace Entities
 	}
 	class Item;
 }
-class Entity;
+class Unit;
 class ZoneSession;
 class ZoneClientInterface : public ClientInterface<ZoneSession>
 {
@@ -76,7 +76,7 @@ public:
 	bool walk_to_coordinates(uint16_t x, uint16_t y, uint8_t dir);
 	
 	bool notify_time();
-	bool notify_entity_name(uint32_t guid);
+	bool notify_unit_name(uint32_t guid);
 	bool stop_attack();
 
 	/**
@@ -103,15 +103,15 @@ public:
 	/* Movement & Viewport*/
 	bool notify_player_movement(MapCoords from, MapCoords to);
 	bool notify_movement_stop(int32_t guid, int16_t x, int16_t y);
-	bool notify_entity_move(int32_t guid, MapCoords from, MapCoords to);
+	bool notify_unit_move(int32_t guid, MapCoords from, MapCoords to);
 
-	item_viewport_entry create_viewport_item_entry(std::shared_ptr<Entities::Item> item);
-	entity_viewport_entry create_viewport_entry(std::shared_ptr<Entity> entity);
+	item_viewport_entry create_viewport_item_entry(std::shared_ptr<Units::Item> item);
+	unit_viewport_entry create_viewport_entry(std::shared_ptr<Unit> unit);
 
-	bool notify_viewport_add_entity(entity_viewport_entry entry);
-	bool notify_viewport_remove_entity(std::shared_ptr<Entity> entity, entity_viewport_notification_type type);
-	bool notify_viewport_moving_entity(entity_viewport_entry entry);
-	bool notify_viewport_spawn_entity(entity_viewport_entry entry);
+	bool notify_viewport_add_unit(unit_viewport_entry entry);
+	bool notify_viewport_remove_unit(std::shared_ptr<Unit> unit, unit_viewport_notification_type type);
+	bool notify_viewport_moving_unit(unit_viewport_entry entry);
+	bool notify_viewport_spawn_unit(unit_viewport_entry entry);
 	bool notify_viewport_item_entry(item_viewport_entry entry);
 	
 	/**
@@ -141,7 +141,7 @@ public:
 	 * Status
 	 */
 	bool notify_initial_status();
-	bool notify_appearance_update(entity_appearance_type type, int32_t value, int32_t value2);
+	bool notify_appearance_update(unit_appearance_type type, int32_t value, int32_t value2);
 	bool notify_compound_attribute_update(status_point_type type, int32_t value);
 	bool notify_status_attribute_update(status_point_type type, int32_t value, bool success);
 	bool notify_required_attribute_update(status_point_type type, int32_t value);

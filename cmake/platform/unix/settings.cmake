@@ -2,6 +2,10 @@
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/bin/Debug" CACHE PATH "default install path" FORCE )
+  elseif (CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
+	set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/bin/RelWithDebInfo" CACHE PATH "default install path" FORCE )
+  elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
+	set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/bin/Release" CACHE PATH "default install path" FORCE )
   else()
     set (CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/bin" CACHE PATH "default install path" FORCE )
   endif()
@@ -20,12 +24,12 @@ endif()
 
 if (NOT DB_DIR)
   set(DB_DIR ${CMAKE_INSTALL_PREFIX}/db)
-  message(STATUS "UNIX: Using deafult static database directory ${DB_DIR}")
+  message(STATUS "UNIX: Using default static database directory ${DB_DIR}")
 endif()
 
 if (WITH_TESTS AND NOT TEST_DIR)
   set(TEST_DIR ${CMAKE_INSTALL_PREFIX}/test)
-  message(STATUS "UNIX: Using deafult test directory ${TEST_DIR}")
+  message(STATUS "UNIX: Using default test directory ${TEST_DIR}")
 endif()
 
 # configure uninstaller

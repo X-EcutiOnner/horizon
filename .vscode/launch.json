@@ -4,66 +4,174 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+		{
+			"type": "cppvsdbg",
+			"request": "attach",
+			"name": "Attach to zone.exe",
+			"processId": "${command:pickProcess}"
+		},
         {
             "name": "MapCache",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\out\\build\\Debug-Tools\\bin\\Debug\\mapcache.exe",
-            "externalConsole": true,
+            "program": "${workspaceFolder}\\out\\build\\Horizon Tools Debug\\bin\\Debug\\mapcache.exe",
+            "console": "integratedTerminal",
             "logging": {
               "moduleLoad": false,
               "trace": true
             },
             "args": [
-                "--config=C:\\Users\\Sagun Khosla\\Desktop\\Repos\\horizon\\out\\build\\Debug-Tools\\bin\\Debug\\map_list.lua",
-                "--grf-config=C:\\Users\\Sagun Khosla\\Desktop\\Repos\\horizon\\out\\build\\Debug-Tools\\bin\\Debug\\grf_list.lua",
-                "--output=C:\\Users\\Sagun Khosla\\Desktop\\Repos\\horizon\\out\\build\\Debug-Tools\\bin\\Debug\\maps.dat"
-            ]
+                "--config=${workspaceFolder}\\out\\build\\Horizon Tools Debug\\bin\\Debug\\map_list.lua",
+                "--grf-config=${workspaceFolder}\\out\\build\\Horizon Tools Debug\\bin\\Debug\\grf_config.lua",
+                "--output=${workspaceFolder}\\out\\build\\Horizon Tools Debug\\bin\\Debug\\maps.dat"
+            ],
+            "cwd": "C:\\Users\\Sagun Khosla\\Desktop\\Repos\\horizon\\out\\build\\Horizon Tools Debug\\bin\\Debug\\"
         },
         {
-            "name": "Auth",
+            "name": "[Release] Auth",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\auth.exe",
-            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Debug\\binDebug\\",
-            "externalConsole": true,
+            "program": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\auth.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\",
+            "console": "integratedTerminal",
             "logging": {
               "moduleLoad": false,
               "trace": true
             },
             "args": [
-                "--with-config=${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\config\\auth-server.lua"
-            ]
+                "--with-config=config\\auth-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\"
         },
         {
-            "name": "Char",
+            "name": "[Release] Char",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\char.exe",
-            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Debug\\binDebug\\",
-            "externalConsole": true,
+            "program": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\char.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\",
+            "console": "integratedTerminal",
             "logging": {
               "moduleLoad": false,
               "trace": true
             },
             "args": [
-                "--with-config=${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\config\\char-server.lua"
-            ]
+                "--with-config=config\\char-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\"
         },
         {
-            "name": "Zone",
+            "name": "[Release] Zone",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\zone.exe",
-            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Debug\\binDebug\\",
-            "externalConsole": true,
+            "program": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\zone.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\",
+            "console": "integratedTerminal",
             "logging": {
               "moduleLoad": false,
               "trace": true
             },
             "args": [
-                "--with-config=${workspaceFolder}\\out\\build\\Debug\\bin\\Debug\\config\\zone-server.lua"
-            ]
-        }
+                "--with-config=config\\zone-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon-Release\\bin\\Release\\"
+        },
+        {
+            "name": "[Debug] Auth",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\auth.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\auth-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\"
+        },
+        {
+            "name": "[Debug] Char",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\char.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\char-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\"
+        },
+        {
+            "name": "[Debug] Zone",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\zone.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\zone-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon Debug\\bin\\Debug\\"
+        },
+		
+        {
+            "name": "[RelWithDebInfo] Auth",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\auth.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\Horizon Debug\\Debug\\bin\\Debug\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\auth-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\"
+        },
+        {
+            "name": "[RelWithDebInfo] Char",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\char.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\char-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\"
+        },
+        {
+            "name": "[RelWithDebInfo] Zone",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\zone.exe",
+            "symbolSearchPath": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\",
+            "console": "integratedTerminal",
+            "logging": {
+              "moduleLoad": false,
+              "trace": true
+            },
+            "args": [
+                "--with-config=config\\zone-server.lua"
+            ],
+            "cwd": "${workspaceFolder}\\out\\build\\Horizon\\bin\\RelWithDebInfo\\"
+        },
+		
     ]
 }

@@ -115,8 +115,8 @@ function BASE_SKILL.cast_skill(scd, skd)
   --[[
     The data we need is:
       - SCD
-      - The state of the entity (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
-      - Load the entity from the target Id (so we can validate the same statuses as the item above)
+      - The state of the unit (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
+      - Load the unit from the target Id (so we can validate the same statuses as the item above)
       - cast time information (it will be in the SCD[skill db data] but for the case of skills used by monsters the casttime is overwritten by the mob_skill_db)
 
     What will be defined and done here
@@ -132,8 +132,8 @@ function BASE_SKILL.validate_after_casting(scd, skd)
   --[[
     The data we need is:
       - SCD
-      - The state of the entity (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
-      - Load the entity from the target Id (so we can validate the same statuses as the item above)
+      - The state of the unit (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
+      - Load the unit from the target Id (so we can validate the same statuses as the item above)
 
     What will be defined and done here
       - Check some conditions again and some new checks like for casting spells on hidden targets. if the target is hidden when the cast ends, the skill fails.
@@ -154,8 +154,8 @@ function BASE_SKILL.perform_skill(scd, skd)
   --[[
     The data we need is:
       - SCD
-      - The state of the entity (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
-      - Load the entity from the target Id (so we can validate the same statuses as the item above)
+      - The state of the unit (status and status changes, map, coordinates, party information. not all data must be available upfront, but it must be possible to get party data from player for example)
+      - Load the unit from the target Id (so we can validate the same statuses as the item above)
 
     What will be defined and done here
       - will execute the effects of the skill.

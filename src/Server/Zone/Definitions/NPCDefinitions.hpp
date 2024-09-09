@@ -30,8 +30,10 @@
 #ifndef HORIZON_ZONE_NPC_DEFINITIONS_HPP
 #define HORIZON_ZONE_NPC_DEFINITIONS_HPP
 
-#include "EntityDefinitions.hpp"
+#include "UnitDefinitions.hpp"
 #include "Server/Zone/Game/Map/Grid/GridDefinitions.hpp"
+#include <memory>
+#include <string>
 
 #define NPC_START_GUID 5000000
 
@@ -52,7 +54,7 @@ namespace Horizon
 	{
 		namespace Game
 		{
-			namespace Entities
+			namespace Units
 			{
 				class NPC;
 			}
@@ -70,7 +72,7 @@ struct npc_db_data
 	std::string script{""};
 	bool script_is_file{true};
 	uint16_t trigger_range{1};
-	std::shared_ptr<Horizon::Zone::Entities::NPC> _npc;
+	std::shared_ptr<Horizon::Zone::Units::NPC> _npc;
 };
 
 #endif /* HORIZON_ZONE_NPC_DEFINITIONS_HPP */

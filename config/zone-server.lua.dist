@@ -57,7 +57,7 @@ horizon_config = {
         user = 'horizon',
         db = 'horizon',
         pass = 'horizon',
-        port = 33060
+        port = 3306
     },
 
 	database_threads = 5,
@@ -65,5 +65,13 @@ horizon_config = {
     ------------------------------------------------------------------------------------------------------
     -- Maximum timeout of a connected session.
     ------------------------------------------------------------------------------------------------------
-    session_max_timeout = 60
+    session_max_timeout = 60,
+
+	------------------------------------------------------------------------------------------------------
+	-- Maximum number of threads for each type of component
+	------------------------------------------------------------------------------------------------------
+	max_network_threads = 1,
+	max_game_logic_threads = 1,
+	max_persistence_threads = 1,
+	max_script_vm_threads = 1
 }

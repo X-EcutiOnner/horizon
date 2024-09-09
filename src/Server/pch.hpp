@@ -27,7 +27,8 @@
 #include <atomic>
 #include <stdint.h>
 
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
+#include <boost/bind/placeholders.hpp>
 #include <boost/asio.hpp>
 #include <boost/thread.hpp>
 #include <boost/algorithm/string/classification.hpp>
@@ -41,9 +42,12 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/bind/placeholders.hpp>
 
-#include <mysqlx/xdevapi.h>
+#include <boost/mysql/error_with_diagnostics.hpp>
+#include <boost/mysql/handshake_params.hpp>
+#include <boost/mysql/results.hpp>
+#include <boost/mysql/static_results.hpp>
+#include <boost/mysql/tcp_ssl.hpp>
 
 #ifndef SOL_ALL_SAFETIES_ON
 #define SOL_ALL_SAFETIES_ON 1
@@ -53,7 +57,6 @@
 #endif
 #include <sol/sol.hpp>
 
-#include "Logging/Logger.hpp"
 
 #include "Core/Multithreading/LockedLookupTable.hpp"
 #include "Core/Multithreading/ThreadSafeQueue.hpp"

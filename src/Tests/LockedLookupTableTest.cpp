@@ -27,7 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "LockedLookupTableTest"
 
 #include "Core/Multithreading/LockedLookupTable.hpp"
@@ -88,8 +88,6 @@ BOOST_AUTO_TEST_CASE(LockedLookupTableTest)
 			for (int j = start; j < end; j++) {
 				int val = table.at(j);
 				if (j != val) {
-					char output[256];
-					sprintf(output, "INT/INT not equal: %d != %d\n", j, val);
 					done_read.exchange(true);
 					fail.exchange(true);
 					return;
@@ -236,7 +234,7 @@ BOOST_AUTO_TEST_CASE(LockedLookupTableTest)
 			for (int j = start; j < end; j++) {
 				std::string val = str_table.at(keylist.at(j));
 				if (val.compare(vallist.at(j)) != 0) {
-					printf("STR/STR not equal: %s != %s\n", vallist.at(j).c_str(), val.c_str());
+					//printf("STR/STR not equal: %s != %s\n", vallist.at(j).c_str(), val.c_str());
 					done_read.exchange(true);
 					fail.exchange(true);
 					return;

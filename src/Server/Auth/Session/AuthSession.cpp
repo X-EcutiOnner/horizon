@@ -35,8 +35,8 @@
 
 using namespace Horizon::Auth;
 
-AuthSession::AuthSession(int64_t uid, std::shared_ptr<AuthSocket> socket)
-: Networking::Session<AuthSocket, AuthSession>(uid, socket)
+AuthSession::AuthSession(uint64_t uid)
+: Networking::Session<AuthSocket, AuthSession>(uid)
 {
 }
 
@@ -63,8 +63,17 @@ void AuthSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 		
 		memcpy(&packet_id, _buffer.get_read_pointer(), sizeof(int16_t));
 
-		TPacketTablePairType p = _pkt_tbl->get_tpacket_info(packet_id);
-		
+		std::pair<int16_t, std::shared_ptr<Base::NetworkPacket<AuthSession>>> p;
+		p = _pkt_tbl->get_tpacket_info(packet_id);
+
+		if (p.first == 0) { // Check if packet sending is a handled packet.
+			p = _pkt_tbl->get_hpacket_info(packet_id);
+			if (p.first == 0) {
+				HLog(warning) << "Trying to send packet 0x" << std::hex << packet_id << " which is unknown... ignoring.";
+				return;
+			}
+		} 
+
 		if (p.first == -1) {
 			memcpy(&packet_len, _buffer.get_read_pointer() + 2, sizeof(int16_t));
 		} else {
@@ -83,7 +92,7 @@ void AuthSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 void AuthSession::update(uint32_t /*diff*/)
 {
 	std::shared_ptr<ByteBuffer> read_buf;
-	while ((read_buf = get_socket()->_buffer_recv_queue.try_pop())) {
+	while ((read_buf = get_recv_queue().try_pop())) {
 		uint16_t packet_id = 0x0;
 		memcpy(&packet_id, read_buf->get_read_pointer(), sizeof(uint16_t));
 		HPacketTablePairType p = _pkt_tbl->get_hpacket_info(packet_id);

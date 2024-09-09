@@ -32,9 +32,12 @@
 
 #include "Server/pch.hpp"
 
+#include "Server/Zone/SocketMgr/ClientSocketMgr.hpp"
+#include "Server/Zone/Game/GameLogicProcess.hpp"
+#include "Server/Zone/Persistence/PersistenceManager.hpp"
+#include "Server/Zone/Script/ScriptManager.hpp"
 #include "Core/Logging/Logger.hpp"
 #include "Server/Common/Server.hpp"
-#include "Server/Zone/Socket/ZoneSocket.hpp"
 
 namespace Horizon
 {
@@ -42,7 +45,7 @@ namespace Horizon
 	{
 		namespace Game
 		{
-			namespace Entities
+			namespace Units
 			{
 				class Player;
 			}
@@ -54,6 +57,7 @@ namespace Horizon
 {
 namespace Zone
 {
+
 struct s_zone_server_configuration
 {
 	boost::filesystem::path &get_mapcache_path() { return _mapcache_path; }
@@ -68,13 +72,90 @@ struct s_zone_server_configuration
     std::time_t session_max_timeout() { return _session_max_timeout; }
     void set_session_max_timeout(std::time_t timeout) { _session_max_timeout = timeout; }
 	
+	int max_network_threads() { return _max_network_threads; }
+	void set_max_network_threads(int threads) { _max_network_threads = threads; }
+
+	int max_game_logic_threads() { return _max_game_logic_threads; }
+	void set_max_game_logic_threads(int threads) { _max_game_logic_threads = threads; }
+
+	int max_persistence_threads() { return _max_persistence_threads; }
+	void set_max_persistence_threads(int threads) { _max_persistence_threads = threads; }
+
+	int max_script_vm_threads() { return _max_script_vm_threads; }
+	void set_max_script_vm_threads(int threads) { _max_script_vm_threads = threads; }
+
 	boost::filesystem::path _static_db_path;
 	boost::filesystem::path _mapcache_path;
     std::time_t _session_max_timeout;
 	boost::filesystem::path _script_root_path;
+	int _max_network_threads{1};
+	int _max_game_logic_threads{1};
+	int _max_persistence_threads{1};
+	int _max_script_vm_threads{1};
 };
 
-class ZoneServer : public Server
+class ZoneKernel : public Server
+{
+public:
+	ZoneKernel(s_zone_server_configuration &config);
+	~ZoneKernel();
+
+	void initialize();
+	void finalize();
+	
+	s_zone_server_configuration &config() { return _config; }
+
+	TaskScheduler &getScheduler() { return _task_scheduler; }
+
+	void verify_connected_sessions();
+
+protected:
+	TaskScheduler _task_scheduler;
+	s_zone_server_configuration _config;
+};
+
+class ZoneRuntime : public KernelComponent
+{
+public:
+	ZoneRuntime();
+
+	virtual void initialize(int segment_number = 1) override
+	{
+		set_segment_number(segment_number);
+
+		_is_initialized.exchange(true);
+
+		_thread = std::thread(&ZoneRuntime::start, this);
+	}
+
+	virtual void finalize() override
+	{
+		if (_thread.joinable())
+			_thread.join();
+
+		_is_finalized.exchange(true);
+	}
+
+	void start();
+	virtual void update(int64_t diff);
+
+	bool is_initialized() override { return _is_initialized; }
+	bool is_finalized() override { return _is_finalized; }
+	
+protected:
+	using PrimaryResource = SharedPriorityResourceMedium<s_segment_storage<uint64_t, std::shared_ptr<ZoneSession>>>;
+	using ResourceManager = SharedPriorityResourceManager<PrimaryResource>;
+	ResourceManager _resource_manager;
+public:
+	ResourceManager &get_resource_manager() { return _resource_manager; }
+private:
+	std::thread _thread;
+	std::atomic<bool> _is_initialized{false};
+	std::atomic<bool> _is_finalized{false};
+
+};
+
+class ZoneServer : public ZoneKernel
 {
 public:
 	ZoneServer();
@@ -87,22 +168,21 @@ public:
 	}
 
 	bool read_config();
-	void initialize_core();
-	void initialize_cli_commands();
-	void verify_connected_sessions();
-	void update(uint64_t diff);
+	void initialize();
+	void finalize();
+
+	void update(int64_t diff);
 
 	s_zone_server_configuration &config() { return _zone_server_config; }
 
-	TaskScheduler &getScheduler() { return _task_scheduler; }
-
 	uint64_t to_uuid(uint8_t type, uint32_t uid, uint16_t uid2, uint8_t uid3);
-	void from_uuid(uint64_t entity_uuid, uint8_t& type, uint32_t& uid, uint16_t& uid2, uint8_t& uid3);
+	void from_uuid(uint64_t unit_uuid, uint8_t& type, uint32_t& uid, uint16_t& uid2, uint8_t& uid3);
 
-
+	ClientSocketMgr &get_client_socket_mgr() { return _client_socket_mgr; }
+	
 private:
 	s_zone_server_configuration _zone_server_config;
-	TaskScheduler _task_scheduler;
+	ClientSocketMgr _client_socket_mgr;
 	boost::asio::deadline_timer _update_timer;
 };
 }

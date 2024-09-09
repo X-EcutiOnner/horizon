@@ -35,7 +35,11 @@ CollectSourceFiles(
 list(REMOVE_ITEM TEST_SOURCES REGEX "${CMAKE_CURRENT_SOURCE_DIR}/prontera.cpp")
 
 set(CORE_DIR ${PROJECT_SOURCE_DIR}/src/Core)
+set(LIBRARY_DIR ${PROJECT_SOURCE_DIR}/src/Libraries)
 set(UTIL_DIR ${PROJECT_SOURCE_DIR}/src/Utility)
+set(COMMON_DIR ${PROJECT_SOURCE_DIR}/src/Server/Common)
+set(SERVER_DIR ${PROJECT_SOURCE_DIR}/src/Server)
+set(ZONE_DIR ${SERVER_DIR}/Zone)
 
 GroupSources(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -54,32 +58,85 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 	elseif (TEST_NAME STREQUAL "Sol2Test")
 		set (ADD_LIBS ${LUA_LIBRARIES})
 		set (ADD_INCLUDE_DIRS ${LUA_INCLUDE_DIR} ${SOL2_INCLUDE_DIR})
-	elseif (TEST_NAME STREQUAL "LockedLookupTableTest"
-			OR TEST_NAME STREQUAL "ThreadSafeQueueTest"
-			OR TEST_NAME STREQUAL "WorkerThreadPoolTest")
-		set (ADD_LIBS -lpthread)
 	elseif (TEST_NAME STREQUAL "LoggingTest")
 		set (ADD_SOURCES
 			${CORE_DIR}/Logging/Logger.cpp
 			${CORE_DIR}/Logging/Logger.hpp)
-		set (ADD_LIBS -lpthread)
-	elseif (TEST_NAME STREQUAL "MySQLTest")
-		set (ADD_SOURCES
+		set(ADD_LIBS ${Boost_LIBRARIES})
+		set(ADD_INCLUDE_DIRS ${Boost_INCLUDE_DIRS})
+	elseif (TEST_NAME STREQUAL "SystemRoutinesTest")
+		set (ADD_SOURCES ${ADD_SOURCES}
+			${COMMON_DIR}/Server.hpp
+			${COMMON_DIR}/Server.cpp
+			${COMMON_DIR}/System.hpp
+			${COMMON_DIR}/System.cpp
 			${CORE_DIR}/Logging/Logger.cpp
-			${CORE_DIR}/Logging/Logger.hpp)
-		set(ADD_INCLUDE_DIRS 
-			${MYSQL_INCLUDE_DIR} 
-			$<$<BOOL:${WIN32}>:${UNOFFICIAL_MYSQL_CONNECTOR_CPP_INCLUDE_DIR}>
-			$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_INCLUDE_DIR}>
+			${CORE_DIR}/Logging/Logger.hpp
+			${SERVER_DIR}/pch.hpp
+			${COMMON_DIR}/Configuration/Horizon.hpp)
+		set (ADD_LIBS 
+			${Boost_LIBRARIES}
+			${LUA_LIBRARIES}
+			OpenSSL::SSL
 		)
-		set(ADD_LIBS 
-			${MYSQL_LIBRARY}
-			$<$<BOOL:${WIN32}>:unofficial::mysql-connector-cpp::connector>
-			$<$<BOOL:${UNIX}>:${MYSQLCPPCONN8_LIBRARIES}>
-			$<$<BOOL:${UNIX}>:-lssl>
-			$<$<BOOL:${UNIX}>:-lcrypto>
-			$<$<BOOL:${UNIX}>:-lresolv>
+		set (ADD_INCLUDE_DIRS 
+			${Boost_INCLUDE_DIRS}
+			${PUBLIC_INCLUDES}
+			${LUA_INCLUDE_DIR}
+			${SOL2_INCLUDE_DIR})
+	elseif (TEST_NAME STREQUAL "AuthServerTest")
+		CollectSourceFiles(
+    		${SERVER_DIR}/Auth
+			AUTH_PRIVATE_SOURCES
 		)
+		list(REMOVE_ITEM AUTH_PRIVATE_SOURCES REGEX "${SERVER_DIR}/Auth/Main.cpp")
+		set (ADD_SOURCES	
+			${AUTH_TESTING_SOURCES}
+		)
+		set (ADD_LIBS 
+			${Boost_LIBRARIES}
+			networking
+			${LUA_LIBRARIES}
+			OpenSSL::SSL
+		)
+		set (ADD_INCLUDE_DIRS 
+			${Boost_INCLUDE_DIRS}
+			${PUBLIC_INCLUDES}
+			${LUA_INCLUDE_DIR}
+			${SOL2_INCLUDE_DIR})
+	elseif (TEST_NAME STREQUAL "CharServerTest")
+		set (ADD_SOURCES
+			${CHAR_TESTING_SOURCES}
+		)
+		set (ADD_LIBS 
+			${Boost_LIBRARIES}
+			networking
+			${LUA_LIBRARIES}
+			OpenSSL::SSL
+		)
+		set (ADD_INCLUDE_DIRS 
+			${Boost_INCLUDE_DIRS}
+			${PUBLIC_INCLUDES}
+			${LUA_INCLUDE_DIR}
+			${SOL2_INCLUDE_DIR})
+	elseif (TEST_NAME STREQUAL "ZoneServerTest")
+		set (ADD_SOURCES
+			${ZONE_TESTING_SOURCES}
+		)
+		set (ADD_LIBS 
+        	${Boost_LIBRARIES}
+			networking
+			mcache
+			${LUA_LIBRARIES}
+			OpenSSL::SSL
+		)
+		set (ADD_INCLUDE_DIRS 
+			${Boost_INCLUDE_DIRS}
+			${PUBLIC_INCLUDES}
+			${LUA_INCLUDE_DIR}
+			${SOL2_INCLUDE_DIR})
+	elseif (TEST_NAME STREQUAL "MySQLTest")
+		set (ADD_LIBS OpenSSL::SSL)
 	endif ()
 
 	# Add test executable.
@@ -89,7 +146,8 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 	target_link_libraries(${TEST_NAME}
 		PUBLIC
 		${Boost_LIBRARIES}
-		${ADD_LIBS})
+		${ADD_LIBS}
+		${QUADMATH_LIBRARY})
 
 	# Link additional include search directories for the executable.
 	target_include_directories(${TEST_NAME}
@@ -98,6 +156,12 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 			${Boost_INCLUDE_DIRS}
 			${ADD_INCLUDE_DIRS})
 
+	if (MSVC)
+		target_compile_definitions(${TEST_NAME} PRIVATE _CRTDBG_MAP_ALLOC)
+		set_property(TARGET ${TEST_NAME} PROPERTY
+			MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+	endif(MSVC)
+
 	# Sol2 LUA linker flags on macOS to avoid crashes.
 	# @see http://luajit.org/install.html
 	if (APPLE AND TEST_NAME STREQUAL "Sol2Test")
@@ -105,22 +169,5 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
 			PROPERTIES
 			LINK_FLAGS "-pagezero_size 10000 -image_base 100000000"
 			)
-	endif()
-
-	# Set the runtime output directory.
-	set_target_properties(${TEST_NAME} PROPERTIES
-		RUNTIME_OUTPUT_DIRECTORY ${TEST_DIR}
-		FOLDER "Tests")
-
-	# Finally add it to test execution.
-	# Notice the WORKING_DIRECTORY and COMMAND.
-	add_test(NAME ${TEST_NAME}
-			WORKING_DIRECTORY ${TEST_DIR}
-			COMMAND ${TEST_NAME})
-
-	if (APPLE)
-	install(TARGETS ${TEST_NAME}
-		DESTINATION ${TEST_DIR}
-		CONFIGURATIONS ${CMAKE_BUILD_TYPE})
 	endif()
 endforeach(TEST_SOURCE)

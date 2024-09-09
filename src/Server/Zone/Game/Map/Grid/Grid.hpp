@@ -32,7 +32,6 @@
 
 #include "Container/GridReferenceContainer.hpp"
 #include "Container/GridReferenceContainerVisitor.hpp"
-#include "Server/Zone/Game/Map/MapManager.hpp"
 
 //! @details Grid is used to store objects in a 2D grid. This is used to speed up the search for objects in a given area.
 //! The grid is divided into cells of a given size. Each grid-cell contains a list of objects that are in that grid-cell.
@@ -50,7 +49,6 @@ template
 >
 class Grid
 {
-friend class Horizon::Zone::MapManager;
 public:
 	template <class SPECIFIC_OBJECT>
 	void add_object(SPECIFIC_OBJECT *obj)

@@ -1,13 +1,13 @@
----@meta entity
+---@meta unit
 
----@param entity Entity
+---@param unit Unit
 ---@return Monster
-function cast_entity_to_monster(entity) end
+function cast_unit_to_monster(unit) end
 
 ---@class Intelligence
 Intelligence = {}
 
----@return integer # Total amount of intelligence that the entity has
+---@return integer # Total amount of intelligence that the unit has
 function Intelligence:get() end
 
 ---@class CurrentHP
@@ -25,29 +25,29 @@ function Status:current_hp() end
 ---@return Intelligence
 function Status:intelligence() end
 
----@class Entity
-Entity = {}
+---@class Unit
+Unit = {}
 
--- TODO: add entity_type enum
----@return integer # the entity type value
-function Entity:type() end
+-- TODO: add unit_type enum
+---@return integer # the unit type value
+function Unit:type() end
 
----@return boolean # Returns true if entity is dead
-function Entity:is_dead() end
+---@return boolean # Returns true if unit is dead
+function Unit:is_dead() end
 
 ---@return Map
-function Entity:map() end
+function Unit:map() end
 
 ---@return MapCoords
-function Entity:map_coords() end
+function Unit:map_coords() end
 
 ---@return Status
-function Entity:status() end
+function Unit:status() end
 
----@return integer # Entity's unique id
-function Entity:guid() end
+---@return integer # Unit's unique id
+function Unit:guid() end
 
----@param target Entity
+---@param target Unit
 ---@param skill_id integer
 ---@param skill_lv integer
 ---@param start_time integer
@@ -56,18 +56,18 @@ function Entity:guid() end
 ---@param damage integer
 ---@param count integer
 ---@param action_type DmgActionType
-function Entity:show_skill_damage(target, skill_id, skill_lv, start_time, attack_motion, attacked_motion, damage, count, action_type) end
+function Unit:show_skill_damage(target, skill_id, skill_lv, start_time, attack_motion, attacked_motion, damage, count, action_type) end
 
----@param target Entity
+---@param target Unit
 ---@param skill_id integer
 ---@param cast_time integer
 ---@param element Element
-function Entity:cast_skill_at_target(target, skill_id, cast_time, element) end
+function Unit:cast_skill_at_target(target, skill_id, cast_time, element) end
 
----@param entity Entity
+---@param unit Unit
 ---@param range integer
 ---@return boolean
-function Entity:is_in_range_of(entity, range) end
+function Unit:is_in_range_of(unit, range) end
 
 ---@return Combat? # Instance of combat if in combat
-function Entity:combat() end
+function Unit:combat() end

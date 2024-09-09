@@ -34,8 +34,8 @@
 
 using namespace Horizon::Char;
 
-CharSession::CharSession(int64_t uid, std::shared_ptr<CharSocket> socket)
-: Horizon::Networking::Session<CharSocket, CharSession>(uid, socket)
+CharSession::CharSession(uint64_t uid)
+: Horizon::Networking::Session<CharSocket, CharSession>(uid)
 {
 }
 
@@ -93,7 +93,7 @@ void CharSession::transmit_buffer(ByteBuffer _buffer, std::size_t size)
 void CharSession::update(uint32_t /*diff*/)
 {
 	std::shared_ptr<ByteBuffer> read_buf;
-	while ((read_buf = get_socket()->_buffer_recv_queue.try_pop())) {
+	while ((read_buf = get_recv_queue().try_pop())) {
 		uint16_t packet_id = 0x0;
 		memcpy(&packet_id, read_buf->get_read_pointer(), sizeof(uint16_t));
 		HPacketTablePairType p = _pkt_tbl->get_hpacket_info(packet_id);

@@ -8,256 +8,390 @@ on:
 
 env:
   # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Release
   MYSQL_PASSWORD: horizon
-  MYSQL_USERNAME: root
+  MYSQL_USERNAME: horizon
   MYSQL_DATABASE: horizon
-  MYSQL_HOSTNAME: localhost
-
+  MYSQL_HOSTNAME: "15.235.163.198"
+  LINUX_BOOST_ROOT: "/home/debian/boost_1_85_0"
+  LINUX_BOOST_LIBRARYDIR: "/home/debian/boost_1_85_0/stage/lib"
+  WINDOWS_PARALLEL: "2"
 jobs:
-  Debian-GCC-Libraries:
+  Debian-GCC-Tests-Tools-SAN:
+    strategy:
+      matrix:
+        sanitizer: [ "-DWITH_ASAN=true", "-DWITH_TSAN=true", "-DWITH_LSAN=true" ]
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITHOUT_SERVERS=true
-        cmake --build ${{github.workspace}}/build
-  Debian-GCC-Tests-Tools:
-    needs: Debian-GCC-Libraries
-    runs-on: Debian
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Configure & Build
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}} ${{matrix.sanitizer}}
+        cmake --build ${{github.workspace}}/build --config Debug
+        cmake --build ${{github.workspace}}/build --target install --config Debug
+    - name: Run
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-GCC-ALL-ASAN:
-    needs: Debian-GCC-Tests-Tools
-    runs-on: Debian
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Configure & Build
-      run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITH_ASAN=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/scripts -r
         files=$(find ${{github.workspace}}/src/Tests -type f -iname "*Test.cpp");
         for f in ${files[@]};
         do
           t=$(basename ${f::-4});
-          /"${{github.workspace}}/build/bin/Debug/test/${t}";
+          ${{github.workspace}}/build/bin/${t};
         done
-  Debian-GCC-Run-ASAN:
-    needs: Debian-GCC-ALL-ASAN
+  
+  Debian-GCC-Tests-Tools:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: Debian-GCC-Tests-Tools-SAN
     runs-on: Debian
-    steps: 
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Configure & Build
+      run: |
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
     - name: Run
       run: |
-        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/Debug/config -r
-        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/Debug/db -r
-        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/Debug/scripts -r
-        cd ${{github.workspace}}/build/bin/Debug
-        ./auth --with-config="config/auth-server.lua.dist" --test-run
-        ./char --with-config="config/char-server.lua.dist" --test-run
-        ./zone --with-config="config/zone-server.lua.dist" --test-run
-  Debian-GCC-ALL-TSAN:
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/scripts -r
+        files=$(find ${{github.workspace}}/src/Tests -type f -iname "*Test.cpp");
+        for f in ${files[@]};
+        do
+          t=$(basename ${f::-4});
+          ${{github.workspace}}/build/bin/${t};
+        done
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with: 
+        name: (GCC) Linux Tests (${{matrix.build_type}})
+        path: ${{github.workspace}}/build/bin/**/*
+  Debian-GCC-Servers-ASAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
     needs: Debian-GCC-Tests-Tools
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITH_TSAN=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-GCC-Run-TSAN:
-    needs: Debian-GCC-ALL-TSAN
-    runs-on: Debian
-    steps: 
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITH_ASAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+      # Run the servers with ASAN enabled, not under gdb because LeakSanitizer doesn't run under gdb.
+      # ==28178==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
     - name: Run
       run: |
-        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/Debug/config -r
-        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/Debug/db -r
-        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/Debug/scripts -r
-        cd ${{github.workspace}}/build/bin/Debug
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
+        ./auth --with-config="config/auth-server.lua.dist" --test-run
+        ./char --with-config="config/char-server.lua.dist" --test-run
+        ./zone --with-config="config/zone-server.lua.dist" --test-run
+  Debian-GCC-Servers-TSAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: Debian-GCC-Tests-Tools
+    runs-on: Debian
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Configure & Build
+      run: |
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITH_TSAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
+        ./auth --with-config="config/auth-server.lua.dist" --test-run
+        ./char --with-config="config/char-server.lua.dist" --test-run
+        ./zone --with-config="config/zone-server.lua.dist" --test-run
+  Debian-GCC-Servers-LSAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: Debian-GCC-Tests-Tools
+    runs-on: Debian
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Configure & Build
+      run: |
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITH_LSAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
         ./auth --with-config="config/auth-server.lua.dist" --test-run
         ./char --with-config="config/char-server.lua.dist" --test-run
         ./zone --with-config="config/zone-server.lua.dist" --test-run
   Debian-GCC-Servers:
-    needs: [ Debian-GCC-Run-TSAN, Debian-GCC-Run-ASAN ]
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: [ Debian-GCC-Servers-TSAN, Debian-GCC-Servers-ASAN, Debian-GCC-Servers-LSAN ]
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++"
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-GCC-Upload-Artifact:
-    needs: Debian-GCC-Servers
-    runs-on: Debian
-    steps:
-    - name: Checkout
-      uses: actions/upload-artifact@v3
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="gcc" -DCMAKE_CXX_COMPILER="g++" -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
+        ./auth --with-config="config/auth-server.lua.dist" --test-run
+        ./char --with-config="config/char-server.lua.dist" --test-run
+        ./zone --with-config="config/zone-server.lua.dist" --test-run
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
       with: 
-        name: artifacts bin
-        path: ${{github.workspace}}\build\bin\Debug\**\*
-  Debian-Clang-Libraries:
+        name: (GCC) Linux Servers (${{matrix.build_type}})
+        path: ${{github.workspace}}/build/bin/${{matrix.build_type}}/**/*
+  Debian-Clang-Tests-Tools-SAN:
+    strategy:
+      matrix:
+        sanitizer: [ "-DWITH_ASAN=true", "-DWITH_TSAN=true", "-DWITH_LSAN=true" ]
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITHOUT_SERVERS=true
-        cmake --build ${{github.workspace}}/build
-  Debian-Clang-Tests-Tools:
-    needs: Debian-Clang-Libraries
-    runs-on: Debian
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Configure & Build
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}} ${{matrix.sanitizer}}
+        cmake --build ${{github.workspace}}/build --config Debug
+        cmake --build ${{github.workspace}}/build --target install --config Debug
+    - name: Run
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/scripts -r
         files=$(find ${{github.workspace}}/src/Tests -type f -iname "*Test.cpp");
         for f in ${files[@]};
         do
           t=$(basename ${f::-4});
-          /"${{github.workspace}}/build/bin/Debug/test/${t}";
+          ${{github.workspace}}/build/bin/${t}
         done
-  Debian-Clang-ALL-ASAN:
+  Debian-Clang-Tests-Tools:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: Debian-Clang-Tests-Tools-SAN
+    runs-on: Debian
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Configure & Build
+      run: |
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TESTS=true -DWITH_TOOLS=true -DWITHOUT_SERVERS=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/scripts -r
+        files=$(find ${{github.workspace}}/src/Tests -type f -iname "*Test.cpp");
+        for f in ${files[@]};
+        do
+          t=$(basename ${f::-4});
+          ${{github.workspace}}/build/bin/${t}
+        done
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with: 
+        name: (Clang) Horizon Linux Tests (${{matrix.build_type}})
+        path: ${{github.workspace}}/build/bin/**/*
+  Debian-Clang-Servers-ASAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
     needs: Debian-Clang-Tests-Tools
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TESTS= -DWITH_ASAN=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-Clang-Run-ASAN:
-    needs: Debian-Clang-ALL-ASAN
-    runs-on: Debian
-    steps: 
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TESTS=false -DWITH_ASAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+      # Run the servers with ASAN enabled, not under gdb because LeakSanitizer doesn't run under gdb.
+      # ==28178==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)
     - name: Run
       run: |
-        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/Debug/config -r
-        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/Debug/db -r
-        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/Debug/scripts -r
-        cd ${{github.workspace}}/build/bin/Debug
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
         ./auth --with-config="config/auth-server.lua.dist" --test-run
         ./char --with-config="config/char-server.lua.dist" --test-run
         ./zone --with-config="config/zone-server.lua.dist" --test-run
-  Debian-Clang-ALL-TSAN:
+  Debian-Clang-Servers-TSAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
     needs: Debian-Clang-Tests-Tools
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TSAN=true
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-Clang-Run-TSAN:
-    needs: Debian-Clang-ALL-TSAN
-    runs-on: Debian
-    steps: 
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_TSAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
     - name: Run
       run: |
-        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/Debug/config -r
-        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/Debug/db -r
-        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/Debug/scripts -r
-        cd ${{github.workspace}}/build/bin/Debug
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
+        ./auth --with-config="config/auth-server.lua.dist" --test-run
+        ./char --with-config="config/char-server.lua.dist" --test-run
+        ./zone --with-config="config/zone-server.lua.dist" --test-run
+  Debian-Clang-Servers-LSAN:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: Debian-Clang-Tests-Tools
+    runs-on: Debian
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Configure & Build
+      run: |
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DWITH_LSAN=true -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
         ./auth --with-config="config/auth-server.lua.dist" --test-run
         ./char --with-config="config/char-server.lua.dist" --test-run
         ./zone --with-config="config/zone-server.lua.dist" --test-run
   Debian-Clang-Servers:
-    needs: [ Debian-Clang-Run-ASAN, Debian-Clang-Run-TSAN ]
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: [ Debian-Clang-Servers-ASAN, Debian-Clang-Servers-TSAN, Debian-Clang-Servers-LSAN ]
     runs-on: Debian
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Configure & Build
       run: |
-        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++"
-        cmake --build ${{github.workspace}}/build
-        cmake --build ${{github.workspace}}/build --target install
-  Debian-Clang-Upload-Artifact:
-    needs: Debian-Clang-Servers
-    runs-on: Debian
-    steps:
-    - name: Checkout
-      uses: actions/upload-artifact@v3
+        cmake -B"${{github.workspace}}/build" -S"${{github.workspace}}" -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_C_COMPILER="clang" -DCMAKE_CXX_COMPILER="clang++" -DBOOST_ROOT=${{env.LINUX_BOOST_ROOT}} -DBOOST_LIBRARYDIR=${{env.LINUX_BOOST_LIBRARYDIR}}
+        cmake --build ${{github.workspace}}/build --config ${{matrix.build_type}}
+        cmake --build ${{github.workspace}}/build --target install --config ${{matrix.build_type}}
+    - name: Run
+      run: |
+        cp ${{github.workspace}}/config ${{github.workspace}}/build/bin/${{matrix.build_type}}/config -r
+        cp ${{github.workspace}}/db ${{github.workspace}}/build/bin/${{matrix.build_type}}/db -r
+        cp ${{github.workspace}}/scripts ${{github.workspace}}/build/bin/${{matrix.build_type}}/scripts -r
+        cd ${{github.workspace}}/build/bin/${{matrix.build_type}}
+        ./auth --with-config="config/auth-server.lua.dist" --test-run
+        ./char --with-config="config/char-server.lua.dist" --test-run
+        ./zone --with-config="config/zone-server.lua.dist" --test-run
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
       with: 
-        name: artifacts bin
-        path: ${{github.workspace}}\build\bin\Debug\**\*
-
-  Windows-Libraries:
-    runs-on: Windows
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Build
-      run: ./horizon.sh build-only-libraries -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows
+        name: (Clang) Horizon Linux Servers (${{matrix.build_type}})
+        path: ${{github.workspace}}/build/bin/${{matrix.build_type}}/**/*
 
   Windows-Tests:
-    needs: Windows-Libraries
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
     runs-on: Windows
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-    
+      uses: actions/checkout@v4
     - name: Build
-      run: ./horizon.sh build-tests -DCMAKE_INSTALL_PREFIX="${{github.workspace}}\build" -DCMAKE_TOOLCHAIN_FILE="C:/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows
-    
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DWITHOUT_SERVERS=1 -DWITH_TESTS=1 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static
+        cmake --build build --config ${{matrix.build_type}}
     - name: Run
-      run: ./horizon.sh run-tests "build\test\Release"
+      run: |
+        Xcopy /E /I ${{github.workspace}}\config ${{github.workspace}}\build\bin\${{matrix.build_type}}\config
+        Xcopy /E /I ${{github.workspace}}\db ${{github.workspace}}\build\bin\${{matrix.build_type}}\db
+        Xcopy /E /I ${{github.workspace}}\scripts ${{github.workspace}}\build\bin\${{matrix.build_type}}\scripts
+        $files = Get-ChildItem -Path "${{github.workspace}}/src/Tests" -Filter "*Test.cpp" -Recurse
+        foreach ($file in $files) {
+          $t = [System.IO.Path]::GetFileNameWithoutExtension($file.FullName)
+          & "${{github.workspace}}\build\bin\${{matrix.build_type}}\$t"
+        }   
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with: 
+        name: Horizon Windows Tests (${{matrix.build_type}})
+        path: ${{github.workspace}}\build\bin\${{matrix.build_type}}\**\*
       
   Windows-Tools:
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
     needs: Windows-Tests
     runs-on: Windows
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Build
-      run: ./horizon.sh build-tools -DCMAKE_INSTALL_PREFIX="${{github.workspace}}\build" -DCMAKE_TOOLCHAIN_FILE="C:/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows
-    
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DWITHOUT_SERVERS=1 -DWITH_TOOLS=1 -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static
+        cmake --build build --config ${{matrix.build_type}}
+
   Windows-Servers:
-    needs: [ Windows-Tests, Windows-Tools, Windows-Libraries ]
+    strategy:
+      matrix:
+        build_type: [ "Debug", "RelWithDebInfo", "Release" ]
+    needs: [ Windows-Tests, Windows-Tools ]
     runs-on: Windows
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
    
     - name: Configure Step & Build
-      run: ./horizon.sh build ${{github.workspace}}\build -DCMAKE_TOOLCHAIN_FILE="C:/vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET=x64-windows -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_INSTALL_PREFIX="${{github.workspace}}\build" 
-
-  Windows-Upload-Artifact:
-    needs: Windows-Servers
-    runs-on: Windows
-    steps:
-    - name: Checkout
-      uses: actions/upload-artifact@v3
+      run: |
+        cmake -B build -DCMAKE_BUILD_TYPE=${{matrix.build_type}} -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows-static
+        cmake --build build --config ${{matrix.build_type}}
+        Xcopy /E /I ${{github.workspace}}\config ${{github.workspace}}\build\bin\${{matrix.build_type}}\config
+        Xcopy /E /I ${{github.workspace}}\db ${{github.workspace}}\build\bin\${{matrix.build_type}}\db
+        Xcopy /E /I ${{github.workspace}}\scripts ${{github.workspace}}\build\bin\${{matrix.build_type}}\scripts
+    - name: Run
+      working-directory: ${{github.workspace}}\build\bin\${{matrix.build_type}}
+      run: |
+        ${{github.workspace}}\build\bin\${{matrix.build_type}}\auth.exe --with-config="${{github.workspace}}\build\bin\${{matrix.build_type}}\config\auth-server.lua.dist" --test-run 
+        ${{github.workspace}}\build\bin\${{matrix.build_type}}\char.exe --with-config="${{github.workspace}}\build\bin\${{matrix.build_type}}\config\char-server.lua.dist" --test-run
+        ${{github.workspace}}\build\bin\${{matrix.build_type}}\zone.exe --with-config="${{github.workspace}}\build\bin\${{matrix.build_type}}\config\zone-server.lua.dist" --test-run 
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
       with: 
-        name: artifacts bin
-        path: ${{github.workspace}}\build\bin\Release\**\*
-    # Uncomment when we have some more information on why its failing?  
-    #- name: Run Auth
-    #  working-directory: ${{github.workspace}}\build\bin\Release
-    #  run: |
-    #    ./auth.exe --with-config="config\auth-server.lua" --test-run 
-    #    ./char.exe --with-config="config\char-server.lua" --test-run
-    #    ./zone.exe --with-config="config\zone-server.lua" --test-run 
+        name: Horizon Windows Servers (${{matrix.build_type}})
+        path: ${{github.workspace}}\build\bin\${{matrix.build_type}}\**\*

@@ -29,7 +29,6 @@
 
 #include "ExpDB.hpp"
 
-#include "Core/Logging/Logger.hpp"
 #include "Server/Zone/Zone.hpp"
 
 using namespace Horizon::Zone;

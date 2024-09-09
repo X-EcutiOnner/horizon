@@ -27,7 +27,7 @@
  * along with this library.  If not, see <http://www.gnu.org/licenses/>.
  **************************************************/
 
-#define BOOST_TEST_DYN_LINK
+
 #define BOOST_TEST_MODULE "ObservableStatusTest"
 
 #include <boost/test/unit_test.hpp>
@@ -36,7 +36,7 @@
 #include <fstream>
 #include <memory>
 
-#include "Server/Zone/Game/Entities/Traits/ObservableStatus.hpp"
+#include "Server/Zone/Game/Units/Traits/ObservableStatus.hpp"
 
 class B;
 class C;

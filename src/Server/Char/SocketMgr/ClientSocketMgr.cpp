@@ -28,6 +28,16 @@
  **************************************************/
 
 #include "ClientSocketMgr.hpp"
+#include "Server/Char/Char.hpp"
 
+using namespace Horizon;
 
-using namespace Horizon::Char;
+bool Char::ClientSocketMgr::start(boost::asio::io_context &io_context, std::string const &listen_ip, uint16_t port, uint32_t threads, bool minimal)
+{
+	if (!BaseSocketMgr::start(io_context, listen_ip, port, threads, minimal))
+		return false;
+	for (auto i : get_thread_map()) {
+		sChar->register_component(Horizon::System::RUNTIME_NETWORKING, (std::dynamic_pointer_cast<CharNetworkThread>(i.second)));
+	}
+	return true;
+}

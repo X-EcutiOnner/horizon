@@ -52,8 +52,6 @@ public:
 	/* */
 	std::shared_ptr<ZoneSession> get_session();
 	void set_session(std::shared_ptr<ZoneSession> session);
-
-	void update_session(uint32_t diff);
 protected:
 	void read_handler() override;
 	void on_close() override;

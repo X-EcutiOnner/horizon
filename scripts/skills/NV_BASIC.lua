@@ -1,11 +1,11 @@
-local entity, skill_id, skill_lv = ...
+local unit, skill_id, skill_lv = ...
 
 player = nil
 
-if entity:type() == EntityType.Player then
-	player = cast_entity_to_player(entity)
+if unit:type() == UnitType.Player then
+	player = cast_unit_to_player(unit)
 else
-	print("skill:NV_BASIC: Entity Type was not Player.")
+	print("skill:NV_BASIC: Unit Type was not Player.")
 	return false
 end
 
@@ -20,13 +20,13 @@ if skill_lv == 3 and learnt ~= nil and learnt.level >= 3 then
 	find_status_effect_by_name = require("scripts/modules/find_status_effect_by_name")
 	skill = find_skill_by_id(skill_id)
 	se = find_status_effect_by_name("SC_SIT")
-	if entity:posture() == Posture.Standing then
-		entity:set_posture(Posture.Sitting)
-		entity:status_effect_start(se["Id"], 9999, 0, 0, 0, 0)
+	if unit:posture() == Posture.Standing then
+		unit:set_posture(Posture.Sitting)
+		unit:status_effect_start(se["Id"], 9999, 0, 0, 0, 0)
 		return player:perform_action(PlayerActionType.Sit)
-	elseif entity:posture() == Posture.Sitting then
-		entity:set_posture(Posture.Standing)
-		entity:status_effect_end(se["Id"])
+	elseif unit:posture() == Posture.Sitting then
+		unit:set_posture(Posture.Standing)
+		unit:status_effect_end(se["Id"])
 		return player:perform_action(PlayerActionType.Stand)
 	else
 		return false

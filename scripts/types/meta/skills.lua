@@ -24,10 +24,10 @@ function SkillConfigData:get_use_range(skill_lv) end
 ---@field skill_id integer
 ---@field skill_lv integer
 ---@field target_type SkillTargetType
----@field initial_source Entity
----@field source Entity?
----@field initial_target Entity?
----@field target Entity?
+---@field initial_source Unit
+---@field source Unit?
+---@field initial_target Unit?
+---@field target Unit?
 ---@field map_coords MapCoords?
 ---@field message string?
 ---@field cast_time integer?

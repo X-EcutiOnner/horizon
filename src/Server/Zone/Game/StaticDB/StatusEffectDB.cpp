@@ -29,7 +29,7 @@
 
 #include "StatusEffectDB.hpp"
 
-#include "Server/Zone/LUA/Components/StatusEffectComponent.hpp"
+#include "Server/Zone/Script/Components/StatusEffectComponent.hpp"
 #include "Server/Zone/Zone.hpp"
 
 using namespace Horizon::Zone;

@@ -58,6 +58,12 @@ set_target_properties(mapcache
 	)
 endif()
 
+# Enable CMP0091 for MSVC Builds
+if (MSVC)
+set_property(TARGET mapcache PROPERTY
+	MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+endif(MSVC)
+
 target_include_directories(mapcache
 	PUBLIC
 		${PUBLIC_INCLUDES}

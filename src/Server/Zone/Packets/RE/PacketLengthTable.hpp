@@ -36,8 +36,8 @@ namespace Horizon
 {
 namespace Zone
 {
-	typedef std::shared_ptr<Base::NetworkPacketHandler<ZoneSession>> HPacketStructPtrType;
-	typedef std::shared_ptr<Base::NetworkPacketTransmitter<ZoneSession>> TPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<ZoneSession>> HPacketStructPtrType;
+	typedef std::shared_ptr<Base::NetworkPacket<ZoneSession>> TPacketStructPtrType;
 	typedef std::pair<int16_t, HPacketStructPtrType> HPacketTablePairType;
 	typedef std::pair<int16_t, TPacketStructPtrType> TPacketTablePairType;
 /**
